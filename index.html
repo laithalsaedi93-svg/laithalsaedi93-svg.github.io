@@ -80,11 +80,13 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 .success-box{padding:14px;background:#ecfdf3;border-radius:14px;color:#166534;margin-top:12px}
 
-@media(max-width:500px){
+.level-box{padding:20px;text-align:center;background:#eef4ff;border-radius:18px;margin:15px 0}
 
-.grid{grid-template-columns:1fr}
+.level-big{font-size:40px;font-weight:800;color:#2563eb}
 
-}
+.badge{display:inline-block;padding:8px 14px;border-radius:20px;background:#2563eb;color:#fff;font-weight:700}
+
+@media(max-width:500px){.grid{grid-template-columns:1fr}}
 
 </style>
 
@@ -120,6 +122,12 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 <p id="overallText" class="small"></p>
 
+<button onclick="startPlacement()">
+
+🎯 اختبار تحديد المستوى
+
+</button>
+
 <button class="secondary" onclick="startVocabulary()">
 
 📚 مفردات A1/A2
@@ -129,6 +137,12 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 <button class="secondary" onclick="openMistakes()">
 
 🧠 مراجعة أخطائي
+
+</button>
+
+<button class="secondary" onclick="openStats()">
+
+📊 إحصائياتي
 
 </button>
 
@@ -158,7 +172,7 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 شرح قبل الاختبار • سؤال واحد كل مرة •
 
-تصحيح وشرح • حفظ الأخطاء • إعادة الأخطاء.
+تصحيح وشرح • حفظ الأخطاء • مراجعة متكررة.
 
 </p>
 
@@ -264,7 +278,7 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 </section>
 
-<!-- VOCABULARY -->
+<!-- VOCAB -->
 
 <section id="vocab" class="hidden">
 
@@ -344,6 +358,108 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 </section>
 
+<!-- PLACEMENT -->
+
+<section id="placement" class="hidden">
+
+<div class="card">
+
+<span class="tag">Placement Test</span>
+
+<h2>🎯 اختبار تحديد المستوى</h2>
+
+<p id="placementIntro">
+
+اختبار قصير يحدد هل مستواك أقرب إلى A1 أو A2.
+
+اختر الإجابة الصحيحة لكل سؤال.
+
+</p>
+
+<div class="small" id="pnum"></div>
+
+<div class="progress">
+
+<div id="pbar" class="bar"></div>
+
+</div>
+
+<h2 id="pquestion"></h2>
+
+<div id="poptions"></div>
+
+<div id="pexplain" class="card hidden"></div>
+
+<button id="pnext" onclick="nextPlacement()" disabled>
+
+تحقق
+
+</button>
+
+</div>
+
+</section>
+
+<!-- PLACEMENT RESULT -->
+
+<section id="placementResult" class="hidden">
+
+<div class="card center">
+
+<span class="tag">Your Level</span>
+
+<h2>🎯 نتيجة تحديد المستوى</h2>
+
+<div class="level-box">
+
+<div id="levelResult" class="level-big"></div>
+
+<p id="levelDescription"></p>
+
+</div>
+
+<div id="levelScore" class="score"></div>
+
+<p id="levelAdvice"></p>
+
+<button onclick="startPlacement()">
+
+🔄 إعادة اختبار تحديد المستوى
+
+</button>
+
+<button onclick="goHome()">
+
+الرئيسية
+
+</button>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section id="stats" class="hidden">
+
+<div class="card">
+
+<span class="tag">Statistics</span>
+
+<h2>📊 إحصائياتك</h2>
+
+<div id="statsBody"></div>
+
+<button class="secondary" onclick="goHome()">
+
+الرئيسية
+
+</button>
+
+</div>
+
+</section>
+
 </main>
 
 <script>
@@ -358,11 +474,7 @@ const units=[
 
 {
 
-id:"a1u1",
-
-level:"A1",
-
-title:"الوحدة 1 — Verb to be",
+id:"a1u1",level:"A1",title:"الوحدة 1 — Verb to be",
 
 topic:"am / is / are",
 
@@ -378,17 +490,11 @@ qs:[
 
 ["We ___ at home.",["is","am","are"],2,"مع We نستخدم are."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u2",
-
-level:"A1",
-
-title:"الوحدة 2 — Pronouns",
+id:"a1u2",level:"A1",title:"الوحدة 2 — Pronouns",
 
 topic:"الضمائر والملكية",
 
@@ -404,17 +510,11 @@ qs:[
 
 ["We love ___ house.",["our","his","her"],0,"We → our."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u3",
-
-level:"A1",
-
-title:"الوحدة 3 — Present Simple",
+id:"a1u3",level:"A1",title:"الوحدة 3 — Present Simple",
 
 topic:"المضارع البسيط",
 
@@ -430,17 +530,11 @@ qs:[
 
 ["She ___ coffee every morning.",["drink","drinks","drinking"],1,"She → drinks."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u4",
-
-level:"A1",
-
-title:"الوحدة 4 — Questions & Negatives",
+id:"a1u4",level:"A1",title:"الوحدة 4 — Questions & Negatives",
 
 topic:"الأسئلة والنفي",
 
@@ -456,17 +550,11 @@ qs:[
 
 ["She ___ like tea.",["don't","doesn't","isn't"],1,"مع She نستخدم doesn't."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u5",
-
-level:"A1",
-
-title:"الوحدة 5 — Present Continuous",
+id:"a1u5",level:"A1",title:"الوحدة 5 — Present Continuous",
 
 topic:"المضارع المستمر",
 
@@ -482,17 +570,11 @@ qs:[
 
 ["We are ___ English.",["study","studying","studies"],1,"بعد are نستخدم verb-ing."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u6",
-
-level:"A1",
-
-title:"الوحدة 6 — Time & Prepositions",
+id:"a1u6",level:"A1",title:"الوحدة 6 — Time & Prepositions",
 
 topic:"in / on / at / under",
 
@@ -508,17 +590,11 @@ qs:[
 
 ["The shoes are ___ the bed.",["at","under","on"],1,"under = تحت."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u7",
-
-level:"A1",
-
-title:"الوحدة 7 — Past Simple",
+id:"a1u7",level:"A1",title:"الوحدة 7 — Past Simple",
 
 topic:"الماضي البسيط",
 
@@ -534,17 +610,11 @@ qs:[
 
 ["He ___ a new phone last week.",["buy","bought","buys"],1,"buy → bought."]
 
-]
-
-},
+]},
 
 {
 
-id:"a1u8",
-
-level:"A1",
-
-title:"الوحدة 8 — A1 Review",
+id:"a1u8",level:"A1",title:"الوحدة 8 — A1 Review",
 
 topic:"مراجعة A1",
 
@@ -560,17 +630,11 @@ qs:[
 
 ["I was born ___ May.",["at","on","in"],2,"الشهر يأخذ in."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u1",
-
-level:"A2",
-
-title:"الوحدة 1 — Present Perfect",
+id:"a2u1",level:"A2",title:"الوحدة 1 — Present Perfect",
 
 topic:"المضارع التام",
 
@@ -586,17 +650,11 @@ qs:[
 
 ["He has ___ his homework.",["do","did","done"],2,"do → done."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u2",
-
-level:"A2",
-
-title:"الوحدة 2 — Present Perfect vs Simple",
+id:"a2u2",level:"A2",title:"الوحدة 2 — Present Perfect vs Simple",
 
 topic:"Present Simple vs Present Perfect",
 
@@ -612,17 +670,11 @@ qs:[
 
 ["We ___ our work already.",["finish","finished","have finished"],2,"already غالبًا مع Present Perfect."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u3",
-
-level:"A2",
-
-title:"الوحدة 3 — Past vs Present Perfect",
+id:"a2u3",level:"A2",title:"الوحدة 3 — Past vs Present Perfect",
 
 topic:"Past Simple vs Present Perfect",
 
@@ -638,17 +690,11 @@ qs:[
 
 ["They ___ the car last week.",["have bought","bought","buy"],1,"last week وقت محدد."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u4",
-
-level:"A2",
-
-title:"الوحدة 4 — Future & Modals",
+id:"a2u4",level:"A2",title:"الوحدة 4 — Future & Modals",
 
 topic:"will / can / should",
 
@@ -664,17 +710,11 @@ qs:[
 
 ["We ___ travel next week.",["will","have","can"],0,"will للمستقبل."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u5",
-
-level:"A2",
-
-title:"الوحدة 5 — Comparatives",
+id:"a2u5",level:"A2",title:"الوحدة 5 — Comparatives",
 
 topic:"Comparatives",
 
@@ -690,17 +730,11 @@ qs:[
 
 ["Today is ___ than yesterday.",["hot","hotter","hottest"],1,"hot → hotter."]
 
-]
-
-},
+]},
 
 {
 
-id:"a2u6",
-
-level:"A2",
-
-title:"الوحدة 6 — A2 Review",
+id:"a2u6",level:"A2",title:"الوحدة 6 — A2 Review",
 
 topic:"مراجعة A2",
 
@@ -716,15 +750,13 @@ qs:[
 
 ["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive للمقارنة."]
 
-]
-
-}
+]}
 
 ];
 
 /* =========================
 
-   المتغيرات
+   متغيرات البرنامج
 
 ========================= */
 
@@ -746,9 +778,17 @@ let mistakeQuiz=false;
 
 let mistakeList=[];
 
+let placementIndex=0;
+
+let placementScore=0;
+
+let placementSelected=null;
+
+let placementChecked=false;
+
 /* =========================
 
-   الأدوات
+   أدوات
 
 ========================= */
 
@@ -756,21 +796,21 @@ const $=id=>document.getElementById(id);
 
 function data(){
 
- return JSON.parse(localStorage.getItem("englishProgress")||"{}");
+return JSON.parse(localStorage.getItem("englishProgress")||"{}");
 
 }
 
 function save(d){
 
- localStorage.setItem("englishProgress",JSON.stringify(d));
+localStorage.setItem("englishProgress",JSON.stringify(d));
 
 }
 
 function pctFor(u){
 
- let d=data();
+let d=data();
 
- return d[u.id]?.mastery||0;
+return d[u.id]?.mastery||0;
 
 }
 
@@ -782,51 +822,51 @@ function pctFor(u){
 
 function renderUnits(){
 
- const a1=$("a1");
+const a1=$("a1");
 
- const a2=$("a2");
+const a2=$("a2");
 
- a1.innerHTML="";
+a1.innerHTML="";
 
- a2.innerHTML="";
+a2.innerHTML="";
 
- units.forEach((u,idx)=>{
+units.forEach((u,idx)=>{
 
-  const b=document.createElement("button");
+const b=document.createElement("button");
 
-  b.className="unit";
+b.className="unit";
 
-  b.innerHTML=
+b.innerHTML=
 
-   `<b>${u.title}</b>
+`<b>${u.title}</b>
 
-   <small>${u.topic}<br>
+<small>${u.topic}<br>
 
-   الإتقان: ${pctFor(u)}%</small>`;
+الإتقان: ${pctFor(u)}%</small>`;
 
-  b.onclick=()=>openUnit(idx);
+b.onclick=()=>openUnit(idx);
 
-  if(u.level==="A1"){
+if(u.level==="A1"){
 
-   a1.appendChild(b);
+a1.appendChild(b);
 
-  }else{
+}else{
 
-   a2.appendChild(b);
+a2.appendChild(b);
 
-  }
+}
 
- });
+});
 
- let sum=units.reduce((s,u)=>s+pctFor(u),0);
+let sum=units.reduce((s,u)=>s+pctFor(u),0);
 
- let p=Math.round(sum/units.length);
+let p=Math.round(sum/units.length);
 
- $("overall").style.width=p+"%";
+$("overall").style.width=p+"%";
 
- $("overallText").textContent=
+$("overallText").textContent=
 
- `الإتقان العام: ${p}% — ${units.length} وحدة`;
+`الإتقان العام: ${p}% — ${units.length} وحدة`;
 
 }
 
@@ -838,725 +878,989 @@ function renderUnits(){
 
 function hide(){
 
- [
+[
 
-  "home",
+"home",
 
-  "lesson",
+"lesson",
 
-  "quiz",
+"quiz",
 
-  "result",
+"result",
 
-  "vocab",
+"vocab",
 
-  "mistakes"
+"mistakes",
 
- ].forEach(x=>{
+"placement",
 
-  $(x).classList.add("hidden");
+"placementResult",
 
- });
+"stats"
+
+].forEach(x=>{
+
+$(x).classList.add("hidden");
+
+});
 
 }
 
 function goHome(){
 
- hide();
+hide();
 
- $("home").classList.remove("hidden");
+$("home").classList.remove("hidden");
 
- renderUnits();
+renderUnits();
 
 }
 
 /* =========================
 
-   فتح الوحدة
+   الدروس
 
 ========================= */
 
 function openUnit(idx){
 
- current=units[idx];
+current=units[idx];
 
- hide();
+hide();
 
- $("lesson").classList.remove("hidden");
+$("lesson").classList.remove("hidden");
 
- $("lessonTag").textContent=current.level;
+$("lessonTag").textContent=current.level;
 
- $("lessonTitle").textContent=current.title;
+$("lessonTitle").textContent=current.title;
 
- const ex=example(current);
+const ex=example(current);
 
- $("lessonBody").innerHTML=`
+$("lessonBody").innerHTML=`
 
- <p><b>${current.topic}</b></p>
+<p><b>${current.topic}</b></p>
 
- <p>${current.lesson}</p>
+<p>${current.lesson}</p>
 
- <p class="english">${ex}</p>
+<p class="english">${ex}</p>
 
- <button class="secondary"
+<button class="secondary"
 
- onclick='speakText(${JSON.stringify(ex)})'>
+onclick='speakText(${JSON.stringify(ex)})'>
 
- 🔊 استمع إلى المثال
+🔊 استمع إلى المثال
 
- </button>
+</button>
 
- `;
+`;
 
 }
-
-/* =========================
-
-   الأمثلة
-
-========================= */
 
 function example(u){
 
- if(u.id==="a1u1")
+if(u.id==="a1u1")
 
-  return "I am ready. She is busy. They are here.";
+return "I am ready. She is busy. They are here.";
 
- if(u.id==="a2u1")
+if(u.id==="a2u1")
 
-  return "I have finished. She has already left.";
+return "I have finished. She has already left.";
 
- if(u.id==="a1u3")
+if(u.id==="a1u3")
 
-  return "I study English every day.";
+return "I study English every day.";
 
- if(u.id==="a1u5")
+if(u.id==="a1u5")
 
-  return "I am studying English now.";
+return "I am studying English now.";
 
- return "Study the rule, then test yourself.";
+return "Study the rule, then test yourself.";
 
 }
 
 /* =========================
 
-   بدء الاختبار
+   الاختبارات
 
 ========================= */
 
 function beginQuiz(){
 
- qIndex=0;
+qIndex=0;
 
- score=0;
+score=0;
 
- wrong=[];
+wrong=[];
 
- retry=false;
+retry=false;
 
- mistakeQuiz=false;
+mistakeQuiz=false;
 
- selected=null;
+selected=null;
 
- checked=false;
+checked=false;
 
- hide();
+hide();
 
- $("quiz").classList.remove("hidden");
+$("quiz").classList.remove("hidden");
 
- renderQ();
+renderQ();
 
 }
-
-/* =========================
-
-   عرض السؤال
-
-========================= */
 
 function renderQ(){
 
- let q;
+let q;
 
- if(mistakeQuiz){
+if(mistakeQuiz){
 
-  q=mistakeList[qIndex].question;
+q=mistakeList[qIndex].question;
 
- }else{
+}else{
 
-  q=
-
-   retry
-
-   ? wrong[qIndex]
-
-   : current.qs[qIndex];
-
- }
-
- selected=null;
-
- checked=false;
-
- $("next").disabled=true;
-
- $("next").textContent="تحقق";
-
- $("explain").classList.add("hidden");
-
- let total=
-
-  mistakeQuiz
-
-  ? mistakeList.length
-
-  : retry
-
-  ? wrong.length
-
-  : current.qs.length;
-
- $("qnum").textContent=
-
- `السؤال ${qIndex+1} من ${total}`;
-
- $("qbar").style.width=
-
- ((qIndex+1)/total*100)+"%";
-
- $("qtext").textContent=q[0];
-
- $("opts").innerHTML="";
-
- q[1].forEach((x,n)=>{
-
-  let b=document.createElement("button");
-
-  b.className="option";
-
-  b.textContent=x;
-
-  b.onclick=()=>choose(b,n);
-
-  $("opts").appendChild(b);
-
- });
+q=retry?wrong[qIndex]:current.qs[qIndex];
 
 }
 
-/* =========================
+selected=null;
 
-   اختيار الإجابة
+checked=false;
 
-========================= */
+$("next").disabled=true;
+
+$("next").textContent="تحقق";
+
+$("explain").classList.add("hidden");
+
+let total=
+
+mistakeQuiz
+
+?mistakeList.length
+
+:retry
+
+?wrong.length
+
+:current.qs.length;
+
+$("qnum").textContent=
+
+`السؤال ${qIndex+1} من ${total}`;
+
+$("qbar").style.width=
+
+((qIndex+1)/total*100)+"%";
+
+$("qtext").textContent=q[0];
+
+$("opts").innerHTML="";
+
+q[1].forEach((x,n)=>{
+
+let b=document.createElement("button");
+
+b.className="option";
+
+b.textContent=x;
+
+b.onclick=()=>choose(b,n);
+
+$("opts").appendChild(b);
+
+});
+
+}
 
 function choose(btn,n){
 
- if(checked)return;
+if(checked)return;
 
- selected=n;
+selected=n;
 
- document
+document.querySelectorAll(".option")
 
- .querySelectorAll(".option")
+.forEach(x=>x.classList.remove("selected"));
 
- .forEach(x=>x.classList.remove("selected"));
+btn.classList.add("selected");
 
- btn.classList.add("selected");
-
- $("next").disabled=false;
+$("next").disabled=false;
 
 }
-
-/* =========================
-
-   حفظ الخطأ
-
-========================= */
 
 function addMistake(question){
 
- let d=data();
+let d=data();
 
- if(!d.mistakes){
+if(!d.mistakes)d.mistakes=[];
 
-  d.mistakes=[];
+const exists=d.mistakes.find(
 
- }
+x=>x.id===question[0]
 
- const exists=d.mistakes.find(
+);
 
-  x=>x.id===question[0]
+if(exists){
 
- );
+exists.count=(exists.count||1)+1;
 
- if(exists){
+}else{
 
-  exists.count=(exists.count||1)+1;
+d.mistakes.push({
 
- }else{
+id:question[0],
 
-  d.mistakes.push({
+question:question,
 
-   id:question[0],
+count:1,
 
-   question:question,
+lastWrong:new Date().toISOString()
 
-   count:1,
-
-   lastWrong:new Date().toISOString()
-
-  });
-
- }
-
- save(d);
+});
 
 }
 
-/* =========================
+save(d);
 
-   السؤال التالي
-
-========================= */
+}
 
 function nextQ(){
 
- let q;
+let q;
 
- if(mistakeQuiz){
+if(mistakeQuiz){
 
-  q=mistakeList[qIndex].question;
+q=mistakeList[qIndex].question;
 
- }else{
+}else{
 
-  q=
+q=retry?wrong[qIndex]:current.qs[qIndex];
 
-   retry
+}
 
-   ? wrong[qIndex]
+if(!checked){
 
-   : current.qs[qIndex];
+checked=true;
 
- }
+let ok=selected===q[2];
 
- if(!checked){
+if(ok){
 
-  checked=true;
+score++;
 
-  let ok=selected===q[2];
+}else{
 
-  if(ok){
+if(!retry&&!mistakeQuiz){
 
-   score++;
+wrong.push(q);
 
-  }else{
+}
 
-   if(!retry && !mistakeQuiz){
+addMistake(q);
 
-    wrong.push(q);
+}
 
-   }
+const options=document.querySelectorAll(".option");
 
-   addMistake(q);
+options[q[2]].classList.add("correct");
 
-  }
+if(!ok&&selected!==null){
 
-  const options=
+options[selected].classList.add("wrong");
 
-  document.querySelectorAll(".option");
+}
 
-  options[q[2]].classList.add("correct");
+$("explain").innerHTML=
 
-  if(!ok && selected!==null){
+`<b>${ok?"صحيح ✅":"خطأ ❌"}</b><br>${q[3]}`;
 
-   options[selected].classList.add("wrong");
+$("explain").classList.remove("hidden");
 
-  }
+let total=
 
-  $("explain").innerHTML=
+mistakeQuiz
 
-   `<b>${ok?"صحيح ✅":"خطأ ❌"}</b><br>${q[3]}`;
+?mistakeList.length
 
-  $("explain").classList.remove("hidden");
+:retry
 
-  let total=
+?wrong.length
 
-   mistakeQuiz
+:current.qs.length;
 
-   ? mistakeList.length
+$("next").textContent=
 
-   : retry
+qIndex+1<total?"التالي":"النتيجة";
 
-   ? wrong.length
+return;
 
-   : current.qs.length;
+}
 
-  $("next").textContent=
+qIndex++;
 
-   qIndex+1<total
+let total=
 
-   ?"التالي"
+mistakeQuiz
 
-   :"النتيجة";
+?mistakeList.length
 
-  return;
+:retry
 
- }
+?wrong.length
 
- qIndex++;
+:current.qs.length;
 
- let total=
+if(qIndex<total){
 
-  mistakeQuiz
+renderQ();
 
-  ? mistakeList.length
+}else{
 
-  : retry
+finish();
 
-  ? wrong.length
-
-  : current.qs.length;
-
- if(qIndex<total){
-
-  renderQ();
-
- }else{
-
-  finish();
-
- }
+}
 
 }
 
 /* =========================
 
-   النتيجة
+   النتائج
 
 ========================= */
 
 function finish(){
 
- if(mistakeQuiz){
+if(mistakeQuiz){
 
-  hide();
+hide();
 
-  $("result").classList.remove("hidden");
+$("result").classList.remove("hidden");
 
-  $("resultTitle").textContent=
+$("resultTitle").textContent=
 
-   "نتيجة مراجعة الأخطاء";
+"نتيجة مراجعة الأخطاء";
 
-  $("resultScore").textContent=
+$("resultScore").textContent=
 
-   `${score} / ${mistakeList.length}`;
+`${score} / ${mistakeList.length}`;
 
-  if(score===mistakeList.length){
+$("resultMsg").textContent=
 
-   $("resultMsg").textContent=
+score===mistakeList.length
 
-    "ممتاز جدًا 🎉 أتقنت جميع الأخطاء.";
+?"ممتاز جدًا 🎉 أتقنت جميع الأخطاء."
 
-   removeCorrectMistakes();
+:"بعض الأخطاء ما زالت تحتاج إلى مراجعة.";
 
-  }else{
+if(score===mistakeList.length){
 
-   $("resultMsg").textContent=
-
-    "بعض الأخطاء ما زالت تحتاج إلى مراجعة. سنحتفظ بها للمرة القادمة.";
-
-  }
-
-  $("retryWrong").style.display="none";
-
-  return;
-
- }
-
- if(retry){
-
-  hide();
-
-  $("result").classList.remove("hidden");
-
-  $("resultTitle").textContent=
-
-   "مراجعة أخطاء الوحدة";
-
-  $("resultScore").textContent=
-
-   `${score} / ${wrong.length}`;
-
-  $("resultMsg").textContent=
-
-   score===wrong.length
-
-   ?"ممتاز! أتقنت أخطاء الوحدة."
-
-   :"أعد مراجعة الدرس وحاول مرة أخرى.";
-
-  $("retryWrong").style.display="none";
-
-  return;
-
- }
-
- let total=current.qs.length;
-
- let p=Math.round(score/total*100);
-
- let d=data();
-
- d[current.id]={
-
-  mastery:p,
-
-  lastScore:score,
-
-  total:total,
-
-  updated:new Date().toISOString()
-
- };
-
- save(d);
-
- hide();
-
- $("result").classList.remove("hidden");
-
- $("resultTitle").textContent=current.title;
-
- $("resultScore").textContent=
-
-  `${score} / ${total} — ${p}%`;
-
- $("resultMsg").textContent=
-
-  p>=90
-
-  ?"إتقان ممتاز — يمكنك الانتقال للوحدة التالية."
-
-  :p>=70
-
-  ?"جيد جدًا — راجع الأخطاء ثم أعد الاختبار."
-
-  :"نحتاج إلى مراجعة الدرس ثم إعادة الاختبار.";
-
- $("retryWrong").style.display=
-
-  wrong.length
-
-  ?"block"
-
-  :"none";
+removeCorrectMistakes();
 
 }
 
-/* =========================
+$("retryWrong").style.display="none";
 
-   إعادة أخطاء الوحدة
+return;
 
-========================= */
+}
+
+if(retry){
+
+hide();
+
+$("result").classList.remove("hidden");
+
+$("resultTitle").textContent=
+
+"مراجعة أخطاء الوحدة";
+
+$("resultScore").textContent=
+
+`${score} / ${wrong.length}`;
+
+$("resultMsg").textContent=
+
+score===wrong.length
+
+?"ممتاز! أتقنت أخطاء الوحدة."
+
+:"أعد مراجعة الدرس وحاول مرة أخرى.";
+
+$("retryWrong").style.display="none";
+
+return;
+
+}
+
+let total=current.qs.length;
+
+let p=Math.round(score/total*100);
+
+let d=data();
+
+d[current.id]={
+
+mastery:p,
+
+lastScore:score,
+
+total:total,
+
+updated:new Date().toISOString()
+
+};
+
+save(d);
+
+hide();
+
+$("result").classList.remove("hidden");
+
+$("resultTitle").textContent=current.title;
+
+$("resultScore").textContent=
+
+`${score} / ${total} — ${p}%`;
+
+$("resultMsg").textContent=
+
+p>=90
+
+?"إتقان ممتاز — يمكنك الانتقال للوحدة التالية."
+
+:p>=70
+
+?"جيد جدًا — راجع الأخطاء ثم أعد الاختبار."
+
+:"نحتاج إلى مراجعة الدرس ثم إعادة الاختبار.";
+
+$("retryWrong").style.display=
+
+wrong.length?"block":"none";
+
+}
 
 function retryWrong(){
 
- if(!wrong.length)return;
+if(!wrong.length)return;
 
- retry=true;
+retry=true;
 
- mistakeQuiz=false;
+mistakeQuiz=false;
 
- qIndex=0;
+qIndex=0;
 
- score=0;
+score=0;
 
- hide();
+hide();
 
- $("quiz").classList.remove("hidden");
+$("quiz").classList.remove("hidden");
 
- renderQ();
+renderQ();
 
 }
 
 /* =========================
 
-   صفحة الأخطاء
+   الأخطاء
 
 ========================= */
 
 function openMistakes(){
 
- hide();
+hide();
 
- $("mistakes").classList.remove("hidden");
+$("mistakes").classList.remove("hidden");
 
- renderMistakes();
+renderMistakes();
 
 }
 
 function renderMistakes(){
 
- let d=data();
+let d=data();
 
- let mistakes=d.mistakes||[];
+let mistakes=d.mistakes||[];
 
- $("mistakeStats").innerHTML=
+$("mistakeStats").innerHTML=
 
- `
+`<div class="stat">عدد الأخطاء المحفوظة: ${mistakes.length}</div>
 
- <div class="stat">عدد الأخطاء المحفوظة: ${mistakes.length}</div>
+<p class="small">
 
- <p class="small">
+البرنامج يحتفظ بالأسئلة التي أخطأت بها حتى تعيد مراجعتها.
 
- البرنامج يحفظ الأسئلة التي أخطأت فيها ويعيدها لك حتى تتقنها.
+</p>`;
 
- </p>
+if(!mistakes.length){
 
- `;
+$("mistakeList").innerHTML=
 
- if(!mistakes.length){
+`<div class="success-box">
 
-  $("mistakeList").innerHTML=
+🎉 لا توجد أخطاء محفوظة حاليًا.
 
-   `<div class="success-box">
+</div>`;
 
-   🎉 لا توجد أخطاء محفوظة حاليًا.
+$("startMistakesBtn").style.display="none";
 
-   </div>`;
-
-  $("startMistakesBtn").style.display="none";
-
-  return;
-
- }
-
- $("startMistakesBtn").style.display="block";
-
- $("mistakeList").innerHTML="";
-
- mistakes.forEach((m,i)=>{
-
-  let div=document.createElement("div");
-
-  div.className="error-item";
-
-  div.innerHTML=
-
-   `<b>${i+1}. ${m.question[0]}</b>
-
-   <br>
-
-   <span class="small">
-
-   عدد الأخطاء: ${m.count||1}
-
-   </span>`;
-
-  $("mistakeList").appendChild(div);
-
- });
+return;
 
 }
 
-/* =========================
+$("startMistakesBtn").style.display="block";
 
-   بدء مراجعة الأخطاء
+$("mistakeList").innerHTML="";
 
-========================= */
+mistakes.forEach((m,i)=>{
+
+let div=document.createElement("div");
+
+div.className="error-item";
+
+div.innerHTML=
+
+`<b>${i+1}. ${m.question[0]}</b>
+
+<br>
+
+<span class="small">
+
+عدد الأخطاء: ${m.count||1}
+
+</span>`;
+
+$("mistakeList").appendChild(div);
+
+});
+
+}
 
 function startMistakeQuiz(){
 
- let d=data();
+let d=data();
 
- let mistakes=d.mistakes||[];
+let mistakes=d.mistakes||[];
 
- if(!mistakes.length){
+if(!mistakes.length){
 
-  alert("لا توجد أخطاء محفوظة حاليًا.");
+alert("لا توجد أخطاء محفوظة حاليًا.");
 
-  return;
-
- }
-
- mistakeList=mistakes.slice();
-
- mistakeQuiz=true;
-
- retry=false;
-
- qIndex=0;
-
- score=0;
-
- hide();
-
- $("quiz").classList.remove("hidden");
-
- renderQ();
+return;
 
 }
 
-/* =========================
+mistakeList=mistakes.slice();
 
-   حذف الأخطاء التي أتقنها
+mistakeQuiz=true;
 
-========================= */
+retry=false;
+
+qIndex=0;
+
+score=0;
+
+hide();
+
+$("quiz").classList.remove("hidden");
+
+renderQ();
+
+}
 
 function removeCorrectMistakes(){
 
- let d=data();
+let d=data();
 
- if(!d.mistakes)return;
+d.mistakes=[];
 
- /*
+save(d);
 
-  إذا أتقن المستخدم مراجعة الأخطاء كاملة،
+}
 
-  نحذف الأخطاء من السجل.
+function clearMistakes(){
 
- */
+if(confirm("هل تريد مسح سجل الأخطاء فقط؟")){
 
- d.mistakes=d.mistakes.filter((m,i)=>{
+let d=data();
 
-  return i>=mistakeList.length;
+d.mistakes=[];
 
- });
+save(d);
 
- /*
+renderMistakes();
 
-  بما أن الاختبار الحالي شمل كل الأخطاء،
-
-  نعيد السجل فارغًا.
-
- */
-
- d.mistakes=[];
-
- save(d);
+}
 
 }
 
 /* =========================
 
-   مسح سجل الأخطاء
+   تحديد المستوى
 
 ========================= */
 
-function clearMistakes(){
+const placementQuestions=[
 
- if(confirm("هل تريد مسح سجل الأخطاء فقط؟")){
+["She ___ a teacher.",["am","is","are"],1,"She → is."],
 
-  let d=data();
+["I ___ English every day.",["study","studies","studying"],0,"I → study."],
 
-  d.mistakes=[];
+["___ you like coffee?",["Do","Does","Are"],0,"You → Do."],
 
-  save(d);
+["They ___ watching TV now.",["is","am","are"],2,"They → are."],
 
-  renderMistakes();
+["He ___ to work yesterday.",["go","went","gone"],1,"yesterday → Past Simple."],
 
- }
+["I have ___ my homework.",["do","did","done"],2,"have + التصريف الثالث."],
+
+["She ___ here since 2020.",["worked","has worked","works"],1,"since → Present Perfect."],
+
+["I ___ this movie before.",["see","saw","have seen"],2,"before بدون وقت محدد → Present Perfect."],
+
+["We ___ travel tomorrow.",["will","did","have"],0,"tomorrow → will."],
+
+["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive للمقارنة."]
+
+];
+
+function startPlacement(){
+
+placementIndex=0;
+
+placementScore=0;
+
+placementSelected=null;
+
+placementChecked=false;
+
+hide();
+
+$("placement").classList.remove("hidden");
+
+renderPlacement();
+
+}
+
+function renderPlacement(){
+
+let q=placementQuestions[placementIndex];
+
+placementSelected=null;
+
+placementChecked=false;
+
+$("pnext").disabled=true;
+
+$("pnext").textContent="تحقق";
+
+$("pexplain").classList.add("hidden");
+
+$("pnum").textContent=
+
+`السؤال ${placementIndex+1} من ${placementQuestions.length}`;
+
+$("pbar").style.width=
+
+((placementIndex+1)/placementQuestions.length*100)+"%";
+
+$("pquestion").textContent=q[0];
+
+$("poptions").innerHTML="";
+
+q[1].forEach((x,n)=>{
+
+let b=document.createElement("button");
+
+b.className="option";
+
+b.textContent=x;
+
+b.onclick=()=>choosePlacement(b,n);
+
+$("poptions").appendChild(b);
+
+});
+
+}
+
+function choosePlacement(btn,n){
+
+if(placementChecked)return;
+
+placementSelected=n;
+
+document.querySelectorAll("#poptions .option")
+
+.forEach(x=>x.classList.remove("selected"));
+
+btn.classList.add("selected");
+
+$("pnext").disabled=false;
+
+}
+
+function nextPlacement(){
+
+let q=placementQuestions[placementIndex];
+
+if(!placementChecked){
+
+placementChecked=true;
+
+let ok=placementSelected===q[2];
+
+if(ok)placementScore++;
+
+let options=
+
+document.querySelectorAll("#poptions .option");
+
+options[q[2]].classList.add("correct");
+
+if(!ok&&placementSelected!==null){
+
+options[placementSelected].classList.add("wrong");
+
+}
+
+$("pexplain").innerHTML=
+
+`<b>${ok?"صحيح ✅":"خطأ ❌"}</b><br>${q[3]}`;
+
+$("pexplain").classList.remove("hidden");
+
+$("pnext").textContent=
+
+placementIndex+1<placementQuestions.length
+
+?"التالي"
+
+:"النتيجة";
+
+return;
+
+}
+
+placementIndex++;
+
+if(placementIndex<placementQuestions.length){
+
+renderPlacement();
+
+}else{
+
+finishPlacement();
+
+}
+
+}
+
+function finishPlacement(){
+
+let percent=
+
+Math.round(
+
+placementScore/
+
+placementQuestions.length*100
+
+);
+
+let level;
+
+if(percent>=70){
+
+level="A2";
+
+}else{
+
+level="A1";
+
+}
+
+let d=data();
+
+d.placement={
+
+score:placementScore,
+
+total:placementQuestions.length,
+
+percent:percent,
+
+level:level,
+
+updated:new Date().toISOString()
+
+};
+
+save(d);
+
+hide();
+
+$("placementResult").classList.remove("hidden");
+
+$("levelResult").textContent=level;
+
+$("levelScore").textContent=
+
+`${placementScore} / ${placementQuestions.length} — ${percent}%`;
+
+if(level==="A2"){
+
+$("levelDescription").textContent=
+
+"نتيجتك تشير إلى أن أساسيات A1 لديك جيدة ويمكنك البدء بتدريب A2.";
+
+$("levelAdvice").textContent=
+
+"ننصحك بالبدء من A2 مع مراجعة وحدات A1 التي تكون فيها نسبة الإتقان منخفضة.";
+
+}else{
+
+$("levelDescription").textContent=
+
+"نتيجتك تشير إلى أن الأفضل تثبيت أساسيات A1 أولًا.";
+
+$("levelAdvice").textContent=
+
+"ابدأ من A1، وأكمل الوحدات بالتدريج حتى تصل إلى إتقان 80–90%.";
+
+}
+
+}
+
+/* =========================
+
+   الإحصائيات
+
+========================= */
+
+function openStats(){
+
+hide();
+
+$("stats").classList.remove("hidden");
+
+renderStats();
+
+}
+
+function renderStats(){
+
+let d=data();
+
+let completed=0;
+
+let totalMastery=0;
+
+units.forEach(u=>{
+
+let p=d[u.id]?.mastery||0;
+
+if(p>=70)completed++;
+
+totalMastery+=p;
+
+});
+
+let average=
+
+Math.round(totalMastery/units.length);
+
+let mistakes=
+
+d.mistakes?.length||0;
+
+let placement=
+
+d.placement;
+
+let html=`
+
+<div class="stat">
+
+📚 الوحدات المتقنة: ${completed} / ${units.length}
+
+</div>
+
+<div class="stat">
+
+📈 متوسط الإتقان: ${average}%
+
+</div>
+
+<div class="stat">
+
+🧠 الأخطاء المحفوظة: ${mistakes}
+
+</div>
+
+<div class="stat">
+
+🎯 مستوى تحديد المستوى:
+
+${placement?placement.level:"لم يتم الاختبار بعد"}
+
+</div>
+
+`;
+
+if(placement){
+
+html+=`
+
+<div class="success-box">
+
+آخر اختبار تحديد مستوى:
+
+${placement.score}/${placement.total}
+
+— ${placement.percent}%
+
+</div>
+
+`;
+
+}
+
+html+=`
+
+<h3 style="margin-top:20px">
+
+تقدم الوحدات
+
+</h3>
+
+`;
+
+units.forEach(u=>{
+
+let p=d[u.id]?.mastery||0;
+
+html+=`
+
+<div style="margin:10px 0">
+
+<b>${u.title}</b>
+
+<div class="progress">
+
+<div class="bar" style="width:${p}%"></div>
+
+</div>
+
+<span class="small">${p}%</span>
+
+</div>
+
+`;
+
+});
+
+$("statsBody").innerHTML=html;
 
 }
 
@@ -1568,35 +1872,33 @@ function clearMistakes(){
 
 function speakText(text){
 
- if(!("speechSynthesis" in window)){
+if(!("speechSynthesis" in window)){
 
-  alert("النطق غير مدعوم في هذا المتصفح.");
+alert("النطق غير مدعوم في هذا المتصفح.");
 
-  return;
+return;
 
- }
+}
 
- speechSynthesis.cancel();
+speechSynthesis.cancel();
 
- const speech=
+const speech=
 
-  new SpeechSynthesisUtterance(text);
+new SpeechSynthesisUtterance(text);
 
- speech.lang="en-US";
+speech.lang="en-US";
 
- speech.rate=0.8;
+speech.rate=0.8;
 
- speech.pitch=1;
+speech.pitch=1;
 
- speechSynthesis.speak(speech);
+speechSynthesis.speak(speech);
 
 }
 
 function speakQuestion(){
 
- const text=$("qtext").textContent;
-
- speakText(text);
+speakText($("qtext").textContent);
 
 }
 
@@ -1654,69 +1956,69 @@ let vIndex=0;
 
 function startVocabulary(){
 
- vIndex=0;
+vIndex=0;
 
- hide();
+hide();
 
- $("vocab").classList.remove("hidden");
+$("vocab").classList.remove("hidden");
 
- renderVocab();
+renderVocab();
 
 }
 
 function renderVocab(){
 
- const v=vocab[vIndex];
+const v=vocab[vIndex];
 
- $("vWord").textContent=v.w;
+$("vWord").textContent=v.w;
 
- $("vMeaning").textContent=v.m;
+$("vMeaning").textContent=v.m;
 
- $("vExample").textContent=v.e;
+$("vExample").textContent=v.e;
 
 }
 
 function nextVocab(){
 
- vIndex=(vIndex+1)%vocab.length;
+vIndex=(vIndex+1)%vocab.length;
 
- renderVocab();
+renderVocab();
 
 }
 
 function speakVocabWord(){
 
- speakText(vocab[vIndex].w);
+speakText(vocab[vIndex].w);
 
 }
 
 function speakVocabSentence(){
 
- speakText(vocab[vIndex].e);
+speakText(vocab[vIndex].e);
 
 }
 
 /* =========================
 
-   مسح كل التقدم
+   مسح كل شيء
 
 ========================= */
 
 function resetAll(){
 
- if(confirm("هل تريد مسح كل تقدمك والأخطاء المحفوظة؟")){
+if(confirm("هل تريد مسح كل تقدمك والأخطاء ونتيجة تحديد المستوى؟")){
 
-  localStorage.removeItem("englishProgress");
+localStorage.removeItem("englishProgress");
 
-  renderUnits();
+renderUnits();
 
- }
+}
 
 }
 
 /* =========================
 
-   تشغيل
+   تشغيل البرنامج
 
 ========================= */
 
