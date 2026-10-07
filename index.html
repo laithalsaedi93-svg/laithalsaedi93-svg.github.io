@@ -1,92 +1,490 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<meta name="theme-color" content="#2563eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
 
-<title>English A1 → A2 | Laith</title>
+<title>English Trainer A1 → A2</title>
 
 <style>
 
 *{box-sizing:border-box}
 
-body{margin:0;background:#f4f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{
 
-header{background:#2563eb;color:#fff;padding:24px 18px 28px;border-radius:0 0 25px 25px}
+margin:0;
 
-header h1{margin:0;font-size:25px}
+font-family:Arial,Tahoma,sans-serif;
 
-header p{margin:6px 0 0;opacity:.9}
+background:#f4f7fb;
 
-main{max-width:760px;margin:auto;padding:15px}
+color:#172033;
 
-.card{background:#fff;border-radius:19px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #0000000a}
+}
 
-h2,h3{margin-top:0}
+header{
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+background:#2563eb;
 
-.unit{padding:15px;border:1px solid #e4e8ef;border-radius:15px;background:#fafcff;text-align:right}
+color:white;
 
-.unit b{display:block;margin-bottom:5px}
+padding:22px 16px;
 
-.unit small{color:#64748b}
+text-align:center;
 
-button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-size:16px;font-weight:700;background:#2563eb;color:#fff}
+}
 
-.secondary{background:#eaf0ff;color:#1746a2}
+header h1{margin:0 0 7px;font-size:25px}
 
-.danger{background:#fff0f0;color:#b42318}
+header p{margin:0;opacity:.9}
 
-.progress{height:9px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin:10px 0}
+.container{
 
-.bar{height:100%;background:#2563eb;width:0}
+max-width:850px;
 
-.tag{display:inline-block;background:#eaf1ff;color:#1d4ed8;padding:6px 10px;border-radius:20px;font-size:13px}
+margin:auto;
 
-.small{font-size:13px;color:#64748b}
+padding:15px;
 
-.score{font-size:34px;font-weight:800;color:#2563eb;text-align:center}
+}
 
-.option{background:#f8fafc;color:#172033;text-align:right;border:2px solid transparent}
+.card{
 
-.option.selected{border-color:#2563eb;background:#eef4ff}
+background:white;
 
-.option.correct{border-color:#16a34a;background:#ecfdf3}
+border-radius:20px;
 
-.option.wrong{border-color:#dc2626;background:#fef2f2}
+padding:20px;
 
-.english{direction:ltr;text-align:left;font-size:22px;font-weight:700}
+margin-bottom:15px;
 
-.hidden{display:none}
+box-shadow:0 5px 20px rgba(0,0,0,.07);
+
+}
+
+.hidden{display:none!important}
+
+button{
+
+width:100%;
+
+border:0;
+
+border-radius:14px;
+
+padding:14px;
+
+margin-top:10px;
+
+font-size:16px;
+
+font-weight:700;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+button:active{transform:scale(.98)}
+
+button.secondary{
+
+background:#eef4ff;
+
+color:#2563eb;
+
+}
+
+button.success{background:#16a34a}
+
+button.danger{background:#dc2626}
+
+button.warning{background:#f59e0b;color:#111}
+
+.tag{
+
+display:inline-block;
+
+padding:7px 12px;
+
+border-radius:20px;
+
+background:#e8f0ff;
+
+color:#2563eb;
+
+font-weight:bold;
+
+}
+
+.lesson-title{
+
+font-size:25px;
+
+margin:12px 0;
+
+}
+
+.english{
+
+direction:ltr;
+
+text-align:left;
+
+background:#f1f5f9;
+
+padding:15px;
+
+border-radius:14px;
+
+font-size:18px;
+
+}
+
+.question{
+
+font-size:21px;
+
+font-weight:bold;
+
+margin:20px 0;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+.option{
+
+background:#f8fafc;
+
+color:#172033;
+
+border:2px solid #e2e8f0;
+
+}
+
+.option.selected{
+
+border-color:#2563eb;
+
+background:#eef4ff;
+
+}
+
+.option.correct{
+
+border-color:#16a34a;
+
+background:#dcfce7;
+
+}
+
+.option.wrong{
+
+border-color:#dc2626;
+
+background:#fee2e2;
+
+}
+
+.explanation{
+
+margin-top:15px;
+
+padding:15px;
+
+border-radius:14px;
+
+background:#f8fafc;
+
+}
+
+.progress{
+
+height:12px;
+
+background:#e5e7eb;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:8px;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+background:#2563eb;
+
+border-radius:20px;
+
+}
+
+.unit{
+
+padding:16px;
+
+border:1px solid #e5e7eb;
+
+border-radius:16px;
+
+margin-bottom:10px;
+
+}
+
+.unit-title{
+
+font-weight:bold;
+
+font-size:17px;
+
+}
+
+.small{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+.level-box{
+
+padding:20px;
+
+text-align:center;
+
+background:#eef4ff;
+
+border-radius:18px;
+
+margin:15px 0;
+
+}
+
+.level-big{
+
+font-size:40px;
+
+font-weight:800;
+
+color:#2563eb;
+
+}
+
+.stat-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.stat{
+
+background:#f8fafc;
+
+border-radius:15px;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+.stat-number{
+
+font-size:28px;
+
+font-weight:bold;
+
+color:#2563eb;
+
+}
+
+.points-box{
+
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+color:white;
+
+border-radius:20px;
+
+padding:20px;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.points-number{
+
+font-size:42px;
+
+font-weight:800;
+
+}
+
+.level-name{
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+.streak{
+
+font-size:18px;
+
+margin-top:8px;
+
+}
+
+.achievement{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px;
+
+background:#f8fafc;
+
+border-radius:15px;
+
+margin-bottom:9px;
+
+}
+
+.achievement-icon{font-size:30px}
+
+.achievement.locked{opacity:.4}
+
+.vocab-word{
+
+font-size:34px;
+
+font-weight:bold;
+
+text-align:center;
+
+direction:ltr;
+
+margin:20px 0 5px;
+
+}
+
+.vocab-meaning{
+
+text-align:center;
+
+font-size:21px;
+
+color:#475569;
+
+}
 
 .center{text-align:center}
 
-.word{font-size:38px;margin:20px 0 10px}
+.listen-box,
 
-.meaning{font-size:22px;font-weight:700}
+.speak-box{
 
-.example{margin:20px 0;padding:15px;background:#f8fafc;border-radius:15px}
+padding:18px;
 
-.stat{font-size:20px;font-weight:700;margin:8px 0}
+border-radius:18px;
 
-.error-item{padding:12px;margin:8px 0;background:#fff7ed;border-radius:12px;border-right:4px solid #f97316}
+background:#f8fafc;
 
-.success-box{padding:14px;background:#ecfdf3;border-radius:14px;color:#166534;margin-top:12px}
+margin:12px 0;
 
-.level-box{padding:20px;text-align:center;background:#eef4ff;border-radius:18px;margin:15px 0}
+}
 
-.level-big{font-size:40px;font-weight:800;color:#2563eb}
+.listen-text{
 
-.badge{display:inline-block;padding:8px 14px;border-radius:20px;background:#2563eb;color:#fff;font-weight:700}
+font-size:20px;
 
-@media(max-width:500px){.grid{grid-template-columns:1fr}}
+font-weight:bold;
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+.mic{
+
+font-size:55px;
+
+text-align:center;
+
+margin:10px;
+
+}
+
+.recording{
+
+animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1)}
+
+50%{transform:scale(1.08)}
+
+100%{transform:scale(1)}
+
+}
+
+.result-good{
+
+color:#16a34a;
+
+font-weight:bold;
+
+}
+
+.result-bad{
+
+color:#dc2626;
+
+font-weight:bold;
+
+}
+
+.footer{
+
+text-align:center;
+
+color:#64748b;
+
+padding:20px;
+
+font-size:13px;
+
+}
 
 </style>
 
@@ -96,371 +494,317 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 <header>
 
-<h1>English A1 → A2</h1>
+<h1>🇬🇧 English Trainer</h1>
 
-<p>برنامج تدريب شخصي — شرح + تدريب + اختبار + متابعة</p>
+<p>A1 → A2 | مدرب اللغة الإنجليزية</p>
 
 </header>
 
-<main>
+<div class="container">
 
 <!-- HOME -->
 
-<section id="home">
+<section id="home" class="card">
 
-<div class="card">
+<div class="points-box">
 
-<span class="tag">مسار كامل</span>
+<div>🏆 نقاطك</div>
 
-<h2>تقدمك</h2>
+<div id="homePoints" class="points-number">0</div>
 
-<div class="progress">
+<div id="homeLevel" class="level-name">مبتدئ 🌱</div>
 
-<div id="overall" class="bar"></div>
-
-</div>
-
-<p id="overallText" class="small"></p>
-
-<button onclick="startPlacement()">
-
-🎯 اختبار تحديد المستوى
-
-</button>
-
-<button class="secondary" onclick="startVocabulary()">
-
-📚 مفردات A1/A2
-
-</button>
-
-<button class="secondary" onclick="openMistakes()">
-
-🧠 مراجعة أخطائي
-
-</button>
-
-<button class="secondary" onclick="openStats()">
-
-📊 إحصائياتي
-
-</button>
+<div id="homeStreak" class="streak">🔥 سلسلة: 0</div>
 
 </div>
 
-<div class="card">
+<div class="level-box">
 
-<h2>A1 — المستوى الأساسي</h2>
+<div>الإتقان العام</div>
 
-<div id="a1" class="grid"></div>
+<div id="overallProgress" class="level-big">0%</div>
 
-</div>
-
-<div class="card">
-
-<h2>A2 — المستوى المتوسط الأساسي</h2>
-
-<div id="a2" class="grid"></div>
+<div id="unitCount" class="small"></div>
 
 </div>
 
-<div class="card">
+<button onclick="showUnits()">📚 الدروس A1 → A2</button>
 
-<h3>قواعد التدريب</h3>
+<button onclick="startPlacement()">🎯 اختبار تحديد المستوى</button>
 
-<p>
+<button class="secondary" onclick="startVocabulary()">📖 مفردات A1/A2</button>
 
-شرح قبل الاختبار • سؤال واحد كل مرة •
+<button class="secondary" onclick="openListening()">🎧 Listening</button>
 
-تصحيح وشرح • حفظ الأخطاء • مراجعة متكررة.
+<button class="secondary" onclick="openSpeaking()">🗣️ Speaking</button>
 
-</p>
+<button class="secondary" onclick="openMistakes()">🧠 مراجعة أخطائي</button>
 
-<button class="danger" onclick="resetAll()">
+<button class="secondary" onclick="openStats()">📊 إحصائياتي</button>
 
-مسح التقدم
+<button class="secondary" onclick="openAchievements()">🏆 النقاط والإنجازات</button>
 
-</button>
+<button class="secondary" onclick="openComprehensive()">📝 الاختبار الشامل</button>
 
-</div>
+<button class="danger" onclick="resetAll()">🗑️ مسح كل التقدم</button>
+
+</section>
+
+<!-- UNITS -->
+
+<section id="unitsSection" class="card hidden">
+
+<h2>📚 منهج A1 → A2</h2>
+
+<div id="unitsList"></div>
+
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
 <!-- LESSON -->
 
-<section id="lesson" class="hidden">
-
-<div class="card">
+<section id="lesson" class="card hidden">
 
 <span id="lessonTag" class="tag"></span>
 
-<h2 id="lessonTitle"></h2>
+<div id="lessonTitle" class="lesson-title"></div>
 
 <div id="lessonBody"></div>
 
-<button onclick="beginQuiz()">
+<button onclick="beginQuiz()">📝 ابدأ اختبار الوحدة</button>
 
-📝 ابدأ اختبار الوحدة
-
-</button>
-
-<button class="secondary" onclick="goHome()">
-
-الوحدات
-
-</button>
-
-</div>
+<button class="secondary" onclick="showUnits()">↩️ رجوع للدروس</button>
 
 </section>
 
 <!-- QUIZ -->
 
-<section id="quiz" class="hidden">
+<section id="quiz" class="card hidden">
 
-<div class="card">
+<div id="quizInfo"></div>
 
-<div class="small" id="qnum"></div>
+<div id="qtext" class="question"></div>
 
-<div class="progress">
+<button class="secondary" onclick="speakQuestion()">🔊 استمع للسؤال</button>
 
-<div id="qbar" class="bar"></div>
+<div id="options"></div>
 
-</div>
+<button id="nextButton" onclick="nextQ()">تحقق ✓</button>
 
-<h2 id="qtext"></h2>
-
-<button class="secondary" onclick="speakQuestion()">
-
-🔊 استمع إلى السؤال
-
-</button>
-
-<div id="opts"></div>
-
-<div id="explain" class="card hidden"></div>
-
-<button id="next" onclick="nextQ()" disabled>
-
-تحقق
-
-</button>
-
-</div>
+<div id="explanation"></div>
 
 </section>
 
 <!-- RESULT -->
 
-<section id="result" class="hidden">
+<section id="result" class="card hidden">
 
-<div class="card center">
+<div class="center">
 
 <h2 id="resultTitle"></h2>
 
-<div id="resultScore" class="score"></div>
+<div id="resultScore" class="level-big"></div>
 
-<p id="resultMsg"></p>
-
-<button id="retryWrong" onclick="retryWrong()">
-
-🔁 إعادة أخطاء الوحدة
-
-</button>
-
-<button onclick="goHome()">
-
-العودة للوحدات
-
-</button>
+<div id="resultDetails"></div>
 
 </div>
+
+<button onclick="retryWrong()">🔁 أعد الأسئلة الخاطئة</button>
+
+<button class="secondary" onclick="showUnits()">📚 الدروس</button>
+
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
 <!-- VOCAB -->
 
-<section id="vocab" class="hidden">
+<section id="vocab" class="card hidden">
 
-<div class="card center">
+<h2>📖 المفردات</h2>
 
-<span class="tag">Vocabulary</span>
+<div id="vocabContent"></div>
 
-<h2>📚 مفردات A1/A2</h2>
+<button onclick="nextVocab()">التالي ➜</button>
 
-<div id="vWord" class="english word"></div>
-
-<div id="vMeaning" class="meaning"></div>
-
-<div id="vExample" class="english example"></div>
-
-<button onclick="speakVocabWord()">
-
-🔊 استمع إلى الكلمة
-
-</button>
-
-<button class="secondary" onclick="speakVocabSentence()">
-
-🔊 استمع إلى الجملة
-
-</button>
-
-<button onclick="nextVocab()">
-
-الكلمة التالية ➜
-
-</button>
-
-<button class="secondary" onclick="goHome()">
-
-الرئيسية
-
-</button>
-
-</div>
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
 <!-- MISTAKES -->
 
-<section id="mistakes" class="hidden">
+<section id="mistakes" class="card hidden">
 
-<div class="card">
-
-<span class="tag">Smart Review</span>
-
-<h2>🧠 أخطائي</h2>
+<h2>🧠 مراجعة أخطائي</h2>
 
 <div id="mistakeStats"></div>
 
 <div id="mistakeList"></div>
 
-<button id="startMistakesBtn" onclick="startMistakeQuiz()">
+<button onclick="startMistakeQuiz()">▶️ ابدأ مراجعة الأخطاء</button>
 
-ابدأ مراجعة الأخطاء
+<button class="danger" onclick="clearMistakes()">🗑️ مسح الأخطاء</button>
 
-</button>
-
-<button class="danger" onclick="clearMistakes()">
-
-مسح سجل الأخطاء
-
-</button>
-
-<button class="secondary" onclick="goHome()">
-
-الرئيسية
-
-</button>
-
-</div>
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
 <!-- PLACEMENT -->
 
-<section id="placement" class="hidden">
-
-<div class="card">
-
-<span class="tag">Placement Test</span>
+<section id="placement" class="card hidden">
 
 <h2>🎯 اختبار تحديد المستوى</h2>
 
-<p id="placementIntro">
+<div id="placementInfo"></div>
 
-اختبار قصير يحدد هل مستواك أقرب إلى A1 أو A2.
+<div id="placementQuestion" class="question"></div>
 
-اختر الإجابة الصحيحة لكل سؤال.
+<div id="placementOptions"></div>
 
-</p>
-
-<div class="small" id="pnum"></div>
-
-<div class="progress">
-
-<div id="pbar" class="bar"></div>
-
-</div>
-
-<h2 id="pquestion"></h2>
-
-<div id="poptions"></div>
-
-<div id="pexplain" class="card hidden"></div>
-
-<button id="pnext" onclick="nextPlacement()" disabled>
-
-تحقق
-
-</button>
-
-</div>
+<button onclick="nextPlacement()">التالي ➜</button>
 
 </section>
 
 <!-- PLACEMENT RESULT -->
 
-<section id="placementResult" class="hidden">
+<section id="placementResult" class="card hidden">
 
-<div class="card center">
+<div class="center">
 
-<span class="tag">Your Level</span>
+<h2>🎯 نتيجتك</h2>
 
-<h2>🎯 نتيجة تحديد المستوى</h2>
+<div id="placementLevel" class="level-big"></div>
 
-<div class="level-box">
+<div id="placementPercent"></div>
 
-<div id="levelResult" class="level-big"></div>
-
-<p id="levelDescription"></p>
+<div id="placementAdvice"></div>
 
 </div>
 
-<div id="levelScore" class="score"></div>
+<button onclick="showUnits()">📚 ابدأ المنهج</button>
 
-<p id="levelAdvice"></p>
-
-<button onclick="startPlacement()">
-
-🔄 إعادة اختبار تحديد المستوى
-
-</button>
-
-<button onclick="goHome()">
-
-الرئيسية
-
-</button>
-
-</div>
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
 <!-- STATS -->
 
-<section id="stats" class="hidden">
+<section id="stats" class="card hidden">
 
-<div class="card">
+<h2>📊 إحصائياتي</h2>
 
-<span class="tag">Statistics</span>
+<div id="statsContent"></div>
 
-<h2>📊 إحصائياتك</h2>
-
-<div id="statsBody"></div>
-
-<button class="secondary" onclick="goHome()">
-
-الرئيسية
-
-</button>
-
-</div>
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
 
 </section>
 
-</main>
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements" class="card hidden">
+
+<h2>🏆 النقاط والإنجازات</h2>
+
+<div id="achievementContent"></div>
+
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
+
+</section>
+
+<!-- COMPREHENSIVE -->
+
+<section id="comprehensive" class="card hidden">
+
+<h2>📝 الاختبار الشامل</h2>
+
+<div id="comprehensiveInfo"></div>
+
+<div id="comprehensiveQuestion" class="question"></div>
+
+<div id="comprehensiveOptions"></div>
+
+<button onclick="nextComprehensive()">التالي ➜</button>
+
+</section>
+
+<!-- LISTENING -->
+
+<section id="listening" class="card hidden">
+
+<h2>🎧 Listening</h2>
+
+<div class="listen-box">
+
+<p class="small center">
+
+استمع للجملة ثم اختر المعنى الصحيح.
+
+</p>
+
+<div id="listenNumber" class="small center"></div>
+
+<div id="listenSentence" class="listen-text"></div>
+
+<button onclick="playListening()">🔊 استمع</button>
+
+<div id="listenOptions"></div>
+
+<div id="listenResult"></div>
+
+</div>
+
+<button onclick="nextListening()">التالي ➜</button>
+
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
+
+</section>
+
+<!-- SPEAKING -->
+
+<section id="speaking" class="card hidden">
+
+<h2>🗣️ Speaking</h2>
+
+<div class="speak-box">
+
+<p class="small center">
+
+اسمع الجملة أولًا، ثم اضغط الميكروفون وكررها.
+
+</p>
+
+<div id="speakNumber" class="small center"></div>
+
+<div id="speakSentence" class="english"></div>
+
+<button onclick="playSpeakingSentence()">🔊 اسمع الجملة</button>
+
+<div id="micIcon" class="mic">🎙️</div>
+
+<button id="recordButton" onclick="startRecording()">
+
+🎙️ ابدأ التحدث
+
+</button>
+
+<div id="speechResult"></div>
+
+</div>
+
+<button onclick="nextSpeaking()">التالي ➜</button>
+
+<button class="secondary" onclick="goHome()">🏠 الرئيسية</button>
+
+</section>
+
+<div class="footer">
+
+English Trainer A1 → A2
+
+</div>
+
+</div>
 
 <script>
 
@@ -478,99 +822,109 @@ id:"a1u1",level:"A1",title:"الوحدة 1 — Verb to be",
 
 topic:"am / is / are",
 
-lesson:"نستخدم am مع I، ونستخدم is مع he / she / it، ونستخدم are مع you / we / they.",
+lesson:"نستخدم am مع I، و is مع he / she / it، و are مع you / we / they.",
 
 qs:[
 
-["I ___ ready.",["am","is","are"],0,"مع I نستخدم am."],
+["I ___ ready.",["am","is","are"],0,"I → am."],
 
-["She ___ happy.",["am","is","are"],1,"مع She نستخدم is."],
+["She ___ a teacher.",["am","is","are"],1,"She → is."],
 
-["They ___ students.",["am","is","are"],2,"مع They نستخدم are."],
+["They ___ at home.",["am","is","are"],2,"They → are."],
 
-["We ___ at home.",["is","am","are"],2,"مع We نستخدم are."]
+["We ___ happy.",["is","am","are"],2,"We → are."]
 
-]},
+]
+
+},
 
 {
 
 id:"a1u2",level:"A1",title:"الوحدة 2 — Pronouns",
 
-topic:"الضمائر والملكية",
+topic:"الضمائر",
 
-lesson:"I, you, he, she, it, we, they. ومن الملكية: my, your, his, her, our, their.",
+lesson:"I, you, he, she, it, we, they هي الضمائر الأساسية.",
 
 qs:[
 
-["This is ___ book. I own it.",["my","his","their"],0,"my = ملكي."],
+["Ali is my friend. ___ is kind.",["He","She","They"],0,"Ali → He."],
 
-["Ali has a car. ___ car is new.",["Her","His","Our"],1,"Ali = he، لذلك His."],
+["Sara is here. ___ is happy.",["He","She","It"],1,"Sara → She."],
 
-["Sara is a teacher. ___ job is difficult.",["His","Her","Their"],1,"Sara = she، لذلك Her."],
+["The children are playing. ___ are happy.",["He","She","They"],2,"children → They."],
 
-["We love ___ house.",["our","his","her"],0,"We → our."]
+["My phone is new. ___ is expensive.",["He","She","It"],2,"phone → It."]
 
-]},
+]
+
+},
 
 {
 
 id:"a1u3",level:"A1",title:"الوحدة 3 — Present Simple",
 
-topic:"المضارع البسيط",
+topic:"Present Simple",
 
-lesson:"نستخدم Present Simple للعادات والأفعال المتكررة والحقائق.",
+lesson:"نستخدم المضارع البسيط للعادات والحقائق. مع he/she/it نضيف s غالبًا.",
 
 qs:[
 
-["I ___ English every day.",["study","studies","studying"],0,"مع I نستخدم الفعل الأساسي."],
+["I ___ English every day.",["study","studies","studying"],0,"I → study."],
 
-["He ___ to work every morning.",["go","goes","going"],1,"مع He نضيف s/es."],
+["He ___ to work every day.",["go","goes","going"],1,"He → goes."],
 
-["They ___ football on Friday.",["play","plays","playing"],0,"They يأخذ الفعل الأساسي."],
+["They ___ football on Friday.",["play","plays","playing"],0,"They → play."],
 
 ["She ___ coffee every morning.",["drink","drinks","drinking"],1,"She → drinks."]
 
-]},
+]
+
+},
 
 {
 
 id:"a1u4",level:"A1",title:"الوحدة 4 — Questions & Negatives",
 
-topic:"الأسئلة والنفي",
+topic:"Do / Does",
 
-lesson:"في Present Simple نستخدم do مع I/you/we/they، وdoes مع he/she/it.",
+lesson:"نستخدم do مع I/you/we/they و does مع he/she/it.",
 
 qs:[
 
-["___ you speak English?",["Do","Does","Are"],0,"مع you نستخدم Do."],
+["___ you like coffee?",["Do","Does","Are"],0,"You → Do."],
 
-["___ he work here?",["Do","Does","Is"],1,"مع he نستخدم Does."],
+["___ he work here?",["Do","Does","Is"],1,"He → Does."],
 
-["I ___ like coffee.",["don't","doesn't","am not"],0,"مع I نستخدم don't."],
+["I ___ not like tea.",["do","does","am"],0,"I → do not."],
 
-["She ___ like tea.",["don't","doesn't","isn't"],1,"مع She نستخدم doesn't."]
+["She ___ not play tennis.",["do","does","is"],1,"She → does not."]
 
-]},
+]
+
+},
 
 {
 
 id:"a1u5",level:"A1",title:"الوحدة 5 — Present Continuous",
 
-topic:"المضارع المستمر",
+topic:"am / is / are + ing",
 
-lesson:"نستخدم am/is/are + verb-ing للأشياء التي تحدث الآن.",
+lesson:"نستخدم المضارع المستمر للشيء الذي يحدث الآن.",
 
 qs:[
 
 ["I ___ studying now.",["am","is","are"],0,"I → am."],
 
-["She ___ sleeping now.",["am","is","are"],1,"She → is."],
+["She ___ sleeping.",["am","is","are"],1,"She → is."],
 
-["They ___ playing football.",["am","is","are"],2,"They → are."],
+["They ___ watching TV.",["is","am","are"],2,"They → are."],
 
-["We are ___ English.",["study","studying","studies"],1,"بعد are نستخدم verb-ing."]
+["We are ___ English.",["study","studying","studied"],1,"are + studying."]
 
-]},
+]
+
+},
 
 {
 
@@ -578,39 +932,43 @@ id:"a1u6",level:"A1",title:"الوحدة 6 — Time & Prepositions",
 
 topic:"in / on / at / under",
 
-lesson:"نستخدم at للوقت المحدد، on للأيام والتواريخ، in للشهور والسنوات والفترات، وunder بمعنى تحت.",
+lesson:"at للوقت المحدد، on للأيام، in للشهور والسنوات.",
 
 qs:[
 
-["I wake up ___ 7 o'clock.",["in","on","at"],2,"نستخدم at مع وقت محدد."],
+["I wake up ___ 7 o'clock.",["in","on","at"],2,"at 7 o'clock."],
 
-["I work ___ Monday.",["in","on","at"],1,"نستخدم on مع الأيام."],
+["I work ___ Monday.",["in","on","at"],1,"on Monday."],
 
-["I was born ___ 1993.",["in","on","at"],0,"نستخدم in مع السنوات."],
+["I was born ___ 1993.",["in","on","at"],0,"in 1993."],
 
-["The shoes are ___ the bed.",["at","under","on"],1,"under = تحت."]
+["The book is ___ the table.",["under","at","in"],0,"under the table."]
 
-]},
+]
+
+},
 
 {
 
 id:"a1u7",level:"A1",title:"الوحدة 7 — Past Simple",
 
-topic:"الماضي البسيط",
+topic:"Past Simple",
 
-lesson:"نستخدم Past Simple للأفعال التي انتهت في الماضي.",
+lesson:"نستخدم الماضي البسيط للأحداث التي انتهت في الماضي.",
 
 qs:[
 
-["I ___ to work yesterday.",["go","went","going"],1,"go → went في الماضي."],
+["He ___ to work yesterday.",["go","went","gone"],1,"yesterday → went."],
 
-["She ___ dinner last night.",["cooked","cook","cooking"],0,"cooked هو الماضي."],
+["I ___ football last Friday.",["play","played","playing"],1,"played."],
 
-["They ___ football yesterday.",["play","played","playing"],1,"play → played."],
+["She ___ her friend yesterday.",["visit","visited","visiting"],1,"visited."],
 
-["He ___ a new phone last week.",["buy","bought","buys"],1,"buy → bought."]
+["They ___ home late.",["come","came","coming"],1,"came."]
 
-]},
+]
+
+},
 
 {
 
@@ -618,79 +976,87 @@ id:"a1u8",level:"A1",title:"الوحدة 8 — A1 Review",
 
 topic:"مراجعة A1",
 
-lesson:"هذه الوحدة تجمع أهم قواعد A1.",
+lesson:"مراجعة أهم قواعد A1.",
 
 qs:[
 
-["She ___ English every day.",["study","studies","studying"],1,"She → studies."],
+["He ___ English every day.",["study","studies","studying"],1,"He → studies."],
 
 ["They ___ watching TV now.",["is","am","are"],2,"They → are."],
 
-["___ you like coffee?",["Do","Does","Is"],0,"You → Do."],
+["I ___ at work yesterday.",["am","was","were"],1,"I → was."],
 
-["I was born ___ May.",["at","on","in"],2,"الشهر يأخذ in."]
+["___ you speak English?",["Do","Does","Are"],0,"You → Do."]
 
-]},
+]
+
+},
 
 {
 
 id:"a2u1",level:"A2",title:"الوحدة 1 — Present Perfect",
 
-topic:"المضارع التام",
+topic:"have / has + V3",
 
-lesson:"Present Perfect = have/has + التصريف الثالث.",
+lesson:"المضارع التام يتكون من have/has + التصريف الثالث.",
 
 qs:[
 
-["I ___ finished my work.",["have","has","am"],0,"I → have."],
+["I have ___ my homework.",["do","did","done"],2,"have + V3."],
 
-["She ___ already left.",["have","has","is"],1,"She → has."],
+["She has ___ home.",["go","went","gone"],2,"has + V3."],
 
-["They have ___ the movie.",["see","saw","seen"],2,"بعد have نستخدم التصريف الثالث."],
+["They have ___ the movie.",["see","saw","seen"],2,"have + seen."],
 
-["He has ___ his homework.",["do","did","done"],2,"do → done."]
+["He has ___ his work.",["finish","finished","finishing"],1,"has + finished."]
 
-]},
+]
+
+},
 
 {
 
 id:"a2u2",level:"A2",title:"الوحدة 2 — Present Perfect vs Simple",
 
-topic:"Present Simple vs Present Perfect",
+topic:"Present Perfect / Present Simple",
 
-lesson:"Present Simple للعادات، وPresent Perfect لحدث مرتبط بالحاضر.",
+lesson:"المضارع البسيط للعادات، والتام لخبرة أو حدث مرتبط بالحاضر.",
 
 qs:[
 
-["I ___ English every day.",["study","have studied","am studying"],0,"every day عادة."],
+["I ___ English every day.",["study","have studied","am studying"],0,"every day → Simple."],
 
-["I ___ this movie before.",["see","saw","have seen"],2,"before هنا تناسب Present Perfect."],
+["She ___ already finished.",["has","is","does"],0,"already → has."],
 
-["She ___ to work every day.",["goes","has gone","is going"],0,"every day → Present Simple."],
+["He ___ to work every morning.",["goes","has gone","is going"],0,"every morning → goes."],
 
-["We ___ our work already.",["finish","finished","have finished"],2,"already غالبًا مع Present Perfect."]
+["We have ___ this movie before.",["see","saw","seen"],2,"have + V3."]
 
-]},
+]
+
+},
 
 {
 
 id:"a2u3",level:"A2",title:"الوحدة 3 — Past vs Present Perfect",
 
-topic:"Past Simple vs Present Perfect",
+topic:"Past Simple / Present Perfect",
 
-lesson:"إذا كان الوقت الماضي محددًا نستخدم Past Simple.",
+lesson:"Past Simple مع وقت ماض محدد، وPresent Perfect بدون وقت محدد.",
 
 qs:[
 
-["I ___ him yesterday.",["see","saw","have seen"],1,"yesterday وقت ماضٍ محدد."],
+["I ___ him yesterday.",["see","saw","have seen"],1,"yesterday → saw."],
 
-["I ___ him before.",["saw","have seen","see"],1,"before بدون وقت محدد."],
+["I have ___ him before.",["see","saw","seen"],2,"have seen."],
 
-["She ___ here since 2020.",["worked","has worked","works"],1,"since → Present Perfect."],
+["She ___ to London in 2020.",["went","has gone","goes"],0,"in 2020 → went."],
 
-["They ___ the car last week.",["have bought","bought","buy"],1,"last week وقت محدد."]
+["They have never ___ there.",["go","went","been"],2,"have never + been."]
 
-]},
+]
+
+},
 
 {
 
@@ -702,15 +1068,17 @@ lesson:"will للمستقبل، can للقدرة، should للنصيحة.",
 
 qs:[
 
-["I ___ call you tomorrow.",["will","am","have"],0,"will للمستقبل."],
+["I ___ call you tomorrow.",["will","did","have"],0,"tomorrow → will."],
 
-["She ___ swim very well.",["can","should","will"],0,"can = يستطيع."],
+["She ___ swim very well.",["can","has","is"],0,"can."],
 
-["You ___ see a doctor.",["can","should","are"],1,"should للنصيحة."],
+["You ___ study more.",["should","are","have"],0,"should."],
 
-["We ___ travel next week.",["will","have","can"],0,"will للمستقبل."]
+["We will ___ tomorrow.",["go","went","gone"],0,"will + base verb."]
 
-]},
+]
+
+},
 
 {
 
@@ -722,15 +1090,17 @@ lesson:"نستخدم -er أو more للمقارنة بين شيئين.",
 
 qs:[
 
-["My car is ___ than yours.",["fast","faster","fastest"],1,"faster = أسرع."],
+["Ali is ___ than Ahmed.",["tall","taller","tallest"],1,"taller."],
 
-["This book is ___ than that one.",["interesting","more interesting","most interesting"],1,"الكلمة الطويلة تأخذ more."],
+["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive."],
 
-["Ali is ___ than Ahmed.",["tall","taller","tallest"],1,"tall → taller."],
+["Today is ___ than yesterday.",["hot","hotter","hottest"],1,"hotter."],
 
-["Today is ___ than yesterday.",["hot","hotter","hottest"],1,"hot → hotter."]
+["English is ___ than I expected.",["easy","easier","easiest"],1,"easier."]
 
-]},
+]
+
+},
 
 {
 
@@ -738,1169 +1108,23 @@ id:"a2u6",level:"A2",title:"الوحدة 6 — A2 Review",
 
 topic:"مراجعة A2",
 
-lesson:"مراجعة Present Perfect وPast Simple والمستقبل والمقارنة.",
+lesson:"مراجعة المضارع التام والماضي والمستقبل والمقارنة.",
 
 qs:[
 
-["I ___ already eaten.",["have","has","am"],0,"I → have."],
+["I have ___ my work.",["finish","finished","finishing"],1,"have + V3."],
 
-["She ___ yesterday.",["worked","has worked","works"],0,"yesterday → Past Simple."],
-
-["I ___ call you tomorrow.",["will","have","am"],0,"tomorrow → will."],
-
-["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive للمقارنة."]
-
-]}
-
-];
-
-/* =========================
-
-   متغيرات البرنامج
-
-========================= */
-
-let current=null;
-
-let qIndex=0;
-
-let score=0;
-
-let wrong=[];
-
-let retry=false;
-
-let selected=null;
-
-let checked=false;
-
-let mistakeQuiz=false;
-
-let mistakeList=[];
-
-let placementIndex=0;
-
-let placementScore=0;
-
-let placementSelected=null;
-
-let placementChecked=false;
-
-/* =========================
-
-   أدوات
-
-========================= */
-
-const $=id=>document.getElementById(id);
-
-function data(){
-
-return JSON.parse(localStorage.getItem("englishProgress")||"{}");
-
-}
-
-function save(d){
-
-localStorage.setItem("englishProgress",JSON.stringify(d));
-
-}
-
-function pctFor(u){
-
-let d=data();
-
-return d[u.id]?.mastery||0;
-
-}
-
-/* =========================
-
-   الصفحة الرئيسية
-
-========================= */
-
-function renderUnits(){
-
-const a1=$("a1");
-
-const a2=$("a2");
-
-a1.innerHTML="";
-
-a2.innerHTML="";
-
-units.forEach((u,idx)=>{
-
-const b=document.createElement("button");
-
-b.className="unit";
-
-b.innerHTML=
-
-`<b>${u.title}</b>
-
-<small>${u.topic}<br>
-
-الإتقان: ${pctFor(u)}%</small>`;
-
-b.onclick=()=>openUnit(idx);
-
-if(u.level==="A1"){
-
-a1.appendChild(b);
-
-}else{
-
-a2.appendChild(b);
-
-}
-
-});
-
-let sum=units.reduce((s,u)=>s+pctFor(u),0);
-
-let p=Math.round(sum/units.length);
-
-$("overall").style.width=p+"%";
-
-$("overallText").textContent=
-
-`الإتقان العام: ${p}% — ${units.length} وحدة`;
-
-}
-
-/* =========================
-
-   التنقل
-
-========================= */
-
-function hide(){
-
-[
-
-"home",
-
-"lesson",
-
-"quiz",
-
-"result",
-
-"vocab",
-
-"mistakes",
-
-"placement",
-
-"placementResult",
-
-"stats"
-
-].forEach(x=>{
-
-$(x).classList.add("hidden");
-
-});
-
-}
-
-function goHome(){
-
-hide();
-
-$("home").classList.remove("hidden");
-
-renderUnits();
-
-}
-
-/* =========================
-
-   الدروس
-
-========================= */
-
-function openUnit(idx){
-
-current=units[idx];
-
-hide();
-
-$("lesson").classList.remove("hidden");
-
-$("lessonTag").textContent=current.level;
-
-$("lessonTitle").textContent=current.title;
-
-const ex=example(current);
-
-$("lessonBody").innerHTML=`
-
-<p><b>${current.topic}</b></p>
-
-<p>${current.lesson}</p>
-
-<p class="english">${ex}</p>
-
-<button class="secondary"
-
-onclick='speakText(${JSON.stringify(ex)})'>
-
-🔊 استمع إلى المثال
-
-</button>
-
-`;
-
-}
-
-function example(u){
-
-if(u.id==="a1u1")
-
-return "I am ready. She is busy. They are here.";
-
-if(u.id==="a2u1")
-
-return "I have finished. She has already left.";
-
-if(u.id==="a1u3")
-
-return "I study English every day.";
-
-if(u.id==="a1u5")
-
-return "I am studying English now.";
-
-return "Study the rule, then test yourself.";
-
-}
-
-/* =========================
-
-   الاختبارات
-
-========================= */
-
-function beginQuiz(){
-
-qIndex=0;
-
-score=0;
-
-wrong=[];
-
-retry=false;
-
-mistakeQuiz=false;
-
-selected=null;
-
-checked=false;
-
-hide();
-
-$("quiz").classList.remove("hidden");
-
-renderQ();
-
-}
-
-function renderQ(){
-
-let q;
-
-if(mistakeQuiz){
-
-q=mistakeList[qIndex].question;
-
-}else{
-
-q=retry?wrong[qIndex]:current.qs[qIndex];
-
-}
-
-selected=null;
-
-checked=false;
-
-$("next").disabled=true;
-
-$("next").textContent="تحقق";
-
-$("explain").classList.add("hidden");
-
-let total=
-
-mistakeQuiz
-
-?mistakeList.length
-
-:retry
-
-?wrong.length
-
-:current.qs.length;
-
-$("qnum").textContent=
-
-`السؤال ${qIndex+1} من ${total}`;
-
-$("qbar").style.width=
-
-((qIndex+1)/total*100)+"%";
-
-$("qtext").textContent=q[0];
-
-$("opts").innerHTML="";
-
-q[1].forEach((x,n)=>{
-
-let b=document.createElement("button");
-
-b.className="option";
-
-b.textContent=x;
-
-b.onclick=()=>choose(b,n);
-
-$("opts").appendChild(b);
-
-});
-
-}
-
-function choose(btn,n){
-
-if(checked)return;
-
-selected=n;
-
-document.querySelectorAll(".option")
-
-.forEach(x=>x.classList.remove("selected"));
-
-btn.classList.add("selected");
-
-$("next").disabled=false;
-
-}
-
-function addMistake(question){
-
-let d=data();
-
-if(!d.mistakes)d.mistakes=[];
-
-const exists=d.mistakes.find(
-
-x=>x.id===question[0]
-
-);
-
-if(exists){
-
-exists.count=(exists.count||1)+1;
-
-}else{
-
-d.mistakes.push({
-
-id:question[0],
-
-question:question,
-
-count:1,
-
-lastWrong:new Date().toISOString()
-
-});
-
-}
-
-save(d);
-
-}
-
-function nextQ(){
-
-let q;
-
-if(mistakeQuiz){
-
-q=mistakeList[qIndex].question;
-
-}else{
-
-q=retry?wrong[qIndex]:current.qs[qIndex];
-
-}
-
-if(!checked){
-
-checked=true;
-
-let ok=selected===q[2];
-
-if(ok){
-
-score++;
-
-}else{
-
-if(!retry&&!mistakeQuiz){
-
-wrong.push(q);
-
-}
-
-addMistake(q);
-
-}
-
-const options=document.querySelectorAll(".option");
-
-options[q[2]].classList.add("correct");
-
-if(!ok&&selected!==null){
-
-options[selected].classList.add("wrong");
-
-}
-
-$("explain").innerHTML=
-
-`<b>${ok?"صحيح ✅":"خطأ ❌"}</b><br>${q[3]}`;
-
-$("explain").classList.remove("hidden");
-
-let total=
-
-mistakeQuiz
-
-?mistakeList.length
-
-:retry
-
-?wrong.length
-
-:current.qs.length;
-
-$("next").textContent=
-
-qIndex+1<total?"التالي":"النتيجة";
-
-return;
-
-}
-
-qIndex++;
-
-let total=
-
-mistakeQuiz
-
-?mistakeList.length
-
-:retry
-
-?wrong.length
-
-:current.qs.length;
-
-if(qIndex<total){
-
-renderQ();
-
-}else{
-
-finish();
-
-}
-
-}
-
-/* =========================
-
-   النتائج
-
-========================= */
-
-function finish(){
-
-if(mistakeQuiz){
-
-hide();
-
-$("result").classList.remove("hidden");
-
-$("resultTitle").textContent=
-
-"نتيجة مراجعة الأخطاء";
-
-$("resultScore").textContent=
-
-`${score} / ${mistakeList.length}`;
-
-$("resultMsg").textContent=
-
-score===mistakeList.length
-
-?"ممتاز جدًا 🎉 أتقنت جميع الأخطاء."
-
-:"بعض الأخطاء ما زالت تحتاج إلى مراجعة.";
-
-if(score===mistakeList.length){
-
-removeCorrectMistakes();
-
-}
-
-$("retryWrong").style.display="none";
-
-return;
-
-}
-
-if(retry){
-
-hide();
-
-$("result").classList.remove("hidden");
-
-$("resultTitle").textContent=
-
-"مراجعة أخطاء الوحدة";
-
-$("resultScore").textContent=
-
-`${score} / ${wrong.length}`;
-
-$("resultMsg").textContent=
-
-score===wrong.length
-
-?"ممتاز! أتقنت أخطاء الوحدة."
-
-:"أعد مراجعة الدرس وحاول مرة أخرى.";
-
-$("retryWrong").style.display="none";
-
-return;
-
-}
-
-let total=current.qs.length;
-
-let p=Math.round(score/total*100);
-
-let d=data();
-
-d[current.id]={
-
-mastery:p,
-
-lastScore:score,
-
-total:total,
-
-updated:new Date().toISOString()
-
-};
-
-save(d);
-
-hide();
-
-$("result").classList.remove("hidden");
-
-$("resultTitle").textContent=current.title;
-
-$("resultScore").textContent=
-
-`${score} / ${total} — ${p}%`;
-
-$("resultMsg").textContent=
-
-p>=90
-
-?"إتقان ممتاز — يمكنك الانتقال للوحدة التالية."
-
-:p>=70
-
-?"جيد جدًا — راجع الأخطاء ثم أعد الاختبار."
-
-:"نحتاج إلى مراجعة الدرس ثم إعادة الاختبار.";
-
-$("retryWrong").style.display=
-
-wrong.length?"block":"none";
-
-}
-
-function retryWrong(){
-
-if(!wrong.length)return;
-
-retry=true;
-
-mistakeQuiz=false;
-
-qIndex=0;
-
-score=0;
-
-hide();
-
-$("quiz").classList.remove("hidden");
-
-renderQ();
-
-}
-
-/* =========================
-
-   الأخطاء
-
-========================= */
-
-function openMistakes(){
-
-hide();
-
-$("mistakes").classList.remove("hidden");
-
-renderMistakes();
-
-}
-
-function renderMistakes(){
-
-let d=data();
-
-let mistakes=d.mistakes||[];
-
-$("mistakeStats").innerHTML=
-
-`<div class="stat">عدد الأخطاء المحفوظة: ${mistakes.length}</div>
-
-<p class="small">
-
-البرنامج يحتفظ بالأسئلة التي أخطأت بها حتى تعيد مراجعتها.
-
-</p>`;
-
-if(!mistakes.length){
-
-$("mistakeList").innerHTML=
-
-`<div class="success-box">
-
-🎉 لا توجد أخطاء محفوظة حاليًا.
-
-</div>`;
-
-$("startMistakesBtn").style.display="none";
-
-return;
-
-}
-
-$("startMistakesBtn").style.display="block";
-
-$("mistakeList").innerHTML="";
-
-mistakes.forEach((m,i)=>{
-
-let div=document.createElement("div");
-
-div.className="error-item";
-
-div.innerHTML=
-
-`<b>${i+1}. ${m.question[0]}</b>
-
-<br>
-
-<span class="small">
-
-عدد الأخطاء: ${m.count||1}
-
-</span>`;
-
-$("mistakeList").appendChild(div);
-
-});
-
-}
-
-function startMistakeQuiz(){
-
-let d=data();
-
-let mistakes=d.mistakes||[];
-
-if(!mistakes.length){
-
-alert("لا توجد أخطاء محفوظة حاليًا.");
-
-return;
-
-}
-
-mistakeList=mistakes.slice();
-
-mistakeQuiz=true;
-
-retry=false;
-
-qIndex=0;
-
-score=0;
-
-hide();
-
-$("quiz").classList.remove("hidden");
-
-renderQ();
-
-}
-
-function removeCorrectMistakes(){
-
-let d=data();
-
-d.mistakes=[];
-
-save(d);
-
-}
-
-function clearMistakes(){
-
-if(confirm("هل تريد مسح سجل الأخطاء فقط؟")){
-
-let d=data();
-
-d.mistakes=[];
-
-save(d);
-
-renderMistakes();
-
-}
-
-}
-
-/* =========================
-
-   تحديد المستوى
-
-========================= */
-
-const placementQuestions=[
-
-["She ___ a teacher.",["am","is","are"],1,"She → is."],
-
-["I ___ English every day.",["study","studies","studying"],0,"I → study."],
-
-["___ you like coffee?",["Do","Does","Are"],0,"You → Do."],
-
-["They ___ watching TV now.",["is","am","are"],2,"They → are."],
-
-["He ___ to work yesterday.",["go","went","gone"],1,"yesterday → Past Simple."],
-
-["I have ___ my homework.",["do","did","done"],2,"have + التصريف الثالث."],
-
-["She ___ here since 2020.",["worked","has worked","works"],1,"since → Present Perfect."],
-
-["I ___ this movie before.",["see","saw","have seen"],2,"before بدون وقت محدد → Present Perfect."],
+["She ___ yesterday.",["came","has come","comes"],0,"yesterday → came."],
 
 ["We ___ travel tomorrow.",["will","did","have"],0,"tomorrow → will."],
 
-["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive للمقارنة."]
+["This is ___ than that.",["good","better","best"],1,"better than."]
+
+]
+
+}
 
 ];
-
-function startPlacement(){
-
-placementIndex=0;
-
-placementScore=0;
-
-placementSelected=null;
-
-placementChecked=false;
-
-hide();
-
-$("placement").classList.remove("hidden");
-
-renderPlacement();
-
-}
-
-function renderPlacement(){
-
-let q=placementQuestions[placementIndex];
-
-placementSelected=null;
-
-placementChecked=false;
-
-$("pnext").disabled=true;
-
-$("pnext").textContent="تحقق";
-
-$("pexplain").classList.add("hidden");
-
-$("pnum").textContent=
-
-`السؤال ${placementIndex+1} من ${placementQuestions.length}`;
-
-$("pbar").style.width=
-
-((placementIndex+1)/placementQuestions.length*100)+"%";
-
-$("pquestion").textContent=q[0];
-
-$("poptions").innerHTML="";
-
-q[1].forEach((x,n)=>{
-
-let b=document.createElement("button");
-
-b.className="option";
-
-b.textContent=x;
-
-b.onclick=()=>choosePlacement(b,n);
-
-$("poptions").appendChild(b);
-
-});
-
-}
-
-function choosePlacement(btn,n){
-
-if(placementChecked)return;
-
-placementSelected=n;
-
-document.querySelectorAll("#poptions .option")
-
-.forEach(x=>x.classList.remove("selected"));
-
-btn.classList.add("selected");
-
-$("pnext").disabled=false;
-
-}
-
-function nextPlacement(){
-
-let q=placementQuestions[placementIndex];
-
-if(!placementChecked){
-
-placementChecked=true;
-
-let ok=placementSelected===q[2];
-
-if(ok)placementScore++;
-
-let options=
-
-document.querySelectorAll("#poptions .option");
-
-options[q[2]].classList.add("correct");
-
-if(!ok&&placementSelected!==null){
-
-options[placementSelected].classList.add("wrong");
-
-}
-
-$("pexplain").innerHTML=
-
-`<b>${ok?"صحيح ✅":"خطأ ❌"}</b><br>${q[3]}`;
-
-$("pexplain").classList.remove("hidden");
-
-$("pnext").textContent=
-
-placementIndex+1<placementQuestions.length
-
-?"التالي"
-
-:"النتيجة";
-
-return;
-
-}
-
-placementIndex++;
-
-if(placementIndex<placementQuestions.length){
-
-renderPlacement();
-
-}else{
-
-finishPlacement();
-
-}
-
-}
-
-function finishPlacement(){
-
-let percent=
-
-Math.round(
-
-placementScore/
-
-placementQuestions.length*100
-
-);
-
-let level;
-
-if(percent>=70){
-
-level="A2";
-
-}else{
-
-level="A1";
-
-}
-
-let d=data();
-
-d.placement={
-
-score:placementScore,
-
-total:placementQuestions.length,
-
-percent:percent,
-
-level:level,
-
-updated:new Date().toISOString()
-
-};
-
-save(d);
-
-hide();
-
-$("placementResult").classList.remove("hidden");
-
-$("levelResult").textContent=level;
-
-$("levelScore").textContent=
-
-`${placementScore} / ${placementQuestions.length} — ${percent}%`;
-
-if(level==="A2"){
-
-$("levelDescription").textContent=
-
-"نتيجتك تشير إلى أن أساسيات A1 لديك جيدة ويمكنك البدء بتدريب A2.";
-
-$("levelAdvice").textContent=
-
-"ننصحك بالبدء من A2 مع مراجعة وحدات A1 التي تكون فيها نسبة الإتقان منخفضة.";
-
-}else{
-
-$("levelDescription").textContent=
-
-"نتيجتك تشير إلى أن الأفضل تثبيت أساسيات A1 أولًا.";
-
-$("levelAdvice").textContent=
-
-"ابدأ من A1، وأكمل الوحدات بالتدريج حتى تصل إلى إتقان 80–90%.";
-
-}
-
-}
-
-/* =========================
-
-   الإحصائيات
-
-========================= */
-
-function openStats(){
-
-hide();
-
-$("stats").classList.remove("hidden");
-
-renderStats();
-
-}
-
-function renderStats(){
-
-let d=data();
-
-let completed=0;
-
-let totalMastery=0;
-
-units.forEach(u=>{
-
-let p=d[u.id]?.mastery||0;
-
-if(p>=70)completed++;
-
-totalMastery+=p;
-
-});
-
-let average=
-
-Math.round(totalMastery/units.length);
-
-let mistakes=
-
-d.mistakes?.length||0;
-
-let placement=
-
-d.placement;
-
-let html=`
-
-<div class="stat">
-
-📚 الوحدات المتقنة: ${completed} / ${units.length}
-
-</div>
-
-<div class="stat">
-
-📈 متوسط الإتقان: ${average}%
-
-</div>
-
-<div class="stat">
-
-🧠 الأخطاء المحفوظة: ${mistakes}
-
-</div>
-
-<div class="stat">
-
-🎯 مستوى تحديد المستوى:
-
-${placement?placement.level:"لم يتم الاختبار بعد"}
-
-</div>
-
-`;
-
-if(placement){
-
-html+=`
-
-<div class="success-box">
-
-آخر اختبار تحديد مستوى:
-
-${placement.score}/${placement.total}
-
-— ${placement.percent}%
-
-</div>
-
-`;
-
-}
-
-html+=`
-
-<h3 style="margin-top:20px">
-
-تقدم الوحدات
-
-</h3>
-
-`;
-
-units.forEach(u=>{
-
-let p=d[u.id]?.mastery||0;
-
-html+=`
-
-<div style="margin:10px 0">
-
-<b>${u.title}</b>
-
-<div class="progress">
-
-<div class="bar" style="width:${p}%"></div>
-
-</div>
-
-<span class="small">${p}%</span>
-
-</div>
-
-`;
-
-});
-
-$("statsBody").innerHTML=html;
-
-}
-
-/* =========================
-
-   النطق
-
-========================= */
-
-function speakText(text){
-
-if(!("speechSynthesis" in window)){
-
-alert("النطق غير مدعوم في هذا المتصفح.");
-
-return;
-
-}
-
-speechSynthesis.cancel();
-
-const speech=
-
-new SpeechSynthesisUtterance(text);
-
-speech.lang="en-US";
-
-speech.rate=0.8;
-
-speech.pitch=1;
-
-speechSynthesis.speak(speech);
-
-}
-
-function speakQuestion(){
-
-speakText($("qtext").textContent);
-
-}
 
 /* =========================
 
@@ -1952,11 +1176,1097 @@ const vocab=[
 
 ];
 
-let vIndex=0;
+/* =========================
+
+   تحديد المستوى
+
+========================= */
+
+const placementQuestions=[
+
+["She ___ a teacher.",["am","is","are"],1,"She → is."],
+
+["I ___ English every day.",["study","studies","studying"],0,"I → study."],
+
+["___ you like coffee?",["Do","Does","Are"],0,"You → Do."],
+
+["They ___ watching TV now.",["is","am","are"],2,"They → are."],
+
+["He ___ to work yesterday.",["go","went","gone"],1,"yesterday → Past Simple."],
+
+["I have ___ my homework.",["do","did","done"],2,"have + V3."],
+
+["She ___ here since 2020.",["worked","has worked","works"],1,"since → Present Perfect."],
+
+["I ___ this movie before.",["see","saw","have seen"],2,"before → Present Perfect."],
+
+["We ___ travel tomorrow.",["will","did","have"],0,"tomorrow → will."],
+
+["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive."]
+
+];
+
+/* =========================
+
+   الاختبار الشامل
+
+========================= */
+
+const comprehensiveQuestions=[
+
+["I ___ a student.",["am","is","are"],0,"I → am."],
+
+["She ___ English every day.",["study","studies","studying"],1,"She → studies."],
+
+["They ___ at home now.",["is","am","are"],2,"They → are."],
+
+["___ you like tea?",["Do","Does","Are"],0,"You → Do."],
+
+["He ___ not work here.",["do","does","is"],1,"He → does not."],
+
+["We ___ watching TV now.",["are","is","am"],0,"We → are."],
+
+["I wake up ___ 7 o'clock.",["in","on","at"],2,"at 7."],
+
+["I work ___ Monday.",["in","on","at"],1,"on Monday."],
+
+["I was born ___ 1993.",["in","on","at"],0,"in 1993."],
+
+["He ___ to work yesterday.",["go","went","gone"],1,"yesterday → went."],
+
+["She ___ her friend last week.",["visit","visited","visiting"],1,"visited."],
+
+["They ___ home late yesterday.",["come","came","coming"],1,"came."],
+
+["I have ___ my homework.",["do","did","done"],2,"done."],
+
+["She has ___ the movie.",["see","saw","seen"],2,"seen."],
+
+["We have ___ here before.",["be","was","been"],2,"been."],
+
+["He has already ___.",["leave","left","leaving"],1,"left."],
+
+["I ___ English every day.",["study","have studied","am studying"],0,"Simple."],
+
+["She ___ already finished.",["has","is","does"],0,"has."],
+
+["He ___ to work every morning.",["goes","has gone","is going"],0,"goes."],
+
+["I have ___ this movie before.",["see","saw","seen"],2,"seen."],
+
+["I ___ him yesterday.",["see","saw","have seen"],1,"saw."],
+
+["I have ___ him before.",["see","saw","seen"],2,"seen."],
+
+["She ___ to London in 2020.",["went","has gone","goes"],0,"went."],
+
+["They have never ___ there.",["go","went","been"],2,"been."],
+
+["I ___ call you tomorrow.",["will","did","have"],0,"will."],
+
+["She ___ swim very well.",["can","has","is"],0,"can."],
+
+["You ___ study more.",["should","are","have"],0,"should."],
+
+["We will ___ tomorrow.",["go","went","gone"],0,"go."],
+
+["Ali is ___ than Ahmed.",["tall","taller","tallest"],1,"taller."],
+
+["This car is ___ than mine.",["expensive","more expensive","most expensive"],1,"more expensive."],
+
+["Today is ___ than yesterday.",["hot","hotter","hottest"],1,"hotter."],
+
+["English is ___ than I expected.",["easy","easier","easiest"],1,"easier."],
+
+["My brother ___ coffee every morning.",["drink","drinks","drinking"],1,"drinks."],
+
+["Listen! The baby ___.",["cries","is crying","cry"],1,"is crying."],
+
+["They ___ finished their work.",["have","has","are"],0,"have."],
+
+["She ___ lived here for five years.",["has","have","is"],0,"has."],
+
+["___ he finished the work?",["Have","Has","Does"],1,"Has."],
+
+["I haven't ___ lunch yet.",["eat","ate","eaten"],2,"eaten."],
+
+["Did you ___ him yesterday?",["see","saw","seen"],0,"see."],
+
+["She didn't ___ to work.",["went","go","gone"],1,"go."]
+
+];
+
+/* =========================
+
+   Listening
+
+========================= */
+
+const listeningQuestions=[
+
+{
+
+sentence:"I go to work every day.",
+
+options:[
+
+"I go to work every day.",
+
+"I went to work yesterday.",
+
+"I am working now."
+
+],
+
+answer:0
+
+},
+
+{
+
+sentence:"She is studying English now.",
+
+options:[
+
+"She studies English every day.",
+
+"She is studying English now.",
+
+"She studied English yesterday."
+
+],
+
+answer:1
+
+},
+
+{
+
+sentence:"They went home yesterday.",
+
+options:[
+
+"They go home every day.",
+
+"They are going home.",
+
+"They went home yesterday."
+
+],
+
+answer:2
+
+},
+
+{
+
+sentence:"I have finished my work.",
+
+options:[
+
+"I have finished my work.",
+
+"I am starting my work.",
+
+"I finished school yesterday."
+
+],
+
+answer:0
+
+},
+
+{
+
+sentence:"He will call you tomorrow.",
+
+options:[
+
+"He called you yesterday.",
+
+"He will call you tomorrow.",
+
+"He calls you every day."
+
+],
+
+answer:1
+
+},
+
+{
+
+sentence:"The book is under the table.",
+
+options:[
+
+"The book is on the table.",
+
+"The book is under the table.",
+
+"The book is in the bag."
+
+],
+
+answer:1
+
+},
+
+{
+
+sentence:"She has already eaten.",
+
+options:[
+
+"She has already eaten.",
+
+"She is eating now.",
+
+"She will eat tomorrow."
+
+],
+
+answer:0
+
+},
+
+{
+
+sentence:"We are watching TV.",
+
+options:[
+
+"We watched TV yesterday.",
+
+"We are watching TV.",
+
+"We watch TV every day."
+
+],
+
+answer:1
+
+}
+
+];
+
+/* =========================
+
+   Speaking
+
+========================= */
+
+const speakingSentences=[
+
+"I am learning English.",
+
+"I go to work every day.",
+
+"She is studying English now.",
+
+"They are watching TV.",
+
+"I have finished my work.",
+
+"He went to work yesterday.",
+
+"I will call you tomorrow.",
+
+"Can you help me?",
+
+"I want to speak English.",
+
+"I understand the question."
+
+];
+
+/* =========================
+
+   الحالة
+
+========================= */
+
+let current=null;
+
+let qIndex=0;
+
+let score=0;
+
+let wrong=[];
+
+let retry=false;
+
+let selected=null;
+
+let checked=false;
+
+let mistakeQuiz=false;
+
+let mistakeList=[];
+
+let placementIndex=0;
+
+let placementScore=0;
+
+let placementSelected=null;
+
+let placementChecked=false;
+
+let vocabIndex=0;
+
+let comprehensiveIndex=0;
+
+let comprehensiveScore=0;
+
+let comprehensiveSelected=null;
+
+let comprehensiveChecked=false;
+
+let listeningIndex=0;
+
+let listeningSelected=null;
+
+let listeningChecked=false;
+
+let speakingIndex=0;
+
+const $=id=>document.getElementById(id);
+
+/* =========================
+
+   التخزين
+
+========================= */
+
+function data(){
+
+return JSON.parse(localStorage.getItem("englishProgress")||"{}");
+
+}
+
+function save(d){
+
+localStorage.setItem("englishProgress",JSON.stringify(d));
+
+}
+
+function hide(){
+
+[
+
+"home",
+
+"unitsSection",
+
+"lesson",
+
+"quiz",
+
+"result",
+
+"vocab",
+
+"mistakes",
+
+"placement",
+
+"placementResult",
+
+"stats",
+
+"achievements",
+
+"comprehensive",
+
+"listening",
+
+"speaking"
+
+].forEach(id=>$(id).classList.add("hidden"));
+
+}
+
+function goHome(){
+
+hide();
+
+$("home").classList.remove("hidden");
+
+updateHome();
+
+}
+
+/* =========================
+
+   النقاط
+
+========================= */
+
+const levels=[
+
+{min:0,name:"مبتدئ 🌱"},
+
+{min:100,name:"متعلم 📘"},
+
+{min:250,name:"متعلم نشيط 🔥"},
+
+{min:500,name:"متقدم ⭐"},
+
+{min:800,name:"متقدم قوي 🏆"},
+
+{min:1200,name:"خبير الإنجليزية 👑"}
+
+];
+
+function getLevel(points){
+
+let level=levels[0];
+
+for(let i=0;i<levels.length;i++){
+
+if(points>=levels[i].min)level=levels[i];
+
+}
+
+return level;
+
+}
+
+function pointsForCorrect(){
+
+let d=data();
+
+let streak=d.streak||0;
+
+return 10+Math.min(streak*2,20);
+
+}
+
+function registerCorrect(){
+
+let d=data();
+
+d.correctAnswers=(d.correctAnswers||0)+1;
+
+let pts=pointsForCorrect();
+
+d.points=(d.points||0)+pts;
+
+d.streak=(d.streak||0)+1;
+
+save(d);
+
+}
+
+function registerWrong(){
+
+let d=data();
+
+d.streak=0;
+
+save(d);
+
+}
+
+function updateHome(){
+
+let d=data();
+
+let total=0;
+
+units.forEach(u=>{
+
+total+=d[u.id]?.mastery||0;
+
+});
+
+let avg=Math.round(total/units.length);
+
+$("overallProgress").textContent=avg+"%";
+
+$("unitCount").textContent=units.length+" وحدة";
+
+let points=d.points||0;
+
+$("homePoints").textContent=points;
+
+$("homeLevel").textContent=getLevel(points).name;
+
+$("homeStreak").textContent="🔥 سلسلة: "+(d.streak||0);
+
+}
+
+/* =========================
+
+   الدروس
+
+========================= */
+
+function showUnits(){
+
+hide();
+
+$("unitsSection").classList.remove("hidden");
+
+renderUnits();
+
+}
+
+function renderUnits(){
+
+let d=data();
+
+let html="";
+
+let currentLevel="";
+
+units.forEach((u,i)=>{
+
+if(currentLevel!==u.level){
+
+currentLevel=u.level;
+
+html+=`<h3>📘 مستوى ${u.level}</h3>`;
+
+}
+
+let p=d[u.id]?.mastery||0;
+
+html+=`
+
+<div class="unit">
+
+<div class="unit-title">${u.title}</div>
+
+<div class="small">${u.topic}</div>
+
+<div class="progress">
+
+<div class="progress-bar" style="width:${p}%"></div>
+
+</div>
+
+<div class="small">الإتقان: ${p}%</div>
+
+<button onclick="openUnit(${i})">
+
+${p>=70?"🔁 مراجعة الوحدة":"▶️ ابدأ الوحدة"}
+
+</button>
+
+</div>
+
+`;
+
+});
+
+$("unitsList").innerHTML=html;
+
+}
+
+function openUnit(idx){
+
+current=units[idx];
+
+hide();
+
+$("lesson").classList.remove("hidden");
+
+$("lessonTag").textContent=current.level;
+
+$("lessonTitle").textContent=current.title;
+
+let ex=example(current);
+
+$("lessonBody").innerHTML=`
+
+<p><b>${current.topic}</b></p>
+
+<p>${current.lesson}</p>
+
+<p class="english">${ex}</p>
+
+<button class="secondary"
+
+onclick='speakText(${JSON.stringify(ex)})'>
+
+🔊 استمع إلى المثال
+
+</button>
+
+`;
+
+}
+
+function example(u){
+
+if(u.id==="a1u1")
+
+return "I am ready. She is busy. They are here.";
+
+if(u.id==="a2u1")
+
+return "I have finished. She has already left.";
+
+if(u.id==="a1u3")
+
+return "I study English every day.";
+
+if(u.id==="a1u5")
+
+return "I am studying English now.";
+
+if(u.id==="a1u6")
+
+return "I work at 8 o'clock on Monday in January.";
+
+if(u.id==="a1u7")
+
+return "I went to work yesterday.";
+
+return "Study the rule, then test yourself.";
+
+}
+
+/* =========================
+
+   اختبار الوحدة
+
+========================= */
+
+function beginQuiz(){
+
+qIndex=0;
+
+score=0;
+
+wrong=[];
+
+retry=false;
+
+mistakeQuiz=false;
+
+hide();
+
+$("quiz").classList.remove("hidden");
+
+renderQ();
+
+}
+
+function renderQ(){
+
+selected=null;
+
+checked=false;
+
+let q;
+
+if(mistakeQuiz)
+
+q=mistakeList[qIndex].q;
+
+else if(retry)
+
+q=wrong[qIndex];
+
+else
+
+q=current.qs[qIndex];
+
+$("quizInfo").innerHTML=
+
+`<span class="tag">السؤال ${qIndex+1} من ${mistakeQuiz?mistakeList.length:retry?wrong.length:current.qs.length}</span>`;
+
+$("qtext").textContent=q[0];
+
+let html="";
+
+q[1].forEach((op,i)=>{
+
+html+=`
+
+<button class="option" onclick="choose(this,${i})">
+
+${op}
+
+</button>
+
+`;
+
+});
+
+$("options").innerHTML=html;
+
+$("explanation").innerHTML="";
+
+$("nextButton").textContent="تحقق ✓";
+
+}
+
+function choose(btn,n){
+
+if(checked)return;
+
+selected=n;
+
+document.querySelectorAll("#options .option").forEach(b=>{
+
+b.classList.remove("selected");
+
+});
+
+btn.classList.add("selected");
+
+}
+
+function addMistake(q){
+
+let d=data();
+
+if(!d.mistakes)d.mistakes=[];
+
+let found=d.mistakes.find(x=>x.id===q[0]);
+
+if(found)
+
+found.count=(found.count||1)+1;
+
+else
+
+d.mistakes.push({id:q[0],q:q,count:1});
+
+save(d);
+
+}
+
+function nextQ(){
+
+if(selected===null){
+
+alert("اختر إجابة أولاً.");
+
+return;
+
+}
+
+let q;
+
+if(mistakeQuiz)
+
+q=mistakeList[qIndex].q;
+
+else if(retry)
+
+q=wrong[qIndex];
+
+else
+
+q=current.qs[qIndex];
+
+if(!checked){
+
+checked=true;
+
+let buttons=document.querySelectorAll("#options .option");
+
+buttons[q[2]].classList.add("correct");
+
+if(selected===q[2]){
+
+score++;
+
+registerCorrect();
+
+$("explanation").innerHTML=
+
+`<div class="explanation">✅ صحيح! 🏆 حصلت على نقاط.</div>`;
+
+}else{
+
+buttons[selected].classList.add("wrong");
+
+registerWrong();
+
+addMistake(q);
+
+$("explanation").innerHTML=
+
+`<div class="explanation">❌ خطأ.<br>${q[3]}</div>`;
+
+}
+
+$("nextButton").textContent="السؤال التالي ➜";
+
+updateHome();
+
+return;
+
+}
+
+qIndex++;
+
+let total;
+
+if(mistakeQuiz)total=mistakeList.length;
+
+else if(retry)total=wrong.length;
+
+else total=current.qs.length;
+
+if(qIndex<total)
+
+renderQ();
+
+else
+
+finish();
+
+}
+
+function finish(){
+
+hide();
+
+$("result").classList.remove("hidden");
+
+let total;
+
+if(mistakeQuiz)total=mistakeList.length;
+
+else if(retry)total=wrong.length;
+
+else total=current.qs.length;
+
+let percent=Math.round(score/total*100);
+
+$("resultTitle").textContent=
+
+mistakeQuiz?"🧠 نتيجة مراجعة الأخطاء":
+
+retry?"🔁 نتيجة إعادة الاختبار":
+
+"🎉 نتيجة الوحدة";
+
+$("resultScore").textContent=score+" / "+total;
+
+$("resultDetails").innerHTML=`
+
+<p>النسبة: <b>${percent}%</b></p>
+
+<p>الإجابات الصحيحة: ${score}</p>
+
+`;
+
+if(mistakeQuiz){
+
+if(score===total){
+
+let d=data();
+
+d.mistakes=[];
+
+d.completedMistakeReviews=(d.completedMistakeReviews||0)+1;
+
+save(d);
+
+$("resultDetails").innerHTML+=
+
+`<p class="result-good">🎉 تمت مراجعة جميع الأخطاء!</p>`;
+
+}
+
+}else if(retry){
+
+$("resultDetails").innerHTML+=
+
+`<p>${percent>=70?"✅ تحسن ممتاز!":"💪 استمر بالمراجعة."}</p>`;
+
+}else{
+
+let d=data();
+
+d[current.id]={
+
+mastery:Math.max(percent,d[current.id]?.mastery||0),
+
+lastScore:score,
+
+total:total,
+
+updated:new Date().toISOString()
+
+};
+
+save(d);
+
+}
+
+updateHome();
+
+}
+
+function retryWrong(){
+
+if(mistakeQuiz)return;
+
+if(wrong.length===0){
+
+alert("لا توجد أخطاء لإعادتها.");
+
+return;
+
+}
+
+retry=true;
+
+qIndex=0;
+
+score=0;
+
+selected=null;
+
+checked=false;
+
+hide();
+
+$("quiz").classList.remove("hidden");
+
+renderQ();
+
+}
+
+/* =========================
+
+   الأخطاء
+
+========================= */
+
+function openMistakes(){
+
+hide();
+
+$("mistakes").classList.remove("hidden");
+
+renderMistakes();
+
+}
+
+function renderMistakes(){
+
+let d=data();
+
+let mistakes=d.mistakes||[];
+
+$("mistakeStats").innerHTML=
+
+`<div class="stat">
+
+<div class="stat-number">${mistakes.length}</div>
+
+عدد الأخطاء المحفوظة
+
+</div>`;
+
+if(!mistakes.length){
+
+$("mistakeList").innerHTML=
+
+`<div class="level-box">
+
+<h3>🎉 ممتاز!</h3>
+
+<p>لا توجد أخطاء محفوظة حاليًا.</p>
+
+</div>`;
+
+return;
+
+}
+
+let html="";
+
+mistakes.forEach((m,i)=>{
+
+html+=`
+
+<div class="unit">
+
+<b>${i+1}. ${m.q[0]}</b>
+
+<div class="small">عدد الأخطاء: ${m.count||1}</div>
+
+</div>
+
+`;
+
+});
+
+$("mistakeList").innerHTML=html;
+
+}
+
+function startMistakeQuiz(){
+
+let d=data();
+
+let mistakes=d.mistakes||[];
+
+if(!mistakes.length){
+
+alert("لا توجد أخطاء للمراجعة.");
+
+return;
+
+}
+
+mistakeList=mistakes.slice();
+
+mistakeQuiz=true;
+
+retry=false;
+
+qIndex=0;
+
+score=0;
+
+selected=null;
+
+checked=false;
+
+hide();
+
+$("quiz").classList.remove("hidden");
+
+renderQ();
+
+}
+
+function clearMistakes(){
+
+if(confirm("هل تريد مسح جميع الأخطاء المحفوظة؟")){
+
+let d=data();
+
+d.mistakes=[];
+
+save(d);
+
+renderMistakes();
+
+}
+
+}
+
+/* =========================
+
+   المفردات
+
+========================= */
 
 function startVocabulary(){
 
-vIndex=0;
+vocabIndex=0;
 
 hide();
 
@@ -1968,49 +2278,1179 @@ renderVocab();
 
 function renderVocab(){
 
-const v=vocab[vIndex];
+let v=vocab[vocabIndex];
 
-$("vWord").textContent=v.w;
+$("vocabContent").innerHTML=`
 
-$("vMeaning").textContent=v.m;
+<div class="small center">
 
-$("vExample").textContent=v.e;
+الكلمة ${vocabIndex+1} من ${vocab.length}
+
+</div>
+
+<div class="vocab-word">${v.w}</div>
+
+<div class="vocab-meaning">${v.m}</div>
+
+<p class="english">${v.e}</p>
+
+<button class="secondary"
+
+onclick='speakText(${JSON.stringify(v.w)})'>
+
+🔊 نطق الكلمة
+
+</button>
+
+<button class="secondary"
+
+onclick='speakText(${JSON.stringify(v.e)})'>
+
+🔊 نطق الجملة
+
+</button>
+
+`;
 
 }
 
 function nextVocab(){
 
-vIndex=(vIndex+1)%vocab.length;
+vocabIndex++;
+
+if(vocabIndex>=vocab.length){
+
+vocabIndex=0;
+
+alert("🎉 أكملت مجموعة المفردات!");
+
+goHome();
+
+return;
+
+}
 
 renderVocab();
 
 }
 
-function speakVocabWord(){
+/* =========================
 
-speakText(vocab[vIndex].w);
+   تحديد المستوى
+
+========================= */
+
+function startPlacement(){
+
+placementIndex=0;
+
+placementScore=0;
+
+placementSelected=null;
+
+placementChecked=false;
+
+hide();
+
+$("placement").classList.remove("hidden");
+
+renderPlacement();
 
 }
 
-function speakVocabSentence(){
+function renderPlacement(){
 
-speakText(vocab[vIndex].e);
+placementSelected=null;
+
+placementChecked=false;
+
+let q=placementQuestions[placementIndex];
+
+$("placementInfo").innerHTML=
+
+`<span class="tag">السؤال ${placementIndex+1} من ${placementQuestions.length}</span>`;
+
+$("placementQuestion").textContent=q[0];
+
+let html="";
+
+q[1].forEach((op,i)=>{
+
+html+=`
+
+<button class="option" onclick="choosePlacement(this,${i})">
+
+${op}
+
+</button>
+
+`;
+
+});
+
+$("placementOptions").innerHTML=html;
+
+}
+
+function choosePlacement(btn,n){
+
+if(placementChecked)return;
+
+placementSelected=n;
+
+document.querySelectorAll("#placementOptions .option").forEach(b=>{
+
+b.classList.remove("selected");
+
+});
+
+btn.classList.add("selected");
+
+}
+
+function nextPlacement(){
+
+if(placementSelected===null){
+
+alert("اختر إجابة أولاً.");
+
+return;
+
+}
+
+let q=placementQuestions[placementIndex];
+
+if(!placementChecked){
+
+placementChecked=true;
+
+let buttons=document.querySelectorAll("#placementOptions .option");
+
+buttons[q[2]].classList.add("correct");
+
+if(placementSelected===q[2])
+
+placementScore++;
+
+else
+
+buttons[placementSelected].classList.add("wrong");
+
+return;
+
+}
+
+placementIndex++;
+
+if(placementIndex<placementQuestions.length)
+
+renderPlacement();
+
+else
+
+finishPlacement();
+
+}
+
+function finishPlacement(){
+
+let percent=Math.round(
+
+placementScore/placementQuestions.length*100
+
+);
+
+let level=percent>=70?"A2":"A1";
+
+let d=data();
+
+d.placement={
+
+score:placementScore,
+
+total:placementQuestions.length,
+
+percent:percent,
+
+level:level,
+
+updated:new Date().toISOString()
+
+};
+
+save(d);
+
+hide();
+
+$("placementResult").classList.remove("hidden");
+
+$("placementLevel").textContent=level;
+
+$("placementPercent").innerHTML=
+
+`<p>نتيجتك: <b>${placementScore}/${placementQuestions.length}</b> — ${percent}%</p>`;
+
+$("placementAdvice").innerHTML=
+
+level==="A2"
+
+?
+
+`<div class="level-box">
+
+<h3>🎉 ممتاز!</h3>
+
+<p>يمكنك البدء من A2 مع مراجعة A1 عند الحاجة.</p>
+
+</div>`
+
+:
+
+`<div class="level-box">
+
+<h3>📘 ابدأ من A1</h3>
+
+<p>أنصحك بإتقان A1 أولًا ثم الانتقال إلى A2.</p>
+
+</div>`;
+
+updateHome();
 
 }
 
 /* =========================
 
-   مسح كل شيء
+   الإحصائيات
+
+========================= */
+
+function openStats(){
+
+hide();
+
+$("stats").classList.remove("hidden");
+
+renderStats();
+
+}
+
+function renderStats(){
+
+let d=data();
+
+let completed=units.filter(
+
+u=>(d[u.id]?.mastery||0)>=70
+
+).length;
+
+let total=0;
+
+units.forEach(u=>{
+
+total+=d[u.id]?.mastery||0;
+
+});
+
+let average=Math.round(total/units.length);
+
+let mistakes=(d.mistakes||[]).length;
+
+let points=d.points||0;
+
+let html=`
+
+<div class="stat-grid">
+
+<div class="stat">
+
+<div class="stat-number">${completed}</div>
+
+وحدات مكتملة
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">${average}%</div>
+
+متوسط الإتقان
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">${mistakes}</div>
+
+أخطاء محفوظة
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">${d.correctAnswers||0}</div>
+
+إجابات صحيحة
+
+</div>
+
+</div>
+
+<div class="level-box">
+
+<h3>🏆 المستوى الحالي</h3>
+
+<div class="level-big">${getLevel(points).name}</div>
+
+<p>${points} نقطة</p>
+
+</div>
+
+`;
+
+units.forEach(u=>{
+
+let p=d[u.id]?.mastery||0;
+
+html+=`
+
+<div class="unit">
+
+<b>${u.title}</b>
+
+<div class="progress">
+
+<div class="progress-bar" style="width:${p}%"></div>
+
+</div>
+
+<div class="small">${p}%</div>
+
+</div>
+
+`;
+
+});
+
+if(d.placement){
+
+html+=`
+
+<div class="level-box">
+
+<h3>🎯 آخر اختبار تحديد مستوى</h3>
+
+<p>المستوى: <b>${d.placement.level}</b></p>
+
+<p>النتيجة: ${d.placement.percent}%</p>
+
+</div>
+
+`;
+
+}
+
+if(d.comprehensive){
+
+html+=`
+
+<div class="level-box">
+
+<h3>📝 آخر اختبار شامل</h3>
+
+<p>${d.comprehensive.score}/${d.comprehensive.total}</p>
+
+<p>${d.comprehensive.percent}%</p>
+
+</div>
+
+`;
+
+}
+
+$("statsContent").innerHTML=html;
+
+}
+
+/* =========================
+
+   الإنجازات
+
+========================= */
+
+const achievementList=[
+
+{
+
+icon:"🌟",
+
+title:"أول خطوة",
+
+desc:"أول إجابة صحيحة.",
+
+check:d=>(d.correctAnswers||0)>=1
+
+},
+
+{
+
+icon:"🔥",
+
+title:"10 إجابات صحيحة",
+
+desc:"10 إجابات صحيحة.",
+
+check:d=>(d.correctAnswers||0)>=10
+
+},
+
+{
+
+icon:"💪",
+
+title:"50 إجابة صحيحة",
+
+desc:"50 إجابة صحيحة.",
+
+check:d=>(d.correctAnswers||0)>=50
+
+},
+
+{
+
+icon:"🏆",
+
+title:"100 إجابة صحيحة",
+
+desc:"100 إجابة صحيحة.",
+
+check:d=>(d.correctAnswers||0)>=100
+
+},
+
+{
+
+icon:"📚",
+
+title:"أول وحدة",
+
+desc:"إكمال أول وحدة بنسبة 70% أو أكثر.",
+
+check:d=>units.some(u=>(d[u.id]?.mastery||0)>=70)
+
+},
+
+{
+
+icon:"🎯",
+
+title:"5 وحدات",
+
+desc:"إكمال خمس وحدات.",
+
+check:d=>units.filter(u=>(d[u.id]?.mastery||0)>=70).length>=5
+
+},
+
+{
+
+icon:"🧠",
+
+title:"مراجعة الأخطاء",
+
+desc:"إكمال مراجعة الأخطاء.",
+
+check:d=>(d.completedMistakeReviews||0)>0
+
+},
+
+{
+
+icon:"🎯",
+
+title:"اختبار المستوى",
+
+desc:"إكمال اختبار تحديد المستوى.",
+
+check:d=>!!d.placement
+
+},
+
+{
+
+icon:"👑",
+
+title:"الوصول إلى A2",
+
+desc:"الحصول على A2.",
+
+check:d=>d.placement?.level==="A2"
+
+}
+
+];
+
+function openAchievements(){
+
+hide();
+
+$("achievements").classList.remove("hidden");
+
+let d=data();
+
+let html=`
+
+<div class="points-box">
+
+<div>🏆 مجموع النقاط</div>
+
+<div class="points-number">${d.points||0}</div>
+
+<div class="level-name">${getLevel(d.points||0).name}</div>
+
+<div>إجابات صحيحة: ${d.correctAnswers||0}</div>
+
+<div>🔥 السلسلة: ${d.streak||0}</div>
+
+</div>
+
+`;
+
+achievementList.forEach(a=>{
+
+let ok=a.check(d);
+
+html+=`
+
+<div class="achievement ${ok?"":"locked"}">
+
+<div class="achievement-icon">${a.icon}</div>
+
+<div>
+
+<b>${a.title}</b>
+
+<div class="small">${a.desc}</div>
+
+<div>${ok?"✅ مكتمل":"🔒 غير مكتمل"}</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+$("achievementContent").innerHTML=html;
+
+}
+
+/* =========================
+
+   الاختبار الشامل
+
+========================= */
+
+function openComprehensive(){
+
+comprehensiveIndex=0;
+
+comprehensiveScore=0;
+
+comprehensiveSelected=null;
+
+comprehensiveChecked=false;
+
+hide();
+
+$("comprehensive").classList.remove("hidden");
+
+renderComprehensive();
+
+}
+
+function renderComprehensive(){
+
+comprehensiveSelected=null;
+
+comprehensiveChecked=false;
+
+let q=comprehensiveQuestions[comprehensiveIndex];
+
+$("comprehensiveInfo").innerHTML=
+
+`<span class="tag">السؤال ${comprehensiveIndex+1} من ${comprehensiveQuestions.length}</span>`;
+
+$("comprehensiveQuestion").textContent=q[0];
+
+let html="";
+
+q[1].forEach((op,i)=>{
+
+html+=`
+
+<button class="option" onclick="chooseComprehensive(this,${i})">
+
+${op}
+
+</button>
+
+`;
+
+});
+
+$("comprehensiveOptions").innerHTML=html;
+
+}
+
+function chooseComprehensive(btn,n){
+
+if(comprehensiveChecked)return;
+
+comprehensiveSelected=n;
+
+document.querySelectorAll("#comprehensiveOptions .option").forEach(b=>{
+
+b.classList.remove("selected");
+
+});
+
+btn.classList.add("selected");
+
+}
+
+function nextComprehensive(){
+
+if(comprehensiveSelected===null){
+
+alert("اختر إجابة أولاً.");
+
+return;
+
+}
+
+let q=comprehensiveQuestions[comprehensiveIndex];
+
+if(!comprehensiveChecked){
+
+comprehensiveChecked=true;
+
+let buttons=document.querySelectorAll("#comprehensiveOptions .option");
+
+buttons[q[2]].classList.add("correct");
+
+if(comprehensiveSelected===q[2]){
+
+comprehensiveScore++;
+
+registerCorrect();
+
+}else{
+
+buttons[comprehensiveSelected].classList.add("wrong");
+
+registerWrong();
+
+addMistake(q);
+
+}
+
+return;
+
+}
+
+comprehensiveIndex++;
+
+if(comprehensiveIndex<comprehensiveQuestions.length)
+
+renderComprehensive();
+
+else
+
+finishComprehensive();
+
+}
+
+function finishComprehensive(){
+
+let total=comprehensiveQuestions.length;
+
+let percent=Math.round(comprehensiveScore/total*100);
+
+let d=data();
+
+d.comprehensive={
+
+score:comprehensiveScore,
+
+total:total,
+
+percent:percent,
+
+updated:new Date().toISOString()
+
+};
+
+save(d);
+
+hide();
+
+$("result").classList.remove("hidden");
+
+$("resultTitle").textContent="🏆 نتيجة الاختبار الشامل";
+
+$("resultScore").textContent=
+
+comprehensiveScore+" / "+total;
+
+$("resultDetails").innerHTML=`
+
+<p>النسبة: <b>${percent}%</b></p>
+
+<p>
+
+${percent>=90?
+
+"👑 ممتاز جدًا!":
+
+percent>=80?
+
+"🔥 ممتاز!":
+
+percent>=70?
+
+"✅ جيد جدًا":
+
+"💪 تحتاج إلى مراجعة أكثر."
+
+}
+
+</p>
+
+<p>تم حفظ نتيجتك في الإحصائيات.</p>
+
+`;
+
+updateHome();
+
+}
+
+/* =========================
+
+   Listening
+
+========================= */
+
+function openListening(){
+
+listeningIndex=0;
+
+listeningSelected=null;
+
+listeningChecked=false;
+
+hide();
+
+$("listening").classList.remove("hidden");
+
+renderListening();
+
+}
+
+function renderListening(){
+
+listeningSelected=null;
+
+listeningChecked=false;
+
+let q=listeningQuestions[listeningIndex];
+
+$("listenNumber").textContent=
+
+`السؤال ${listeningIndex+1} من ${listeningQuestions.length}`;
+
+$("listenSentence").textContent="اضغط 🔊 للاستماع";
+
+$("listenResult").innerHTML="";
+
+let html="";
+
+q.options.forEach((op,i)=>{
+
+html+=`
+
+<button class="option"
+
+onclick="chooseListening(this,${i})">
+
+${op}
+
+</button>
+
+`;
+
+});
+
+$("listenOptions").innerHTML=html;
+
+}
+
+function playListening(){
+
+let q=listeningQuestions[listeningIndex];
+
+speakText(q.sentence);
+
+}
+
+function chooseListening(btn,n){
+
+if(listeningChecked)return;
+
+listeningSelected=n;
+
+document.querySelectorAll("#listenOptions .option").forEach(b=>{
+
+b.classList.remove("selected");
+
+});
+
+btn.classList.add("selected");
+
+let q=listeningQuestions[listeningIndex];
+
+if(n===q.answer){
+
+listeningChecked=true;
+
+btn.classList.add("correct");
+
+registerCorrect();
+
+$("listenResult").innerHTML=
+
+`<p class="result-good">✅ صحيح! 🏆</p>`;
+
+}else{
+
+btn.classList.add("wrong");
+
+$("listenResult").innerHTML=
+
+`<p class="result-bad">❌ حاول مرة أخرى.</p>`;
+
+}
+
+updateHome();
+
+}
+
+function nextListening(){
+
+if(!listeningChecked){
+
+alert("اختر الإجابة الصحيحة أولاً.");
+
+return;
+
+}
+
+listeningIndex++;
+
+if(listeningIndex>=listeningQuestions.length){
+
+alert("🎉 أكملت Listening!");
+
+goHome();
+
+return;
+
+}
+
+renderListening();
+
+}
+
+/* =========================
+
+   Speaking
+
+========================= */
+
+function openSpeaking(){
+
+speakingIndex=0;
+
+hide();
+
+$("speaking").classList.remove("hidden");
+
+renderSpeaking();
+
+}
+
+function renderSpeaking(){
+
+let sentence=speakingSentences[speakingIndex];
+
+$("speakNumber").textContent=
+
+`الجملة ${speakingIndex+1} من ${speakingSentences.length}`;
+
+$("speakSentence").textContent=sentence;
+
+$("speechResult").innerHTML="";
+
+$("recordButton").textContent="🎙️ ابدأ التحدث";
+
+$("micIcon").textContent="🎙️";
+
+}
+
+function playSpeakingSentence(){
+
+speakText(speakingSentences[speakingIndex]);
+
+}
+
+function startRecording(){
+
+const SpeechRecognition=
+
+window.SpeechRecognition||
+
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+
+alert(
+
+"المتصفح الحالي لا يدعم التعرف على الكلام. يمكنك الاستماع للجملة وتكرارها بنفسك."
+
+);
+
+return;
+
+}
+
+const recognition=new SpeechRecognition();
+
+recognition.lang="en-US";
+
+recognition.interimResults=false;
+
+recognition.maxAlternatives=1;
+
+$("recordButton").textContent="🔴 جاري الاستماع...";
+
+$("micIcon").textContent="🔴";
+
+$("micIcon").classList.add("recording");
+
+recognition.start();
+
+recognition.onresult=function(event){
+
+let spoken=event.results[0][0].transcript;
+
+let target=speakingSentences[speakingIndex];
+
+let similarity=getSimilarity(
+
+spoken.toLowerCase(),
+
+target.toLowerCase()
+
+);
+
+let percent=Math.round(similarity*100);
+
+if(percent>=80){
+
+registerCorrect();
+
+$("speechResult").innerHTML=`
+
+<div class="level-box">
+
+<h3>🎉 ممتاز!</h3>
+
+<p>سمعت:</p>
+
+<p class="english">${spoken}</p>
+
+<p>التقييم: <b>${percent}%</b></p>
+
+<p class="result-good">✅ النطق قريب جدًا من الجملة.</p>
+
+</div>
+
+`;
+
+}else if(percent>=55){
+
+$("speechResult").innerHTML=`
+
+<div class="level-box">
+
+<h3>👍 جيد</h3>
+
+<p>سمعت:</p>
+
+<p class="english">${spoken}</p>
+
+<p>التقييم: <b>${percent}%</b></p>
+
+<p>حاول تكرار الجملة مرة أخرى بوضوح.</p>
+
+</div>
+
+`;
+
+}else{
+
+$("speechResult").innerHTML=`
+
+<div class="level-box">
+
+<h3>💪 حاول مرة أخرى</h3>
+
+<p>سمعت:</p>
+
+<p class="english">${spoken}</p>
+
+<p>التقييم: <b>${percent}%</b></p>
+
+<p>استمع للجملة ثم أعدها ببطء.</p>
+
+</div>
+
+`;
+
+}
+
+updateHome();
+
+};
+
+recognition.onerror=function(){
+
+$("speechResult").innerHTML=
+
+`<p class="result-bad">لم أتمكن من التعرف على الكلام. حاول مرة أخرى.</p>`;
+
+};
+
+recognition.onend=function(){
+
+$("recordButton").textContent="🎙️ ابدأ التحدث";
+
+$("micIcon").textContent="🎙️";
+
+$("micIcon").classList.remove("recording");
+
+};
+
+}
+
+function getSimilarity(a,b){
+
+let aw=a.replace(/[.,!?]/g,"").split(/\s+/);
+
+let bw=b.replace(/[.,!?]/g,"").split(/\s+/);
+
+let matched=0;
+
+aw.forEach(word=>{
+
+if(bw.includes(word))matched++;
+
+});
+
+return Math.min(
+
+1,
+
+matched/Math.max(aw.length,bw.length)
+
+);
+
+}
+
+function nextSpeaking(){
+
+speakingIndex++;
+
+if(speakingIndex>=speakingSentences.length){
+
+alert("🎉 أكملت تدريب Speaking!");
+
+goHome();
+
+return;
+
+}
+
+renderSpeaking();
+
+}
+
+/* =========================
+
+   النطق
+
+========================= */
+
+function speakText(text){
+
+if(!("speechSynthesis" in window)){
+
+alert("النطق غير مدعوم في هذا المتصفح.");
+
+return;
+
+}
+
+speechSynthesis.cancel();
+
+const speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+
+speech.rate=.8;
+
+speech.pitch=1;
+
+speechSynthesis.speak(speech);
+
+}
+
+function speakQuestion(){
+
+speakText($("qtext").textContent);
+
+}
+
+/* =========================
+
+   مسح البيانات
 
 ========================= */
 
 function resetAll(){
 
-if(confirm("هل تريد مسح كل تقدمك والأخطاء ونتيجة تحديد المستوى؟")){
+if(confirm(
+
+"هل تريد مسح كل تقدمك والنقاط والأخطاء والنتائج؟"
+
+)){
 
 localStorage.removeItem("englishProgress");
 
-renderUnits();
+updateHome();
+
+alert("تم مسح جميع البيانات.");
 
 }
 
@@ -2018,11 +3458,11 @@ renderUnits();
 
 /* =========================
 
-   تشغيل البرنامج
+   تشغيل
 
 ========================= */
 
-renderUnits();
+updateHome();
 
 </script>
 
