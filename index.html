@@ -22,7 +22,9 @@ body{
 
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
 
- background:#f4f7fb;color:#172033;
+ background:#f4f7fb;
+
+ color:#172033;
 
 }
 
@@ -30,161 +32,401 @@ header{
 
  background:linear-gradient(135deg,#1d4ed8,#2563eb);
 
- color:white;padding:22px 16px 18px;
+ color:white;
 
- position:sticky;top:0;z-index:10;
+ padding:22px 16px 18px;
+
+ position:sticky;
+
+ top:0;
+
+ z-index:10;
 
  box-shadow:0 3px 15px #0002;
 
 }
 
-header h1{margin:0;font-size:23px}
+header h1{
 
-header p{margin:6px 0 0;opacity:.9;font-size:13px}
+ margin:0;
 
-.container{max-width:900px;margin:auto;padding:15px}
+ font-size:23px
+
+}
+
+header p{
+
+ margin:6px 0 0;
+
+ opacity:.9;
+
+ font-size:13px
+
+}
+
+.container{
+
+ max-width:900px;
+
+ margin:auto;
+
+ padding:15px
+
+}
 
 .card{
 
- background:white;border-radius:18px;padding:17px;margin-bottom:14px;
+ background:white;
+
+ border-radius:18px;
+
+ padding:17px;
+
+ margin-bottom:14px;
 
  box-shadow:0 3px 15px #0000000c;
 
 }
 
-h2{margin-top:0;font-size:20px}
+h2{
 
-h3{margin-bottom:7px}
+ margin-top:0;
 
-button{
-
- border:0;border-radius:13px;padding:12px 15px;
-
- font-size:15px;font-weight:700;cursor:pointer;
-
- background:#2563eb;color:white;margin:4px;
+ font-size:20px
 
 }
 
-button.secondary{background:#e8eefb;color:#1e40af}
+h3{
 
-button.success{background:#16a34a}
+ margin-bottom:7px
 
-button.danger{background:#dc2626}
+}
 
-button.gray{background:#64748b}
+button{
 
-button:disabled{opacity:.45}
+ border:0;
+
+ border-radius:13px;
+
+ padding:12px 15px;
+
+ font-size:15px;
+
+ font-weight:700;
+
+ cursor:pointer;
+
+ background:#2563eb;
+
+ color:white;
+
+ margin:4px;
+
+}
+
+button.secondary{
+
+ background:#e8eefb;
+
+ color:#1e40af
+
+}
+
+button.success{
+
+ background:#16a34a
+
+}
+
+button.danger{
+
+ background:#dc2626
+
+}
+
+button.gray{
+
+ background:#64748b
+
+}
+
+button:disabled{
+
+ opacity:.45
+
+}
 
 .nav{
 
- display:grid;grid-template-columns:repeat(3,1fr);gap:7px;
+ display:grid;
+
+ grid-template-columns:repeat(3,1fr);
+
+ gap:7px;
 
  margin-bottom:15px;
 
 }
 
-.nav button{margin:0;font-size:12px;padding:10px 5px}
+.nav button{
+
+ margin:0;
+
+ font-size:12px;
+
+ padding:10px 5px
+
+}
 
 .statgrid{
 
- display:grid;grid-template-columns:repeat(2,1fr);gap:10px;
+ display:grid;
+
+ grid-template-columns:repeat(2,1fr);
+
+ gap:10px;
 
 }
 
 .stat{
 
- background:#f8fafc;border-radius:14px;padding:14px;text-align:center;
+ background:#f8fafc;
+
+ border-radius:14px;
+
+ padding:14px;
+
+ text-align:center;
 
 }
 
-.stat b{display:block;font-size:24px;color:#2563eb}
+.stat b{
+
+ display:block;
+
+ font-size:24px;
+
+ color:#2563eb
+
+}
 
 .progress{
 
- height:12px;background:#e5e7eb;border-radius:20px;overflow:hidden;
+ height:12px;
+
+ background:#e5e7eb;
+
+ border-radius:20px;
+
+ overflow:hidden;
 
 }
 
-.progress div{height:100%;background:#2563eb;border-radius:20px}
+.progress div{
+
+ height:100%;
+
+ background:#2563eb;
+
+ border-radius:20px
+
+}
 
 .option{
 
- width:100%;text-align:right;background:#f8fafc;color:#172033;
+ width:100%;
 
- border:2px solid #e5e7eb;margin:5px 0;
+ text-align:right;
+
+ background:#f8fafc;
+
+ color:#172033;
+
+ border:2px solid #e5e7eb;
+
+ margin:5px 0;
 
 }
 
-.option:hover{border-color:#2563eb}
+.option:hover{
 
-.option.correct{background:#dcfce7;border-color:#16a34a}
+ border-color:#2563eb
 
-.option.wrong{background:#fee2e2;border-color:#dc2626}
+}
+
+.option.correct{
+
+ background:#dcfce7;
+
+ border-color:#16a34a
+
+}
+
+.option.wrong{
+
+ background:#fee2e2;
+
+ border-color:#dc2626
+
+}
 
 .badge{
 
- display:inline-block;padding:7px 10px;border-radius:20px;
+ display:inline-block;
 
- background:#dbeafe;color:#1d4ed8;font-size:12px;margin:3px;
+ padding:7px 10px;
+
+ border-radius:20px;
+
+ background:#dbeafe;
+
+ color:#1d4ed8;
+
+ font-size:12px;
+
+ margin:3px;
 
 }
 
-.lock{opacity:.55}
+.badge.green{
+
+ background:#dcfce7;
+
+ color:#15803d
+
+}
+
+.badge.orange{
+
+ background:#ffedd5;
+
+ color:#c2410c
+
+}
 
 .word{
 
- font-size:30px;font-weight:800;text-align:center;
+ font-size:30px;
 
- color:#1d4ed8;margin:18px 0 5px;
+ font-weight:800;
+
+ text-align:center;
+
+ color:#1d4ed8;
+
+ margin:18px 0 5px;
 
 }
 
-.mean{text-align:center;font-size:18px}
+.mean{
+
+ text-align:center;
+
+ font-size:18px
+
+}
 
 .example{
 
- background:#eff6ff;border-right:4px solid #2563eb;
+ background:#eff6ff;
 
- padding:12px;margin:12px 0;border-radius:8px;
+ border-right:4px solid #2563eb;
 
- direction:ltr;text-align:left;
+ padding:12px;
+
+ margin:12px 0;
+
+ border-radius:8px;
+
+ direction:ltr;
+
+ text-align:left;
 
 }
 
-textarea,input{
+textarea,
 
- width:100%;padding:12px;border:2px solid #dbe1ea;
+input{
 
- border-radius:12px;font-size:16px;margin:6px 0;
+ width:100%;
+
+ padding:12px;
+
+ border:2px solid #dbe1ea;
+
+ border-radius:12px;
+
+ font-size:16px;
+
+ margin:6px 0;
 
 }
 
-textarea{min-height:120px}
+textarea{
 
-.small{font-size:13px;color:#64748b}
+ min-height:120px
 
-.center{text-align:center}
+}
 
-.hidden{display:none!important}
+.small{
+
+ font-size:13px;
+
+ color:#64748b
+
+}
+
+.center{
+
+ text-align:center
+
+}
+
+.hidden{
+
+ display:none!important
+
+}
 
 .lessonbox{
 
- background:#f8fafc;border-radius:14px;padding:14px;margin:10px 0;
+ background:#f8fafc;
+
+ border-radius:14px;
+
+ padding:14px;
+
+ margin:10px 0;
 
 }
 
 .unit{
 
- border:2px solid #e5e7eb;border-radius:15px;
+ border:2px solid #e5e7eb;
 
- padding:13px;margin:8px 0;background:white;
+ border-radius:15px;
+
+ padding:13px;
+
+ margin:8px 0;
+
+ background:white;
 
 }
 
-.unit.open{border-color:#bfdbfe}
+.unit.open{
 
-.unit.done{border-color:#86efac}
+ border-color:#bfdbfe
+
+}
+
+.unit.done{
+
+ border-color:#86efac;
+
+ background:#fafffb
+
+}
 
 .review{
 
@@ -194,7 +436,35 @@ textarea{min-height:120px}
 
 }
 
-footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
+.mastered{
+
+ border-right:5px solid #16a34a;
+
+ background:#f0fdf4;
+
+}
+
+footer{
+
+ text-align:center;
+
+ color:#64748b;
+
+ font-size:12px;
+
+ padding:25px
+
+}
+
+hr{
+
+ border:0;
+
+ border-top:1px solid #e5e7eb;
+
+ margin:15px 0
+
+}
 
 </style>
 
@@ -236,17 +506,47 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h2>أهلًا ليث 👋</h2>
 
-<p>الهدف: الوصول إلى <b>A2 قوي</b> وليس مجرد حفظ الإجابات.</p>
+<p>
+
+البرنامج يعرف ما أنجزته سابقًا، لذلك لن يجبرك على إعادة دراسة
+
+المواضيع التي أتقنتها.
+
+</p>
 
 <div class="statgrid">
 
-<div class="stat"><b id="points">0</b>نقطة</div>
+<div class="stat">
 
-<div class="stat"><b id="level">1</b>المستوى</div>
+<b id="points">0</b>
 
-<div class="stat"><b id="streak">0</b>يوم متواصل</div>
+نقطة
 
-<div class="stat"><b id="accuracy">0%</b>الدقة</div>
+</div>
+
+<div class="stat">
+
+<b id="level">1</b>
+
+المستوى
+
+</div>
+
+<div class="stat">
+
+<b id="streak">0</b>
+
+يوم متواصل
+
+</div>
+
+<div class="stat">
+
+<b id="accuracy">0%</b>
+
+الدقة
+
+</div>
 
 </div>
 
@@ -254,11 +554,31 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <div class="card">
 
-<h3>تقدمك العام</h3>
+<h3>📈 تقدمك العام</h3>
 
-<div class="progress"><div id="overallBar" style="width:0%"></div></div>
+<div class="progress">
+
+<div id="overallBar" style="width:0%"></div>
+
+</div>
 
 <p id="overallText">0 / 24 وحدة</p>
+
+</div>
+
+<div class="card mastered">
+
+<h3>✅ ما أتقنته سابقًا</h3>
+
+<p>
+
+هذه الوحدات محسوبة لك كمنجزة، لكن يمكنك الرجوع إليها
+
+ودراستها أو اختبارها في أي وقت.
+
+</p>
+
+<div id="previousMasteredText"></div>
 
 </div>
 
@@ -266,9 +586,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h3>🔁 المراجعة الذكية</h3>
 
-<p id="reviewText">لا توجد أخطاء تحتاج للمراجعة الآن.</p>
+<p id="reviewText">
 
-<button onclick="startReview()">ابدأ مراجعة أخطائك</button>
+لا توجد أخطاء تحتاج للمراجعة الآن.
+
+</p>
+
+<button onclick="startReview()">
+
+ابدأ مراجعة أخطائك
+
+</button>
 
 </div>
 
@@ -276,9 +604,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h3>🎯 هدف اليوم</h3>
 
-<p>20 دقيقة يوميًا تكفي إذا كنت ملتزمًا.</p>
+<p>
 
-<button onclick="show('daily')">ابدأ تدريب اليوم</button>
+20 دقيقة يوميًا تكفي إذا كنت ملتزمًا.
+
+</p>
+
+<button onclick="show('daily')">
+
+ابدأ تدريب اليوم
+
+</button>
 
 </div>
 
@@ -286,9 +622,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h3>📊 اختبار تحديد المستوى</h3>
 
-<p>اختبار سريع يحدد نقطة البداية.</p>
+<p>
 
-<button onclick="startPlacement()">ابدأ اختبار المستوى</button>
+اختبار سريع لمعرفة مستواك الحالي.
+
+</p>
+
+<button onclick="startPlacement()">
+
+ابدأ اختبار المستوى
+
+</button>
 
 </div>
 
@@ -302,7 +646,13 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h2>📚 منهج A1 → A2</h2>
 
-<p class="small">الوحدة التالية تفتح بعد إتقان الحالية بنسبة 80%.</p>
+<p class="small">
+
+الوحدات التي أتقنتها سابقًا تعتبر منجزة،
+
+لكنها تبقى مفتوحة للدراسة والاختبار والمراجعة.
+
+</p>
 
 <div id="units"></div>
 
@@ -336,7 +686,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <div id="explanation"></div>
 
-<button id="nextBtn" onclick="nextQuestion()" class="hidden">السؤال التالي ➜</button>
+<button
+
+id="nextBtn"
+
+onclick="nextQuestion()"
+
+class="hidden">
+
+السؤال التالي ➜
+
+</button>
 
 </div>
 
@@ -352,9 +712,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <div id="resultText"></div>
 
-<button onclick="show('curriculum')">العودة للمنهج</button>
+<button onclick="show('curriculum')">
 
-<button onclick="show('home')" class="secondary">الرئيسية</button>
+العودة للمنهج
+
+</button>
+
+<button onclick="show('home')" class="secondary">
+
+الرئيسية
+
+</button>
 
 </div>
 
@@ -368,7 +736,11 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h2>📚 الكلمات الأساسية</h2>
 
-<p>تعلم الكلمة، اسمعها، ثم اختبر نفسك.</p>
+<p>
+
+تعلم الكلمة، اسمعها، ثم اختبر نفسك.
+
+</p>
 
 <div id="wordIndex"></div>
 
@@ -380,13 +752,29 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <div class="center">
 
-<button onclick="speakCurrent()">🔊 النطق</button>
+<button onclick="speakCurrent()">
 
-<button onclick="knowWord()" class="success">✓ أعرفها</button>
+🔊 النطق
 
-<button onclick="missWord()" class="danger">✗ لا أعرفها</button>
+</button>
 
-<button onclick="nextWord()" class="secondary">التالي</button>
+<button onclick="knowWord()" class="success">
+
+✓ أعرفها
+
+</button>
+
+<button onclick="missWord()" class="danger">
+
+✗ لا أعرفها
+
+</button>
+
+<button onclick="nextWord()" class="secondary">
+
+التالي
+
+</button>
 
 </div>
 
@@ -398,7 +786,11 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <p id="vocabReviewText"></p>
 
-<button onclick="startVocabReview()">راجع الكلمات الصعبة</button>
+<button onclick="startVocabReview()">
+
+راجع الكلمات الصعبة
+
+</button>
 
 </div>
 
@@ -416,9 +808,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <b>1️⃣ Vocabulary — 5 دقائق</b>
 
-<p>تعلم 5 كلمات جديدة.</p>
+<p>
 
-<button onclick="show('vocab')">ابدأ</button>
+تعلم 5 كلمات جديدة.
+
+</p>
+
+<button onclick="show('vocab')">
+
+ابدأ
+
+</button>
 
 </div>
 
@@ -426,9 +826,19 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <b>2️⃣ Grammar — 5 دقائق</b>
 
-<p>تعلم قاعدة ثم حل أسئلة.</p>
+<p>
 
-<button onclick="show('curriculum')">ابدأ</button>
+إذا كانت الوحدة منجزة سابقًا انتقل للجديدة،
+
+وإذا أردت يمكنك مراجعة القديمة.
+
+</p>
+
+<button onclick="show('curriculum')">
+
+ابدأ
+
+</button>
 
 </div>
 
@@ -436,9 +846,17 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <b>3️⃣ Listening — 5 دقائق</b>
 
-<p>اسمع الجمل الإنجليزية وحاول فهمها.</p>
+<p>
 
-<button onclick="startListening()">ابدأ</button>
+استمع للجمل الإنجليزية وحاول فهمها.
+
+</p>
+
+<button onclick="startListening()">
+
+ابدأ
+
+</button>
 
 </div>
 
@@ -446,11 +864,23 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <b>4️⃣ Speaking / Writing — 5 دقائق</b>
 
-<p>تحدث أو اكتب جملة باللغة الإنجليزية.</p>
+<p>
 
-<button onclick="startSpeaking()">Speaking</button>
+تحدث أو اكتب جملة باللغة الإنجليزية.
 
-<button onclick="startWriting()" class="secondary">Writing</button>
+</p>
+
+<button onclick="startSpeaking()">
+
+Speaking
+
+</button>
+
+<button onclick="startWriting()" class="secondary">
+
+Writing
+
+</button>
 
 </div>
 
@@ -466,7 +896,11 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h2>🗣️ English in Real Life</h2>
 
-<p>مواقف عملية: العمل، المطعم، الفندق، الهاتف والمقابلة.</p>
+<p>
+
+مواقف عملية: العمل، المطعم، الفندق، الهاتف والمقابلة.
+
+</p>
 
 <div id="scenarios"></div>
 
@@ -496,11 +930,19 @@ footer{text-align:center;color:#64748b;font-size:12px;padding:25px}
 
 <h2>🎤 Speaking</h2>
 
-<p>اضغط واستمع ثم حاول نطق الجملة.</p>
+<p>
+
+استمع ثم حاول نطق الجملة.
+
+</p>
 
 <div id="speakContent"></div>
 
-<button onclick="startRecognition()">🎙️ ابدأ الكلام</button>
+<button onclick="startRecognition()">
+
+🎙️ ابدأ الكلام
+
+</button>
 
 <p id="recognized"></p>
 
@@ -548,11 +990,11 @@ English Trainer A1 → A2<br>
 
 <script>
 
-/* =========================
+/* =====================================================
 
    DATA
 
-========================= */
+===================================================== */
 
 const UNITS=[
 
@@ -608,8 +1050,6 @@ const UNITS=[
 
 const QUESTIONS=[
 
-/* A1 */
-
 ["A1","Verb to be","I ___ from Iraq.","am","is","are","be","am","نستخدم am مع I."],
 
 ["A1","Verb to be","She ___ a doctor.","am","is","are","be","is","نستخدم is مع he/she/it."],
@@ -657,8 +1097,6 @@ const QUESTIONS=[
 ["A1","Past","She ___ at home yesterday.","was","were","is","are","was","She + was."],
 
 ["A1","Past","They ___ happy.","was","were","is","be","were","They + were."],
-
-/* A2 */
 
 ["A2","Present Perfect","I ___ finished my work.","have","has","am","did","have","I + have + V3."],
 
@@ -1036,15 +1474,15 @@ const WRITING=[
 
 ];
 
-/* =========================
+/* =====================================================
 
    STATE
 
-========================= */
+===================================================== */
 
 const KEY="englishProgress";
 
-let state=JSON.parse(localStorage.getItem(KEY)||"null")||{
+const DEFAULT_STATE={
 
  completed:[],
 
@@ -1066,11 +1504,29 @@ let state=JSON.parse(localStorage.getItem(KEY)||"null")||{
 
  placement:null,
 
- listening:{attempts:0,correct:0},
+ listening:{
 
- speaking:{attempts:0,correct:0},
+   attempts:0,
 
- writing:{attempts:0,correct:0},
+   correct:0
+
+ },
+
+ speaking:{
+
+   attempts:0,
+
+   correct:0
+
+ },
+
+ writing:{
+
+   attempts:0,
+
+   correct:0
+
+ },
 
  streak:0,
 
@@ -1078,9 +1534,137 @@ let state=JSON.parse(localStorage.getItem(KEY)||"null")||{
 
  dailyDone:0,
 
- fullTest:0
+ fullTest:0,
+
+ /*
+
+   الوحدات التي سبق أن أتقنها ليث في تدريبه السابق.
+
+   هذه لا تحتاج إلى إعادة من البداية،
+
+   لكنها تبقى مفتوحة للدراسة والاختبار.
+
+ */
+
+ previousMastered:[
+
+   0,  // Verb to be
+
+   1,  // Pronouns / Possessive
+
+   2,  // Present Simple
+
+   4,  // Questions & Negatives
+
+   5,  // Present Continuous
+
+   9,  // Prepositions
+
+   10, // Past Simple
+
+   12, // Present Perfect
+
+   13, // Present Perfect vs Simple
+
+   14  // Past Simple vs Present Perfect
+
+ ],
+
+ previousTests:{
+
+   presentSimple:true,
+
+   presentContinuous:true,
+
+   presentPerfect:true,
+
+   mixedTenses:true,
+
+   doDoes:true,
+
+   haveHas:true,
+
+   sinceFor:true,
+
+   alreadyYet:true,
+
+   prepositions:true,
+
+   thirdForm:true
+
+ }
 
 };
+
+/* =====================================================
+
+   LOAD / MIGRATION
+
+===================================================== */
+
+let saved=JSON.parse(localStorage.getItem(KEY)||"null");
+
+let state=saved
+
+ ? Object.assign({},DEFAULT_STATE,saved)
+
+ : JSON.parse(JSON.stringify(DEFAULT_STATE));
+
+/*
+
+  إذا كانت هناك بيانات قديمة،
+
+  نضمن وجود الحقول الجديدة بدون حذف التقدم.
+
+*/
+
+if(!Array.isArray(state.previousMastered)){
+
+ state.previousMastered=[...DEFAULT_STATE.previousMastered];
+
+}
+
+if(!state.previousTests){
+
+ state.previousTests={...DEFAULT_STATE.previousTests};
+
+}
+
+if(!Array.isArray(state.completed)){
+
+ state.completed=[];
+
+}
+
+if(!state.unitScores){
+
+ state.unitScores={};
+
+}
+
+if(!Array.isArray(state.mistakes)){
+
+ state.mistakes=[];
+
+}
+
+if(!Array.isArray(state.knownWords)){
+
+ state.knownWords=[];
+
+}
+
+if(!Array.isArray(state.missedWords)){
+
+ state.missedWords=[];
+
+}
+
+/* =====================================================
+
+   SAVE
+
+===================================================== */
 
 function save(){
 
@@ -1089,6 +1673,12 @@ function save(){
  updateHome();
 
 }
+
+/* =====================================================
+
+   NORMALIZE
+
+===================================================== */
 
 function normalize(s){
 
@@ -1104,59 +1694,155 @@ function normalize(s){
 
 }
 
+/* =====================================================
+
+   SHOW
+
+===================================================== */
+
 function show(id){
 
- document.querySelectorAll("section").forEach(x=>x.classList.add("hidden"));
+ document
 
- document.getElementById(id).classList.remove("hidden");
+ .querySelectorAll("section")
 
- if(id==="home")updateHome();
+ .forEach(x=>x.classList.add("hidden"));
 
- if(id==="curriculum")renderUnits();
+ document
 
- if(id==="vocab")renderWord();
+ .getElementById(id)
 
- if(id==="stats")renderStats();
+ .classList.remove("hidden");
 
- if(id==="practice")renderScenarios();
+ if(id==="home")
 
- window.scrollTo({top:0,behavior:"smooth"});
+ updateHome();
+
+ if(id==="curriculum")
+
+ renderUnits();
+
+ if(id==="vocab")
+
+ renderWord();
+
+ if(id==="stats")
+
+ renderStats();
+
+ if(id==="practice")
+
+ renderScenarios();
+
+ window.scrollTo({
+
+   top:0,
+
+   behavior:"smooth"
+
+ });
 
 }
 
-/* =========================
+/* =====================================================
 
-   HOME / PROGRESS
+   HOME
 
-========================= */
+===================================================== */
 
 function updateHome(){
 
  document.getElementById("points").textContent=state.points;
 
- document.getElementById("level").textContent=Math.max(1,Math.floor(state.points/100)+1);
+ document.getElementById("level").textContent=
 
- document.getElementById("streak").textContent=state.streak;
+ Math.max(1,Math.floor(state.points/100)+1);
 
- let acc=state.correct+state.wrong?
+ document.getElementById("streak").textContent=
 
- Math.round(state.correct/(state.correct+state.wrong)*100):0;
+ state.streak;
 
- document.getElementById("accuracy").textContent=acc+"%";
+ let total=state.correct+state.wrong;
 
- let c=state.completed.length;
+ let acc=total
 
- document.getElementById("overallBar").style.width=(c/24*100)+"%";
+ ?Math.round(state.correct/total*100)
 
- document.getElementById("overallText").textContent=c+" / 24 وحدة";
+ :0;
 
- let r=state.mistakes.length+state.missedWords.length;
+ document.getElementById("accuracy").textContent=
+
+ acc+"%";
+
+ /*
+
+   الوحدة تعتبر منجزة إذا:
+
+   - أكملها حاليًا
+
+   أو
+
+   - أتقنها سابقًا
+
+ */
+
+ let doneUnits=new Set([
+
+   ...state.completed,
+
+   ...state.previousMastered
+
+ ]);
+
+ let c=doneUnits.size;
+
+ document.getElementById("overallBar").style.width=
+
+ (c/24*100)+"%";
+
+ document.getElementById("overallText").textContent=
+
+ c+" / 24 وحدة";
+
+ let r=
+
+ state.mistakes.length+
+
+ state.missedWords.length;
 
  document.getElementById("reviewText").textContent=
 
- r?r+" أخطاء/كلمات تحتاج إلى مراجعة.":"ممتاز! لا توجد أخطاء تحتاج للمراجعة.";
+ r
+
+ ? r+" أخطاء/كلمات تحتاج إلى مراجعة."
+
+ : "ممتاز! لا توجد أخطاء تحتاج للمراجعة.";
+
+ let names=state.previousMastered
+
+ .map(i=>UNITS[i]?UNITS[i][1]:"")
+
+ .filter(Boolean);
+
+ document.getElementById("previousMasteredText").innerHTML=
+
+ names.length
+
+ ? names.map(n=>
+
+   `<span class="badge green">✓ ${n}</span>`
+
+ ).join("")
+
+ : "لا توجد وحدات سابقة محفوظة.";
 
 }
+
+/* =====================================================
+
+   DAILY
+
+===================================================== */
 
 function daily(){
 
@@ -1170,11 +1856,23 @@ function daily(){
 
      const now=new Date(d);
 
-     const diff=Math.round((now-old)/86400000);
+     const diff=
 
-     state.streak=diff===1?state.streak+1:1;
+       Math.round((now-old)/86400000);
 
-   }else state.streak=1;
+     state.streak=
+
+       diff===1
+
+       ?state.streak+1
+
+       :1;
+
+   }else{
+
+     state.streak=1;
+
+   }
 
    state.lastDay=d;
 
@@ -1186,19 +1884,69 @@ function daily(){
 
 }
 
-/* =========================
+/* =====================================================
 
    CURRICULUM
 
-========================= */
+===================================================== */
+
+/*
+
+  أهم تعديل:
+
+  الوحدة مفتوحة إذا:
+
+  1. هي من الوحدات التي أتقنها سابقًا
+
+  2. هي الوحدة الأولى
+
+  3. أكمل المستخدم الوحدة السابقة
+
+  4. الوحدة السابقة منجزة سابقًا
+
+*/
 
 function unlocked(i){
 
- if(i===0)return true;
+ if(state.previousMastered.includes(i))
 
- return state.completed.includes(i-1);
+ return true;
+
+ if(i===0)
+
+ return true;
+
+ if(state.completed.includes(i-1))
+
+ return true;
+
+ if(state.previousMastered.includes(i-1))
+
+ return true;
+
+ return false;
 
 }
+
+/*
+
+  هل الوحدة منجزة؟
+
+*/
+
+function isDone(i){
+
+ return state.completed.includes(i) ||
+
+        state.previousMastered.includes(i);
+
+}
+
+/*
+
+  رسم الوحدات
+
+*/
 
 function renderUnits(){
 
@@ -1208,43 +1956,149 @@ function renderUnits(){
 
    let open=unlocked(i);
 
-   let done=state.completed.includes(i);
+   let done=isDone(i);
 
-   let score=state.unitScores[i]||0;
+   let previous=
+
+     state.previousMastered.includes(i) &&
+
+     !state.completed.includes(i);
+
+   let score=
+
+     state.unitScores[i]||0;
 
    html+=`
 
-   <div class="unit ${open?"open lock":""} ${done?"done":""}">
+   <div class="unit
+
+     ${open?"open":""}
+
+     ${done?"done":""}">
 
     <b>${i+1}. ${u[1]}</b>
 
-    <span class="badge">${u[0]}</span>
+    <span class="badge">
 
-    ${done?'<span class="badge">✓ مكتملة</span>':""}
+      ${u[0]}
+
+    </span>
+
+    ${
+
+      previous
+
+      ? `<span class="badge green">
+
+           ✓ متقنة سابقًا
+
+         </span>`
+
+      : done
+
+      ? `<span class="badge green">
+
+           ✓ مكتملة
+
+         </span>`
+
+      : ""
+
+    }
 
     <p>${u[2]}</p>
 
-    ${score?`<p>أفضل نتيجة: <b>${score}%</b></p>`:""}
+    ${
+
+      score
+
+      ? `<p>
+
+           أفضل نتيجة:
+
+           <b>${score}%</b>
+
+         </p>`
+
+      : ""
+
+    }
 
     ${
 
       open
 
-      ? `<button onclick="openLesson(${i})">درس</button>
+      ? `
 
-         <button onclick="startUnit(${i})" class="secondary">اختبار</button>`
+        <button onclick="openLesson(${i})">
 
-      : `<button disabled>🔒 مغلقة</button>`
+          📖 دراسة
+
+        </button>
+
+        <button
+
+          onclick="startUnit(${i})"
+
+          class="secondary">
+
+          📝 اختبار
+
+        </button>
+
+        ${
+
+          done
+
+          ? `
+
+            <button
+
+              onclick="startUnit(${i})"
+
+              class="gray">
+
+              🔄 مراجعة
+
+            </button>
+
+          `
+
+          : ""
+
+        }
+
+      `
+
+      : `
+
+        <button disabled>
+
+          🔒 مغلقة
+
+        </button>
+
+      `
 
     }
 
-   </div>`;
+   </div>
+
+   `;
 
  });
 
- document.getElementById("units").innerHTML=html;
+ document.getElementById("units").innerHTML=
+
+ html;
 
 }
+
+/* =====================================================
+
+   LESSON
+
+===================================================== */
 
 function openLesson(i){
 
@@ -1252,21 +2106,61 @@ function openLesson(i){
 
  let u=UNITS[i];
 
+ let previous=
+
+   state.previousMastered.includes(i);
+
  document.getElementById("lessonContent").innerHTML=`
 
- <h2>Unit ${i+1}: ${u[1]}</h2>
+ <h2>
 
- <span class="badge">${u[0]}</span>
+ Unit ${i+1}: ${u[1]}
+
+ </h2>
+
+ <span class="badge">
+
+ ${u[0]}
+
+ </span>
+
+ ${
+
+   previous
+
+   ? `
+
+   <span class="badge green">
+
+     ✓ هذا الموضوع متقن سابقًا
+
+   </span>
+
+   `
+
+   : ""
+
+ }
 
  <h3>🎯 الهدف</h3>
 
- <p>إتقان: <b>${u[2]}</b></p>
+ <p>
+
+ إتقان:
+
+ <b>${u[2]}</b>
+
+ </p>
 
  <div class="lessonbox">
 
  <h3>شرح مختصر</h3>
 
- <p>${lessonText(i)}</p>
+ <p>
+
+ ${lessonText(i)}
+
+ </p>
 
  </div>
 
@@ -1274,15 +2168,39 @@ function openLesson(i){
 
  <h3>مثال</h3>
 
- <div class="example">${u[3]}</div>
+ <div class="example">
+
+ ${u[3]}
 
  </div>
 
- <button onclick="say(${JSON.stringify(u[3])})">🔊 اسمع المثال</button>
+ </div>
 
- <button onclick="startUnit(${i})">ابدأ الاختبار</button>
+ <button
 
- <button onclick="show('curriculum')" class="secondary">رجوع</button>
+ onclick="say(${JSON.stringify(u[3])})">
+
+ 🔊 اسمع المثال
+
+ </button>
+
+ <button
+
+ onclick="startUnit(${i})">
+
+ 📝 ابدأ الاختبار
+
+ </button>
+
+ <button
+
+ onclick="show('curriculum')"
+
+ class="secondary">
+
+ رجوع
+
+ </button>
 
  `;
 
@@ -1346,11 +2264,11 @@ function lessonText(i){
 
 }
 
-/* =========================
+/* =====================================================
 
-   QUIZ
+   QUIZ VARIABLES
 
-========================= */
+===================================================== */
 
 let quiz=[];
 
@@ -1362,6 +2280,12 @@ let qUnit=-1;
 
 let quizMode="unit";
 
+/* =====================================================
+
+   UNIT QUIZ
+
+===================================================== */
+
 function startUnit(i){
 
  quizMode="unit";
@@ -1372,19 +2296,121 @@ function startUnit(i){
 
  let topic=UNITS[i][1];
 
- let exact=QUESTIONS.filter(q=>q[0]===level && q[1]===topic);
+ /*
 
- let fallback=QUESTIONS.filter(q=>q[0]===level);
+   بعض الوحدات اسمها مختلف عن Topic الموجود
 
- quiz=[...exact,...fallback.filter(q=>!exact.includes(q))];
+   في بنك الأسئلة، لذلك نستخدم أسئلة مطابقة
 
- if(quiz.length<8)quiz=QUESTIONS.filter(q=>q[0]===level);
+   ثم نستخدم أسئلة المستوى عند الحاجة.
 
- quiz=quiz.slice(0,Math.min(10,quiz.length));
+ */
+
+ let topicMap={
+
+   0:["Verb to be"],
+
+   1:["Possessive"],
+
+   2:["Present Simple"],
+
+   3:["Present Simple"],
+
+   4:["Questions","Negative"],
+
+   5:["Continuous"],
+
+   6:["There is","There are"],
+
+   7:["Articles"],
+
+   8:["Some Any"],
+
+   9:["Prepositions"],
+
+   10:["Past"],
+
+   11:["Review"],
+
+   12:["Present Perfect"],
+
+   13:["Present Perfect","Review"],
+
+   14:["Past vs Perfect"],
+
+   15:["Past Continuous"],
+
+   16:["Future"],
+
+   17:["Modals"],
+
+   18:["Comparative","Superlative"],
+
+   19:["Frequency"],
+
+   20:["Conditional"],
+
+   21:["Infinitive","Gerund"],
+
+   22:["Practical"],
+
+   23:["Review"]
+
+ };
+
+ let wanted=topicMap[i]||[];
+
+ let exact=QUESTIONS.filter(q=>
+
+   q[0]===level &&
+
+   wanted.includes(q[1])
+
+ );
+
+ let fallback=QUESTIONS.filter(q=>
+
+   q[0]===level
+
+ );
+
+ quiz=[
+
+   ...exact,
+
+   ...fallback.filter(q=>!exact.includes(q))
+
+ ];
+
+ if(quiz.length<5){
+
+   quiz=QUESTIONS.filter(q=>
+
+     q[0]===level
+
+   );
+
+ }
+
+ shuffle(quiz);
+
+ quiz=quiz.slice(
+
+   0,
+
+   Math.min(10,quiz.length)
+
+ );
 
  beginQuiz();
 
 }
+
+/* =====================================================
+
+   PLACEMENT
+
+===================================================== */
 
 function startPlacement(){
 
@@ -1392,7 +2418,7 @@ function startPlacement(){
 
  qUnit=-1;
 
- quiz=QUESTIONS.slice(0,QUESTIONS.length);
+ quiz=QUESTIONS.slice();
 
  shuffle(quiz);
 
@@ -1402,17 +2428,67 @@ function startPlacement(){
 
 }
 
+/* =====================================================
+
+   SMART REVIEW
+
+===================================================== */
+
 function startReview(){
 
  quizMode="review";
 
  qUnit=-1;
 
- let wrongTopics=state.mistakes.map(x=>x.topic);
+ /*
 
- let arr=QUESTIONS.filter(q=>wrongTopics.includes(q[1]));
+   نحاول أولًا إعادة الأسئلة
 
- if(!arr.length)arr=QUESTIONS.filter(q=>q[0]==="A1");
+   التي أخطأ فيها المستخدم نفسه.
+
+ */
+
+ let exactQuestions=state.mistakes
+
+ .map(m=>QUESTIONS.find(q=>
+
+   q[2]===m.question
+
+ ))
+
+ .filter(Boolean);
+
+ let wrongTopics=
+
+ state.mistakes.map(x=>x.topic);
+
+ let topicQuestions=
+
+ QUESTIONS.filter(q=>
+
+   wrongTopics.includes(q[1])
+
+ );
+
+ let arr=[
+
+   ...exactQuestions,
+
+   ...topicQuestions.filter(q=>
+
+     !exactQuestions.includes(q)
+
+   )
+
+ ];
+
+ if(!arr.length){
+
+   alert("لا توجد أخطاء محفوظة للمراجعة حاليًا.");
+
+   return;
+
+ }
 
  shuffle(arr);
 
@@ -1421,6 +2497,12 @@ function startReview(){
  beginQuiz();
 
 }
+
+/* =====================================================
+
+   VOCAB REVIEW
+
+===================================================== */
 
 function startVocabReview(){
 
@@ -1434,17 +2516,25 @@ function startVocabReview(){
 
  show("vocab");
 
- let i=state.missedWords[0];
+ state.vocabIndex=
 
- state.vocabIndex=i;
+   state.missedWords[0];
 
  renderWord();
 
 }
 
+/* =====================================================
+
+   BEGIN QUIZ
+
+===================================================== */
+
 function beginQuiz(){
 
- qi=0;qCorrect=0;
+ qi=0;
+
+ qCorrect=0;
 
  show("quiz");
 
@@ -1452,11 +2542,19 @@ function beginQuiz(){
 
 }
 
+/* =====================================================
+
+   RENDER QUESTION
+
+===================================================== */
+
 function renderQuestion(){
 
  if(qi>=quiz.length){
 
-   finishQuiz();return;
+   finishQuiz();
+
+   return;
 
  }
 
@@ -1466,25 +2564,69 @@ function renderQuestion(){
 
  `السؤال ${qi+1} من ${quiz.length}`;
 
- document.getElementById("question").textContent=q[2];
+ document.getElementById("question").textContent=
 
- let opts=[q[3],q[4],q[5],q[6]];
+ q[2];
+
+ let opts=[
+
+   q[3],
+
+   q[4],
+
+   q[5],
+
+   q[6]
+
+ ];
 
  shuffle(opts);
 
  document.getElementById("options").innerHTML=
 
- opts.map(x=>`<button class="option" onclick="answer(this,${JSON.stringify(x)},${JSON.stringify(q[7])})">${x}</button>`).join("");
+ opts.map(x=>
+
+ `<button
+
+   class="option"
+
+   onclick="answer(
+
+     this,
+
+     ${JSON.stringify(x)},
+
+     ${JSON.stringify(q[7])}
+
+   )">
+
+   ${x}
+
+ </button>`
+
+ ).join("");
 
  document.getElementById("explanation").innerHTML="";
 
- document.getElementById("nextBtn").classList.add("hidden");
+ document.getElementById("nextBtn")
+
+ .classList.add("hidden");
 
 }
 
+/* =====================================================
+
+   ANSWER
+
+===================================================== */
+
 function answer(btn,choice,correct){
 
- document.querySelectorAll(".option").forEach(b=>b.disabled=true);
+ document
+
+ .querySelectorAll(".option")
+
+ .forEach(b=>b.disabled=true);
 
  if(choice===correct){
 
@@ -1498,7 +2640,11 @@ function answer(btn,choice,correct){
 
    document.getElementById("explanation").innerHTML=
 
-   `<p style="color:#15803d"><b>✓ صحيح</b></p>`;
+   `<p style="color:#15803d">
+
+     <b>✓ صحيح</b>
+
+   </p>`;
 
  }else{
 
@@ -1506,35 +2652,73 @@ function answer(btn,choice,correct){
 
    state.wrong++;
 
-   state.mistakes.push({
+   /*
 
-     question:quiz[qi][2],
+     نحفظ الخطأ بدون تكرار
 
-     topic:quiz[qi][1],
+   */
 
-     correct:correct,
+   let exists=state.mistakes.some(m=>
 
-     date:Date.now()
+     m.question===quiz[qi][2]
 
-   });
+   );
+
+   if(!exists){
+
+     state.mistakes.push({
+
+       question:quiz[qi][2],
+
+       topic:quiz[qi][1],
+
+       correct:correct,
+
+       date:Date.now()
+
+     });
+
+   }
 
    document.getElementById("explanation").innerHTML=
 
-   `<p style="color:#b91c1c"><b>✗ خطأ</b></p>
+   `<p style="color:#b91c1c">
 
-    <p>الإجابة الصحيحة: <b>${correct}</b></p>
+     <b>✗ خطأ</b>
 
-    <p>${quiz[qi][7]}</p>`;
+   </p>
+
+   <p>
+
+     الإجابة الصحيحة:
+
+     <b>${correct}</b>
+
+   </p>
+
+   <p>
+
+     ${quiz[qi][7]}
+
+   </p>`;
 
  }
 
- document.getElementById("nextBtn").classList.remove("hidden");
+ document.getElementById("nextBtn")
+
+ .classList.remove("hidden");
 
  daily();
 
  save();
 
 }
+
+/* =====================================================
+
+   NEXT QUESTION
+
+===================================================== */
 
 function nextQuestion(){
 
@@ -1544,19 +2728,59 @@ function nextQuestion(){
 
 }
 
+/* =====================================================
+
+   FINISH QUIZ
+
+===================================================== */
+
 function finishQuiz(){
 
- let score=Math.round(qCorrect/quiz.length*100);
+ let score=
+
+   Math.round(
+
+     qCorrect/quiz.length*100
+
+   );
+
+ /*
+
+   اختبار الوحدة
+
+ */
 
  if(quizMode==="unit"){
 
-   state.unitScores[qUnit]=Math.max(state.unitScores[qUnit]||0,score);
+   state.unitScores[qUnit]=
+
+     Math.max(
+
+       state.unitScores[qUnit]||0,
+
+       score
+
+     );
+
+   /*
+
+     حتى لو كانت الوحدة منجزة سابقًا،
+
+     لا نحذف حالة الإتقان.
+
+     وإذا حصل على 80% الآن،
+
+     نضيفها أيضًا إلى completed.
+
+   */
 
    if(score>=80){
 
-     if(!state.completed.includes(qUnit))
+     if(!state.completed.includes(qUnit)){
 
        state.completed.push(qUnit);
+
+     }
 
      state.points+=50;
 
@@ -1564,11 +2788,23 @@ function finishQuiz(){
 
  }
 
+ /*
+
+   اختبار تحديد المستوى
+
+ */
+
  if(quizMode==="placement"){
 
    state.placement=score;
 
  }
+
+ /*
+
+   المراجعة
+
+ */
 
  if(quizMode==="review"){
 
@@ -1584,39 +2820,107 @@ function finishQuiz(){
 
  `<h2>${score}%</h2>
 
- <p>أجبت بشكل صحيح على ${qCorrect} من ${quiz.length}.</p>`;
+ <p>
+
+ أجبت بشكل صحيح على
+
+ <b>${qCorrect}</b>
+
+ من
+
+ <b>${quiz.length}</b>.
+
+ </p>`;
 
  if(quizMode==="unit"){
 
-   msg+=score>=80
+   if(score>=80){
 
-   ?`<p style="color:#15803d">🎉 ممتاز! تم إتقان الوحدة وفتح الوحدة التالية.</p>`
+     msg+=`
 
-   :`<p style="color:#b45309">تحتاج ${80-score}% إضافية للوصول إلى حد الإتقان 80%. راجع الدرس وأعد الاختبار.</p>`;
+     <p style="color:#15803d">
+
+     🎉 ممتاز!
+
+     ${
+
+       state.previousMastered.includes(qUnit)
+
+       ? "أكدت إتقانك السابق لهذه الوحدة."
+
+       : "تم إتقان الوحدة وفتح الوحدة التالية."
+
+     }
+
+     </p>`;
+
+   }else{
+
+     msg+=`
+
+     <p style="color:#b45309">
+
+     تحتاج إلى مراجعة بعض النقاط.
+
+     يمكنك العودة للدرس ثم إعادة الاختبار.
+
+     </p>`;
+
+   }
 
  }
 
  if(quizMode==="placement"){
 
-   let level=score>=80?"A2":"A1";
+   let level=
 
-   msg+=`<p>مستواك المبدئي المقترح: <b>${level}</b></p>`;
+     score>=80
+
+     ?"A2"
+
+     :"A1";
+
+   msg+=`
+
+   <p>
+
+   مستواك المبدئي المقترح:
+
+   <b>${level}</b>
+
+   </p>`;
 
  }
 
- document.getElementById("resultText").innerHTML=msg;
+ if(quizMode==="review"){
+
+   msg+=`
+
+   <p>
+
+   🔄 هذه كانت مراجعة لأخطائك السابقة.
+
+   </p>`;
+
+ }
+
+ document.getElementById("resultText").innerHTML=
+
+ msg;
 
 }
 
-/* =========================
+/* =====================================================
 
    VOCABULARY
 
-========================= */
+===================================================== */
 
 function renderWord(){
 
- let i=state.vocabIndex%WORDS.length;
+ let i=
+
+   state.vocabIndex%WORDS.length;
 
  let w=WORDS[i];
 
@@ -1624,41 +2928,63 @@ function renderWord(){
 
  `الكلمة ${i+1} من ${WORDS.length}`;
 
- document.getElementById("word").textContent=w[0];
+ document.getElementById("word").textContent=
 
- document.getElementById("meaning").textContent=w[1];
+ w[0];
+
+ document.getElementById("meaning").textContent=
+
+ w[1];
 
  document.getElementById("wordExample").innerHTML=
 
  `<b>Example:</b> ${w[2]}`;
 
- let difficult=state.missedWords.length;
+ let difficult=
+
+   state.missedWords.length;
 
  document.getElementById("vocabReviewText").textContent=
 
- difficult?`لديك ${difficult} كلمة تحتاج للمراجعة.`:
+ difficult
 
- "ممتاز، لا توجد كلمات صعبة محفوظة.";
+ ? `لديك ${difficult} كلمة تحتاج للمراجعة.`
+
+ : "ممتاز، لا توجد كلمات صعبة محفوظة.";
 
 }
 
 function nextWord(){
 
- state.vocabIndex=(state.vocabIndex+1)%WORDS.length;
+ state.vocabIndex=
 
- save();renderWord();
+   (state.vocabIndex+1)%WORDS.length;
+
+ save();
+
+ renderWord();
 
 }
 
 function speakCurrent(){
 
- say(WORDS[state.vocabIndex%WORDS.length][0]);
+ say(
+
+   WORDS[
+
+     state.vocabIndex%WORDS.length
+
+   ][0]
+
+ );
 
 }
 
 function knowWord(){
 
- let i=state.vocabIndex%WORDS.length;
+ let i=
+
+   state.vocabIndex%WORDS.length;
 
  if(!state.knownWords.includes(i)){
 
@@ -1668,7 +2994,13 @@ function knowWord(){
 
  }
 
- state.missedWords=state.missedWords.filter(x=>x!==i);
+ state.missedWords=
+
+   state.missedWords.filter(
+
+     x=>x!==i
+
+   );
 
  nextWord();
 
@@ -1676,55 +3008,89 @@ function knowWord(){
 
 function missWord(){
 
- let i=state.vocabIndex%WORDS.length;
+ let i=
 
- if(!state.missedWords.includes(i))
+   state.vocabIndex%WORDS.length;
+
+ if(!state.missedWords.includes(i)){
 
    state.missedWords.push(i);
 
- state.points=Math.max(0,state.points-1);
+ }
+
+ state.points=
+
+   Math.max(
+
+     0,
+
+     state.points-1
+
+   );
 
  nextWord();
 
 }
 
-/* =========================
+/* =====================================================
 
    REAL LIFE
 
-========================= */
+===================================================== */
 
 function renderScenarios(){
 
  let html="";
 
- SCENARIOS.forEach((s,i)=>{
+ SCENARIOS.forEach(s=>{
 
   html+=`
 
   <div class="lessonbox">
 
-   <span class="badge">${s[0]}</span>
+   <span class="badge">
 
-   <h3>${s[1]}</h3>
+   ${s[0]}
 
-   <p>${s[2]}</p>
+   </span>
 
-   <button onclick="say(${JSON.stringify(s[1])})">🔊 اسمع</button>
+   <h3>
 
-  </div>`;
+   ${s[1]}
+
+   </h3>
+
+   <p>
+
+   ${s[2]}
+
+   </p>
+
+   <button
+
+   onclick="say(${JSON.stringify(s[1])})">
+
+   🔊 اسمع
+
+   </button>
+
+  </div>
+
+  `;
 
  });
 
- document.getElementById("scenarios").innerHTML=html;
+ document.getElementById("scenarios").innerHTML=
+
+ html;
 
 }
 
-/* =========================
+/* =====================================================
 
    LISTENING
 
-========================= */
+===================================================== */
 
 let listenIndex=0;
 
@@ -1738,29 +3104,77 @@ function startListening(){
 
 function renderListening(){
 
- let x=LISTEN[listenIndex%LISTEN.length];
+ let x=
+
+   LISTEN[
+
+     listenIndex%LISTEN.length
+
+   ];
 
  document.getElementById("listenContent").innerHTML=`
 
- <p>استمع إلى الجملة ثم حاول فهمها:</p>
+ <p>
 
- <div class="example">${x[0]}</div>
+ استمع إلى الجملة ثم حاول فهمها:
 
- <button onclick="say(${JSON.stringify(x[0])})">🔊 استماع</button>
+ </p>
 
- <button onclick="document.getElementById('listenAnswer').classList.toggle('hidden')" class="secondary">
+ <div class="example">
+
+ ${x[0]}
+
+ </div>
+
+ <button
+
+ onclick="say(${JSON.stringify(x[0])})">
+
+ 🔊 استماع
+
+ </button>
+
+ <button
+
+ onclick="document
+
+ .getElementById('listenAnswer')
+
+ .classList.toggle('hidden')"
+
+ class="secondary">
 
  إظهار المعنى
 
  </button>
 
- <div id="listenAnswer" class="lessonbox hidden">${x[1]}</div>
+ <div
+
+ id="listenAnswer"
+
+ class="lessonbox hidden">
+
+ ${x[1]}
+
+ </div>
 
  <br>
 
- <button onclick="listenCorrect()">✓ فهمتها</button>
+ <button onclick="listenCorrect()">
 
- <button onclick="listenWrong()" class="danger">✗ لم أفهمها</button>
+ ✓ فهمتها
+
+ </button>
+
+ <button
+
+ onclick="listenWrong()"
+
+ class="danger">
+
+ ✗ لم أفهمها
+
+ </button>
 
  `;
 
@@ -1776,7 +3190,11 @@ function listenCorrect(){
 
  listenIndex++;
 
- daily();save();renderListening();
+ daily();
+
+ save();
+
+ renderListening();
 
 }
 
@@ -1786,15 +3204,17 @@ function listenWrong(){
 
  listenIndex++;
 
- save();renderListening();
+ save();
+
+ renderListening();
 
 }
 
-/* =========================
+/* =====================================================
 
    SPEAKING
 
-========================= */
+===================================================== */
 
 let speakIndex=0;
 
@@ -1810,29 +3230,61 @@ function startSpeaking(){
 
 function renderSpeaking(){
 
- let s=SPEAK[speakIndex%SPEAK.length];
+ let s=
+
+   SPEAK[
+
+     speakIndex%SPEAK.length
+
+   ];
 
  document.getElementById("speakContent").innerHTML=`
 
- <div class="example">${s}</div>
+ <div class="example">
 
- <button onclick="say(${JSON.stringify(s)})">🔊 اسمع</button>
+ ${s}
 
- <button onclick="startRecognition()">🎙️ انطق الجملة</button>
+ </div>
+
+ <button
+
+ onclick="say(${JSON.stringify(s)})">
+
+ 🔊 اسمع
+
+ </button>
+
+ <button
+
+ onclick="startRecognition()">
+
+ 🎙️ انطق الجملة
+
+ </button>
 
  `;
 
- document.getElementById("recognized").textContent="";
+ document.getElementById("recognized")
+
+ .textContent="";
 
 }
 
 function startRecognition(){
 
- const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ const SR=
+
+   window.SpeechRecognition ||
+
+   window.webkitSpeechRecognition;
 
  if(!SR){
 
-   alert("المتصفح الحالي لا يدعم التعرف على الكلام. جرّب Safari.");
+   alert(
+
+   "المتصفح الحالي لا يدعم التعرف على الكلام. جرّب Safari."
+
+   );
 
    return;
 
@@ -1848,19 +3300,51 @@ function startRecognition(){
 
  recognition.onresult=function(e){
 
-   let text=e.results[0][0].transcript;
+   let text=
 
-   document.getElementById("recognized").textContent="سمعت: "+text;
+     e.results[0][0].transcript;
 
-   let target=normalize(SPEAK[speakIndex%SPEAK.length]);
+   document.getElementById("recognized")
 
-   let spoken=normalize(text);
+   .textContent=
 
-   let words=target.split(" ");
+     "سمعت: "+text;
 
-   let hit=words.filter(w=>spoken.includes(w)).length;
+   let target=
 
-   let score=Math.round(hit/words.length*100);
+     normalize(
+
+       SPEAK[
+
+         speakIndex%SPEAK.length
+
+       ]
+
+     );
+
+   let spoken=
+
+     normalize(text);
+
+   let words=
+
+     target.split(" ");
+
+   let hit=
+
+     words.filter(
+
+       w=>spoken.includes(w)
+
+     ).length;
+
+   let score=
+
+     Math.round(
+
+       hit/words.length*100
+
+     );
 
    state.speaking.attempts++;
 
@@ -1870,23 +3354,43 @@ function startRecognition(){
 
      state.points+=10;
 
-     alert("ممتاز! نطقك قريب من الجملة المطلوبة — "+score+"%");
+     alert(
+
+       "ممتاز! نطقك قريب من الجملة المطلوبة — "
+
+       +score+"%"
+
+     );
 
      speakIndex++;
 
    }else{
 
-     alert("حاول مرة أخرى. التطابق التقريبي "+score+"%");
+     alert(
+
+       "حاول مرة أخرى. التطابق التقريبي "
+
+       +score+"%"
+
+     );
 
    }
 
-   daily();save();renderSpeaking();
+   daily();
+
+   save();
+
+   renderSpeaking();
 
  };
 
  recognition.onerror=function(){
 
-   alert("لم أستطع التقاط صوتك. حاول مرة أخرى.");
+   alert(
+
+   "لم أستطع التقاط صوتك. حاول مرة أخرى."
+
+   );
 
  };
 
@@ -1894,11 +3398,11 @@ function startRecognition(){
 
 }
 
-/* =========================
+/* =====================================================
 
    WRITING
 
-========================= */
+===================================================== */
 
 let writingIndex=0;
 
@@ -1912,17 +3416,45 @@ function startWriting(){
 
 function renderWriting(){
 
- let x=WRITING[writingIndex%WRITING.length];
+ let x=
+
+   WRITING[
+
+     writingIndex%WRITING.length
+
+   ];
 
  document.getElementById("writingContent").innerHTML=`
 
- <h3>${x[0]}</h3>
+ <h3>
 
- <textarea id="writingInput" placeholder="اكتب إجابتك بالإنجليزية هنا..."></textarea>
+ ${x[0]}
 
- <button onclick="checkWriting()">تصحيح</button>
+ </h3>
 
- <button onclick="say(${JSON.stringify(x[1])})" class="secondary">🔊 اسمع نموذجًا</button>
+ <textarea
+
+ id="writingInput"
+
+ placeholder="اكتب إجابتك بالإنجليزية هنا...">
+
+ </textarea>
+
+ <button onclick="checkWriting()">
+
+ تصحيح
+
+ </button>
+
+ <button
+
+ onclick="say(${JSON.stringify(x[1])})"
+
+ class="secondary">
+
+ 🔊 اسمع نموذجًا
+
+ </button>
 
  <div id="writingFeedback"></div>
 
@@ -1932,9 +3464,25 @@ function renderWriting(){
 
 function checkWriting(){
 
- let input=normalize(document.getElementById("writingInput").value);
+ let input=
 
- let target=normalize(WRITING[writingIndex%WRITING.length][1]);
+   normalize(
+
+     document.getElementById("writingInput").value
+
+   );
+
+ let target=
+
+   normalize(
+
+     WRITING[
+
+       writingIndex%WRITING.length
+
+     ][1]
+
+   );
 
  if(!input){
 
@@ -1944,11 +3492,25 @@ function checkWriting(){
 
  }
 
- let targetWords=target.split(" ");
+ let targetWords=
 
- let hits=targetWords.filter(w=>input.includes(w)).length;
+   target.split(" ");
 
- let score=Math.round(hits/targetWords.length*100);
+ let hits=
+
+   targetWords.filter(
+
+     w=>input.includes(w)
+
+   ).length;
+
+ let score=
+
+   Math.round(
+
+     hits/targetWords.length*100
+
+   );
 
  state.writing.attempts++;
 
@@ -1964,13 +3526,31 @@ function checkWriting(){
 
    <div class="lessonbox">
 
-   <b style="color:#15803d">✓ جيد جدًا — ${score}%</b>
+   <b style="color:#15803d">
 
-   <p>النموذج المقترح:</p>
+   ✓ جيد جدًا — ${score}%
 
-   <div class="example">${WRITING[writingIndex%WRITING.length][1]}</div>
+   </b>
 
-   </div>`;
+   <p>
+
+   النموذج المقترح:
+
+   </p>
+
+   <div class="example">
+
+   ${WRITING[
+
+     writingIndex%WRITING.length
+
+   ][1]}
+
+   </div>
+
+   </div>
+
+   `;
 
    writingIndex++;
 
@@ -1980,67 +3560,195 @@ function checkWriting(){
 
    <div class="lessonbox">
 
-   <b style="color:#b91c1c">تحتاج إلى مراجعة — ${score}%</b>
+   <b style="color:#b91c1c">
 
-   <p>النموذج الصحيح:</p>
+   تحتاج إلى مراجعة — ${score}%
 
-   <div class="example">${WRITING[writingIndex%WRITING.length][1]}</div>
+   </b>
 
-   </div>`;
+   <p>
+
+   النموذج الصحيح:
+
+   </p>
+
+   <div class="example">
+
+   ${WRITING[
+
+     writingIndex%WRITING.length
+
+   ][1]}
+
+   </div>
+
+   </div>
+
+   `;
 
  }
 
- document.getElementById("writingFeedback").innerHTML=feedback;
+ document.getElementById(
 
- daily();save();
+   "writingFeedback"
+
+ ).innerHTML=feedback;
+
+ daily();
+
+ save();
 
 }
 
-/* =========================
+/* =====================================================
 
    STATS
 
-========================= */
+===================================================== */
 
 function renderStats(){
 
- let total=state.correct+state.wrong;
+ let total=
 
- let acc=total?Math.round(state.correct/total*100):0;
+   state.correct+
 
- let ls=state.listening.attempts?
+   state.wrong;
 
- Math.round(state.listening.correct/state.listening.attempts*100):0;
+ let acc=
 
- let sp=state.speaking.attempts?
+   total
 
- Math.round(state.speaking.correct/state.speaking.attempts*100):0;
+   ?Math.round(
 
- let wr=state.writing.attempts?
+     state.correct/total*100
 
- Math.round(state.writing.correct/state.writing.attempts*100):0;
+   )
+
+   :0;
+
+ let ls=
+
+   state.listening.attempts
+
+   ?Math.round(
+
+     state.listening.correct/
+
+     state.listening.attempts*100
+
+   )
+
+   :0;
+
+ let sp=
+
+   state.speaking.attempts
+
+   ?Math.round(
+
+     state.speaking.correct/
+
+     state.speaking.attempts*100
+
+   )
+
+   :0;
+
+ let wr=
+
+   state.writing.attempts
+
+   ?Math.round(
+
+     state.writing.correct/
+
+     state.writing.attempts*100
+
+   )
+
+   :0;
+
+ let doneUnits=
+
+   new Set([
+
+     ...state.completed,
+
+     ...state.previousMastered
+
+   ]).size;
 
  document.getElementById("statsContent").innerHTML=`
 
  <div class="statgrid">
 
-  <div class="stat"><b>${acc}%</b>Grammar / Quiz</div>
+  <div class="stat">
 
-  <div class="stat"><b>${Math.min(100,Math.round(state.knownWords.length/5))}%</b>Vocabulary</div>
+   <b>${acc}%</b>
 
-  <div class="stat"><b>${ls}%</b>Listening</div>
+   Grammar / Quiz
 
-  <div class="stat"><b>${sp}%</b>Speaking</div>
+  </div>
 
-  <div class="stat"><b>${wr}%</b>Writing</div>
+  <div class="stat">
 
-  <div class="stat"><b>${state.completed.length}/24</b>Units</div>
+   <b>
+
+   ${Math.min(
+
+     100,
+
+     Math.round(state.knownWords.length/5)
+
+   )}%
+
+   </b>
+
+   Vocabulary
+
+  </div>
+
+  <div class="stat">
+
+   <b>${ls}%</b>
+
+   Listening
+
+  </div>
+
+  <div class="stat">
+
+   <b>${sp}%</b>
+
+   Speaking
+
+  </div>
+
+  <div class="stat">
+
+   <b>${wr}%</b>
+
+   Writing
+
+  </div>
+
+  <div class="stat">
+
+   <b>${doneUnits}/24</b>
+
+   Units
+
+  </div>
 
  </div>
 
  <div class="lessonbox">
 
- <h3>🎯 نقاط تحتاج تحسين</h3>
+ <h3>
+
+ 🎯 نقاط تحتاج تحسين
+
+ </h3>
 
  ${weakAreas()}
 
@@ -2048,17 +3756,61 @@ function renderStats(){
 
  <div class="lessonbox">
 
- <h3>🏆 إنجازاتك</h3>
+ <h3>
+
+ 🏆 إنجازاتك
+
+ </h3>
 
  ${achievements()}
 
  </div>
 
- <button onclick="resetProgress()" class="danger">مسح التقدم</button>
+ <div class="lessonbox">
+
+ <h3>
+
+ ✅ الوحدات المتقنة سابقًا
+
+ </h3>
+
+ ${
+
+   state.previousMastered
+
+   .map(i=>
+
+     `<span class="badge green">
+
+       ✓ ${i+1}. ${UNITS[i][1]}
+
+     </span>`
+
+   ).join("")
+
+ }
+
+ </div>
+
+ <button
+
+ onclick="resetProgress()"
+
+ class="danger">
+
+ مسح التقدم
+
+ </button>
 
  `;
 
 }
+
+/* =====================================================
+
+   WEAK AREAS
+
+===================================================== */
 
 function weakAreas(){
 
@@ -2066,63 +3818,139 @@ function weakAreas(){
 
  state.mistakes.forEach(x=>{
 
-   map[x.topic]=(map[x.topic]||0)+1;
+   map[x.topic]=
+
+     (map[x.topic]||0)+1;
 
  });
 
- let arr=Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ let arr=
 
- if(!arr.length)return "لا توجد نقاط ضعف مسجلة بعد. استمر بالتدريب.";
+   Object.entries(map)
 
- return arr.map(x=>`<p>🔸 ${x[0]} — ${x[1]} خطأ</p>`).join("");
+   .sort((a,b)=>b[1]-a[1])
+
+   .slice(0,5);
+
+ if(!arr.length)
+
+ return "لا توجد نقاط ضعف مسجلة بعد. استمر بالتدريب.";
+
+ return arr
+
+ .map(x=>
+
+   `<p>
+
+     🔸 ${x[0]} — ${x[1]} خطأ
+
+   </p>`
+
+ )
+
+ .join("");
 
 }
+
+/* =====================================================
+
+   ACHIEVEMENTS
+
+===================================================== */
 
 function achievements(){
 
  let a=[];
 
- if(state.correct>=1)a.push("🥇 أول إجابة صحيحة");
+ if(state.correct>=1)
 
- if(state.correct>=10)a.push("⭐ 10 إجابات صحيحة");
+ a.push("🥇 أول إجابة صحيحة");
 
- if(state.correct>=50)a.push("🏅 50 إجابة صحيحة");
+ if(state.correct>=10)
 
- if(state.correct>=100)a.push("🏆 100 إجابة صحيحة");
+ a.push("⭐ 10 إجابات صحيحة");
 
- if(state.completed.length>=1)a.push("📘 أول وحدة");
+ if(state.correct>=50)
 
- if(state.completed.length>=5)a.push("📚 5 وحدات");
+ a.push("🏅 50 إجابة صحيحة");
 
- if(state.completed.length>=12)a.push("🎓 إكمال A1");
+ if(state.correct>=100)
 
- if(state.completed.length>=24)a.push("👑 إكمال A2");
+ a.push("🏆 100 إجابة صحيحة");
 
- if(state.knownWords.length>=50)a.push("📖 50 كلمة");
+ let doneUnits=
 
- if(state.knownWords.length>=100)a.push("📚 100 كلمة");
+   new Set([
 
- if(state.knownWords.length>=250)a.push("🔥 250 كلمة");
+     ...state.completed,
 
- if(state.knownWords.length>=500)a.push("👑 500 كلمة");
+     ...state.previousMastered
 
- return a.length?a.map(x=>`<span class="badge">${x}</span>`).join(""):
+   ]).size;
 
- "ابدأ التدريب للحصول على أول إنجاز.";
+ if(doneUnits>=1)
+
+ a.push("📘 أول وحدة");
+
+ if(doneUnits>=5)
+
+ a.push("📚 5 وحدات");
+
+ if(doneUnits>=12)
+
+ a.push("🎓 إكمال A1");
+
+ if(doneUnits>=24)
+
+ a.push("👑 إكمال A2");
+
+ if(state.knownWords.length>=50)
+
+ a.push("📖 50 كلمة");
+
+ if(state.knownWords.length>=100)
+
+ a.push("📚 100 كلمة");
+
+ if(state.knownWords.length>=250)
+
+ a.push("🔥 250 كلمة");
+
+ if(state.knownWords.length>=500)
+
+ a.push("👑 500 كلمة");
+
+ return a.length
+
+ ?a.map(x=>
+
+   `<span class="badge">
+
+     ${x}
+
+   </span>`
+
+ ).join("")
+
+ :"ابدأ التدريب للحصول على أول إنجاز.";
 
 }
 
-/* =========================
+/* =====================================================
 
-   UTILITIES
+   SPEECH
 
-========================= */
+===================================================== */
 
 function say(text){
 
  if(!("speechSynthesis" in window)){
 
-   alert("النطق غير مدعوم في هذا المتصفح.");
+   alert(
+
+   "النطق غير مدعوم في هذا المتصفح."
+
+   );
 
    return;
 
@@ -2130,7 +3958,9 @@ function say(text){
 
  speechSynthesis.cancel();
 
- let u=new SpeechSynthesisUtterance(text);
+ let u=
+
+   new SpeechSynthesisUtterance(text);
 
  u.lang="en-US";
 
@@ -2140,13 +3970,35 @@ function say(text){
 
 }
 
+/* =====================================================
+
+   SHUFFLE
+
+===================================================== */
+
 function shuffle(a){
 
- for(let i=a.length-1;i>0;i--){
+ for(
 
-   let j=Math.floor(Math.random()*(i+1));
+   let i=a.length-1;
 
-   [a[i],a[j]]=[a[j],a[i]];
+   i>0;
+
+   i--
+
+ ){
+
+   let j=
+
+     Math.floor(
+
+       Math.random()*(i+1)
+
+     );
+
+   [a[i],a[j]]=
+
+   [a[j],a[i]];
 
  }
 
@@ -2154,9 +4006,19 @@ function shuffle(a){
 
 }
 
+/* =====================================================
+
+   RESET
+
+===================================================== */
+
 function resetProgress(){
 
- if(confirm("هل أنت متأكد؟ سيتم حذف تقدم البرنامج كاملًا.")){
+ if(confirm(
+
+   "هل أنت متأكد؟ سيتم حذف تقدم البرنامج كاملًا."
+
+ )){
 
    localStorage.removeItem(KEY);
 
@@ -2166,11 +4028,11 @@ function resetProgress(){
 
 }
 
-/* =========================
+/* =====================================================
 
    START
 
-========================= */
+===================================================== */
 
 daily();
 
