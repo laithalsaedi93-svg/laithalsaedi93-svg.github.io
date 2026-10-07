@@ -41,7 +41,9 @@ button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-s
 
 <section id="quiz" class="hidden"><div class="card">
 <div class="small" id="qnum"></div><div class="progress"><div id="qbar" class="bar"></div></div>
-<h2 id="qtext"></h2><div id="opts"></div>
+<h2 id="qtext"></h2>
+<button class="secondary" onclick="speakQuestion()">🔊 استمع إلى السؤال</button>
+<div id="opts"></div>
 <div id="explain" class="card hidden"></div>
 <button id="next" onclick="nextQ()" disabled>تحقق</button>
 </div></section>
@@ -163,7 +165,14 @@ function renderUnits(){
 }
 function hide(){["home","lesson","quiz","result"].forEach(x=>$(x).classList.add("hidden"))}
 function goHome(){hide();$("home").classList.remove("hidden");renderUnits()}
-function openUnit(idx){current=units[idx];hide();$("lesson").classList.remove("hidden");$("lessonTag").textContent=current.level;$("lessonTitle").textContent=current.title;$("lessonBody").innerHTML=`<p><b>${current.topic}</b></p><p>${current.lesson}</p><p class="english">${example(current)}</p>`}
+$("lessonBody").innerHTML=`
+<p><b>${current.topic}</b></p>
+<p>${current.lesson}</p>
+<p class="english">${example(current)}</p>
+<button class="secondary" onclick="speakText('${example(current).replace(/'/g,"\\'")}')">
+🔊 استمع إلى المثال
+</button>
+`
 function example(u){if(u.id==="a1u1")return"I am ready. She is busy. They are here.";if(u.id==="a2u1")return"I have finished. She has already left.";return "Study the rule, then test yourself."}
 function beginQuiz(){qIndex=0;score=0;wrong=[];retry=false;selected=null;checked=false;hide();$("quiz").classList.remove("hidden");renderQ()}
 function renderQ(){
@@ -186,6 +195,23 @@ function finish(){
 }
 function retryWrong(){if(!wrong.length)return;retry=true;qIndex=0;score=0;hide();$("quiz").classList.remove("hidden");renderQ()}
 function resetAll(){if(confirm("هل تريد مسح كل تقدمك؟")){localStorage.removeItem("englishProgress");renderUnits()}}
-renderUnits();
-</script>
-</body></html>
+function speakText(text){
+  if (!("speechSynthesis" in window)) {
+    alert("النطق غير مدعوم في هذا المتصفح.");
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "en-US";
+  speech.rate = 0.8;
+  speech.pitch = 1;
+
+  speechSynthesis.speak(speech);
+}
+
+function speakQuestion(){
+  const text = $("qtext").textContent;
+  speakText(text);
+}
