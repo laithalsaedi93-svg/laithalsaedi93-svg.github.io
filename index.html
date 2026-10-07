@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
@@ -17,453 +16,272 @@
 *{box-sizing:border-box}
 
 body{
-
  margin:0;
-
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
-
  background:#f4f7fb;
-
  color:#172033;
-
 }
 
 header{
-
  background:linear-gradient(135deg,#1d4ed8,#2563eb);
-
  color:white;
-
  padding:22px 16px 18px;
-
  position:sticky;
-
  top:0;
-
  z-index:10;
-
  box-shadow:0 3px 15px #0002;
-
 }
 
 header h1{
-
  margin:0;
-
  font-size:23px
-
 }
 
 header p{
-
  margin:6px 0 0;
-
  opacity:.9;
-
  font-size:13px
-
 }
 
 .container{
-
  max-width:900px;
-
  margin:auto;
-
  padding:15px
-
 }
 
 .card{
-
  background:white;
-
  border-radius:18px;
-
  padding:17px;
-
  margin-bottom:14px;
-
  box-shadow:0 3px 15px #0000000c;
-
 }
 
 h2{
-
  margin-top:0;
-
  font-size:20px
-
 }
 
 h3{
-
  margin-bottom:7px
-
 }
 
 button{
-
  border:0;
-
  border-radius:13px;
-
  padding:12px 15px;
-
  font-size:15px;
-
  font-weight:700;
-
  cursor:pointer;
-
  background:#2563eb;
-
  color:white;
-
  margin:4px;
-
 }
 
 button.secondary{
-
  background:#e8eefb;
-
  color:#1e40af
-
 }
 
 button.success{
-
  background:#16a34a
-
 }
 
 button.danger{
-
  background:#dc2626
-
 }
 
 button.gray{
-
  background:#64748b
-
 }
 
 button:disabled{
-
  opacity:.45
-
 }
 
 .nav{
-
  display:grid;
-
  grid-template-columns:repeat(3,1fr);
-
  gap:7px;
-
  margin-bottom:15px;
-
 }
 
 .nav button{
-
  margin:0;
-
  font-size:12px;
-
  padding:10px 5px
-
 }
 
 .statgrid{
-
  display:grid;
-
  grid-template-columns:repeat(2,1fr);
-
  gap:10px;
-
 }
 
 .stat{
-
  background:#f8fafc;
-
  border-radius:14px;
-
  padding:14px;
-
  text-align:center;
-
 }
 
 .stat b{
-
  display:block;
-
  font-size:24px;
-
  color:#2563eb
-
 }
 
 .progress{
-
  height:12px;
-
  background:#e5e7eb;
-
  border-radius:20px;
-
  overflow:hidden;
-
 }
 
 .progress div{
-
  height:100%;
-
  background:#2563eb;
-
  border-radius:20px
-
 }
 
 .option{
-
  width:100%;
-
  text-align:right;
-
  background:#f8fafc;
-
  color:#172033;
-
  border:2px solid #e5e7eb;
-
  margin:5px 0;
-
 }
 
 .option:hover{
-
  border-color:#2563eb
-
 }
 
 .option.correct{
-
  background:#dcfce7;
-
  border-color:#16a34a
-
 }
 
 .option.wrong{
-
  background:#fee2e2;
-
  border-color:#dc2626
-
 }
 
 .badge{
-
  display:inline-block;
-
  padding:7px 10px;
-
  border-radius:20px;
-
  background:#dbeafe;
-
  color:#1d4ed8;
-
  font-size:12px;
-
  margin:3px;
-
 }
 
 .badge.green{
-
  background:#dcfce7;
-
  color:#15803d
-
 }
 
 .badge.orange{
-
  background:#ffedd5;
-
  color:#c2410c
-
 }
 
 .word{
-
  font-size:30px;
-
  font-weight:800;
-
  text-align:center;
-
  color:#1d4ed8;
-
  margin:18px 0 5px;
-
 }
 
 .mean{
-
  text-align:center;
-
  font-size:18px
-
 }
 
 .example{
-
  background:#eff6ff;
-
  border-right:4px solid #2563eb;
-
  padding:12px;
-
  margin:12px 0;
-
  border-radius:8px;
-
  direction:ltr;
-
  text-align:left;
-
 }
 
 textarea,
-
 input{
-
  width:100%;
-
  padding:12px;
-
  border:2px solid #dbe1ea;
-
  border-radius:12px;
-
  font-size:16px;
-
  margin:6px 0;
-
 }
 
 textarea{
-
  min-height:120px
-
 }
 
 .small{
-
  font-size:13px;
-
  color:#64748b
-
 }
 
 .center{
-
  text-align:center
-
 }
 
 .hidden{
-
  display:none!important
-
 }
 
 .lessonbox{
-
  background:#f8fafc;
-
  border-radius:14px;
-
  padding:14px;
-
  margin:10px 0;
-
 }
 
 .unit{
-
  border:2px solid #e5e7eb;
-
  border-radius:15px;
-
  padding:13px;
-
  margin:8px 0;
-
  background:white;
-
 }
 
 .unit.open{
-
  border-color:#bfdbfe
-
 }
 
 .unit.done{
-
  border-color:#86efac;
-
  background:#fafffb
-
 }
 
 .review{
-
  border-right:5px solid #f59e0b;
-
  background:#fffbeb;
-
 }
 
 .mastered{
-
  border-right:5px solid #16a34a;
-
  background:#f0fdf4;
-
 }
 
 footer{
-
  text-align:center;
-
  color:#64748b;
-
  font-size:12px;
-
  padding:25px
-
 }
 
 hr{
-
  border:0;
-
  border-top:1px solid #e5e7eb;
-
  margin:15px 0
-
 }
 
 </style>
@@ -498,6 +316,7 @@ hr{
 
 </div>
 
+
 <!-- HOME -->
 
 <section id="home">
@@ -507,136 +326,110 @@ hr{
 <h2>أهلًا ليث 👋</h2>
 
 <p>
-
 البرنامج يعرف ما أنجزته سابقًا، لذلك لن يجبرك على إعادة دراسة
-
 المواضيع التي أتقنتها.
-
 </p>
 
 <div class="statgrid">
 
 <div class="stat">
-
 <b id="points">0</b>
-
 نقطة
-
 </div>
 
 <div class="stat">
-
 <b id="level">1</b>
-
 المستوى
-
 </div>
 
 <div class="stat">
-
 <b id="streak">0</b>
-
 يوم متواصل
-
 </div>
 
 <div class="stat">
-
 <b id="accuracy">0%</b>
-
 الدقة
-
 </div>
 
 </div>
 
 </div>
+
 
 <div class="card">
 
 <h3>📈 تقدمك العام</h3>
 
 <div class="progress">
-
 <div id="overallBar" style="width:0%"></div>
-
 </div>
 
 <p id="overallText">0 / 24 وحدة</p>
 
 </div>
 
+
 <div class="card mastered">
 
 <h3>✅ ما أتقنته سابقًا</h3>
 
 <p>
-
 هذه الوحدات محسوبة لك كمنجزة، لكن يمكنك الرجوع إليها
-
 ودراستها أو اختبارها في أي وقت.
-
 </p>
 
 <div id="previousMasteredText"></div>
 
 </div>
 
+
 <div class="card review">
 
 <h3>🔁 المراجعة الذكية</h3>
 
 <p id="reviewText">
-
 لا توجد أخطاء تحتاج للمراجعة الآن.
-
 </p>
 
 <button onclick="startReview()">
-
 ابدأ مراجعة أخطائك
-
 </button>
 
 </div>
+
 
 <div class="card">
 
 <h3>🎯 هدف اليوم</h3>
 
 <p>
-
 20 دقيقة يوميًا تكفي إذا كنت ملتزمًا.
-
 </p>
 
 <button onclick="show('daily')">
-
 ابدأ تدريب اليوم
-
 </button>
 
 </div>
+
 
 <div class="card">
 
 <h3>📊 اختبار تحديد المستوى</h3>
 
 <p>
-
 اختبار سريع لمعرفة مستواك الحالي.
-
 </p>
 
 <button onclick="startPlacement()">
-
 ابدأ اختبار المستوى
-
 </button>
 
 </div>
 
 </section>
+
 
 <!-- CURRICULUM -->
 
@@ -649,7 +442,6 @@ hr{
 <p class="small">
 
 الوحدات التي أتقنتها سابقًا تعتبر منجزة،
-
 لكنها تبقى مفتوحة للدراسة والاختبار والمراجعة.
 
 </p>
@@ -659,6 +451,7 @@ hr{
 </div>
 
 </section>
+
 
 <!-- LESSON -->
 
@@ -671,6 +464,7 @@ hr{
 </div>
 
 </section>
+
 
 <!-- QUIZ -->
 
@@ -687,20 +481,16 @@ hr{
 <div id="explanation"></div>
 
 <button
-
 id="nextBtn"
-
 onclick="nextQuestion()"
-
 class="hidden">
-
 السؤال التالي ➜
-
 </button>
 
 </div>
 
 </section>
+
 
 <!-- RESULT -->
 
@@ -713,20 +503,17 @@ class="hidden">
 <div id="resultText"></div>
 
 <button onclick="show('curriculum')">
-
 العودة للمنهج
-
 </button>
 
 <button onclick="show('home')" class="secondary">
-
 الرئيسية
-
 </button>
 
 </div>
 
 </section>
+
 
 <!-- VOCAB -->
 
@@ -737,9 +524,7 @@ class="hidden">
 <h2>📚 الكلمات الأساسية</h2>
 
 <p>
-
 تعلم الكلمة، اسمعها، ثم اختبر نفسك.
-
 </p>
 
 <div id="wordIndex"></div>
@@ -753,32 +538,25 @@ class="hidden">
 <div class="center">
 
 <button onclick="speakCurrent()">
-
 🔊 النطق
-
 </button>
 
 <button onclick="knowWord()" class="success">
-
 ✓ أعرفها
-
 </button>
 
 <button onclick="missWord()" class="danger">
-
 ✗ لا أعرفها
-
 </button>
 
 <button onclick="nextWord()" class="secondary">
-
 التالي
-
 </button>
 
 </div>
 
 </div>
+
 
 <div class="card">
 
@@ -787,14 +565,13 @@ class="hidden">
 <p id="vocabReviewText"></p>
 
 <button onclick="startVocabReview()">
-
 راجع الكلمات الصعبة
-
 </button>
 
 </div>
 
 </section>
+
 
 <!-- DAILY -->
 
@@ -809,77 +586,61 @@ class="hidden">
 <b>1️⃣ Vocabulary — 5 دقائق</b>
 
 <p>
-
 تعلم 5 كلمات جديدة.
-
 </p>
 
 <button onclick="show('vocab')">
-
 ابدأ
-
 </button>
 
 </div>
+
 
 <div class="lessonbox">
 
 <b>2️⃣ Grammar — 5 دقائق</b>
 
 <p>
-
 إذا كانت الوحدة منجزة سابقًا انتقل للجديدة،
-
 وإذا أردت يمكنك مراجعة القديمة.
-
 </p>
 
 <button onclick="show('curriculum')">
-
 ابدأ
-
 </button>
 
 </div>
+
 
 <div class="lessonbox">
 
 <b>3️⃣ Listening — 5 دقائق</b>
 
 <p>
-
 استمع للجمل الإنجليزية وحاول فهمها.
-
 </p>
 
 <button onclick="startListening()">
-
 ابدأ
-
 </button>
 
 </div>
+
 
 <div class="lessonbox">
 
 <b>4️⃣ Speaking / Writing — 5 دقائق</b>
 
 <p>
-
 تحدث أو اكتب جملة باللغة الإنجليزية.
-
 </p>
 
 <button onclick="startSpeaking()">
-
 Speaking
-
 </button>
 
 <button onclick="startWriting()" class="secondary">
-
 Writing
-
 </button>
 
 </div>
@@ -887,6 +648,7 @@ Writing
 </div>
 
 </section>
+
 
 <!-- PRACTICE -->
 
@@ -897,9 +659,7 @@ Writing
 <h2>🗣️ English in Real Life</h2>
 
 <p>
-
 مواقف عملية: العمل، المطعم، الفندق، الهاتف والمقابلة.
-
 </p>
 
 <div id="scenarios"></div>
@@ -907,6 +667,7 @@ Writing
 </div>
 
 </section>
+
 
 <!-- LISTENING -->
 
@@ -922,6 +683,7 @@ Writing
 
 </section>
 
+
 <!-- SPEAKING -->
 
 <section id="speaking" class="hidden">
@@ -931,17 +693,13 @@ Writing
 <h2>🎤 Speaking</h2>
 
 <p>
-
 استمع ثم حاول نطق الجملة.
-
 </p>
 
 <div id="speakContent"></div>
 
 <button onclick="startRecognition()">
-
 🎙️ ابدأ الكلام
-
 </button>
 
 <p id="recognized"></p>
@@ -949,6 +707,7 @@ Writing
 </div>
 
 </section>
+
 
 <!-- WRITING -->
 
@@ -964,6 +723,7 @@ Writing
 
 </section>
 
+
 <!-- STATS -->
 
 <section id="stats" class="hidden">
@@ -978,6 +738,7 @@ Writing
 
 </section>
 
+
 <footer>
 
 English Trainer A1 → A2<br>
@@ -988,12 +749,11 @@ English Trainer A1 → A2<br>
 
 </div>
 
+
 <script>
 
 /* =====================================================
-
    DATA
-
 ===================================================== */
 
 const UNITS=[
@@ -1047,6 +807,7 @@ const UNITS=[
 ["A2","A2 Review","مراجعة شاملة","A2 Final Review"]
 
 ];
+
 
 const QUESTIONS=[
 
@@ -1150,229 +911,122 @@ const QUESTIONS=[
 
 ];
 
+
 const WORDS=[
 
 ["work","يعمل","I work every day."],
-
 ["study","يدرس","I study English."],
-
 ["learn","يتعلم","I learn new words."],
-
 ["know","يعرف","I know the answer."],
-
 ["think","يفكر / يعتقد","I think it is good."],
-
 ["want","يريد","I want to learn."],
-
 ["need","يحتاج","I need help."],
-
 ["make","يصنع / يعمل","I make a plan."],
-
 ["take","يأخذ","Take your book."],
-
 ["give","يعطي","Give me a minute."],
-
 ["get","يحصل على","I get a message."],
-
 ["come","يأتي","Come here."],
-
 ["go","يذهب","I go to work."],
-
 ["have","يملك / لديه","I have a car."],
-
 ["do","يفعل","I do my work."],
-
 ["say","يقول","She says hello."],
-
 ["tell","يخبر","Tell me the truth."],
-
 ["ask","يسأل","Ask a question."],
-
 ["answer","يجيب","Answer the question."],
-
 ["use","يستخدم","I use my phone."],
-
 ["help","يساعد","Can you help me?"],
-
 ["call","يتصل","I will call you."],
-
 ["meet","يقابل","We meet at work."],
-
 ["start","يبدأ","The meeting starts at nine."],
-
 ["finish","ينهي","I finish work at three."],
-
 ["live","يعيش","I live in Basra."],
-
 ["work","عمل","My work is important."],
-
 ["office","مكتب","I am in the office."],
-
 ["company","شركة","I work for a company."],
-
 ["department","قسم","Our department is busy."],
-
 ["manager","مدير","The manager is here."],
-
 ["meeting","اجتماع","We have a meeting."],
-
 ["report","تقرير","I wrote a report."],
-
 ["message","رسالة","I received a message."],
-
 ["phone","هاتف","My phone is new."],
-
 ["email","بريد إلكتروني","I sent an email."],
-
 ["problem","مشكلة","We have a problem."],
-
 ["question","سؤال","I have a question."],
-
 ["information","معلومات","I need information."],
-
 ["important","مهم","This is important."],
-
 ["good","جيد","This is good."],
-
 ["better","أفضل","This is better."],
-
 ["easy","سهل","English can be easy."],
-
 ["difficult","صعب","This question is difficult."],
-
 ["early","مبكر","I arrive early."],
-
 ["late","متأخر","I am late."],
-
 ["today","اليوم","I am working today."],
-
 ["yesterday","أمس","I worked yesterday."],
-
 ["tomorrow","غدًا","I will go tomorrow."],
-
 ["morning","الصباح","Good morning."],
-
 ["afternoon","بعد الظهر","Good afternoon."],
-
 ["evening","المساء","Good evening."],
-
 ["night","الليل","Good night."],
-
 ["time","وقت","What time is it?"],
-
 ["day","يوم","Have a good day."],
-
 ["week","أسبوع","See you next week."],
-
 ["month","شهر","This month is busy."],
-
 ["year","سنة","I started last year."],
-
 ["home","البيت","I am at home."],
-
 ["car","سيارة","My car is outside."],
-
 ["road","طريق","The road is busy."],
-
 ["city","مدينة","Basra is a city."],
-
 ["country","بلد","Iraq is my country."],
-
 ["food","طعام","The food is good."],
-
 ["water","ماء","I need water."],
-
 ["coffee","قهوة","I drink coffee."],
-
 ["restaurant","مطعم","The restaurant is nearby."],
-
 ["hotel","فندق","The hotel is good."],
-
 ["airport","مطار","We are at the airport."],
-
 ["ticket","تذكرة","I have a ticket."],
-
 ["room","غرفة","My room is clean."],
-
 ["money","مال","I need money."],
-
 ["price","سعر","What is the price?"],
-
 ["buy","يشتري","I want to buy it."],
-
 ["pay","يدفع","Can I pay by card?"],
-
 ["open","يفتح","The office is open."],
-
 ["close","يغلق","The shop closes at ten."],
-
 ["read","يقرأ","I read every day."],
-
 ["write","يكتب","I write emails."],
-
 ["listen","يستمع","Listen carefully."],
-
 ["speak","يتحدث","I speak English."],
-
 ["understand","يفهم","I understand you."],
-
 ["remember","يتذكر","I remember the word."],
-
 ["forget","ينسى","Don't forget."],
-
 ["try","يحاول","Try again."],
-
 ["practice","يتدرب","Practice every day."],
-
 ["improve","يتحسن","I want to improve."],
-
 ["correct","صحيح","The answer is correct."],
-
 ["wrong","خطأ","This answer is wrong."],
-
 ["right","يمين / صحيح","You are right."],
-
 ["left","يسار","Turn left."],
-
 ["before","قبل","Come before eight."],
-
 ["after","بعد","Call me after work."],
-
 ["under","تحت","The bag is under the table."],
-
 ["over","فوق / عبر","The plane is over the city."],
-
 ["between","بين","It is between the two buildings."],
-
 ["because","لأن","I study because I want to improve."],
-
 ["but","لكن","It is difficult but useful."],
-
 ["and","و","I work and study."],
-
 ["or","أو","Tea or coffee?"],
-
 ["if","إذا","If I study, I improve."],
-
 ["when","متى / عندما","Call me when you arrive."],
-
 ["always","دائمًا","I always study."],
-
 ["usually","عادةً","I usually work early."],
-
 ["sometimes","أحيانًا","I sometimes walk."],
-
 ["never","أبدًا","I never smoke here."],
-
 ["already","بالفعل","I have already finished."],
-
 ["yet","بعد / حتى الآن","I haven't finished yet."],
-
 ["since","منذ","I have lived here since 2020."],
-
 ["for","لمدة","I have worked here for five years."]
 
 ];
+
 
 const SCENARIOS=[
 
@@ -1402,6 +1056,7 @@ const SCENARIOS=[
 
 ];
 
+
 const LISTEN=[
 
 ["I work in the communications department.","أنا أعمل في قسم الاتصالات."],
@@ -1425,6 +1080,7 @@ const LISTEN=[
 ["Could you repeat that, please?","هل يمكنك تكرار ذلك؟"]
 
 ];
+
 
 const SPEAK=[
 
@@ -1450,6 +1106,7 @@ const SPEAK=[
 
 ];
 
+
 const WRITING=[
 
 ["Introduce yourself.","My name is Laith. I work in the communications department."],
@@ -1474,10 +1131,9 @@ const WRITING=[
 
 ];
 
+
 /* =====================================================
-
    STATE
-
 ===================================================== */
 
 const KEY="englishProgress";
@@ -1505,27 +1161,18 @@ const DEFAULT_STATE={
  placement:null,
 
  listening:{
-
    attempts:0,
-
    correct:0
-
  },
 
  speaking:{
-
    attempts:0,
-
    correct:0
-
  },
 
  writing:{
-
    attempts:0,
-
    correct:0
-
  },
 
  streak:0,
@@ -1537,35 +1184,22 @@ const DEFAULT_STATE={
  fullTest:0,
 
  /*
-
    الوحدات التي سبق أن أتقنها ليث في تدريبه السابق.
 
    هذه لا تحتاج إلى إعادة من البداية،
-
    لكنها تبقى مفتوحة للدراسة والاختبار.
-
  */
-
  previousMastered:[
 
    0,  // Verb to be
-
    1,  // Pronouns / Possessive
-
    2,  // Present Simple
-
    4,  // Questions & Negatives
-
    5,  // Present Continuous
-
    9,  // Prepositions
-
    10, // Past Simple
-
    12, // Present Perfect
-
    13, // Present Perfect vs Simple
-
    14  // Past Simple vs Present Perfect
 
  ],
@@ -1596,74 +1230,54 @@ const DEFAULT_STATE={
 
 };
 
+
 /* =====================================================
-
    LOAD / MIGRATION
-
 ===================================================== */
 
 let saved=JSON.parse(localStorage.getItem(KEY)||"null");
 
 let state=saved
-
  ? Object.assign({},DEFAULT_STATE,saved)
-
  : JSON.parse(JSON.stringify(DEFAULT_STATE));
 
+
 /*
-
   إذا كانت هناك بيانات قديمة،
-
   نضمن وجود الحقول الجديدة بدون حذف التقدم.
-
 */
 
 if(!Array.isArray(state.previousMastered)){
-
  state.previousMastered=[...DEFAULT_STATE.previousMastered];
-
 }
 
 if(!state.previousTests){
-
  state.previousTests={...DEFAULT_STATE.previousTests};
-
 }
 
 if(!Array.isArray(state.completed)){
-
  state.completed=[];
-
 }
 
 if(!state.unitScores){
-
  state.unitScores={};
-
 }
 
 if(!Array.isArray(state.mistakes)){
-
  state.mistakes=[];
-
 }
 
 if(!Array.isArray(state.knownWords)){
-
  state.knownWords=[];
-
 }
 
 if(!Array.isArray(state.missedWords)){
-
  state.missedWords=[];
-
 }
 
+
 /* =====================================================
-
    SAVE
-
 ===================================================== */
 
 function save(){
@@ -1674,10 +1288,9 @@ function save(){
 
 }
 
+
 /* =====================================================
-
    NORMALIZE
-
 ===================================================== */
 
 function normalize(s){
@@ -1694,60 +1307,46 @@ function normalize(s){
 
 }
 
+
 /* =====================================================
-
    SHOW
-
 ===================================================== */
 
 function show(id){
 
  document
-
  .querySelectorAll("section")
-
  .forEach(x=>x.classList.add("hidden"));
 
  document
-
  .getElementById(id)
-
  .classList.remove("hidden");
 
  if(id==="home")
-
  updateHome();
 
  if(id==="curriculum")
-
  renderUnits();
 
  if(id==="vocab")
-
  renderWord();
 
  if(id==="stats")
-
  renderStats();
 
  if(id==="practice")
-
  renderScenarios();
 
  window.scrollTo({
-
    top:0,
-
    behavior:"smooth"
-
  });
 
 }
 
+
 /* =====================================================
-
    HOME
-
 ===================================================== */
 
 function updateHome(){
@@ -1755,35 +1354,26 @@ function updateHome(){
  document.getElementById("points").textContent=state.points;
 
  document.getElementById("level").textContent=
-
  Math.max(1,Math.floor(state.points/100)+1);
 
  document.getElementById("streak").textContent=
-
  state.streak;
 
  let total=state.correct+state.wrong;
 
  let acc=total
-
  ?Math.round(state.correct/total*100)
-
  :0;
 
  document.getElementById("accuracy").textContent=
-
  acc+"%";
 
+
  /*
-
    الوحدة تعتبر منجزة إذا:
-
    - أكملها حاليًا
-
    أو
-
    - أتقنها سابقًا
-
  */
 
  let doneUnits=new Set([
@@ -1797,31 +1387,25 @@ function updateHome(){
  let c=doneUnits.size;
 
  document.getElementById("overallBar").style.width=
-
  (c/24*100)+"%";
 
  document.getElementById("overallText").textContent=
-
  c+" / 24 وحدة";
 
+
  let r=
-
  state.mistakes.length+
-
  state.missedWords.length;
 
  document.getElementById("reviewText").textContent=
 
  r
-
  ? r+" أخطاء/كلمات تحتاج إلى مراجعة."
-
  : "ممتاز! لا توجد أخطاء تحتاج للمراجعة.";
 
+
  let names=state.previousMastered
-
  .map(i=>UNITS[i]?UNITS[i][1]:"")
-
  .filter(Boolean);
 
  document.getElementById("previousMasteredText").innerHTML=
@@ -1829,19 +1413,16 @@ function updateHome(){
  names.length
 
  ? names.map(n=>
-
    `<span class="badge green">✓ ${n}</span>`
-
  ).join("")
 
  : "لا توجد وحدات سابقة محفوظة.";
 
 }
 
+
 /* =====================================================
-
    DAILY
-
 ===================================================== */
 
 function daily(){
@@ -1857,15 +1438,11 @@ function daily(){
      const now=new Date(d);
 
      const diff=
-
        Math.round((now-old)/86400000);
 
      state.streak=
-
        diff===1
-
        ?state.streak+1
-
        :1;
 
    }else{
@@ -1884,68 +1461,55 @@ function daily(){
 
 }
 
+
 /* =====================================================
-
    CURRICULUM
-
 ===================================================== */
 
-/*
 
+/*
   أهم تعديل:
 
   الوحدة مفتوحة إذا:
-
   1. هي من الوحدات التي أتقنها سابقًا
-
   2. هي الوحدة الأولى
-
   3. أكمل المستخدم الوحدة السابقة
-
   4. الوحدة السابقة منجزة سابقًا
-
 */
 
 function unlocked(i){
 
  if(state.previousMastered.includes(i))
-
  return true;
 
  if(i===0)
-
  return true;
 
  if(state.completed.includes(i-1))
-
  return true;
 
  if(state.previousMastered.includes(i-1))
-
  return true;
 
  return false;
 
 }
 
+
 /*
-
   هل الوحدة منجزة؟
-
 */
 
 function isDone(i){
 
  return state.completed.includes(i) ||
-
         state.previousMastered.includes(i);
 
 }
 
+
 /*
-
   رسم الوحدات
-
 */
 
 function renderUnits(){
@@ -1959,107 +1523,84 @@ function renderUnits(){
    let done=isDone(i);
 
    let previous=
-
      state.previousMastered.includes(i) &&
-
      !state.completed.includes(i);
 
    let score=
-
      state.unitScores[i]||0;
+
 
    html+=`
 
    <div class="unit
-
      ${open?"open":""}
-
      ${done?"done":""}">
 
     <b>${i+1}. ${u[1]}</b>
 
     <span class="badge">
-
       ${u[0]}
-
     </span>
 
-    ${
 
+    ${
       previous
 
       ? `<span class="badge green">
-
            ✓ متقنة سابقًا
-
          </span>`
 
       : done
 
       ? `<span class="badge green">
-
            ✓ مكتملة
-
          </span>`
 
       : ""
 
     }
 
+
     <p>${u[2]}</p>
 
-    ${
 
+    ${
       score
 
       ? `<p>
-
            أفضل نتيجة:
-
            <b>${score}%</b>
-
          </p>`
 
       : ""
 
     }
 
-    ${
 
+    ${
       open
 
       ? `
 
         <button onclick="openLesson(${i})">
-
           📖 دراسة
-
         </button>
 
         <button
-
           onclick="startUnit(${i})"
-
           class="secondary">
-
           📝 اختبار
-
         </button>
 
         ${
-
           done
 
           ? `
 
             <button
-
               onclick="startUnit(${i})"
-
               class="gray">
-
               🔄 مراجعة
-
             </button>
 
           `
@@ -2073,9 +1614,7 @@ function renderUnits(){
       : `
 
         <button disabled>
-
           🔒 مغلقة
-
         </button>
 
       `
@@ -2088,16 +1627,15 @@ function renderUnits(){
 
  });
 
- document.getElementById("units").innerHTML=
 
+ document.getElementById("units").innerHTML=
  html;
 
 }
 
+
 /* =====================================================
-
    LESSON
-
 ===================================================== */
 
 function openLesson(i){
@@ -2107,33 +1645,27 @@ function openLesson(i){
  let u=UNITS[i];
 
  let previous=
-
    state.previousMastered.includes(i);
+
 
  document.getElementById("lessonContent").innerHTML=`
 
  <h2>
-
  Unit ${i+1}: ${u[1]}
-
  </h2>
 
  <span class="badge">
-
  ${u[0]}
-
  </span>
 
- ${
 
+ ${
    previous
 
    ? `
 
    <span class="badge green">
-
      ✓ هذا الموضوع متقن سابقًا
-
    </span>
 
    `
@@ -2142,69 +1674,59 @@ function openLesson(i){
 
  }
 
+
  <h3>🎯 الهدف</h3>
 
  <p>
-
  إتقان:
-
  <b>${u[2]}</b>
-
  </p>
+
 
  <div class="lessonbox">
 
  <h3>شرح مختصر</h3>
 
  <p>
-
  ${lessonText(i)}
-
  </p>
 
  </div>
+
 
  <div class="lessonbox">
 
  <h3>مثال</h3>
 
  <div class="example">
-
  ${u[3]}
-
  </div>
 
  </div>
+
 
  <button
-
  onclick="say(${JSON.stringify(u[3])})">
-
  🔊 اسمع المثال
-
  </button>
 
- <button
 
+ <button
  onclick="startUnit(${i})">
-
  📝 ابدأ الاختبار
-
  </button>
 
+
  <button
-
  onclick="show('curriculum')"
-
  class="secondary">
-
  رجوع
-
  </button>
 
  `;
 
 }
+
 
 function lessonText(i){
 
@@ -2264,10 +1786,9 @@ function lessonText(i){
 
 }
 
+
 /* =====================================================
-
    QUIZ VARIABLES
-
 ===================================================== */
 
 let quiz=[];
@@ -2280,10 +1801,9 @@ let qUnit=-1;
 
 let quizMode="unit";
 
+
 /* =====================================================
-
    UNIT QUIZ
-
 ===================================================== */
 
 function startUnit(i){
@@ -2296,14 +1816,11 @@ function startUnit(i){
 
  let topic=UNITS[i][1];
 
+
  /*
-
    بعض الوحدات اسمها مختلف عن Topic الموجود
-
    في بنك الأسئلة، لذلك نستخدم أسئلة مطابقة
-
    ثم نستخدم أسئلة المستوى عند الحاجة.
-
  */
 
  let topicMap={
@@ -2358,58 +1875,50 @@ function startUnit(i){
 
  };
 
+
  let wanted=topicMap[i]||[];
 
  let exact=QUESTIONS.filter(q=>
-
    q[0]===level &&
-
    wanted.includes(q[1])
-
  );
+
 
  let fallback=QUESTIONS.filter(q=>
-
    q[0]===level
-
  );
 
+
  quiz=[
-
    ...exact,
-
    ...fallback.filter(q=>!exact.includes(q))
-
  ];
+
 
  if(quiz.length<5){
 
    quiz=QUESTIONS.filter(q=>
-
      q[0]===level
-
    );
 
  }
 
+
  shuffle(quiz);
 
  quiz=quiz.slice(
-
    0,
-
    Math.min(10,quiz.length)
-
  );
+
 
  beginQuiz();
 
 }
 
+
 /* =====================================================
-
    PLACEMENT
-
 ===================================================== */
 
 function startPlacement(){
@@ -2428,10 +1937,9 @@ function startPlacement(){
 
 }
 
+
 /* =====================================================
-
    SMART REVIEW
-
 ===================================================== */
 
 function startReview(){
@@ -2440,47 +1948,36 @@ function startReview(){
 
  qUnit=-1;
 
+
  /*
-
    نحاول أولًا إعادة الأسئلة
-
    التي أخطأ فيها المستخدم نفسه.
-
  */
 
  let exactQuestions=state.mistakes
-
  .map(m=>QUESTIONS.find(q=>
-
    q[2]===m.question
-
  ))
-
  .filter(Boolean);
 
- let wrongTopics=
 
+ let wrongTopics=
  state.mistakes.map(x=>x.topic);
 
+
  let topicQuestions=
-
  QUESTIONS.filter(q=>
-
    wrongTopics.includes(q[1])
-
  );
 
+
  let arr=[
-
    ...exactQuestions,
-
    ...topicQuestions.filter(q=>
-
      !exactQuestions.includes(q)
-
    )
-
  ];
+
 
  if(!arr.length){
 
@@ -2490,6 +1987,7 @@ function startReview(){
 
  }
 
+
  shuffle(arr);
 
  quiz=arr.slice(0,10);
@@ -2498,10 +1996,9 @@ function startReview(){
 
 }
 
+
 /* =====================================================
-
    VOCAB REVIEW
-
 ===================================================== */
 
 function startVocabReview(){
@@ -2517,17 +2014,15 @@ function startVocabReview(){
  show("vocab");
 
  state.vocabIndex=
-
    state.missedWords[0];
 
  renderWord();
 
 }
 
+
 /* =====================================================
-
    BEGIN QUIZ
-
 ===================================================== */
 
 function beginQuiz(){
@@ -2542,10 +2037,9 @@ function beginQuiz(){
 
 }
 
+
 /* =====================================================
-
    RENDER QUESTION
-
 ===================================================== */
 
 function renderQuestion(){
@@ -2558,75 +2052,65 @@ function renderQuestion(){
 
  }
 
+
  let q=quiz[qi];
+
 
  document.getElementById("quizProgress").innerHTML=
 
  `السؤال ${qi+1} من ${quiz.length}`;
 
- document.getElementById("question").textContent=
 
+ document.getElementById("question").textContent=
  q[2];
 
+
  let opts=[
-
    q[3],
-
    q[4],
-
    q[5],
-
    q[6]
-
  ];
 
+
  shuffle(opts);
+
 
  document.getElementById("options").innerHTML=
 
  opts.map(x=>
 
  `<button
-
    class="option"
-
    onclick="answer(
-
      this,
-
      ${JSON.stringify(x)},
-
      ${JSON.stringify(q[7])}
-
    )">
-
    ${x}
-
  </button>`
 
  ).join("");
 
+
  document.getElementById("explanation").innerHTML="";
 
  document.getElementById("nextBtn")
-
  .classList.add("hidden");
 
 }
 
+
 /* =====================================================
-
    ANSWER
-
 ===================================================== */
 
 function answer(btn,choice,correct){
 
  document
-
  .querySelectorAll(".option")
-
  .forEach(b=>b.disabled=true);
+
 
  if(choice===correct){
 
@@ -2638,12 +2122,11 @@ function answer(btn,choice,correct){
 
    state.points+=10;
 
+
    document.getElementById("explanation").innerHTML=
 
    `<p style="color:#15803d">
-
      <b>✓ صحيح</b>
-
    </p>`;
 
  }else{
@@ -2652,17 +2135,15 @@ function answer(btn,choice,correct){
 
    state.wrong++;
 
+
    /*
-
      نحفظ الخطأ بدون تكرار
-
    */
 
    let exists=state.mistakes.some(m=>
-
      m.question===quiz[qi][2]
-
    );
+
 
    if(!exists){
 
@@ -2680,33 +2161,28 @@ function answer(btn,choice,correct){
 
    }
 
+
    document.getElementById("explanation").innerHTML=
 
    `<p style="color:#b91c1c">
-
      <b>✗ خطأ</b>
-
    </p>
 
    <p>
-
      الإجابة الصحيحة:
-
      <b>${correct}</b>
-
    </p>
 
    <p>
-
      ${quiz[qi][7]}
-
    </p>`;
 
  }
 
- document.getElementById("nextBtn")
 
+ document.getElementById("nextBtn")
  .classList.remove("hidden");
+
 
  daily();
 
@@ -2714,10 +2190,9 @@ function answer(btn,choice,correct){
 
 }
 
+
 /* =====================================================
-
    NEXT QUESTION
-
 ===================================================== */
 
 function nextQuestion(){
@@ -2728,50 +2203,38 @@ function nextQuestion(){
 
 }
 
+
 /* =====================================================
-
    FINISH QUIZ
-
 ===================================================== */
 
 function finishQuiz(){
 
  let score=
-
    Math.round(
-
      qCorrect/quiz.length*100
-
    );
 
+
  /*
-
    اختبار الوحدة
-
  */
 
  if(quizMode==="unit"){
 
    state.unitScores[qUnit]=
-
      Math.max(
-
        state.unitScores[qUnit]||0,
-
        score
-
      );
 
+
    /*
-
      حتى لو كانت الوحدة منجزة سابقًا،
-
      لا نحذف حالة الإتقان.
 
      وإذا حصل على 80% الآن،
-
      نضيفها أيضًا إلى completed.
-
    */
 
    if(score>=80){
@@ -2788,10 +2251,9 @@ function finishQuiz(){
 
  }
 
+
  /*
-
    اختبار تحديد المستوى
-
  */
 
  if(quizMode==="placement"){
@@ -2800,10 +2262,9 @@ function finishQuiz(){
 
  }
 
+
  /*
-
    المراجعة
-
  */
 
  if(quizMode==="review"){
@@ -2812,25 +2273,23 @@ function finishQuiz(){
 
  }
 
+
  save();
 
  show("result");
+
 
  let msg=
 
  `<h2>${score}%</h2>
 
  <p>
-
  أجبت بشكل صحيح على
-
  <b>${qCorrect}</b>
-
  من
-
  <b>${quiz.length}</b>.
-
  </p>`;
+
 
  if(quizMode==="unit"){
 
@@ -2843,7 +2302,6 @@ function finishQuiz(){
      🎉 ممتاز!
 
      ${
-
        state.previousMastered.includes(qUnit)
 
        ? "أكدت إتقانك السابق لهذه الوحدة."
@@ -2870,79 +2328,75 @@ function finishQuiz(){
 
  }
 
+
  if(quizMode==="placement"){
 
    let level=
-
      score>=80
-
      ?"A2"
-
      :"A1";
+
 
    msg+=`
 
    <p>
-
    مستواك المبدئي المقترح:
-
    <b>${level}</b>
-
    </p>`;
 
  }
+
 
  if(quizMode==="review"){
 
    msg+=`
 
    <p>
-
    🔄 هذه كانت مراجعة لأخطائك السابقة.
-
    </p>`;
 
  }
 
- document.getElementById("resultText").innerHTML=
 
+ document.getElementById("resultText").innerHTML=
  msg;
 
 }
 
+
 /* =====================================================
-
    VOCABULARY
-
 ===================================================== */
 
 function renderWord(){
 
  let i=
-
    state.vocabIndex%WORDS.length;
 
  let w=WORDS[i];
+
 
  document.getElementById("wordIndex").textContent=
 
  `الكلمة ${i+1} من ${WORDS.length}`;
 
- document.getElementById("word").textContent=
 
+ document.getElementById("word").textContent=
  w[0];
 
- document.getElementById("meaning").textContent=
 
+ document.getElementById("meaning").textContent=
  w[1];
+
 
  document.getElementById("wordExample").innerHTML=
 
  `<b>Example:</b> ${w[2]}`;
 
- let difficult=
 
+ let difficult=
    state.missedWords.length;
+
 
  document.getElementById("vocabReviewText").textContent=
 
@@ -2954,10 +2408,10 @@ function renderWord(){
 
 }
 
+
 function nextWord(){
 
  state.vocabIndex=
-
    (state.vocabIndex+1)%WORDS.length;
 
  save();
@@ -2966,25 +2420,23 @@ function nextWord(){
 
 }
 
+
 function speakCurrent(){
 
  say(
-
    WORDS[
-
      state.vocabIndex%WORDS.length
-
    ][0]
-
  );
 
 }
 
+
 function knowWord(){
 
  let i=
-
    state.vocabIndex%WORDS.length;
+
 
  if(!state.knownWords.includes(i)){
 
@@ -2994,23 +2446,23 @@ function knowWord(){
 
  }
 
+
  state.missedWords=
-
    state.missedWords.filter(
-
      x=>x!==i
-
    );
+
 
  nextWord();
 
 }
 
+
 function missWord(){
 
  let i=
-
    state.vocabIndex%WORDS.length;
+
 
  if(!state.missedWords.includes(i)){
 
@@ -3018,29 +2470,27 @@ function missWord(){
 
  }
 
+
  state.points=
-
    Math.max(
-
      0,
-
      state.points-1
-
    );
+
 
  nextWord();
 
 }
 
+
 /* =====================================================
-
    REAL LIFE
-
 ===================================================== */
 
 function renderScenarios(){
 
  let html="";
+
 
  SCENARIOS.forEach(s=>{
 
@@ -3049,29 +2499,20 @@ function renderScenarios(){
   <div class="lessonbox">
 
    <span class="badge">
-
    ${s[0]}
-
    </span>
 
    <h3>
-
    ${s[1]}
-
    </h3>
 
    <p>
-
    ${s[2]}
-
    </p>
 
    <button
-
    onclick="say(${JSON.stringify(s[1])})">
-
    🔊 اسمع
-
    </button>
 
   </div>
@@ -3080,19 +2521,19 @@ function renderScenarios(){
 
  });
 
- document.getElementById("scenarios").innerHTML=
 
+ document.getElementById("scenarios").innerHTML=
  html;
 
 }
 
+
 /* =====================================================
-
    LISTENING
-
 ===================================================== */
 
 let listenIndex=0;
+
 
 function startListening(){
 
@@ -3102,74 +2543,62 @@ function startListening(){
 
 }
 
+
 function renderListening(){
 
  let x=
-
    LISTEN[
-
      listenIndex%LISTEN.length
-
    ];
+
 
  document.getElementById("listenContent").innerHTML=`
 
  <p>
-
  استمع إلى الجملة ثم حاول فهمها:
-
  </p>
 
  <div class="example">
-
  ${x[0]}
-
  </div>
 
+
  <button
-
  onclick="say(${JSON.stringify(x[0])})">
-
  🔊 استماع
-
  </button>
 
+
  <button
-
  onclick="document
-
  .getElementById('listenAnswer')
-
  .classList.toggle('hidden')"
-
  class="secondary">
 
  إظهار المعنى
 
  </button>
 
+
  <div
-
  id="listenAnswer"
-
  class="lessonbox hidden">
 
  ${x[1]}
 
  </div>
 
+
  <br>
 
+
  <button onclick="listenCorrect()">
-
  ✓ فهمتها
-
  </button>
 
+
  <button
-
  onclick="listenWrong()"
-
  class="danger">
 
  ✗ لم أفهمها
@@ -3179,6 +2608,7 @@ function renderListening(){
  `;
 
 }
+
 
 function listenCorrect(){
 
@@ -3198,6 +2628,7 @@ function listenCorrect(){
 
 }
 
+
 function listenWrong(){
 
  state.listening.attempts++;
@@ -3210,15 +2641,15 @@ function listenWrong(){
 
 }
 
+
 /* =====================================================
-
    SPEAKING
-
 ===================================================== */
 
 let speakIndex=0;
 
 let recognition=null;
+
 
 function startSpeaking(){
 
@@ -3228,67 +2659,59 @@ function startSpeaking(){
 
 }
 
+
 function renderSpeaking(){
 
  let s=
-
    SPEAK[
-
      speakIndex%SPEAK.length
-
    ];
+
 
  document.getElementById("speakContent").innerHTML=`
 
  <div class="example">
-
  ${s}
-
  </div>
 
+
  <button
-
  onclick="say(${JSON.stringify(s)})">
-
  🔊 اسمع
-
  </button>
 
+
  <button
-
  onclick="startRecognition()">
-
  🎙️ انطق الجملة
-
  </button>
 
  `;
 
- document.getElementById("recognized")
 
+ document.getElementById("recognized")
  .textContent="";
 
 }
 
+
 function startRecognition(){
 
  const SR=
-
    window.SpeechRecognition ||
-
    window.webkitSpeechRecognition;
+
 
  if(!SR){
 
    alert(
-
    "المتصفح الحالي لا يدعم التعرف على الكلام. جرّب Safari."
-
    );
 
    return;
 
  }
+
 
  recognition=new SR();
 
@@ -3298,55 +2721,48 @@ function startRecognition(){
 
  recognition.maxAlternatives=1;
 
+
  recognition.onresult=function(e){
 
    let text=
-
      e.results[0][0].transcript;
 
+
    document.getElementById("recognized")
-
    .textContent=
-
      "سمعت: "+text;
 
+
    let target=
-
      normalize(
-
        SPEAK[
-
          speakIndex%SPEAK.length
-
        ]
-
      );
+
 
    let spoken=
-
      normalize(text);
 
-   let words=
 
+   let words=
      target.split(" ");
 
+
    let hit=
-
      words.filter(
-
        w=>spoken.includes(w)
-
      ).length;
 
+
    let score=
-
      Math.round(
-
        hit/words.length*100
-
      );
 
+
    state.speaking.attempts++;
+
 
    if(score>=70){
 
@@ -3354,27 +2770,24 @@ function startRecognition(){
 
      state.points+=10;
 
+
      alert(
-
        "ممتاز! نطقك قريب من الجملة المطلوبة — "
-
        +score+"%"
-
      );
+
 
      speakIndex++;
 
    }else{
 
      alert(
-
        "حاول مرة أخرى. التطابق التقريبي "
-
        +score+"%"
-
      );
 
    }
+
 
    daily();
 
@@ -3384,27 +2797,27 @@ function startRecognition(){
 
  };
 
+
  recognition.onerror=function(){
 
    alert(
-
    "لم أستطع التقاط صوتك. حاول مرة أخرى."
-
    );
 
  };
+
 
  recognition.start();
 
 }
 
+
 /* =====================================================
-
    WRITING
-
 ===================================================== */
 
 let writingIndex=0;
+
 
 function startWriting(){
 
@@ -3414,47 +2827,41 @@ function startWriting(){
 
 }
 
+
 function renderWriting(){
 
  let x=
-
    WRITING[
-
      writingIndex%WRITING.length
-
    ];
+
 
  document.getElementById("writingContent").innerHTML=`
 
  <h3>
-
  ${x[0]}
-
  </h3>
 
+
  <textarea
-
  id="writingInput"
-
  placeholder="اكتب إجابتك بالإنجليزية هنا...">
-
  </textarea>
 
+
  <button onclick="checkWriting()">
-
  تصحيح
-
  </button>
 
+
  <button
-
  onclick="say(${JSON.stringify(x[1])})"
-
  class="secondary">
 
  🔊 اسمع نموذجًا
 
  </button>
+
 
  <div id="writingFeedback"></div>
 
@@ -3462,27 +2869,22 @@ function renderWriting(){
 
 }
 
+
 function checkWriting(){
 
  let input=
-
    normalize(
-
      document.getElementById("writingInput").value
-
    );
+
 
  let target=
-
    normalize(
-
      WRITING[
-
        writingIndex%WRITING.length
-
      ][1]
-
    );
+
 
  if(!input){
 
@@ -3492,29 +2894,28 @@ function checkWriting(){
 
  }
 
- let targetWords=
 
+ let targetWords=
    target.split(" ");
 
+
  let hits=
-
    targetWords.filter(
-
      w=>input.includes(w)
-
    ).length;
 
+
  let score=
-
    Math.round(
-
      hits/targetWords.length*100
-
    );
+
 
  state.writing.attempts++;
 
+
  let feedback="";
+
 
  if(score>=60){
 
@@ -3522,35 +2923,29 @@ function checkWriting(){
 
    state.points+=10;
 
+
    feedback=`
 
    <div class="lessonbox">
 
    <b style="color:#15803d">
-
    ✓ جيد جدًا — ${score}%
-
    </b>
 
    <p>
-
    النموذج المقترح:
-
    </p>
 
    <div class="example">
-
    ${WRITING[
-
      writingIndex%WRITING.length
-
    ][1]}
-
    </div>
 
    </div>
 
    `;
+
 
    writingIndex++;
 
@@ -3561,25 +2956,17 @@ function checkWriting(){
    <div class="lessonbox">
 
    <b style="color:#b91c1c">
-
    تحتاج إلى مراجعة — ${score}%
-
    </b>
 
    <p>
-
    النموذج الصحيح:
-
    </p>
 
    <div class="example">
-
    ${WRITING[
-
      writingIndex%WRITING.length
-
    ][1]}
-
    </div>
 
    </div>
@@ -3588,11 +2975,11 @@ function checkWriting(){
 
  }
 
+
  document.getElementById(
-
    "writingFeedback"
-
  ).innerHTML=feedback;
+
 
  daily();
 
@@ -3600,202 +2987,144 @@ function checkWriting(){
 
 }
 
+
 /* =====================================================
-
    STATS
-
 ===================================================== */
 
 function renderStats(){
 
  let total=
-
    state.correct+
-
    state.wrong;
 
+
  let acc=
-
    total
-
    ?Math.round(
-
      state.correct/total*100
-
    )
-
    :0;
+
 
  let ls=
-
    state.listening.attempts
-
    ?Math.round(
-
      state.listening.correct/
-
      state.listening.attempts*100
-
    )
-
    :0;
+
 
  let sp=
-
    state.speaking.attempts
-
    ?Math.round(
-
      state.speaking.correct/
-
      state.speaking.attempts*100
-
    )
-
    :0;
+
 
  let wr=
-
    state.writing.attempts
-
    ?Math.round(
-
      state.writing.correct/
-
      state.writing.attempts*100
-
    )
-
    :0;
 
+
  let doneUnits=
-
    new Set([
-
      ...state.completed,
-
      ...state.previousMastered
-
    ]).size;
+
 
  document.getElementById("statsContent").innerHTML=`
 
  <div class="statgrid">
 
   <div class="stat">
-
    <b>${acc}%</b>
-
    Grammar / Quiz
-
   </div>
 
   <div class="stat">
-
    <b>
-
    ${Math.min(
-
      100,
-
      Math.round(state.knownWords.length/5)
-
    )}%
-
    </b>
-
    Vocabulary
-
   </div>
 
   <div class="stat">
-
    <b>${ls}%</b>
-
    Listening
-
   </div>
 
   <div class="stat">
-
    <b>${sp}%</b>
-
    Speaking
-
   </div>
 
   <div class="stat">
-
    <b>${wr}%</b>
-
    Writing
-
   </div>
 
   <div class="stat">
-
    <b>${doneUnits}/24</b>
-
    Units
-
   </div>
 
  </div>
 
+
  <div class="lessonbox">
 
  <h3>
-
  🎯 نقاط تحتاج تحسين
-
  </h3>
 
  ${weakAreas()}
 
  </div>
 
+
  <div class="lessonbox">
 
  <h3>
-
  🏆 إنجازاتك
-
  </h3>
 
  ${achievements()}
 
  </div>
 
+
  <div class="lessonbox">
 
  <h3>
-
  ✅ الوحدات المتقنة سابقًا
-
  </h3>
 
  ${
-
    state.previousMastered
-
    .map(i=>
-
      `<span class="badge green">
-
        ✓ ${i+1}. ${UNITS[i][1]}
-
      </span>`
-
    ).join("")
-
  }
 
  </div>
 
+
  <button
-
  onclick="resetProgress()"
-
  class="danger">
 
  مسح التقدم
@@ -3806,140 +3135,125 @@ function renderStats(){
 
 }
 
+
 /* =====================================================
-
    WEAK AREAS
-
 ===================================================== */
 
 function weakAreas(){
 
  let map={};
 
+
  state.mistakes.forEach(x=>{
 
    map[x.topic]=
-
      (map[x.topic]||0)+1;
 
  });
 
+
  let arr=
-
    Object.entries(map)
-
    .sort((a,b)=>b[1]-a[1])
-
    .slice(0,5);
+
 
  if(!arr.length)
 
  return "لا توجد نقاط ضعف مسجلة بعد. استمر بالتدريب.";
 
+
  return arr
-
  .map(x=>
-
    `<p>
-
      🔸 ${x[0]} — ${x[1]} خطأ
-
    </p>`
-
  )
-
  .join("");
 
 }
 
+
 /* =====================================================
-
    ACHIEVEMENTS
-
 ===================================================== */
 
 function achievements(){
 
  let a=[];
 
- if(state.correct>=1)
 
+ if(state.correct>=1)
  a.push("🥇 أول إجابة صحيحة");
 
- if(state.correct>=10)
 
+ if(state.correct>=10)
  a.push("⭐ 10 إجابات صحيحة");
 
- if(state.correct>=50)
 
+ if(state.correct>=50)
  a.push("🏅 50 إجابة صحيحة");
 
- if(state.correct>=100)
 
+ if(state.correct>=100)
  a.push("🏆 100 إجابة صحيحة");
 
+
  let doneUnits=
-
    new Set([
-
      ...state.completed,
-
      ...state.previousMastered
-
    ]).size;
 
- if(doneUnits>=1)
 
+ if(doneUnits>=1)
  a.push("📘 أول وحدة");
 
- if(doneUnits>=5)
 
+ if(doneUnits>=5)
  a.push("📚 5 وحدات");
 
- if(doneUnits>=12)
 
+ if(doneUnits>=12)
  a.push("🎓 إكمال A1");
 
- if(doneUnits>=24)
 
+ if(doneUnits>=24)
  a.push("👑 إكمال A2");
 
- if(state.knownWords.length>=50)
 
+ if(state.knownWords.length>=50)
  a.push("📖 50 كلمة");
 
- if(state.knownWords.length>=100)
 
+ if(state.knownWords.length>=100)
  a.push("📚 100 كلمة");
 
- if(state.knownWords.length>=250)
 
+ if(state.knownWords.length>=250)
  a.push("🔥 250 كلمة");
 
- if(state.knownWords.length>=500)
 
+ if(state.knownWords.length>=500)
  a.push("👑 500 كلمة");
+
 
  return a.length
 
  ?a.map(x=>
-
    `<span class="badge">
-
      ${x}
-
    </span>`
-
  ).join("")
 
  :"ابدأ التدريب للحصول على أول إنجاز.";
 
 }
 
+
 /* =====================================================
-
    SPEECH
-
 ===================================================== */
 
 function say(text){
@@ -3947,77 +3261,68 @@ function say(text){
  if(!("speechSynthesis" in window)){
 
    alert(
-
    "النطق غير مدعوم في هذا المتصفح."
-
    );
 
    return;
 
  }
 
+
  speechSynthesis.cancel();
 
- let u=
 
+ let u=
    new SpeechSynthesisUtterance(text);
+
 
  u.lang="en-US";
 
  u.rate=.82;
 
+
  speechSynthesis.speak(u);
 
 }
 
+
 /* =====================================================
-
    SHUFFLE
-
 ===================================================== */
 
 function shuffle(a){
 
  for(
-
    let i=a.length-1;
-
    i>0;
-
    i--
-
  ){
 
    let j=
-
      Math.floor(
-
        Math.random()*(i+1)
-
      );
 
-   [a[i],a[j]]=
 
+   [a[i],a[j]]=
    [a[j],a[i]];
 
  }
+
 
  return a;
 
 }
 
+
 /* =====================================================
-
    RESET
-
 ===================================================== */
 
 function resetProgress(){
 
  if(confirm(
-
    "هل أنت متأكد؟ سيتم حذف تقدم البرنامج كاملًا."
-
  )){
 
    localStorage.removeItem(KEY);
@@ -4028,10 +3333,9 @@ function resetProgress(){
 
 }
 
+
 /* =====================================================
-
    START
-
 ===================================================== */
 
 daily();
@@ -4047,5 +3351,4 @@ renderScenarios();
 </script>
 
 </body>
-
 </html>
