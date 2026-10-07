@@ -16,303 +16,73 @@
 
 *{box-sizing:border-box}
 
-body{
+body{margin:0;background:#f4f7fb;color:#172033;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
 
- margin:0;
+header{background:#2563eb;color:#fff;padding:24px 18px 28px;border-radius:0 0 25px 25px}
 
- background:#f4f7fb;
+header h1{margin:0;font-size:25px}
 
- color:#172033;
+header p{margin:6px 0 0;opacity:.9}
 
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
+main{max-width:760px;margin:auto;padding:15px}
 
-}
-
-header{
-
- background:#2563eb;
-
- color:#fff;
-
- padding:24px 18px 28px;
-
- border-radius:0 0 25px 25px
-
-}
-
-header h1{
-
- margin:0;
-
- font-size:25px
-
-}
-
-header p{
-
- margin:6px 0 0;
-
- opacity:.9
-
-}
-
-main{
-
- max-width:760px;
-
- margin:auto;
-
- padding:15px
-
-}
-
-.card{
-
- background:#fff;
-
- border-radius:19px;
-
- padding:18px;
-
- margin:12px 0;
-
- box-shadow:0 5px 18px #0000000a
-
-}
+.card{background:#fff;border-radius:19px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #0000000a}
 
 h2,h3{margin-top:0}
 
-.grid{
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
- display:grid;
+.unit{padding:15px;border:1px solid #e4e8ef;border-radius:15px;background:#fafcff;text-align:right}
 
- grid-template-columns:1fr 1fr;
+.unit b{display:block;margin-bottom:5px}
 
- gap:10px
+.unit small{color:#64748b}
 
-}
+button{width:100%;border:0;border-radius:14px;padding:14px;margin-top:9px;font-size:16px;font-weight:700;background:#2563eb;color:#fff}
 
-.unit{
+.secondary{background:#eaf0ff;color:#1746a2}
 
- padding:15px;
+.danger{background:#fff0f0;color:#b42318}
 
- border:1px solid #e4e8ef;
+.progress{height:9px;background:#e5e7eb;border-radius:10px;overflow:hidden;margin:10px 0}
 
- border-radius:15px;
+.bar{height:100%;background:#2563eb;width:0}
 
- background:#fafcff;
+.tag{display:inline-block;background:#eaf1ff;color:#1d4ed8;padding:6px 10px;border-radius:20px;font-size:13px}
 
- text-align:right
+.small{font-size:13px;color:#64748b}
 
-}
+.score{font-size:34px;font-weight:800;color:#2563eb;text-align:center}
 
-.unit b{
+.option{background:#f8fafc;color:#172033;text-align:right;border:2px solid transparent}
 
- display:block;
+.option.selected{border-color:#2563eb;background:#eef4ff}
 
- margin-bottom:5px
+.option.correct{border-color:#16a34a;background:#ecfdf3}
 
-}
+.option.wrong{border-color:#dc2626;background:#fef2f2}
 
-.unit small{
+.english{direction:ltr;text-align:left;font-size:22px;font-weight:700}
 
- color:#64748b
+.hidden{display:none}
 
-}
+.center{text-align:center}
 
-button{
+.word{font-size:38px;margin:20px 0 10px}
 
- width:100%;
+.meaning{font-size:22px;font-weight:700}
 
- border:0;
+.example{margin:20px 0;padding:15px;background:#f8fafc;border-radius:15px}
 
- border-radius:14px;
+.stat{font-size:20px;font-weight:700;margin:8px 0}
 
- padding:14px;
+.error-item{padding:12px;margin:8px 0;background:#fff7ed;border-radius:12px;border-right:4px solid #f97316}
 
- margin-top:9px;
-
- font-size:16px;
-
- font-weight:700;
-
- background:#2563eb;
-
- color:#fff
-
-}
-
-.secondary{
-
- background:#eaf0ff;
-
- color:#1746a2
-
-}
-
-.danger{
-
- background:#fff0f0;
-
- color:#b42318
-
-}
-
-.progress{
-
- height:9px;
-
- background:#e5e7eb;
-
- border-radius:10px;
-
- overflow:hidden;
-
- margin:10px 0
-
-}
-
-.bar{
-
- height:100%;
-
- background:#2563eb;
-
- width:0
-
-}
-
-.tag{
-
- display:inline-block;
-
- background:#eaf1ff;
-
- color:#1d4ed8;
-
- padding:6px 10px;
-
- border-radius:20px;
-
- font-size:13px
-
-}
-
-.small{
-
- font-size:13px;
-
- color:#64748b
-
-}
-
-.score{
-
- font-size:34px;
-
- font-weight:800;
-
- color:#2563eb;
-
- text-align:center
-
-}
-
-.option{
-
- background:#f8fafc;
-
- color:#172033;
-
- text-align:right;
-
- border:2px solid transparent
-
-}
-
-.option.selected{
-
- border-color:#2563eb;
-
- background:#eef4ff
-
-}
-
-.option.correct{
-
- border-color:#16a34a;
-
- background:#ecfdf3
-
-}
-
-.option.wrong{
-
- border-color:#dc2626;
-
- background:#fef2f2
-
-}
-
-.english{
-
- direction:ltr;
-
- text-align:left;
-
- font-size:22px;
-
- font-weight:700
-
-}
-
-.hidden{
-
- display:none
-
-}
-
-.center{
-
- text-align:center
-
-}
-
-.word{
-
- font-size:38px;
-
- margin:20px 0 10px
-
-}
-
-.meaning{
-
- font-size:22px;
-
- font-weight:700
-
-}
-
-.example{
-
- margin:20px 0;
-
- padding:15px;
-
- background:#f8fafc;
-
- border-radius:15px
-
-}
+.success-box{padding:14px;background:#ecfdf3;border-radius:14px;color:#166534;margin-top:12px}
 
 @media(max-width:500px){
 
- .grid{
-
-  grid-template-columns:1fr
-
- }
+.grid{grid-template-columns:1fr}
 
 }
 
@@ -356,6 +126,12 @@ button{
 
 </button>
 
+<button class="secondary" onclick="openMistakes()">
+
+🧠 مراجعة أخطائي
+
+</button>
+
 </div>
 
 <div class="card">
@@ -382,9 +158,7 @@ button{
 
 شرح قبل الاختبار • سؤال واحد كل مرة •
 
-تصحيح وشرح • إعادة الأخطاء •
-
-حفظ التقدم تلقائيًا.
+تصحيح وشرح • حفظ الأخطاء • إعادة الأخطاء.
 
 </p>
 
@@ -476,7 +250,7 @@ button{
 
 <button id="retryWrong" onclick="retryWrong()">
 
-🔁 إعادة الأخطاء
+🔁 إعادة أخطاء الوحدة
 
 </button>
 
@@ -521,6 +295,42 @@ button{
 <button onclick="nextVocab()">
 
 الكلمة التالية ➜
+
+</button>
+
+<button class="secondary" onclick="goHome()">
+
+الرئيسية
+
+</button>
+
+</div>
+
+</section>
+
+<!-- MISTAKES -->
+
+<section id="mistakes" class="hidden">
+
+<div class="card">
+
+<span class="tag">Smart Review</span>
+
+<h2>🧠 أخطائي</h2>
+
+<div id="mistakeStats"></div>
+
+<div id="mistakeList"></div>
+
+<button id="startMistakesBtn" onclick="startMistakeQuiz()">
+
+ابدأ مراجعة الأخطاء
+
+</button>
+
+<button class="danger" onclick="clearMistakes()">
+
+مسح سجل الأخطاء
 
 </button>
 
@@ -764,7 +574,7 @@ title:"الوحدة 1 — Present Perfect",
 
 topic:"المضارع التام",
 
-lesson:"Present Perfect = have/has + التصريف الثالث. نستخدمه للخبرات أو الأحداث المرتبطة بالحاضر.",
+lesson:"Present Perfect = have/has + التصريف الثالث.",
 
 qs:[
 
@@ -790,11 +600,11 @@ title:"الوحدة 2 — Present Perfect vs Simple",
 
 topic:"Present Simple vs Present Perfect",
 
-lesson:"Present Simple للعادات، وPresent Perfect لحدث وقع وله علاقة بالحاضر.",
+lesson:"Present Simple للعادات، وPresent Perfect لحدث مرتبط بالحاضر.",
 
 qs:[
 
-["I ___ English every day.",["study","have studied","am studying"],0,"every day عادة متكررة."],
+["I ___ English every day.",["study","have studied","am studying"],0,"every day عادة."],
 
 ["I ___ this movie before.",["see","saw","have seen"],2,"before هنا تناسب Present Perfect."],
 
@@ -816,7 +626,7 @@ title:"الوحدة 3 — Past vs Present Perfect",
 
 topic:"Past Simple vs Present Perfect",
 
-lesson:"إذا كان الوقت الماضي محددًا نستخدم Past Simple. مع since/for أو وقت غير محدد قد نستخدم Present Perfect.",
+lesson:"إذا كان الوقت الماضي محددًا نستخدم Past Simple.",
 
 qs:[
 
@@ -826,7 +636,7 @@ qs:[
 
 ["She ___ here since 2020.",["worked","has worked","works"],1,"since → Present Perfect."],
 
-["They ___ the car last week.",["have bought","bought","buy"],1,"last week وقت ماضٍ محدد."]
+["They ___ the car last week.",["have bought","bought","buy"],1,"last week وقت محدد."]
 
 ]
 
@@ -850,7 +660,7 @@ qs:[
 
 ["She ___ swim very well.",["can","should","will"],0,"can = يستطيع."],
 
-["You ___ see a doctor.",["can","should","are"],1,"should تستخدم للنصيحة."],
+["You ___ see a doctor.",["can","should","are"],1,"should للنصيحة."],
 
 ["We ___ travel next week.",["will","have","can"],0,"will للمستقبل."]
 
@@ -932,9 +742,13 @@ let selected=null;
 
 let checked=false;
 
+let mistakeQuiz=false;
+
+let mistakeList=[];
+
 /* =========================
 
-   أدوات
+   الأدوات
 
 ========================= */
 
@@ -1034,7 +848,9 @@ function hide(){
 
   "result",
 
-  "vocab"
+  "vocab",
+
+  "mistakes"
 
  ].forEach(x=>{
 
@@ -1096,7 +912,7 @@ function openUnit(idx){
 
 /* =========================
 
-   أمثلة النطق
+   الأمثلة
 
 ========================= */
 
@@ -1138,6 +954,8 @@ function beginQuiz(){
 
  retry=false;
 
+ mistakeQuiz=false;
+
  selected=null;
 
  checked=false;
@@ -1158,13 +976,23 @@ function beginQuiz(){
 
 function renderQ(){
 
- const q=
+ let q;
 
- retry
+ if(mistakeQuiz){
 
- ? wrong[qIndex]
+  q=mistakeList[qIndex].question;
 
- : current.qs[qIndex];
+ }else{
+
+  q=
+
+   retry
+
+   ? wrong[qIndex]
+
+   : current.qs[qIndex];
+
+ }
 
  selected=null;
 
@@ -1176,13 +1004,17 @@ function renderQ(){
 
  $("explain").classList.add("hidden");
 
- const total=
+ let total=
 
- retry
+  mistakeQuiz
 
- ? wrong.length
+  ? mistakeList.length
 
- : current.qs.length;
+  : retry
+
+  ? wrong.length
+
+  : current.qs.length;
 
  $("qnum").textContent=
 
@@ -1238,19 +1070,75 @@ function choose(btn,n){
 
 /* =========================
 
+   حفظ الخطأ
+
+========================= */
+
+function addMistake(question){
+
+ let d=data();
+
+ if(!d.mistakes){
+
+  d.mistakes=[];
+
+ }
+
+ const exists=d.mistakes.find(
+
+  x=>x.id===question[0]
+
+ );
+
+ if(exists){
+
+  exists.count=(exists.count||1)+1;
+
+ }else{
+
+  d.mistakes.push({
+
+   id:question[0],
+
+   question:question,
+
+   count:1,
+
+   lastWrong:new Date().toISOString()
+
+  });
+
+ }
+
+ save(d);
+
+}
+
+/* =========================
+
    السؤال التالي
 
 ========================= */
 
 function nextQ(){
 
- const q=
+ let q;
 
- retry
+ if(mistakeQuiz){
 
- ? wrong[qIndex]
+  q=mistakeList[qIndex].question;
 
- : current.qs[qIndex];
+ }else{
+
+  q=
+
+   retry
+
+   ? wrong[qIndex]
+
+   : current.qs[qIndex];
+
+ }
 
  if(!checked){
 
@@ -1262,9 +1150,15 @@ function nextQ(){
 
    score++;
 
-  }else if(!retry){
+  }else{
 
-   wrong.push(q);
+   if(!retry && !mistakeQuiz){
+
+    wrong.push(q);
+
+   }
+
+   addMistake(q);
 
   }
 
@@ -1286,9 +1180,13 @@ function nextQ(){
 
   $("explain").classList.remove("hidden");
 
-  const total=
+  let total=
 
-   retry
+   mistakeQuiz
+
+   ? mistakeList.length
+
+   : retry
 
    ? wrong.length
 
@@ -1308,9 +1206,13 @@ function nextQ(){
 
  qIndex++;
 
- const total=
+ let total=
 
-  retry
+  mistakeQuiz
+
+  ? mistakeList.length
+
+  : retry
 
   ? wrong.length
 
@@ -1336,6 +1238,42 @@ function nextQ(){
 
 function finish(){
 
+ if(mistakeQuiz){
+
+  hide();
+
+  $("result").classList.remove("hidden");
+
+  $("resultTitle").textContent=
+
+   "نتيجة مراجعة الأخطاء";
+
+  $("resultScore").textContent=
+
+   `${score} / ${mistakeList.length}`;
+
+  if(score===mistakeList.length){
+
+   $("resultMsg").textContent=
+
+    "ممتاز جدًا 🎉 أتقنت جميع الأخطاء.";
+
+   removeCorrectMistakes();
+
+  }else{
+
+   $("resultMsg").textContent=
+
+    "بعض الأخطاء ما زالت تحتاج إلى مراجعة. سنحتفظ بها للمرة القادمة.";
+
+  }
+
+  $("retryWrong").style.display="none";
+
+  return;
+
+ }
+
  if(retry){
 
   hide();
@@ -1344,7 +1282,7 @@ function finish(){
 
   $("resultTitle").textContent=
 
-   "مراجعة الأخطاء";
+   "مراجعة أخطاء الوحدة";
 
   $("resultScore").textContent=
 
@@ -1354,7 +1292,9 @@ function finish(){
 
    score===wrong.length
 
-   ?"ممتاز! أتقنت الأخطاء التي أعدناها.":"أعد مراجعة الدرس وحاول مرة أخرى.";
+   ?"ممتاز! أتقنت أخطاء الوحدة."
+
+   :"أعد مراجعة الدرس وحاول مرة أخرى.";
 
   $("retryWrong").style.display="none";
 
@@ -1416,7 +1356,7 @@ function finish(){
 
 /* =========================
 
-   إعادة الأخطاء
+   إعادة أخطاء الوحدة
 
 ========================= */
 
@@ -1425,6 +1365,8 @@ function retryWrong(){
  if(!wrong.length)return;
 
  retry=true;
+
+ mistakeQuiz=false;
 
  qIndex=0;
 
@@ -1435,6 +1377,186 @@ function retryWrong(){
  $("quiz").classList.remove("hidden");
 
  renderQ();
+
+}
+
+/* =========================
+
+   صفحة الأخطاء
+
+========================= */
+
+function openMistakes(){
+
+ hide();
+
+ $("mistakes").classList.remove("hidden");
+
+ renderMistakes();
+
+}
+
+function renderMistakes(){
+
+ let d=data();
+
+ let mistakes=d.mistakes||[];
+
+ $("mistakeStats").innerHTML=
+
+ `
+
+ <div class="stat">عدد الأخطاء المحفوظة: ${mistakes.length}</div>
+
+ <p class="small">
+
+ البرنامج يحفظ الأسئلة التي أخطأت فيها ويعيدها لك حتى تتقنها.
+
+ </p>
+
+ `;
+
+ if(!mistakes.length){
+
+  $("mistakeList").innerHTML=
+
+   `<div class="success-box">
+
+   🎉 لا توجد أخطاء محفوظة حاليًا.
+
+   </div>`;
+
+  $("startMistakesBtn").style.display="none";
+
+  return;
+
+ }
+
+ $("startMistakesBtn").style.display="block";
+
+ $("mistakeList").innerHTML="";
+
+ mistakes.forEach((m,i)=>{
+
+  let div=document.createElement("div");
+
+  div.className="error-item";
+
+  div.innerHTML=
+
+   `<b>${i+1}. ${m.question[0]}</b>
+
+   <br>
+
+   <span class="small">
+
+   عدد الأخطاء: ${m.count||1}
+
+   </span>`;
+
+  $("mistakeList").appendChild(div);
+
+ });
+
+}
+
+/* =========================
+
+   بدء مراجعة الأخطاء
+
+========================= */
+
+function startMistakeQuiz(){
+
+ let d=data();
+
+ let mistakes=d.mistakes||[];
+
+ if(!mistakes.length){
+
+  alert("لا توجد أخطاء محفوظة حاليًا.");
+
+  return;
+
+ }
+
+ mistakeList=mistakes.slice();
+
+ mistakeQuiz=true;
+
+ retry=false;
+
+ qIndex=0;
+
+ score=0;
+
+ hide();
+
+ $("quiz").classList.remove("hidden");
+
+ renderQ();
+
+}
+
+/* =========================
+
+   حذف الأخطاء التي أتقنها
+
+========================= */
+
+function removeCorrectMistakes(){
+
+ let d=data();
+
+ if(!d.mistakes)return;
+
+ /*
+
+  إذا أتقن المستخدم مراجعة الأخطاء كاملة،
+
+  نحذف الأخطاء من السجل.
+
+ */
+
+ d.mistakes=d.mistakes.filter((m,i)=>{
+
+  return i>=mistakeList.length;
+
+ });
+
+ /*
+
+  بما أن الاختبار الحالي شمل كل الأخطاء،
+
+  نعيد السجل فارغًا.
+
+ */
+
+ d.mistakes=[];
+
+ save(d);
+
+}
+
+/* =========================
+
+   مسح سجل الأخطاء
+
+========================= */
+
+function clearMistakes(){
+
+ if(confirm("هل تريد مسح سجل الأخطاء فقط؟")){
+
+  let d=data();
+
+  d.mistakes=[];
+
+  save(d);
+
+  renderMistakes();
+
+ }
 
 }
 
@@ -1486,45 +1608,45 @@ function speakQuestion(){
 
 const vocab=[
 
- {w:"want",m:"يريد",e:"I want to learn English."},
+{w:"want",m:"يريد",e:"I want to learn English."},
 
- {w:"need",m:"يحتاج",e:"I need some help."},
+{w:"need",m:"يحتاج",e:"I need some help."},
 
- {w:"know",m:"يعرف",e:"I know the answer."},
+{w:"know",m:"يعرف",e:"I know the answer."},
 
- {w:"think",m:"يعتقد / يفكر",e:"I think it is good."},
+{w:"think",m:"يعتقد / يفكر",e:"I think it is good."},
 
- {w:"make",m:"يصنع / يجعل",e:"I make coffee."},
+{w:"make",m:"يصنع / يجعل",e:"I make coffee."},
 
- {w:"take",m:"يأخذ",e:"I take the bus."},
+{w:"take",m:"يأخذ",e:"I take the bus."},
 
- {w:"give",m:"يعطي",e:"Please give me the book."},
+{w:"give",m:"يعطي",e:"Please give me the book."},
 
- {w:"get",m:"يحصل على",e:"I get up at seven."},
+{w:"get",m:"يحصل على",e:"I get up at seven."},
 
- {w:"come",m:"يأتي",e:"Come here, please."},
+{w:"come",m:"يأتي",e:"Come here, please."},
 
- {w:"go",m:"يذهب",e:"I go to work every day."},
+{w:"go",m:"يذهب",e:"I go to work every day."},
 
- {w:"work",m:"يعمل",e:"I work every day."},
+{w:"work",m:"يعمل",e:"I work every day."},
 
- {w:"learn",m:"يتعلم",e:"I learn English."},
+{w:"learn",m:"يتعلم",e:"I learn English."},
 
- {w:"study",m:"يدرس",e:"I study English."},
+{w:"study",m:"يدرس",e:"I study English."},
 
- {w:"speak",m:"يتكلم",e:"I speak English."},
+{w:"speak",m:"يتكلم",e:"I speak English."},
 
- {w:"understand",m:"يفهم",e:"I understand you."},
+{w:"understand",m:"يفهم",e:"I understand you."},
 
- {w:"remember",m:"يتذكر",e:"I remember his name."},
+{w:"remember",m:"يتذكر",e:"I remember his name."},
 
- {w:"forget",m:"ينسى",e:"Don't forget your book."},
+{w:"forget",m:"ينسى",e:"Don't forget your book."},
 
- {w:"help",m:"يساعد",e:"Can you help me?"},
+{w:"help",m:"يساعد",e:"Can you help me?"},
 
- {w:"start",m:"يبدأ",e:"Let's start the lesson."},
+{w:"start",m:"يبدأ",e:"Let's start the lesson."},
 
- {w:"finish",m:"ينهي",e:"I have finished my work."}
+{w:"finish",m:"ينهي",e:"I have finished my work."}
 
 ];
 
@@ -1576,13 +1698,13 @@ function speakVocabSentence(){
 
 /* =========================
 
-   مسح التقدم
+   مسح كل التقدم
 
 ========================= */
 
 function resetAll(){
 
- if(confirm("هل تريد مسح كل تقدمك؟")){
+ if(confirm("هل تريد مسح كل تقدمك والأخطاء المحفوظة؟")){
 
   localStorage.removeItem("englishProgress");
 
@@ -1594,7 +1716,7 @@ function resetAll(){
 
 /* =========================
 
-   تشغيل البرنامج
+   تشغيل
 
 ========================= */
 
