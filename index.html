@@ -3,494 +3,458 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1d4ed8">
-<title>English Trainer A1 → A2 | Laith</title>
+<title>English Trainer A1-A2 | Laith</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.7}
-header{background:#1d4ed8;color:white;padding:22px 16px;text-align:center}
-header h1{font-size:23px;margin:0 0 5px}
-header p{margin:0;font-size:14px}
-main{max-width:850px;margin:auto;padding:14px}
-.card{background:white;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 2px 8px #0000000c}
-h2{font-size:19px;margin:0 0 12px}
-h3{font-size:16px;margin:0 0 8px}
-button,select,input,textarea{font:inherit}
-button{border:0;border-radius:11px;padding:11px 14px;background:#1d4ed8;color:white;cursor:pointer;margin:4px}
+body{margin:0;background:#f1f5f9;color:#172033;font-family:Arial,sans-serif;line-height:1.8}
+header{background:#1d4ed8;color:white;padding:20px 14px;text-align:center}
+header h1{margin:0;font-size:23px}
+main{max-width:900px;margin:auto;padding:12px}
+.card{background:#fff;border-radius:15px;padding:16px;margin:12px 0;box-shadow:0 2px 8px #0000000b}
+h2{font-size:20px;margin:0 0 12px}
+h3{font-size:17px;margin:12px 0 5px}
+button{font:inherit;border:0;border-radius:10px;padding:10px 13px;margin:4px;background:#1d4ed8;color:white;cursor:pointer}
 button.secondary{background:#e2e8f0;color:#172033}
-button.green{background:#15803d}
-button.orange{background:#c2410c}
-button:disabled{opacity:.5}
+button.good{background:#15803d}
+button.danger{background:#b91c1c}
+button:disabled{opacity:.55}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px}
-.unit{border:1px solid #dbe3ef;border-radius:12px;padding:12px;background:#fff;text-align:right}
+.unit{padding:12px;border:1px solid #dbe3ef;border-radius:12px}
 .unit.done{border:2px solid #16a34a;background:#f0fdf4}
-.unit button{width:100%;margin:5px 0 0;padding:8px;font-size:14px}
+.unit button{width:100%}
 .small{font-size:13px;color:#64748b}
-.big{font-size:22px;font-weight:750}
-.progress{height:10px;background:#e2e8f0;border-radius:10px;overflow:hidden}
-.progress div{height:100%;background:#16a34a;width:0;transition:width .2s}
-.option{display:block;width:100%;text-align:right;background:#f8fafc;color:#172033;border:1px solid #cbd5e1;margin:8px 0}
-.option:hover{background:#dbeafe}
+.progress{height:10px;background:#e2e8f0;border-radius:20px;overflow:hidden}
+.progress div{height:100%;background:#16a34a;width:0}
+.notice{background:#eff6ff;border-radius:10px;padding:12px;margin:10px 0}
+.option{display:block;width:100%;text-align:right;background:#f8fafc;color:#172033;border:1px solid #cbd5e1}
 .option.correct{background:#dcfce7;border-color:#16a34a}
 .option.wrong{background:#fee2e2;border-color:#dc2626}
-.notice{padding:12px;border-radius:10px;background:#eff6ff;margin:10px 0}
-input,textarea,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;background:white;margin:5px 0}
-textarea{min-height:100px}
+input,textarea,select{width:100%;font:inherit;border:1px solid #cbd5e1;border-radius:9px;padding:10px;margin:5px 0}
+textarea{min-height:120px}
 .hidden{display:none!important}
-footer{text-align:center;color:#64748b;padding:20px;font-size:12px}
-.tag{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:20px;padding:2px 9px;font-size:12px}
-#feedback{padding:10px;border-radius:10px;margin-top:10px}
-@media(max-width:450px){header h1{font-size:20px}main{padding:9px}.card{padding:13px}}
+.tag{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:20px;padding:2px 10px;font-size:12px}
+.en{direction:ltr;text-align:left}
+.wordrow{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-bottom:1px solid #e2e8f0;padding:6px}
+footer{text-align:center;color:#64748b;padding:20px}
 </style>
 </head>
 <body>
 <header>
 <h1>English Trainer A1 → A2</h1>
-<p>برنامج تدريب شخصي — شرح وتدريب واختبار ومتابعة</p>
-<p>تعلم خطوة بخطوة مع حفظ تقدمك</p>
+<div>شرح القواعد • مفردات • استماع • تحدث • قراءة • كتابة • اختبارات</div>
+<div>برنامج تدريبي شخصي يعمل مجانًا على جهازك</div>
 </header>
 <main>
 <section class="card">
-<h2>لوحة تقدمك</h2>
+<h2>تقدمك الدراسي</h2>
 <div class="grid">
-<div><div class="small">الوحدات المكتملة</div><div class="big" id="completedCount">0 / 14</div></div>
-<div><div class="small">إجابات صحيحة</div><div class="big" id="correctCount">0</div></div>
-<div><div class="small">نسبة الإجابات الصحيحة</div><div class="big" id="accuracy">0%</div></div>
-<div><div class="small">الكلمات التي تدربت عليها</div><div class="big" id="wordsCount">0</div></div>
+<div>الوحدات المكتملة <h3 id="done">0 / 14</h3></div>
+<div>دقة الإجابات <h3 id="accuracy">0%</h3></div>
+<div>الإجابات الصحيحة <h3 id="correct">0</h3></div>
+<div>مفردات تدربت عليها <h3 id="seen">0</h3></div>
 </div>
-<div class="progress" style="margin-top:12px"><div id="progressBar"></div></div>
-<p class="small" id="progressText">ابدأ بالوحدة الأولى أو تابع من حيث توقفت.</p>
-<button onclick="continueLearning()">متابعة التعلم</button>
-<button class="secondary" onclick="showHome()">الرئيسية</button>
+<div class="progress"><div id="bar"></div></div>
+<p id="progressText" class="small"></p>
+<button onclick="continueStudy()">تابع من حيث توقفت</button>
+<button class="secondary" onclick="home()">الرئيسية</button>
 </section>
 
 <section id="home">
+<section class="card"><h2>المستوى A1 — مبتدئ</h2><div id="A1" class="grid"></div></section>
+<section class="card"><h2>المستوى A2 — أساسي</h2><div id="A2" class="grid"></div></section>
 <section class="card">
-<h2>منهج A1 — المستوى المبتدئ</h2>
-<div id="a1Units" class="grid"></div>
-</section>
-<section class="card">
-<h2>منهج A2 — المستوى الأساسي</h2>
-<div id="a2Units" class="grid"></div>
-</section>
-<section class="card">
-<h2>التدريب على المهارات</h2>
+<h2>المهارات والتدريب العام</h2>
 <div class="grid">
 <button onclick="openSkill('listen')">الاستماع</button>
-<button onclick="openSkill('read')">القراءة</button>
-<button onclick="openSkill('write')">الكتابة</button>
 <button onclick="openSkill('speak')">التحدث والنطق</button>
-<button onclick="openVocabulary()">المفردات</button>
-<button onclick="startFinalExam()">الاختبار النهائي</button>
-<button class="orange" onclick="retryErrors()">إعادة الأخطاء</button>
+<button onclick="openSkill('read')">القراءة والفهم</button>
+<button onclick="openSkill('write')">الكتابة والتصحيح</button>
+<button onclick="vocabulary()">قاموس المفردات</button>
+<button onclick="finalExam()">اختبار شامل A1+A2</button>
+<button onclick="wrongReview()">إعادة الأسئلة الخاطئة</button>
 </div>
 </section>
 <section class="card">
-<h2>إدارة التقدم</h2>
-<p class="small">يُحفظ تقدمك تلقائيًا في هذا المتصفح على جهازك.</p>
-<button class="secondary" onclick="exportProgress()">نسخ نسخة احتياطية</button>
-<button class="secondary" onclick="document.getElementById('importFile').click()">استعادة نسخة احتياطية</button>
-<input id="importFile" type="file" accept=".json,application/json" class="hidden" onchange="importProgress(event)">
-<button class="orange" onclick="resetProgress()">إعادة ضبط التقدم</button>
+<h2>النسخ الاحتياطي</h2>
+<button onclick="backup()">نسخ تقدمي</button>
+<button class="secondary" onclick="document.getElementById('restoreFile').click()">استعادة التقدم</button>
+<input id="restoreFile" type="file" accept=".json" class="hidden" onchange="restore(event)">
+<button class="danger" onclick="resetAll()">مسح التقدم والبدء من جديد</button>
 </section>
 </section>
 
 <section id="lesson" class="hidden">
 <div class="card">
-<span id="unitLevel" class="tag"></span>
-<h2 id="lessonTitle"></h2>
-<div id="lessonExplanation"></div>
-<div class="notice" id="lessonExample"></div>
-<h3>مفردات الوحدة</h3>
-<div id="lessonWords"></div>
-<button onclick="startQuiz()">ابدأ اختبار الوحدة</button>
-<button class="secondary" onclick="showHome()">العودة للوحدات</button>
+<span id="level" class="tag"></span>
+<h2 id="title"></h2>
+<h3>شرح الدرس</h3><div id="explanation"></div>
+<h3>أمثلة مع الترجمة</h3><div id="examples"></div>
+<h3>تذكّر القاعدة</h3><div id="rule" class="notice"></div>
+<h3>مفردات الوحدة</h3><div id="unitWords"></div>
+<button onclick="beginUnitQuiz()">ابدأ الاختبار</button>
+<button class="secondary" onclick="home()">عودة</button>
 </div>
 </section>
 
 <section id="quiz" class="hidden">
 <div class="card">
-<div class="small" id="quizUnit"></div>
-<div class="progress"><div id="quizProgress"></div></div>
-<p id="questionCounter" class="small"></p>
-<h2 id="questionText"></h2>
-<div id="options"></div>
-<div id="feedback" class="hidden"></div>
-<button id="nextButton" onclick="nextQuestion()" disabled>السؤال التالي</button>
-<button class="secondary" onclick="showHome()">إنهاء والعودة للرئيسية</button>
+<div id="quizName" class="small"></div>
+<div class="progress"><div id="quizBar"></div></div>
+<p id="counter" class="small"></p>
+<h2 id="question"></h2>
+<div id="answers"></div>
+<div id="feedback" class="notice hidden"></div>
+<button id="next" disabled onclick="nextQ()">السؤال التالي</button>
+<button class="secondary" onclick="home()">عودة للرئيسية</button>
 </div>
 </section>
 
-<section id="skills" class="hidden">
+<section id="skill" class="hidden">
 <div class="card">
 <h2 id="skillTitle"></h2>
-<div id="skillContent"></div>
-<button class="secondary" onclick="showHome()">العودة للرئيسية</button>
+<div id="skillBody"></div>
+<button class="secondary" onclick="home()">عودة للرئيسية</button>
 </div>
 </section>
 
 <section id="vocab" class="hidden">
 <div class="card">
-<h2>تدريب المفردات</h2>
-<div class="small" id="vocabCounter"></div>
-<div class="big" id="vocabWord" style="margin:16px 0"></div>
-<div id="vocabPronunciation" class="small"></div>
-<div id="vocabMeaning" class="notice hidden"></div>
-<button onclick="showMeaning()">إظهار المعنى</button>
-<button onclick="speakWord()">استمع للنطق</button>
-<button class="green" onclick="nextVocab(true)">عرفتها</button>
-<button class="orange" onclick="nextVocab(false)">أعدها لاحقًا</button>
-<button class="secondary" onclick="showHome()">العودة</button>
+<h2>قاموس المفردات والتدريب</h2>
+<p id="wordCounter" class="small"></p>
+<div id="word" class="en" style="font-size:28px;font-weight:bold"></div>
+<p id="pron" class="small"></p>
+<div id="meaning" class="notice hidden"></div>
+<button onclick="revealMeaning()">إظهار المعنى</button>
+<button onclick="sayCurrent()">استمع للنطق</button>
+<button class="good" onclick="wordNext(true)">عرفتها</button>
+<button class="danger" onclick="wordNext(false)">أعدها لاحقًا</button>
+<button class="secondary" onclick="home()">عودة</button>
 </div>
 </section>
 </main>
-<footer>English Trainer A1 → A2 | تعلم يوميًا ولو 15 دقيقة</footer>
+<footer>English Trainer A1-A2 — احفظ تقدمك ولا تعتمد على حذف بيانات المتصفح</footer>
 
 <script>
 "use strict";
 
-const units = [
-{id:"A1u1",level:"A1",title:"الوحدة 1: Verb to be",explain:"نستخدم am و is و are للتعريف أو وصف الشخص أو الشيء في الحاضر.",example:"I am Laith. = أنا ليث. / He is happy. = هو سعيد. / They are ready. = هم مستعدون.",words:[["I","أنا","آي"],["you","أنت / أنتم","يو"],["he","هو","هي"],["she","هي","شي"],["we","نحن","وي"],["they","هم","ذَي"]],q:[
-["I ___ a student.",["am","is","are"],0,"مع I نستخدم am."],
-["He ___ my friend.",["am","are","is"],2,"مع He نستخدم is."],
+/* كل وحدة تحتوي على شرح وقاعدة وأمثلة ومفردات واختبارات */
+const U=[
+{id:"a1-1",lv:"A1",name:"1. Verb to be",ex:"نستخدم am و is و are للتعريف ووصف الأشخاص والأشياء والحالة. لا نضع فعلًا مساعدًا آخر معها في الجملة العادية.",rule:"I am — He/She/It is — You/We/They are. في السؤال نقدّم am/is/are على الفاعل، وفي النفي نضيف not.",eg:[["I am a student.","أنا طالب."],["She is happy.","هي سعيدة."],["They are at home.","هم في المنزل."],["Are you ready?","هل أنت مستعد؟"],["He is not tired.","هو ليس متعبًا."]],w:[["student","طالب"],["teacher","مدرس"],["happy","سعيد"],["tired","متعب"],["ready","مستعد"],["home","منزل"],["friend","صديق"],["name","اسم"]],q:[
+["I ___ from Iraq.",["am","is","are"],0,"مع I نستخدم am."],
+["She ___ my sister.",["am","are","is"],2,"مع She نستخدم is."],
 ["They ___ happy.",["is","are","am"],1,"مع They نستخدم are."],
-["___ she a teacher?",["Am","Is","Are"],1,"السؤال مع she يبدأ بـ Is."],
-["We ___ from Iraq.",["are","is","am"],0,"مع We نستخدم are."],
-["It ___ cold today.",["are","am","is"],2,"مع It نستخدم is."]
+["___ he a doctor?",["Are","Am","Is"],2,"نقدّم Is في سؤال he."],
+["We ___ not late.",["is","are","am"],1,"We are not."],
+["It ___ cold today.",["are","is","am"],1,"مع It نستخدم is."],
+["You ___ my friend.",["is","are","am"],1,"مع You نستخدم are."],
+["I ___ not tired.",["am","is","are"],0,"I am not."]
 ]},
-{id:"A1u2",level:"A1",title:"الوحدة 2: Pronouns & Possessives",explain:"ضمائر الفاعل: I, you, he, she, it, we, they. صفات الملكية: my, your, his, her, its, our, their، وتأتي قبل الاسم.",example:"This is my book. = هذا كتابي. / Her name is Sara. = اسمها سارة.",words:[["my","خاصتي / ـي","ماي"],["your","خاصتك","يور"],["his","خاصته","هِز"],["her","خاصتها","هِر"],["our","خاصتنا","آور"],["their","خاصتهم","ذير"]],q:[
-"This is ___ car. (سيارتي)",["I","my","me"],1,"قبل الاسم نستخدم my."],
-["Ali is my friend. ___ is kind.",["He","She","They"],0,"Ali اسم مذكر، لذلك نستخدم He."],
-["Sara has a bag. It is ___ bag.",["his","her","their"],1,"مع Sara نستخدم her."],
-["This is ___ house. (بيتنا)",["our","we","us"],0,"صفة الملكية قبل الاسم هي our."],
-["The boys have books. These are ___ books.",["his","their","her"],1,"مع الجمع they نستخدم their."],
-["I love ___ family.",["me","my","mine"],1,"نستخدم my قبل الاسم family."]
+{id:"a1-2",lv:"A1",name:"2. Pronouns & Possessives",ex:"ضمائر الفاعل تحل محل الاسم: I, you, he, she, it, we, they. صفات الملكية تأتي قبل الاسم: my, your, his, her, its, our, their.",rule:"I → my، you → your، he → his، she → her، we → our، they → their. نقول my book وليس me book.",eg:[["My name is Ali.","اسمي علي."],["Her bag is red.","حقيبتها حمراء."],["Their house is big.","منزلهم كبير."],["He is my brother.","هو أخي."]],w:[["my","خاصتي / ـي"],["your","خاصتك"],["his","خاصته"],["her","خاصتها"],["our","خاصتنا"],["their","خاصتهم"],["family","عائلة"],["brother","أخ"]],q:[
+["This is ___ book. (كتابي)",["I","my","me"],1,"نستخدم my قبل الاسم."],
+["Ali is here. ___ is happy.",["He","She","They"],0,"Ali ضميرُه He."],
+["Sara has a car. It is ___ car.",["his","her","their"],1,"مع Sara نستخدم her."],
+["We love ___ family.",["our","us","we"],0,"Our صفة ملكية."],
+["The boys have bags. ___ bags are black.",["Their","His","Her"],0,"Their للجمع."],
+["Is this ___ phone? (هاتفك)",["you","your","yours"],1,"Your تأتي قبل الاسم."],
+["My parents are kind. I love ___.",["they","them","their"],1,"Them ضمير مفعول به."],
+["This pen is ___. (قلمي)",["mine","my","I"],0,"Mine يأتي دون اسم بعده."]
 ]},
-{id:"A1u3",level:"A1",title:"الوحدة 3: Present Simple",explain:"نستخدم المضارع البسيط للعادات والحقائق. مع he/she/it نضيف غالبًا s للفعل. مع I/you/we/they يبقى الفعل بصورته الأساسية.",example:"I work every day. / He works every day. / She likes tea.",words:[["work","يعمل","وِرك"],["study","يدرس","ستَدي"],["live","يسكن","لِف"],["like","يحب","لايك"],["usually","عادةً","يوجُولي"],["every day","كل يوم","إفري داي"]],q:[
-"He ___ to work every day.",["go","goes","going"],1,"مع He نضيف es إلى go."],
-["I ___ English.",["studies","study","studying"],1,"مع I نستخدم study."],
-["She ___ coffee.",["like","likes","liking"],1,"مع She نضيف s إلى الفعل."],
+{id:"a1-3",lv:"A1",name:"3. Present Simple",ex:"نستخدم المضارع البسيط للعادات والحقائق والجداول. مع he/she/it نضيف s أو es غالبًا. في النفي والسؤال نستخدم do/does.",rule:"I work. He works. They don't work. Does he work? بعد does أو doesn't يبقى الفعل بصيغته الأساسية.",eg:[["I work every day.","أعمل كل يوم."],["He works in Basra.","هو يعمل في البصرة."],["She studies English.","هي تدرس الإنجليزية."],["Do you like tea?","هل تحب الشاي؟"]],w:[["work","يعمل"],["study","يدرس"],["live","يسكن"],["like","يحب"],["speak","يتكلم"],["usually","عادةً"],["often","غالبًا"],["sometimes","أحيانًا"]],q:[
+["He ___ to work every day.",["go","goes","going"],1,"مع He نستخدم goes."],
+["I ___ English at night.",["study","studies","studying"],0,"مع I نستخدم study."],
+["She ___ coffee.",["like","likes","liking"],1,"مع She نضيف s."],
 ["They ___ in Basra.",["live","lives","living"],0,"مع They نستخدم live."],
-["My brother ___ TV at night.",["watch","watches","watching"],1,"مع My brother نضيف es إلى watch."],
-["We ___ early.",["gets up","get up","getting up"],1,"مع We نستخدم الفعل الأساسي."]
+["My brother ___ TV.",["watch","watches","watching"],1,"watch تصبح watches."],
+["We ___ early.",["gets up","get up","getting up"],1,"مع We نستخدم get up."],
+["Water ___ at 100°C.",["boil","boils","boiling"],1,"الحقيقة العامة: water boils."],
+["He ___ English every day.",["practise","practises","practising"],1,"مع He نضيف s."]
 ]},
-{id:"A1u4",level:"A1",title:"الوحدة 4: Questions & Negatives",explain:"في المضارع البسيط نستخدم do مع I/you/we/they و does مع he/she/it. النفي don't أو doesn't. بعد does/doesn't يعود الفعل إلى أصله.",example:"Do you work? / Does he work? / He doesn't work here.",words:[["do","أداة سؤال/فعل مساعد","دو"],["does","أداة سؤال مع he/she/it","دَز"],["don't","لا أفعل","دونت"],["doesn't","لا يفعل","دَزَنت"]],q:[
-["___ you speak English?",["Does","Do","Are"],1,"مع you نستخدم Do."],
-["___ she work here?",["Do","Is","Does"],2,"مع she نستخدم Does."],
-["He ___ like tea.",["doesn't","don't","isn't"],0,"مع He نستخدم doesn't."],
-["They ___ live here.",["doesn't","don't","isn't"],1,"مع They نستخدم don't."],
-["Does he ___ English?",["speaks","speak","speaking"],1,"بعد Does نستخدم الفعل الأساسي."],
-["___ they work every day?",["Do","Does","Is"],0,"مع they نستخدم Do."]
+{id:"a1-4",lv:"A1",name:"4. Questions & Negatives",ex:"في المضارع البسيط نستخدم Do مع I/you/we/they وDoes مع he/she/it. النفي don't وdoesn't. مع verb to be نستخدم am/is/are مباشرة.",rule:"Does he work? وليس Does he works? / He doesn't work. / Are you ready? لا نستخدم do مع am/is/are.",eg:[["Do you work here?","هل تعمل هنا؟"],["Does she drive?","هل تقود السيارة؟"],["He doesn't smoke.","هو لا يدخن."],["Are they ready?","هل هم مستعدون؟"]],w:[["question","سؤال"],["answer","إجابة"],["where","أين"],["when","متى"],["why","لماذا"],["who","من"],["what","ماذا"],["how","كيف"]],q:[
+["___ you speak English?",["Does","Do","Is"],1,"مع you نستخدم Do."],
+["___ he live here?",["Do","Does","Are"],1,"مع he نستخدم Does."],
+["She ___ like coffee.",["don't","doesn't","isn't"],1,"مع she نستخدم doesn't."],
+["They ___ work on Friday.",["doesn't","don't","isn't"],1,"مع they نستخدم don't."],
+["Does he ___ here?",["works","work","working"],1,"بعد Does نستخدم work."],
+["___ are you from?",["Where","Who","Why"],0,"Where للسؤال عن المكان."],
+["___ you tired?",["Do","Are","Does"],1,"مع صفة tired نستخدم Are."],
+["He isn't at home. ___ he at work?",["Does","Is","Do"],1,"السؤال عن be: Is he...?"]
 ]},
-{id:"A1u5",level:"A1",title:"الوحدة 5: Present Continuous",explain:"نستخدم المضارع المستمر لشيء يحدث الآن: am/is/are + الفعل مع ing.",example:"I am studying now. / She is cooking. / They are playing.",words:[["now","الآن","ناو"],["reading","يقرأ الآن","ريدِنغ"],["working","يعمل الآن","وِركِنغ"],["cooking","يطبخ","كُكِنغ"],["playing","يلعب","بلايِنغ"]],q:[
+{id:"a1-5",lv:"A1",name:"5. Present Continuous",ex:"نستخدم المضارع المستمر لشيء يحدث الآن أو في فترة مؤقتة. الصيغة am/is/are + فعل ing.",rule:"I am reading. She is reading. They are reading. غالبًا نحذف e الأخيرة قبل ing: make → making.",eg:[["I am studying now.","أنا أدرس الآن."],["She is cooking.","هي تطبخ."],["They are playing.","هم يلعبون."],["What are you doing?","ماذا تفعل؟"]],w:[["now","الآن"],["today","اليوم"],["reading","يقرأ"],["cooking","يطبخ"],["playing","يلعب"],["waiting","ينتظر"],["talking","يتحدث"],["working","يعمل"]],q:[
 ["I ___ studying now.",["am","is","are"],0,"I am."],
-["She is ___ dinner.",["cook","cooks","cooking"],2,"بعد is نستخدم الفعل مع ing."],
+["She is ___ dinner.",["cook","cooks","cooking"],2,"الفعل مع ing."],
 ["They ___ playing.",["is","are","am"],1,"They are."],
-["He is ___ a book.",["read","reads","reading"],2,"الفعل بعد is يأخذ ing."],
+["He is ___ a book.",["read","reads","reading"],2,"He is reading."],
 ["We are ___ English.",["learn","learning","learns"],1,"We are learning."],
-["Look! It ___ raining.",["is","are","am"],0,"مع It نستخدم is."]
+["Look! It ___ raining.",["is","are","am"],0,"It is raining."],
+["What ___ she doing?",["are","is","does"],1,"What is she doing?"],
+["I am not ___.",["sleep","sleeping","sleeps"],1,"بعد am نستخدم sleeping."]
 ]},
-{id:"A1u6",level:"A1",title:"الوحدة 6: Time & Prepositions",explain:"in مع الأشهر والسنوات وأجزاء اليوم، on مع الأيام والتواريخ، at مع الساعة. حروف المكان تشمل in و on و under و next to.",example:"in July / on Monday / at 7 o'clock / The book is on the table.",words:[["in","في / داخل","إن"],["on","على","أون"],["under","تحت","أندر"],["next to","بجانب","نكست تو"],["at","عند / في الساعة","آت"],["between","بين","بتوين"]],q:[
-["I wake up ___ 7 o'clock.",["in","on","at"],2,"مع الساعة نستخدم at."],
-["My birthday is ___ May.",["in","on","at"],0,"مع الأشهر نستخدم in."],
-["We meet ___ Monday.",["at","on","in"],1,"مع أيام الأسبوع نستخدم on."],
-["The cat is ___ the table. (تحت)",["under","between","on"],0,"Under تعني تحت."],
-["The bank is ___ the school and the shop.",["between","under","at"],0,"Between تعني بين شيئين."],
-["The keys are ___ the bag.",["in","at","on"],0,"In تعني داخل."]
+{id:"a1-6",lv:"A1",name:"6. Time & Prepositions",ex:"in مع الأشهر والسنوات وبعض أجزاء اليوم. on مع الأيام والتواريخ. at مع الساعة. حروف المكان: in داخل، on على، under تحت، next to بجانب.",rule:"in July / in 2026 / on Monday / at 7:00 / under the table / next to the door.",eg:[["I wake up at seven.","أستيقظ الساعة السابعة."],["My birthday is in May.","عيد ميلادي في مايو."],["We meet on Monday.","نلتقي يوم الاثنين."],["The cat is under the chair.","القطة تحت الكرسي."]],w:[["morning","صباح"],["afternoon","بعد الظهر"],["evening","مساء"],["minute","دقيقة"],["hour","ساعة"],["between","بين"],["behind","خلف"],["in front of","أمام"]],q:[
+["I wake up ___ 7 o'clock.",["in","on","at"],2,"الساعة: at."],
+["My birthday is ___ May.",["in","on","at"],0,"الشهر: in."],
+["We meet ___ Monday.",["at","on","in"],1,"اليوم: on."],
+["The cat is ___ the table. (تحت)",["under","between","on"],0,"under = تحت."],
+["The bank is ___ the school and shop.",["between","behind","at"],0,"between = بين."],
+["The keys are ___ the bag.",["in","at","on"],0,"in = داخل."],
+["The picture is ___ the wall.",["on","under","between"],0,"على الجدار: on."],
+["I study ___ the evening.",["at","in","on"],1,"in the evening."]
 ]},
-{id:"A1u7",level:"A1",title:"الوحدة 7: Past Simple",explain:"نستخدم الماضي البسيط لحدث انتهى في الماضي. الأفعال المنتظمة غالبًا نضيف لها ed، أما غير المنتظمة فلها أشكال خاصة. في السؤال نستخدم Did + الفعل الأساسي.",example:"I worked yesterday. / She went home. / Did you see him? / I didn't go.",words:[["yesterday","أمس","يِستَرداي"],["last week","الأسبوع الماضي","لاست ويك"],["went","ذهب","وِنت"],["saw","رأى","سو"],["worked","عمل","وِركت"]],q:[
+{id:"a1-7",lv:"A1",name:"7. Past Simple",ex:"نستخدم الماضي البسيط لحدث انتهى في الماضي. الأفعال المنتظمة غالبًا تنتهي بـ ed، وغير المنتظمة لها تصريف خاص. في السؤال والنفي نستخدم did/didn't.",rule:"I worked yesterday. She went home. Did you see him? I didn't go. بعد did/didn't نستخدم الفعل الأساسي.",eg:[["I visited my friend yesterday.","زرت صديقي أمس."],["She went to work.","ذهبت إلى العمل."],["Did you call me?","هل اتصلت بي؟"],["We didn't go.","لم نذهب."]],w:[["yesterday","أمس"],["last week","الأسبوع الماضي"],["visited","زار"],["went","ذهب"],["saw","رأى"],["bought","اشترى"],["made","صنع"],["came","جاء"]],q:[
 ["I ___ to work yesterday.",["go","went","going"],1,"الماضي من go هو went."],
-["She ___ TV last night.",["watch","watched","watches"],1,"الماضي من watch هو watched."],
-["Did you ___ him?",["saw","see","seen"],1,"بعد Did نستخدم الفعل الأساسي see."],
-["They ___ come yesterday.",["didn't","doesn't","aren't"],0,"النفي في الماضي: didn't."],
-["We ___ dinner at 8.",["had","have","has"],0,"الماضي من have هو had."],
-["He ___ at home yesterday.",["were","was","is"],1,"مع He في الماضي نستخدم was."]
+["She ___ TV last night.",["watch","watched","watches"],1,"watch تصبح watched."],
+["Did you ___ him?",["saw","see","seen"],1,"بعد Did نستخدم see."],
+["They ___ come yesterday.",["didn't","doesn't","aren't"],0,"نفي الماضي: didn't."],
+["We ___ dinner at eight.",["had","have","has"],0,"الماضي من have هو had."],
+["He ___ at home yesterday.",["were","was","is"],1,"مع he نستخدم was."],
+["___ she call you?",["Did","Does","Was"],0,"السؤال في الماضي يبدأ بـ Did."],
+["I didn't ___ the answer.",["knew","know","known"],1,"بعد didn't نستخدم know."]
 ]},
-{id:"A1u8",level:"A1",title:"الوحدة 8: مراجعة A1",explain:"مراجعة الضمائر، verb to be، المضارع البسيط والمستمر، الماضي، حروف الجر والأسئلة.",example:"She works every day. / She is working now. / She worked yesterday.",words:[["always","دائمًا","أولويز"],["sometimes","أحيانًا","سمتايمز"],["yesterday","أمس","يِستَرداي"],["tomorrow","غدًا","تُمورو"]],q:[
-["My sister ___ a doctor.",["am","is","are"],1,"مع My sister نستخدم is."],
-["He ___ to work every day.",["go","goes","going"],1,"المضارع البسيط مع He: goes."],
-["They are ___ now.",["study","studying","studies"],1,"المضارع المستمر: are + ing."],
-["I ___ him yesterday.",["see","saw","seen"],1,"حدث انتهى أمس، نستخدم saw."],
+{id:"a1-8",lv:"A1",name:"8. A1 Review",ex:"مراجعة الأزمنة الأساسية، الضمائر، الصفات، الأسئلة، النفي، حروف الجر والماضي.",rule:"انتبه للكلمات الزمنية: every day للمضارع البسيط، now للمستمر، yesterday للماضي.",eg:[["He works every day.","يعمل كل يوم."],["He is working now.","يعمل الآن."],["He worked yesterday.","عمل أمس."],["I can swim.","أستطيع السباحة."]],w:[["always","دائمًا"],["never","أبدًا"],["usually","عادةً"],["sometimes","أحيانًا"],["because","لأن"],["but","لكن"],["and","و"],["or","أو"]],q:[
+["My sister ___ a doctor.",["am","is","are"],1,"My sister = she."],
+["He ___ to work every day.",["go","goes","going"],1,"المضارع البسيط مع he."],
+["They are ___ now.",["study","studying","studies"],1,"المستمر مع ing."],
+["I ___ him yesterday.",["see","saw","seen"],1,"الماضي من see هو saw."],
 ["___ you like coffee?",["Do","Does","Are"],0,"مع you نستخدم Do."],
-["She doesn't ___ meat.",["eats","eat","eating"],1,"بعد doesn't نستخدم eat."]
+["She doesn't ___ meat.",["eats","eat","eating"],1,"بعد doesn't نستخدم eat."],
+["The meeting is ___ Monday.",["in","on","at"],1,"اليوم: on."],
+["He ___ tired yesterday.",["is","was","were"],1,"الماضي من is هو was."]
 ]},
-{id:"A2u1",level:"A2",title:"الوحدة 1: Present Perfect",explain:"الصيغة: have/has + التصريف الثالث. نستخدمه للتجارب أو أحداث لها علاقة بالحاضر. مع he/she/it نستخدم has.",example:"I have finished. / She has visited London. / Have you ever travelled?",words:[["already","بالفعل","أولريدي"],["yet","بعد / حتى الآن","يِت"],["ever","هل سبق","إفَر"],["never","أبدًا","نِفَر"],["finished","أنهى","فِنِشت"]],q:[
+{id:"a2-1",lv:"A2",name:"1. Present Perfect",ex:"الصيغة have/has + التصريف الثالث. نستخدمه للتجارب أو الأحداث ذات الصلة بالحاضر، دون تحديد وقت ماضٍ منتهٍ.",rule:"I/you/we/they have. He/she/it has. السؤال: Have you...? النفي: haven't/hasn't. التصريف الثالث من go هو gone، ومن see هو seen.",eg:[["I have finished my work.","أنهيت عملي."],["She has visited London.","سبق أن زارت لندن."],["Have you ever travelled?","هل سبق أن سافرت؟"],["He hasn't arrived yet.","لم يصل بعد."]],w:[["already","بالفعل"],["yet","بعد / حتى الآن"],["ever","هل سبق"],["never","أبدًا"],["just","للتو"],["finished","أنهى"],["visited","زار"],["experience","تجربة"]],q:[
 ["I ___ finished my work.",["has","have","am"],1,"مع I نستخدم have."],
-["She ___ visited London.",["have","has","is"],1,"مع She نستخدم has."],
-["Have you ___ eaten sushi?",["ever","nevered","yet"],0,"Ever للسؤال عن تجربة سابقة."],
+["She ___ visited London.",["have","has","is"],1,"مع she نستخدم has."],
+["Have you ___ eaten sushi?",["ever","nevered","yesterday"],0,"Ever للسؤال عن تجربة."],
 ["I have ___ seen snow.",["never","didn't","wasn't"],0,"Never تعني لم يحدث مطلقًا."],
-["He hasn't arrived ___.",["already","yet","ever"],1,"Yet تُستخدم غالبًا في النفي والسؤال."],
-["We have ___ finished.",["already","yesterday","last"],0,"Already تعني بالفعل."]
+["He hasn't arrived ___.",["already","yet","ago"],1,"Yet في النفي والسؤال."],
+["We have ___ finished.",["already","yesterday","last"],0,"Already = بالفعل."],
+["She has ___ her keys.",["lose","lost","losing"],1,"التصريف الثالث من lose هو lost."],
+["Have they ___ home?",["went","go","gone"],2,"التصريف الثالث من go هو gone."]
 ]},
-{id:"A2u2",level:"A2",title:"الوحدة 2: Present Perfect vs Simple",explain:"نستخدم Present Perfect للتجارب أو النتيجة المرتبطة بالحاضر، وPast Simple لحدث انتهى في وقت ماضٍ محدد مثل yesterday أو last year.",example:"I have visited Baghdad. / I visited Baghdad last year.",words:[["recently","مؤخرًا","ريسَنتلي"],["just","للتو","جَست"],["ago","منذ","أگو"],["last year","السنة الماضية","لاست يير"]],q:[
-["I ___ him yesterday.",["have seen","saw","seen"],1,"Yesterday يدل على الماضي البسيط."],
-["She has ___ arrived.",["just","ago","yesterday"],0,"Just تعني للتو."],
-["We ___ that film last week.",["have watched","watched","watch"],1,"Last week يدل على الماضي البسيط."],
-["Have you ever ___ to Turkey?",["went","go","been"],2,"Have you ever been تعبير صحيح للتجربة."],
-["They ___ here in 2020.",["lived","have lived","live"],0,"في 2020 وقت ماضٍ محدد."],
-["I haven't finished ___.",["yet","last night","ago"],0,"Yet تُستخدم هنا بمعنى بعد."]
+{id:"a2-2",lv:"A2",name:"2. Perfect vs Past Simple",ex:"Present Perfect للتجارب أو النتيجة الحالية دون وقت منتهٍ محدد. Past Simple لحدث انتهى في وقت محدد مثل yesterday أو last year.",rule:"I have visited London. لكن: I visited London last year. لا نستخدم have مع yesterday في الجملة الاعتيادية.",eg:[["I have seen that film.","شاهدت ذلك الفيلم من قبل."],["I saw it last week.","شاهدته الأسبوع الماضي."],["She has just arrived.","وصلت للتو."],["They left two hours ago.","غادروا قبل ساعتين."]],w:[["recently","مؤخرًا"],["ago","منذ"],["last year","السنة الماضية"],["just","للتو"],["before","من قبل"],["arrived","وصل"],["left","غادر"],["travelled","سافر"]],q:[
+["I ___ him yesterday.",["have seen","saw","seen"],1,"Yesterday للماضي البسيط."],
+["She has ___ arrived.",["just","ago","yesterday"],0,"Just = للتو."],
+["We ___ that film last week.",["have watched","watched","watch"],1,"Last week للماضي البسيط."],
+["Have you ever ___ to Turkey?",["went","go","been"],2,"Have you ever been."],
+["They ___ here in 2020.",["lived","have lived","live"],0,"في 2020 وقت محدد."],
+["I haven't finished ___.",["yet","last night","ago"],0,"Yet مع النفي."],
+["He ___ two hours ago.",["has left","left","leaves"],1,"Ago للماضي البسيط."],
+["I have ___ eaten.",["just","last week","yesterday"],0,"Just مع present perfect."]
 ]},
-{id:"A2u3",level:"A2",title:"الوحدة 3: Past vs Present Perfect",explain:"قارن بين حدث انتهى بوقت محدد وحدث له صلة بالحاضر. since تشير إلى بداية زمن، وfor إلى مدة زمنية.",example:"I have lived here for five years. / I have lived here since 2021.",words:[["since","منذ نقطة زمنية","سِنس"],["for","لمدة","فور"],["for two years","لمدة سنتين","فور تو ييرز"],["since Monday","منذ يوم الاثنين","سِنس مَندي"]],q:[
+{id:"a2-3",lv:"A2",name:"3. Since & For",ex:"نستخدم since مع بداية الفترة، مثل since 2020، ونستخدم for مع المدة، مثل for three years. يمكن استعمالهما مع Present Perfect عندما يستمر الوضع إلى الحاضر.",rule:"since Monday / since 2020 / for two hours / for five years.",eg:[["I have lived here for five years.","أعيش هنا منذ خمس سنوات."],["She has worked here since 2021.","تعمل هنا منذ 2021."],["We have known him for a long time.","نعرفه منذ وقت طويل."]],w:[["since","منذ نقطة زمنية"],["for","لمدة"],["long time","وقت طويل"],["years","سنوات"],["months","أشهر"],["hours","ساعات"],["begin","يبدأ"],["continue","يستمر"]],q:[
 ["I have worked here ___ 2022.",["for","since","ago"],1,"Since مع بداية محددة."],
-["She has studied English ___ three years.",["since","for","last"],1,"For مع مدة زمنية."],
-["He ___ his keys yesterday.",["has lost","lost","lose"],1,"Yesterday يتطلب الماضي البسيط."],
-["We have known him ___ a long time.",["since","for","ago"],1,"For مع مدة."],
-["I ___ to London in 2019.",["have gone","went","go"],1,"In 2019 وقت محدد في الماضي."],
-["She has lived here ___ 2020.",["since","for","during"],0,"Since 2020."]
+["She has studied ___ three years.",["since","for","last"],1,"For مع مدة."],
+["We have known him ___ a long time.",["since","for","ago"],1,"For a long time."],
+["He has been here ___ Monday.",["for","since","during"],1,"Since Monday."],
+["They have lived here ___ ten years.",["since","for","at"],1,"For ten years."],
+["I started this job two years ___.",["for","since","ago"],2,"Ago مع الماضي البسيط."],
+["She has worked here ___ 2019.",["since","for","ago"],0,"Since 2019."],
+["We have waited ___ an hour.",["since","for","from"],1,"For an hour."]
 ]},
-{id:"A2u4",level:"A2",title:"الوحدة 4: Future & Modals",explain:"will للتوقع أو القرار، going to للخطة أو النية، can للقدرة، should للنصيحة، must للضرورة.",example:"I will call you. / I'm going to study. / You should rest. / I can swim.",words:[["will","سوف","وِل"],["going to","ينوي / سوف","گوينغ تو"],["can","يستطيع","كان"],["should","ينبغي","شود"],["must","يجب","مَست"]],q:[
+{id:"a2-4",lv:"A2",name:"4. Future & Modals",ex:"will للتوقع أو القرار، going to للخطة أو النية، can للقدرة، should للنصيحة، must للضرورة، may/might للاحتمال.",rule:"will + فعل أساسي. am/is/are going to + فعل. can/should/must + فعل أساسي دون to.",eg:[["I will call you tomorrow.","سأتصل بك غدًا."],["I am going to study.","أنوي الدراسة."],["You should rest.","ينبغي أن ترتاح."],["She can swim.","هي تستطيع السباحة."]],w:[["will","سوف"],["plan","خطة"],["can","يستطيع"],["should","ينبغي"],["must","يجب"],["might","قد"],["probably","على الأرجح"],["promise","يعد"]],q:[
 ["I ___ call you tomorrow.",["will","did","have"],0,"Will للمستقبل."],
-["She is ___ to travel.",["go","going","went"],1,"الصيغة: is going to."],
-["You ___ drink more water. (نصيحة)",["should","shouldn't","did"],0,"Should للنصيحة."],
-["He ___ swim very well.",["can","must to","does"],0,"Can للقدرة."],
-["You ___ wear a seat belt. (ضرورة)",["must","might to","are"],0,"Must للضرورة."],
-["Look at those clouds! It is ___ to rain.",["go","going","went"],1,"It is going to rain."]
+["She is ___ to travel.",["go","going","went"],1,"is going to."],
+["You ___ drink more water.",["should","should to","did"],0,"Should للنصيحة."],
+["He ___ swim very well.",["can","can to","does"],0,"Can + الفعل الأساسي."],
+["You ___ wear a seat belt.",["must","must to","are"],0,"Must + الفعل الأساسي."],
+["It is ___ to rain.",["going","go","went"],0,"It is going to rain."],
+["You ___ smoke here. (ممنوع)",["mustn't","don't have","should to"],0,"Mustn't تعني ممنوع."],
+["I think it ___ be sunny tomorrow.",["will","was","has"],0,"Will للتوقع."]
 ]},
-{id:"A2u5",level:"A2",title:"الوحدة 5: Comparatives",explain:"للمقارنة نستخدم غالبًا -er مع الصفات القصيرة وmore مع الصفات الطويلة. نستخدم than بعد صيغة المقارنة. صيغة التفضيل: the -est أو the most.",example:"Ali is taller than Omar. / This book is more interesting. / She is the tallest.",words:[["taller","أطول","تولَر"],["cheaper","أرخص","تشيپَر"],["more expensive","أغلى","مور إكسبنسِف"],["the best","الأفضل","ذَ بِست"]],q:[
-["Ali is ___ than Omar. (tall)",["tall","taller","tallest"],1,"المقارنة: taller than."],
-["This bag is ___ than that one. (cheap)",["cheaper","cheapest","cheap"],0,"Cheap تصبح cheaper."],
-["English is ___ than I expected. (easy)",["easier","easyest","more easy"],0,"Easy تصبح easier."],
-["This is the ___ day of my life.",["happy","happiest","happier"],1,"التفضيل: the happiest."],
-["A car is usually ___ than a bicycle. (expensive)",["expensiver","more expensive","most expensive"],1,"مع الصفة الطويلة نستخدم more."],
-["This is the ___ restaurant in town. (good)",["better","best","gooder"],1,"أفضل صيغة لـ good هي best."]
+{id:"a2-5",lv:"A2",name:"5. Comparatives & Superlatives",ex:"للمقارنة نضيف -er غالبًا للصفة القصيرة ونستخدم than. للصفات الطويلة نستخدم more. للتفضيل the -est أو the most.",rule:"tall → taller → the tallest. easy → easier → the easiest. expensive → more expensive → the most expensive. good → better → the best.",eg:[["Ali is taller than Omar.","علي أطول من عمر."],["This bag is cheaper.","هذه الحقيبة أرخص."],["It is the best choice.","إنه أفضل اختيار."],["This is more expensive.","هذا أغلى."]],w:[["taller","أطول"],["shorter","أقصر"],["cheaper","أرخص"],["bigger","أكبر"],["smaller","أصغر"],["better","أفضل"],["worse","أسوأ"],["the best","الأفضل"]],q:[
+["Ali is ___ than Omar.",["tall","taller","tallest"],1,"taller than."],
+["This bag is ___ than that one.",["cheaper","cheapest","cheap"],0,"cheap تصبح cheaper."],
+["English is ___ than I expected.",["easier","easyest","more easy"],0,"easy تصبح easier."],
+["This is the ___ day.",["happy","happiest","happier"],1,"the happiest."],
+["A car is ___ than a bicycle.",["expensiver","more expensive","most expensive"],1,"more مع الصفة الطويلة."],
+["This is the ___ restaurant.",["better","best","gooder"],1,"the best."],
+["My room is ___ than yours.",["bigger","biggest","more big"],0,"big تصبح bigger."],
+["Today is ___ than yesterday.",["bad","worse","worst"],1,"bad تصبح worse."]
 ]},
-{id:"A2u6",level:"A2",title:"الوحدة 6: A2 Review",explain:"مراجعة الأزمنة الأساسية، المقارنة، المستقبل، الأفعال المساعدة، المفردات ومهارات التواصل.",example:"I have worked here for two years. / You should practise every day. / This test is easier than the last one.",words:[["improve","يحسّن","إمبروف"],["practise","يتدرّب","پراكتِس"],["experience","تجربة / خبرة","إكسبيرينس"],["comfortable","مرتاح","كمفرتَبُل"]],q:[
+{id:"a2-6",lv:"A2",name:"6. A2 Review & Communication",ex:"مراجعة الأزمنة والمقارنة والمستقبل والتعبير عن الرأي والطلب المهذب ووصف التجارب. تدرّب على جمل كاملة بدل حفظ الكلمات وحدها.",rule:"اجمع بين الأزمنة والمهارات: اكتب عن يومك، صف تجربة سابقة، تحدث عن خططك، واقرأ نصًا ثم أجب عن أسئلة الفهم.",eg:[["I have worked here for two years.","أعمل هنا منذ سنتين."],["Could you help me, please?","هل يمكنك مساعدتي، من فضلك؟"],["In my opinion, it is useful.","برأيي، إنه مفيد."],["I am going to practise tomorrow.","سأتدرب غدًا."]],w:[["improve","يحسّن"],["practise","يتدرّب"],["experience","تجربة"],["comfortable","مرتاح"],["opinion","رأي"],["useful","مفيد"],["perhaps","ربما"],["although","على الرغم من"]],q:[
 ["She ___ here since 2021.",["lives","has lived","lived"],1,"Since مع Present Perfect."],
-["I ___ visit my friend tomorrow.",["am going to","did","have"],0,"خطة مستقبلية: am going to."],
-["You ___ see a doctor if you feel very ill.",["should","should to","are"],0,"Should للنصيحة."],
-["This exam is ___ than the first one.",["easy","easier","easiest"],1,"المقارنة: easier than."],
-["He has never ___ abroad.",["went","been","go"],1,"Present Perfect يحتاج التصريف الثالث been."],
-["They ___ playing football when I arrived.",["were","are","have"],0,"حدث مستمر في الماضي: were playing."]
+["I ___ visit my friend tomorrow.",["am going to","did","have"],0,"خطة مستقبلية."],
+["You ___ see a doctor if you feel ill.",["should","should to","are"],0,"Should للنصيحة."],
+["This exam is ___ than the first.",["easy","easier","easiest"],1,"easier than."],
+["He has never ___ abroad.",["went","been","go"],1,"التصريف الثالث been."],
+["They ___ playing when I arrived.",["were","are","have"],0,"were playing للماضي المستمر."],
+["___ you help me, please?",["Could","Do","Are"],0,"Could للطلب المهذب."],
+["In my ___, English is useful.",["opinion","because","yesterday"],0,"In my opinion = برأيي."]
 ]}
 ];
 
-const allWords = units.flatMap(u=>u.words.map(w=>({en:w[0],ar:w[1],pron:w[2],unit:u.id})));
-let state = loadState();
-let current = null, questions = [], qi = 0, score = 0, answered = false;
-let sessionWrong = [], vocabList = [], vocabIndex = 0;
-let skillBack = "home";
+/* قاموس إضافي موسّع، قابل للبحث والتدريب */
+const EXTRA=`hello|مرحبًا;goodbye|وداعًا;please|من فضلك;thank you|شكرًا;welcome|أهلًا;yes|نعم;no|لا;sorry|آسف;excuse me|عذرًا;name|اسم;age|عمر;country|بلد;city|مدينة;street|شارع;address|عنوان;phone|هاتف;number|رقم;job|وظيفة;work|عمل;office|مكتب;company|شركة;manager|مدير;colleague|زميل;meeting|اجتماع;computer|حاسوب;message|رسالة;email|بريد إلكتروني;document|مستند;report|تقرير;time|وقت;day|يوم;week|أسبوع;month|شهر;year|سنة;today|اليوم;tomorrow|غدًا;yesterday|أمس;morning|صباح;afternoon|بعد الظهر;evening|مساء;night|ليل;minute|دقيقة;hour|ساعة;early|مبكر;late|متأخر;always|دائمًا;usually|عادةً;often|غالبًا;sometimes|أحيانًا;never|أبدًا;family|عائلة;father|أب;mother|أم;parent|والد;brother|أخ;sister|أخت;son|ابن;daughter|ابنة;husband|زوج;wife|زوجة;child|طفل;children|أطفال;friend|صديق;people|ناس;person|شخص;man|رجل;woman|امرأة;boy|ولد;girl|بنت;house|منزل;room|غرفة;bedroom|غرفة نوم;kitchen|مطبخ;bathroom|حمام;door|باب;window|نافذة;table|طاولة;chair|كرسي;bed|سرير;key|مفتاح;bag|حقيبة;book|كتاب;pen|قلم;paper|ورق;clothes|ملابس;shirt|قميص;shoes|حذاء;food|طعام;water|ماء;tea|شاي;coffee|قهوة;milk|حليب;bread|خبز;rice|رز;meat|لحم;chicken|دجاج;fish|سمك;fruit|فاكهة;apple|تفاحة;banana|موزة;vegetable|خضار;breakfast|فطور;lunch|غداء;dinner|عشاء;restaurant|مطعم;shop|محل;market|سوق;price|سعر;money|مال;cheap|رخيص;expensive|غالي;buy|يشتري;sell|يبيع;pay|يدفع;open|يفتح;close|يغلق;start|يبدأ;finish|ينهي;begin|يبدأ;stop|يتوقف;go|يذهب;come|يأتي;leave|يغادر;arrive|يصل;travel|يسافر;drive|يقود;walk|يمشي;run|يركض;wait|ينتظر;stay|يبقى;live|يسكن;visit|يزور;meet|يقابل;call|يتصل;help|يساعد;need|يحتاج;want|يريد;like|يحب;love|يعشق;hate|يكره;know|يعرف;think|يعتقد;understand|يفهم;remember|يتذكر;forget|ينسى;learn|يتعلم;teach|يدرّس;study|يدرس;read|يقرأ;write|يكتب;speak|يتحدث;talk|يتكلم;listen|يستمع;hear|يسمع;watch|يشاهد;see|يرى;look|ينظر;find|يجد;make|يصنع;do|يفعل;take|يأخذ;give|يعطي;get|يحصل على;keep|يحتفظ;put|يضع;bring|يجلب;send|يرسل;use|يستخدم;try|يحاول;change|يغير;choose|يختار;decide|يقرر;feel|يشعر;seem|يبدو;become|يصبح;happen|يحدث;move|يتحرك;carry|يحمل;build|يبني;clean|ينظف;wash|يغسل;cook|يطبخ;eat|يأكل;drink|يشرب;sleep|ينام;wake|يستيقظ;rest|يرتاح;play|يلعب;swim|يسبح;exercise|يتمرن;healthy|صحي;sick|مريض;ill|مريض;hospital|مستشفى;doctor|طبيب;nurse|ممرض;medicine|دواء;pain|ألم;head|رأس;eye|عين;ear|أذن;hand|يد;foot|قدم;leg|ساق;arm|ذراع;back|ظهر;heart|قلب;weather|طقس;sun|شمس;rain|مطر;wind|ريح;cloud|غيمة;hot|حار;cold|بارد;warm|دافئ;cool|معتدل;beautiful|جميل;ugly|قبيح;big|كبير;small|صغير;long|طويل;short|قصير;tall|طويل القامة;high|مرتفع;low|منخفض;old|قديم / كبير السن;young|شاب;new|جديد;good|جيد;bad|سيئ;great|رائع;easy|سهل;difficult|صعب;important|مهم;interesting|مثير للاهتمام;boring|ممل;happy|سعيد;sad|حزين;angry|غاضب;tired|متعب;busy|مشغول;free|متفرغ / مجاني;ready|مستعد;right|صحيح / يمين;wrong|خطأ;different|مختلف;same|نفسه;possible|ممكن;impossible|مستحيل;fast|سريع;slow|بطيء;careful|حذر;carefully|بحذر;quickly|بسرعة;really|حقًا;very|جدًا;quite|إلى حد ما;too|أيضًا / أكثر من اللازم;enough|كافٍ;almost|تقريبًا;only|فقط;also|أيضًا;again|مرة أخرى;together|معًا;alone|وحده;here|هنا;there|هناك;inside|داخل;outside|خارج;above|فوق;below|أسفل;under|تحت;over|فوق;behind|خلف;between|بين;beside|بجانب;near|قريب;far|بعيد;left|يسار;right|يمين;straight|مستقيم;north|شمال;south|جنوب;east|شرق;west|غرب;because|لأن;but|لكن;and|و;or|أو;so|لذلك;if|إذا;when|متى / عندما;while|بينما;before|قبل;after|بعد;during|أثناء;until|حتى;with|مع;without|بدون;from|من;to|إلى;for|لأجل / لمدة;about|عن;around|حول;through|عبر;across|عبر;against|ضد;each|كل واحد;every|كل;all|الجميع;some|بعض;any|أي;many|كثير من;much|كثير من;few|قليل من;little|قليل;more|أكثر;most|الأكثر;less|أقل;least|الأقل;another|آخر;other|آخر;both|كلاهما;either|أحدهما;neither|لا هذا ولا ذاك;first|الأول;second|الثاني;third|الثالث;last|الأخير;next|التالي;past|ماضٍ;future|مستقبل;present|حاضر;question|سؤال;answer|جواب;example|مثال;practice|تدريب;lesson|درس;unit|وحدة;test|اختبار;exam|امتحان;score|درجة;mistake|خطأ;correct|صحيح;incorrect|غير صحيح;language|لغة;word|كلمة;sentence|جملة;grammar|قواعد;meaning|معنى;pronunciation|نطق;conversation|محادثة;story|قصة;paragraph|فقرة;letter|حرف / رسالة;sound|صوت;voice|صوت;idea|فكرة;reason|سبب;problem|مشكلة;solution|حل;plan|خطة;goal|هدف;habit|عادة;chance|فرصة;choice|اختيار;decision|قرار;experience|خبرة / تجربة;information|معلومات;advice|نصيحة;news|أخبار;fact|حقيقة;opinion|رأي;hope|أمل;dream|حلم;future|مستقبل;success|نجاح;fail|يفشل;improve|يحسن;develop|يطور;continue|يستمر;repeat|يكرر;review|يراجع;prepare|يستعد;explain|يشرح;describe|يصف;compare|يقارن;agree|يوافق;disagree|يخالف;believe|يعتقد;prefer|يفضل;hope|يأمل;wish|يتمنى;promise|يعد;offer|يعرض;invite|يدعو;accept|يقبل;refuse|يرفض;allow|يسمح;must|يجب;should|ينبغي;could|استطاع / هل يمكنك;would|كان سي / هل تود;may|قد / يجوز;might|ربما;can|يستطيع;able|قادر;available|متاح;care|يهتم;kind|لطيف;polite|مهذب;honest|صادق;patient|صبور;friendly|ودود;helpful|متعاون;serious|جاد;quiet|هادئ;loud|عال الصوت;safe|آمن;dangerous|خطير;strong|قوي;weak|ضعيف;rich|غني;poor|فقير;full|ممتلئ;empty|فارغ;wet|مبلل;dry|جاف;dark|مظلم;bright|مضيء;light|خفيف / ضوء;heavy|ثقيل;soft|ناعم;hard|صلب / صعب;dirty|متسخ;fresh|طازج;delicious|لذيذ;popular|مشهور;famous|مشهور;local|محلي;international|دولي;public|عام;private|خاص;special|مميز;normal|طبيعي;usual|معتاد;strange|غريب;simple|بسيط;clear|واضح;certain|متأكد;true|صحيح;false|خاطئ;real|حقيقي;personal|شخصي;social|اجتماعي;professional|مهني;modern|حديث;traditional|تقليدي;culture|ثقافة;history|تاريخ;music|موسيقى;movie|فيلم;game|لعبة;sport|رياضة;football|كرة القدم;team|فريق;player|لاعب;school|مدرسة;university|جامعة;student|طالب;teacher|مدرس;class|صف;course|دورة;skill|مهارة;subject|مادة;homework|واجب;holiday|عطلة;weekend|نهاية الأسبوع;vacation|إجازة;ticket|تذكرة;station|محطة;airport|مطار;bus|حافلة;train|قطار;plane|طائرة;car|سيارة;taxi|سيارة أجرة;road|طريق;traffic|زحام;map|خريطة;hotel|فندق;reservation|حجز;passport|جواز سفر;luggage|أمتعة;beach|شاطئ;mountain|جبل;river|نهر;sea|بحر;country|دولة;village|قرية;capital|عاصمة;building|بناية;floor|طابق;lift|مصعد;stairs|درج;garden|حديقة;park|متنزه;tree|شجرة;flower|زهرة;animal|حيوان;dog|كلب;cat|قطة;bird|طائر;horse|حصان;farm|مزرعة;environment|بيئة;energy|طاقة;electricity|كهرباء;internet|إنترنت;website|موقع إلكتروني;password|كلمة مرور;screen|شاشة;keyboard|لوحة مفاتيح;file|ملف;photo|صورة;video|فيديو;camera|كاميرا;charger|شاحن;battery|بطارية;online|متصل بالإنترنت;download|ينزل ملفًا;upload|يرفع ملفًا;search|يبحث;click|ينقر;save|يحفظ;delete|يحذف;edit|يحرر;create|ينشئ;share|يشارك;connect|يتصل;repair|يصلح;broken|معطل;service|خدمة;customer|زبون;price|سعر;cost|يكلف;cheap|رخيص;expensive|غالي;discount|خصم;receipt|وصل;cash|نقد;card|بطاقة;bank|مصرف;account|حساب;salary|راتب;tax|ضريبة;rent|إيجار;bill|فاتورة;budget|ميزانية;save money|يدخر المال;spend|ينفق;borrow|يستعير;lend|يقرض;owe|يدين;earn|يكسب;business|عمل تجاري;meeting|اجتماع;appointment|موعد;schedule|جدول;task|مهمة;deadline|موعد نهائي;career|مسيرة مهنية;training|تدريب;experience|خبرة;skill|مهارة;teamwork|عمل جماعي;responsibility|مسؤولية;decision|قرار;progress|تقدم;performance|أداء;result|نتيجة;achievement|إنجاز;successfully|بنجاح;carefully|بعناية;especially|خصوصًا;probably|على الأرجح;perhaps|ربما;maybe|ربما;certainly|بالتأكيد;actually|في الواقع;finally|أخيرًا;recently|مؤخرًا;immediately|فورًا;already|بالفعل;still|ما زال;yet|بعد;ever|في أي وقت;never|أبدًا;just|للتو / فقط;soon|قريبًا;later|لاحقًا;tonight|الليلة;tomorrow morning|صباح الغد;last month|الشهر الماضي;next year|السنة القادمة;once|مرة واحدة;twice|مرتين;several|عدة;pair|زوج;piece|قطعة;kind|نوع;sort|نوع;size|حجم;shape|شكل;color|لون;red|أحمر;blue|أزرق;green|أخضر;yellow|أصفر;black|أسود;white|أبيض;brown|بني;grey|رمادي;orange|برتقالي;purple|بنفسجي;pink|وردي;number|رقم;date|تاريخ;calendar|تقويم;birthday|عيد ميلاد;age|عمر;young|شاب;adult|بالغ;married|متزوج;single|أعزب;relationship|علاقة;neighbour|جار;guest|ضيف;host|مضيف;community|مجتمع;meeting room|قاعة اجتماع;department|قسم;manager|مدير;employee|موظف;worker|عامل;engineer|مهندس;driver|سائق;doctor|طبيب;nurse|ممرض;police officer|شرطي;lawyer|محام;chef|طاهٍ;farmer|مزارع;artist|فنان;writer|كاتب;designer|مصمم;scientist|عالم;mechanic|ميكانيكي;technician|فني;electrician|كهربائي;plumber|سباك;security|أمن;health|صحة;education|تعليم;transport|نقل;communication|اتصال;technology|تقنية;science|علم;art|فن;law|قانون;government|حكومة;community|مجتمع;rule|قاعدة;lawful|قانوني;important|مهم;necessary|ضروري;useful|مفيد;successful|ناجح;comfortable|مريح;convenient|ملائم;available|متاح;responsible|مسؤول;careful|حذر;confident|واثق;worried|قلق;excited|متحمس;surprised|متفاجئ;surprising|مفاجئ;interested|مهتم;interesting|مثير;relaxed|مسترخٍ;relaxing|مريح;confused|مرتبك;confusing|مربك;boring|ممل;bored|يشعر بالملل;tired|متعب;tiring|مرهق;amazed|مندهش;amazing|مدهش;pleased|مسرور;pleasing|مُرضٍ`.split(";").map(x=>x.split("|"));
 
-function defaultState(){return {completed:[],correct:0,attempts:0,wrong:[],seenWords:[],lastUnit:"A1u1"}}
-function loadState(){
- try{
-  const saved=localStorage.getItem("laithEnglishTrainerA1A2");
-  if(saved){const p=JSON.parse(saved);return {...defaultState(),...p}}
- }catch(e){}
- return defaultState();
-}
-function saveState(){
- try{localStorage.setItem("laithEnglishTrainerA1A2",JSON.stringify(state))}catch(e){}
- updateStats();
-}
-function $(id){return document.getElementById(id)}
-function showOnly(id){
- ["home","lesson","quiz","skills","vocab"].forEach(x=>$(x).classList.toggle("hidden",x!==id));
- window.scrollTo({top:0,behavior:"smooth"});
-}
-function showHome(){showOnly("home");updateStats()}
-function updateStats(){
- $("completedCount").textContent=state.completed.filter(id=>units.some(u=>u.id===id)).length+" / "+units.length;
- $("correctCount").textContent=state.correct;
- $("accuracy").textContent=(state.attempts?Math.round(state.correct/state.attempts*100):0)+"%";
- $("wordsCount").textContent=state.seenWords.length;
- const n=state.completed.filter(id=>units.some(u=>u.id===id)).length;
- $("progressBar").style.width=(n/units.length*100)+"%";
- $("progressText").textContent=n===units.length?"أكملت جميع الوحدات! جرّب الاختبار النهائي والمراجعة.":"أنجزت "+n+" من "+units.length+" وحدة.";
+let S=load();
+let current=null,qs=[],qi=0,points=0,answered=false,wrongSession=[],vocabList=[],vi=0;
+function defaults(){return{completed:[],correct:0,attempts:0,wrong:[],seen:[],last:"a1-1"}}
+function load(){try{return{...defaults(),...JSON.parse(localStorage.getItem("laithTrainerFull")||"{}")}}catch(e){return defaults()}}
+function save(){try{localStorage.setItem("laithTrainerFull",JSON.stringify(S))}catch(e){}stats()}
+function $(x){return document.getElementById(x)}
+function escape(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function show(id){["home","lesson","quiz","skill","vocab"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"})}
+function home(){show("home");stats()}
+function stats(){
+let done=S.completed.filter(x=>U.some(u=>u.id===x)).length;
+$("done").textContent=done+" / "+U.length;
+$("accuracy").textContent=(S.attempts?Math.round(S.correct/S.attempts*100):0)+"%";
+$("correct").textContent=S.correct;
+$("seen").textContent=S.seen.length;
+$("bar").style.width=(done/U.length*100)+"%";
+$("progressText").textContent=done===U.length?"أكملت الوحدات كلها. راجع المهارات والاختبار الشامل.":"أكملت "+done+" من "+U.length+" وحدة.";
 }
 function renderUnits(){
- for(const level of ["A1","A2"]){
-  const target=$(level.toLowerCase()+"Units");target.innerHTML="";
-  units.filter(u=>u.level===level).forEach(u=>{
-   const done=state.completed.includes(u.id);
-   const div=document.createElement("div");
-   div.className="unit"+(done?" done":"");
-   const h=document.createElement("h3");h.textContent=u.title;div.appendChild(h);
-   const p=document.createElement("div");p.className="small";p.textContent=done?"✓ مكتملة":u.level+" • درس واختبار";div.appendChild(p);
-   const b=document.createElement("button");b.textContent=done?"مراجعة الوحدة":"افتح الوحدة";b.onclick=()=>openUnit(u.id);div.appendChild(b);
-   target.appendChild(div);
-  });
- }
+["A1","A2"].forEach(lv=>{
+let el=$(lv);el.innerHTML="";
+U.filter(u=>u.lv===lv).forEach(u=>{
+let d=document.createElement("div");d.className="unit"+(S.completed.includes(u.id)?" done":"");
+d.innerHTML="<b>"+escape(u.name)+"</b><p class='small'>"+(S.completed.includes(u.id)?"✓ مكتملة":"شرح + أمثلة + مفردات + اختبار")+"</p>";
+let b=document.createElement("button");b.textContent="افتح الدرس";b.onclick=()=>openUnit(u.id);d.appendChild(b);el.appendChild(d);
+});
+});
 }
+function continueStudy(){let u=U.find(x=>x.id===S.last&&!S.completed.includes(x.id))||U.find(x=>!S.completed.includes(x.id))||U[0];openUnit(u.id)}
 function openUnit(id){
- current=units.find(u=>u.id===id);if(!current)return;
- state.lastUnit=id;saveState();
- $("unitLevel").textContent=current.level;
- $("lessonTitle").textContent=current.title;
- $("lessonExplanation").textContent=current.explain;
- $("lessonExample").textContent=current.example;
- $("lessonWords").innerHTML="";
- current.words.forEach(w=>{
-  const p=document.createElement("p");p.innerHTML="<b>"+escapeHTML(w[0])+"</b> — "+escapeHTML(w[1])+" <span class='small'>("+escapeHTML(w[2])+")</span>";
-  $("lessonWords").appendChild(p);
- });
- showOnly("lesson");
+current=U.find(u=>u.id===id);if(!current)return;S.last=id;save();
+$("level").textContent=current.lv;$("title").textContent=current.name;
+$("explanation").textContent=current.ex;$("rule").textContent=current.rule;
+$("examples").innerHTML=current.eg.map(x=>"<p><b class='en'>"+escape(x[0])+"</b><br>"+escape(x[1])+"</p>").join("");
+$("unitWords").innerHTML=current.w.map(x=>"<div class='wordrow'><span class='en'>"+escape(x[0])+"</span><span>"+escape(x[1])+"</span></div>").join("");
+show("lesson");
 }
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function continueLearning(){
- const next=units.find(u=>!state.completed.includes(u.id))||units[0];
- openUnit(state.lastUnit&&units.some(u=>u.id===state.lastUnit)&&!state.completed.includes(state.lastUnit)?state.lastUnit:next.id);
+function beginUnitQuiz(){begin(current.q.map((q,i)=>({text:q[0],opts:q[1],a:q[2],why:q[3],unit:current.id,index:i})),false)}
+function begin(list,final){
+qs=list.slice();qi=0;points=0;answered=false;wrongSession=[];current.final=final;
+$("quizName").textContent=current.name+(final?" — اختبار شامل":" — اختبار الوحدة");
+$("next").onclick=nextQ;$("next").textContent="السؤال التالي";show("quiz");renderQ();
 }
-function startQuiz(){
- questions=current.q.map((q,i)=>({text:q[0],options:q[1],answer:q[2],why:q[3],unit:current.id,index:i}));
- beginQuiz(questions,false);
+function renderQ(){
+answered=false;
+$("counter").textContent="السؤال "+(qi+1)+" من "+qs.length+" | الدرجة "+points;
+$("quizBar").style.width=(qi/qs.length*100)+"%";
+$("question").textContent=qs[qi].text;
+$("answers").innerHTML="";$("feedback").classList.add("hidden");$("next").disabled=true;
+qs[qi].opts.forEach((o,i)=>{
+let b=document.createElement("button");b.className="option";b.textContent=String.fromCharCode(65+i)+". "+o;
+b.onclick=()=>answer(i);$("answers").appendChild(b);
+});
 }
-function beginQuiz(list,isFinal){
- questions=list.slice();qi=0;score=0;answered=false;sessionWrong=[];
- current.isFinal=!!isFinal;
- $("nextButton").onclick=nextQuestion;
- $("nextButton").textContent="السؤال التالي";
- $("nextButton").disabled=true;
- $("quizUnit").textContent=current.title+(isFinal?" — اختبار شامل":"");
- showOnly("quiz");renderQuestion();
+function answer(i){
+if(answered)return;answered=true;
+let q=qs[qi],ok=i===q.a;S.attempts++;if(ok){points++;S.correct++}
+else{
+wrongSession.push(q);
+let key=q.unit+"|"+q.index+"|"+q.text;
+if(!S.wrong.some(x=>x.key===key))S.wrong.push({key,...q});
 }
-function renderQuestion(){
- if(qi>=questions.length){finishQuiz();return}
- answered=false;
- $("questionCounter").textContent="السؤال "+(qi+1)+" من "+questions.length+" | الدرجة: "+score;
- $("quizProgress").style.width=(qi/questions.length*100)+"%";
- $("questionText").textContent=questions[qi].text;
- $("feedback").className="hidden";$("feedback").textContent="";
- $("options").innerHTML="";
- $("nextButton").disabled=true;
- questions[qi].options.forEach((opt,i)=>{
-  const b=document.createElement("button");b.className="option";b.textContent=String.fromCharCode(65+i)+". "+opt;
-  b.onclick=()=>chooseAnswer(i,b);$("options").appendChild(b);
- });
+[...$("answers").children].forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add("correct");if(j===i&&!ok)b.classList.add("wrong")});
+$("feedback").classList.remove("hidden");$("feedback").style.background=ok?"#dcfce7":"#fee2e2";
+$("feedback").textContent=(ok?"أحسنت، إجابة صحيحة. ":"الإجابة الصحيحة: "+q.opts[q.a]+". ")+q.why;
+$("next").disabled=false;$("next").textContent=qi===qs.length-1?"عرض النتيجة":"السؤال التالي";save();
 }
-function chooseAnswer(index,button){
- if(answered)return;answered=true;
- const q=questions[qi],ok=index===q.answer;
- state.attempts++;
- if(ok){score++;state.correct++}
- else{
-  sessionWrong.push(q);
-  const key=q.unit+"|"+q.index;
-  if(!state.wrong.some(w=>w.key===key))state.wrong.push({key,unit:q.unit,index:q.index,text:q.text,options:q.options,answer:q.answer,why:q.why});
- }
- [...$("options").children].forEach((b,i)=>{
-  b.disabled=true;
-  if(i===q.answer)b.classList.add("correct");
-  if(i===index&&!ok)b.classList.add("wrong");
- });
- $("feedback").className="";
- $("feedback").style.background=ok?"#dcfce7":"#fee2e2";
- $("feedback").textContent=(ok?"إجابة صحيحة! ":"الإجابة غير صحيحة. ")+q.why;
- $("nextButton").disabled=false;
- $("nextButton").textContent=qi===questions.length-1?"عرض النتيجة":"السؤال التالي";
- saveState();
-}
-function nextQuestion(){
- if(!answered)return;
- qi++;
- if(qi<questions.length)renderQuestion();else finishQuiz();
+function nextQ(){
+if(!answered)return;
+qi++;if(qi<qs.length){renderQ();return}
+finishQuiz();
 }
 function finishQuiz(){
- $("quizProgress").style.width="100%";
- $("questionCounter").textContent="انتهى الاختبار";
- $("questionText").textContent="نتيجتك: "+score+" من "+questions.length+" ("+Math.round(score/questions.length*100)+"%)";
- $("options").innerHTML="";
- $("feedback").className="notice";
- $("feedback").textContent=score===questions.length?"ممتاز! أتقنت جميع أسئلة هذا الاختبار.":score/questions.length>=.7?"جيد جدًا. راجع الأخطاء وحاول مرة أخرى.":"واصل التدريب. أعد الاختبار لتثبيت القاعدة.";
- $("nextButton").disabled=false;$("nextButton").textContent="العودة للوحدات";$("nextButton").onclick=()=>{ $("nextButton").onclick=nextQuestion;showHome();};
- if(current.id!=="final"&&score===questions.length&&!state.completed.includes(current.id)){
-  state.completed.push(current.id);saveState();renderUnits();
- }
+$("quizBar").style.width="100%";$("counter").textContent="انتهى الاختبار";
+$("question").textContent="نتيجتك "+points+" من "+qs.length+" — "+Math.round(points/qs.length*100)+"%";
+$("answers").innerHTML="";
+$("feedback").classList.remove("hidden");$("feedback").textContent=points===qs.length?"ممتاز! جميع إجاباتك صحيحة.":points/qs.length>=.7?"جيد جدًا. راجع أخطاءك وثبّت القواعد.":"واصل التدريب ثم أعد الاختبار.";
+$("next").disabled=false;$("next").textContent="العودة للرئيسية";$("next").onclick=home;
+if(!current.final&&U.some(u=>u.id===current.id)&&points===qs.length&&!S.completed.includes(current.id)){S.completed.push(current.id);save();renderUnits()}
 }
-function retryErrors(){
- if(!state.wrong.length){alert("لا توجد أخطاء محفوظة لإعادتها. أكمل اختبار وحدة أولًا.");return}
- current={id:"review",level:"مراجعة",title:"مراجعة الأخطاء"};
- const list=state.wrong.map(w=>({text:w.text,options:w.options,answer:w.answer,why:w.why,unit:w.unit,index:w.index}));
- beginQuiz(list,false);
+function wrongReview(){
+if(!S.wrong.length){alert("لا توجد أخطاء محفوظة بعد. أجب عن أسئلة وحدة أولًا.");return}
+current={id:"review",name:"مراجعة الأخطاء",final:false};
+begin(S.wrong.map(w=>({text:w.text,opts:w.opts,a:w.a,why:w.why,unit:w.unit,index:w.index})),false);
 }
-function startFinalExam(){
- current={id:"final",level:"A1-A2",title:"الاختبار النهائي A1 + A2"};
- const list=units.flatMap(u=>u.q.map((q,i)=>({text:q[0],options:q[1],answer:q[2],why:q[3],unit:u.id,index:i})));
- beginQuiz(list,true);
+function finalExam(){
+current={id:"final",name:"الاختبار الشامل A1 + A2",final:true};
+begin(U.flatMap(u=>u.q.map((q,i)=>({text:q[0],opts:q[1],a:q[2],why:q[3],unit:u.id,index:i}))),true);
 }
-function openSkill(type){
- skillBack="home";showOnly("skills");
- const content=$("skillContent");
- content.innerHTML="";
- const data={
- listen:{title:"الاستماع",intro:"اضغط على زر الاستماع لسماع الجملة الإنجليزية، ثم حاول فهمها.",text:"I work in Basra. I am learning English every day.",ar:"أنا أعمل في البصرة. أتعلم الإنجليزية كل يوم."},
- read:{title:"القراءة",intro:"اقرأ النص ثم أجب عن السؤال.",text:"My name is Ali. I live in Basra. I work every day, and I study English at night.",ar:"أين يسكن علي؟",opts:["Baghdad","Basra","London"],answer:1},
- write:{title:"الكتابة",intro:"اكتب جملتين عن نفسك باللغة الإنجليزية. مثال: My name is Ali. I live in Basra.",text:"اكتب هنا...",ar:"اكتب جملتين على الأقل."},
- speak:{title:"التحدث والنطق",intro:"استمع إلى الجملة ثم كررها بصوت مرتفع عدة مرات.",text:"Hello. My name is Laith. I am learning English.",ar:"مرحبًا. اسمي ليث. أنا أتعلم الإنجليزية."}
- };
- const d=data[type];$("skillTitle").textContent=d.title;
- const p=document.createElement("p");p.textContent=d.intro;content.appendChild(p);
- if(type==="listen"||type==="speak"){
-  const en=document.createElement("h3");en.textContent=d.text;content.appendChild(en);
-  const b=document.createElement("button");b.textContent="استمع إلى الجملة";b.onclick=()=>say(d.text);content.appendChild(b);
-  const ar=document.createElement("p");ar.className="notice";ar.textContent=d.ar;content.appendChild(ar);
- }else if(type==="read"){
-  const en=document.createElement("p");en.className="notice";en.textContent=d.text;content.appendChild(en);
-  const question=document.createElement("h3");question.textContent=d.ar;content.appendChild(question);
-  d.opts.forEach((o,i)=>{const b=document.createElement("button");b.className="option";b.textContent=o;b.onclick=()=>{content.querySelectorAll("button").forEach(x=>x.disabled=true);const f=document.createElement("p");f.textContent=i===d.answer?"إجابة صحيحة!":"حاول مرة أخرى في المرة القادمة. الإجابة الصحيحة: Basra.";content.appendChild(f);};content.appendChild(b)});
- }else{
-  const ta=document.createElement("textarea");ta.placeholder=d.text;content.appendChild(ta);
-  const b=document.createElement("button");b.textContent="تحقق من الكتابة";b.onclick=()=>{
-   const val=ta.value.trim();const f=document.createElement("p");f.className="notice";
-   f.textContent=val.split(/\s+/).filter(Boolean).length>=5?"أحسنت! كتبت جملة أو أكثر. راجع الحروف الكبيرة والنقطة في نهاية الجملة.":"اكتب خمس كلمات على الأقل. مثال: My name is Ali.";
-   content.appendChild(f);
-  };content.appendChild(b);
- }
+
+/* قاموس الكلمات يجمع مفردات الوحدات مع القائمة الموسعة */
+function allWords(){
+let out=[];
+U.forEach(u=>u.w.forEach(w=>out.push({en:w[0],ar:w[1]})));
+EXTRA.forEach(w=>out.push({en:w[0],ar:w[1]}));
+let seen=new Set();return out.filter(w=>{let k=w.en.toLowerCase();if(seen.has(k))return false;seen.add(k);return true});
+}
+function vocabulary(){vocabList=allWords();vi=0;show("vocab");showWord()}
+function showWord(){
+if(!vocabList.length)return;
+let w=vocabList[vi%vocabList.length];
+$("wordCounter").textContent="المفردة "+(vi+1)+" من "+vocabList.length;
+$("word").textContent=w.en;$("pron").textContent="اقرأ الكلمة بصوت مرتفع، ثم استمع إلى نطقها.";
+$("meaning").textContent=w.ar;$("meaning").classList.add("hidden");
+}
+function revealMeaning(){$("meaning").classList.remove("hidden")}
+function sayCurrent(){say(vocabList[vi%vocabList.length].en)}
+function wordNext(known){
+let w=vocabList[vi%vocabList.length];
+if(!S.seen.includes(w.en))S.seen.push(w.en);
+if(!known)vocabList.push(w);
+vi=(vi+1)%vocabList.length;save();showWord();
 }
 function say(text){
- if("speechSynthesis" in window){
-  try{window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="en-US";u.rate=.8;window.speechSynthesis.speak(u)}
-  catch(e){alert("تعذر تشغيل النطق في هذا المتصفح.")}
- }else alert("ميزة النطق غير مدعومة في هذا المتصفح.");
+if(!("speechSynthesis" in window)){alert("ميزة النطق غير متاحة في هذا المتصفح.");return}
+window.speechSynthesis.cancel();
+let utter=new SpeechSynthesisUtterance(text);utter.lang="en-US";utter.rate=.82;
+window.speechSynthesis.speak(utter);
 }
-function openVocabulary(){
- vocabList=allWords.slice();vocabIndex=0;showOnly("vocab");renderVocab();
+function openSkill(type){
+show("skill");let box=$("skillBody");box.innerHTML="";
+const data={
+listen:{title:"الاستماع والفهم",text:"Hello, my name is Adam. I live in Basra. I work in an office. Every evening, I study English for thirty minutes.",ar:"مرحبًا، اسمي آدم. أعيش في البصرة. أعمل في مكتب. كل مساء أدرس الإنجليزية لمدة ثلاثين دقيقة.",q:"Where does Adam live?",opts:["Baghdad","Basra","London"],a:1},
+speak:{title:"التحدث والنطق",text:"Hello. My name is Laith. I am from Iraq. I live in Basra. I work every day. I am learning English because it is useful.",ar:"مرحبًا. اسمي ليث. أنا من العراق. أعيش في البصرة. أعمل كل يوم. أتعلم الإنجليزية لأنها مفيدة."},
+read:{title:"القراءة والفهم",text:"Sara gets up at seven o'clock. She has breakfast and goes to work by bus. She finishes work at three o'clock. In the evening, she reads a book or watches TV.",q:"How does Sara go to work?",opts:["By bus","By car","On foot"],a:0},
+write:{title:"الكتابة باللغة الإنجليزية"}
+};
+let d=data[type];$("skillTitle").textContent=d.title;
+if(type==="listen"||type==="speak"){
+box.innerHTML="<p>استمع إلى النص مرتين، وحاول أن تكرر الجمل بصوت مرتفع.</p><h3 class='en'>"+escape(d.text)+"</h3><button id='playText'>استمع للنص</button><button id='slowText' class='secondary'>استمع ببطء</button><button id='showTranslation' class='secondary'>إظهار الترجمة</button><div id='translation' class='notice hidden'>"+escape(d.ar)+"</div>";
+$("playText").onclick=()=>{if("speechSynthesis"in window){window.speechSynthesis.cancel();let x=new SpeechSynthesisUtterance(d.text);x.lang="en-US";x.rate=0.9;speechSynthesis.speak(x)}};
+$("slowText").onclick=()=>{if("speechSynthesis"in window){window.speechSynthesis.cancel();let x=new SpeechSynthesisUtterance(d.text);x.lang="en-US";x.rate=0.65;speechSynthesis.speak(x)}};
+$("showTranslation").onclick=()=>$("translation").classList.toggle("hidden");
+if(type==="listen"){let h=document.createElement("h3");h.textContent="اختبر فهمك";box.appendChild(h);let p=document.createElement("p");p.textContent=d.q;box.appendChild(p);d.opts.forEach((o,i)=>{let b=document.createElement("button");b.className="option";b.textContent=o;b.onclick=()=>{const f=document.createElement("p");f.className="notice";f.textContent=i===d.a?"إجابة صحيحة!":"الإجابة الصحيحة: "+d.opts[d.a];box.appendChild(f);[...box.querySelectorAll("button.option")].forEach(x=>x.disabled=true)};box.appendChild(b)})}
+if(type==="speak"){let p=document.createElement("p");p.className="notice";p.textContent="تدريب: عرّف بنفسك، واذكر مدينتك وعملك وسبب تعلمك الإنجليزية. لا يسجّل البرنامج صوتك؛ استخدم زر الاستماع ثم كرر الجمل." ;box.appendChild(p)}
+}else if(type==="read"){
+box.innerHTML="<p>اقرأ النص الإنجليزي، ثم أجب عن السؤال.</p><div class='notice en'>"+escape(d.text)+"</div><h3>"+d.q+"</h3>";
+d.opts.forEach((o,i)=>{let b=document.createElement("button");b.className="option";b.textContent=o;b.onclick=()=>{let p=document.createElement("p");p.className="notice";p.textContent=i===d.a?"إجابة صحيحة!":"الإجابة الصحيحة: "+d.opts[d.a];box.appendChild(p);[...box.querySelectorAll("button.option")].forEach(x=>x.disabled=true)};box.appendChild(b)});
+}else{
+box.innerHTML="<p>اكتب فقرة من خمس إلى ثماني جمل عن نفسك أو يومك. استخدم المثال للمساعدة، ثم اضغط على التحقق.</p><div class='notice en'>My name is Ali. I live in Basra. I work every day. I study English in the evening. I want to improve my English.</div><textarea id='writing' placeholder='Write in English here...'></textarea><button id='checkWriting'>تحقق من الكتابة</button><div id='writingResult'></div>";
+$("checkWriting").onclick=()=>{
+let val=$("writing").value.trim(),words=val.split(/\s+/).filter(Boolean);
+let tips=[];
+if(words.length<5)tips.push("اكتب خمس كلمات على الأقل.");
+if(val&&!/[.!?]$/.test(val))tips.push("ضع نقطة أو علامة مناسبة في نهاية الجملة.");
+if(val&&!/^[A-Z]/.test(val))tips.push("ابدأ الجملة الإنجليزية بحرف كبير.");
+if(val&&/\b(i)\b/.test(val))tips.push("ضمير I يُكتب دائمًا بحرف كبير.");
+if(!tips.length)tips.push("جيد! راجع ترتيب الكلمات والتهجئة. هذا فحص مبدئي وليس تصحيحًا نحويًا كاملًا.");
+$("writingResult").className="notice";$("writingResult").textContent=tips.join(" ");
+};
 }
-function renderVocab(){
- if(!vocabList.length)return;
- const w=vocabList[vocabIndex%vocabList.length];
- $("vocabCounter").textContent="الكلمة "+(vocabIndex+1)+" من "+vocabList.length;
- $("vocabWord").textContent=w.en;$("vocabPronunciation").textContent="النطق التقريبي: "+w.pron;
- $("vocabMeaning").classList.add("hidden");$("vocabMeaning").textContent=w.ar;
 }
-function showMeaning(){$("vocabMeaning").classList.remove("hidden")}
-function speakWord(){say(vocabList[vocabIndex%vocabList.length].en)}
-function nextVocab(known){
- const w=vocabList[vocabIndex%vocabList.length];
- if(!state.seenWords.includes(w.en))state.seenWords.push(w.en);
- if(!known){vocabList.push(w)}
- vocabIndex++;
- if(vocabIndex>=vocabList.length)vocabIndex=0;
- saveState();renderVocab();
+function backup(){
+let txt=JSON.stringify(S,null,2);
+let blob=new Blob([txt],{type:"application/json"});
+let url=URL.createObjectURL(blob);let a=document.createElement("a");a.href=url;a.download="english-trainer-progress.json";a.click();URL.revokeObjectURL(url);
 }
-function exportProgress(){
- const data=JSON.stringify(state,null,2);
- if(navigator.clipboard&&navigator.clipboard.writeText){
-  navigator.clipboard.writeText(data).then(()=>alert("تم نسخ النسخة الاحتياطية. احفظها في مكان آمن." )).catch(()=>showBackup(data));
- }else showBackup(data);
+function restore(e){
+let file=e.target.files&&e.target.files[0];if(!file)return;
+let r=new FileReader();r.onload=()=>{
+try{let d=JSON.parse(r.result);if(!Array.isArray(d.completed)||!Array.isArray(d.wrong))throw Error();S={...defaults(),...d};save();renderUnits();home();alert("تمت استعادة التقدم.");}
+catch(err){alert("تعذر قراءة النسخة الاحتياطية.");}
+};r.readAsText(file);e.target.value="";
 }
-function showBackup(data){
- const w=window.open("","_blank");
- if(w){w.document.write("<textarea style='width:95%;height:90vh'></textarea>");w.document.querySelector("textarea").value=data}
- else prompt("انسخ النص التالي واحفظه:",data);
+function resetAll(){
+if(!confirm("هل تريد حذف تقدمك المحفوظ؟"))return;
+S=defaults();save();renderUnits();home();
 }
-function importProgress(event){
- const file=event.target.files&&event.target.files[0];if(!file)return;
- const reader=new FileReader();
- reader.onload=()=>{
-  try{
-   const d=JSON.parse(reader.result);
-   if(!Array.isArray(d.completed)||!Array.isArray(d.wrong))throw new Error("invalid");
-   state={...defaultState(),...d};saveState();renderUnits();showHome();alert("تم استعادة التقدم.");
-  }catch(e){alert("الملف غير صالح أو ليس نسخة احتياطية من البرنامج.")}
- };
- reader.readAsText(file);event.target.value="";
-}
-function resetProgress(){
- if(!confirm("هل تريد حذف جميع نتائجك وتقدمك المحفوظ؟"))return;
- state=defaultState();saveState();renderUnits();showHome();alert("تمت إعادة ضبط التقدم.");
-}
-renderUnits();updateStats();
+renderUnits();stats();
 </script>
 </body>
 </html>
