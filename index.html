@@ -195,9 +195,9 @@
             display: inline-block;
             background: var(--light-blue);
             color: var(--primary);
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin: 2px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 4px;
             font-weight: bold;
             font-size: 0.9rem;
         }
@@ -236,39 +236,31 @@
     </div>
 
     <div class="selector-card">
-        <label for="unit-select">📂 تصفح الـ 42 وحدة كاملة بالتفصيل:</label>
-        <!-- تم التأكد وتعديل عنصر القائمة ليعمل ويظهر إجبارياً على شاشات الهواتف -->
-        <select id="unit-select" onchange="loadSelectedUnit()"></select>
-        <button class="btn btn-wrong" id="btn-review-wrong" onclick="startWrongReview()">🔄 إعادة الأسئلة التي أخطأت بها (<span id="wrong-count">0</span>)</button>
-    </div>
-
-    <div class="card-content">
-        <div class="section-title grammar-title">📘 شرح القواعد المعياري والأمثلة بالعربية</div>
-        <div class="explanation-text" id="grammar-text">جاري تحميل البيانات...</div>
-        <div style="margin-top: 10px; font-weight: bold; color: var(--dark)">🔤 المفردات والكلمات المطلوبة:</div>
-        <div id="vocab-container" style="margin-top: 5px;"></div>
-    </div>
-
-    <div class="card-content">
-        <div class="section-title audio-title">🎧 مهارات الاستماع والتحدث التفاعلي</div>
-        <button class="btn btn-audio" onclick="playOxfordVoice()">🔊 استمع للمقطع الصوتي التعليمي (الإصغاء)</button>
-        <button class="btn btn-mic" onclick="simulateMic()">🎤 تفعيل لاقط الميكروفون للتحليل (التحدث)</button>
-    </div>
-
-    <div class="card-content">
-        <div class="section-title write-title">📝 القراءة والكتابة والتقييم الفوري</div>
-        <div id="question-text" style="font-size: 1rem; font-weight: 600; color: #3c4043; line-height: 1.4;">السؤال:</div>
-        <input type="text" class="input-answer" id="user-answer" placeholder="اكتب إجابتك بالإنجليزية هنا..." autocomplete="off" autocapitalize="none">
-        <button class="btn btn-success" onclick="verifyLaithAnswer()">✅ تحقق من إجابتي الفورية</button>
-    </div>
-
-    <script>
-        // قاعدة البيانات الكاملة لجميع الوحدات الـ 42 بالتفصيل لمنع القوالب الفارغة
-        const curriculumData = {};
-        
-        // بناء الـ 21 وحدة لمستوى A1
-        for(let i = 1; i <= 21; i++) {
-            curriculumData[`unit_${i}`] = {
-                level: "A1",
-                title: `الوحدة ${i} (A1): قواعد التأسيس والتركيب - الجزء ${i}`,
-                grammar: `★ شرح قاعدة الوحدة ${i} من منهج أكسفورد للتأسيس:\nنركز في هذا القسم على الهيكل القواعدي وصياغة الجمل الاسمية والفعلية بشكل منظم ومتدرج للمبتدئين.\n\n🔤 الكلمات المطلوبة: Hello (مرحباً) - Name (اسم) - Book (كتاب)`,
+        <label for="unit-select">📂 تصفح الـ 42 وحدة كاملة بالتفصيل دون أي نقص:</label>
+        <!-- تم وضع الخيارات هنا يدوياً وثابتاً لكي يراها الآيفون فوراً ولا تظهر قائمة فارغة أبداً -->
+        <select id="unit-select" onchange="loadSelectedUnit()">
+            <optgroup label="المستوى المبتدئ A1">
+                <option value="unit_1" selected>الوحدة 1 (A1): التعارف وفعل الكينونة (am)</option>
+                <option value="unit_2">الوحدة 2 (A1): فعل الكينونة للمفرد (is)</option>
+                <option value="unit_3">الوحدة 3 (A1): فعل الكينونة للجمع (are)</option>
+                <option value="unit_4">الوحدة 4 (A1): ضمائر الفاعل الشخصية</option>
+                <option value="unit_5">الوحدة 5 (A1): ضمائر المفعول به</option>
+                <option value="unit_6">الوحدة 6 (A1): صفات الملكية</option>
+                <option value="unit_7">الوحدة 7 (A1): أسماء الإشارة</option>
+                <option value="unit_8">الوحدة 8 (A1): المضارع البسيط (I / الجمع)</option>
+                <option value="unit_9">الوحدة 9 (A1): المضارع البسيط (المفرد وحرف S)</option>
+                <option value="unit_10">الوحدة 10 (A1): نفي المضارع البسيط</option>
+                <option value="unit_11">الوحدة 11 (A1): أدوات النكرة (A / An)</option>
+                <option value="unit_12">الوحدة 12 (A1): أداة التعريف (The)</option>
+                <option value="unit_13">الوحدة 13 (A1): الأسماء المعدودة وغير المعدودة</option>
+                <option value="unit_14">الوحدة 14 (A1): استخدام Some</option>
+                <option value="unit_15">الوحدة 15 (A1): استخدام Any</option>
+                <option value="unit_16">الوحدة 16 (A1): قواعد التعبير عن الوجود (There is)</option>
+                <option value="unit_17">الوحدة 17 (A1): قواعد التعبير عن الوجود (There are)</option>
+                <option value="unit_18">الوحدة 18 (A1): أحرف جر المكان الأساسية</option>
+                <option value="unit_19">الوحدة 19 (A1): أدوات الاستفهام (What / Where)</option>
+                <option value="unit_20">الوحدة 20 (A1): أدوات الاستفهام (Who / When)</option>
+                <option value="unit_21">الوحدة 21 (A1): مراجعة كبرى وتثبيت مستوى A1</option>
+            </optgroup>
+            <optgroup label="المستوى الأساسي A2">
+                <option value="unit_22">الوحدة 22 (A2): المضارع المستمر (ing)</option>
