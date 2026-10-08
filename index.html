@@ -1,1669 +1,1456 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
 <meta name="theme-color" content="#2563eb">
-
 <title>English Trainer A1 → A2 | Laith</title>
 
 <style>
-
 *{box-sizing:border-box}
-
 body{
-
   margin:0;
-
-  font-family:Arial,sans-serif;
-
-  background:#f1f5f9;
-
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#f3f6fb;
   color:#172033;
-
 }
-
 header{
-
   background:#2563eb;
-
   color:white;
-
-  padding:20px 15px;
-
+  padding:22px 16px;
   text-align:center;
-
 }
-
-header h1{margin:0 0 7px;font-size:23px}
-
+header h1{margin:0 0 8px;font-size:24px}
 header p{margin:0;font-size:14px}
-
 .container{
-
   max-width:850px;
-
   margin:auto;
-
   padding:15px;
-
 }
-
 .card{
-
   background:white;
-
   border-radius:16px;
-
   padding:18px;
-
   margin-bottom:15px;
-
-  box-shadow:0 3px 12px #00000012;
-
+  box-shadow:0 3px 12px rgba(0,0,0,.07);
 }
-
-h2{margin-top:0;color:#1d4ed8}
-
-h3{color:#334155}
-
+h2,h3{margin-top:0}
 button{
-
-  border:0;
-
-  border-radius:10px;
-
-  padding:12px 17px;
-
-  margin:5px 0;
-
-  font-size:16px;
-
-  cursor:pointer;
-
-}
-
-.primary{background:#2563eb;color:white}
-
-.secondary{background:#e2e8f0;color:#172033}
-
-.danger{background:#dc2626;color:white}
-
-.option{
-
-  display:block;
-
   width:100%;
-
-  text-align:right;
-
-  background:#f8fafc;
-
-  border:2px solid #e2e8f0;
-
-  margin:9px 0;
-
+  border:0;
+  border-radius:12px;
+  padding:14px;
+  margin:6px 0;
+  font-size:16px;
+  cursor:pointer;
 }
-
-.option:hover{border-color:#2563eb}
-
-.correct{background:#dcfce7!important;border-color:#16a34a!important}
-
-.wrong{background:#fee2e2!important;border-color:#dc2626!important}
-
-.progress{
-
-  height:12px;
-
-  background:#e2e8f0;
-
-  border-radius:20px;
-
-  overflow:hidden;
-
-}
-
-.progress div{
-
-  height:100%;
-
-  background:#2563eb;
-
-  width:0%;
-
-}
-
+.primary{background:#2563eb;color:white}
+.secondary{background:#e8eefc;color:#174ea6}
+.danger{background:#fee2e2;color:#991b1b}
 .unit{
-
-  border:2px solid #e2e8f0;
-
+  border:1px solid #e2e8f0;
   border-radius:14px;
-
   padding:15px;
-
   margin:10px 0;
-
 }
-
-.unit.done{border-color:#16a34a}
-
-.small{font-size:14px;color:#64748b}
-
-.example{
-
-  background:#eff6ff;
-
-  padding:12px;
-
+.unit-title{
+  font-weight:bold;
+  font-size:17px;
+}
+.progress{
+  height:10px;
+  background:#e5e7eb;
   border-radius:10px;
-
-  margin:8px 0;
-
+  overflow:hidden;
+  margin-top:10px;
 }
-
-.rule{
-
+.progress-bar{
+  height:100%;
+  background:#2563eb;
+  width:0%;
+}
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  background:#eef2ff;
+  color:#3730a3;
+  font-size:12px;
+}
+.example{
   background:#f8fafc;
-
   border-right:4px solid #2563eb;
-
   padding:12px;
-
-  margin:10px 0;
-
+  margin:9px 0;
+  border-radius:8px;
 }
-
-.english{
-
+.en{
   direction:ltr;
-
   text-align:left;
-
   font-weight:bold;
-
 }
-
-#lesson,#quiz{display:none}
-
+.ar{margin-top:5px}
+.option{
+  background:#f8fafc;
+  border:1px solid #dbe2ea;
+  text-align:right;
+}
+.option.correct{
+  background:#dcfce7;
+  border-color:#22c55e;
+}
+.option.wrong{
+  background:#fee2e2;
+  border-color:#ef4444;
+}
+.hidden{display:none}
 .score{
-
   font-size:22px;
-
   font-weight:bold;
-
   text-align:center;
-
-  padding:15px;
-
 }
-
+.small{
+  color:#64748b;
+  font-size:14px;
+}
+ul{line-height:2}
+.nav{
+  display:flex;
+  gap:8px;
+}
+.nav button{flex:1}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<h1>English Trainer A1 → A2 | Laith</h1>
-
-<p>برنامج تدريب شخصي — شرح + أمثلة + تدريب + اختبار + متابعة</p>
-
+  <h1>English Trainer A1 → A2 | Laith</h1>
+  <p>برنامج تدريب شخصي — شرح + تدريب + اختبار + متابعة</p>
 </header>
 
 <div class="container">
 
 <div id="home">
 
-<div class="card">
+  <div class="card">
+    <h2>🎯 مستوى A1</h2>
+    <p>
+      برنامج تدريبي منظم لتعلم أساسيات اللغة الإنجليزية من البداية،
+      مع شرح عربي، أمثلة، أسئلة، اختبارات ومتابعة التقدم.
+    </p>
 
-<h2>📊 تقدمك</h2>
+    <div class="progress">
+      <div id="overallProgress" class="progress-bar"></div>
+    </div>
 
-<div class="progress"><div id="progressBar"></div></div>
+    <p id="overallText" class="small"></p>
 
-<p id="progressText">0%</p>
+    <button class="primary" onclick="showMistakes()">
+      🔁 مراجعة أخطائي
+    </button>
+
+    <button class="danger" onclick="resetProgress()">
+      إعادة التقدم من البداية
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>📚 وحدات A1</h2>
+    <div id="units"></div>
+  </div>
+
+</div>
+
+
+<div id="lesson" class="hidden">
+
+  <div class="card">
+    <button class="secondary" onclick="goHome()">⬅️ العودة للوحدات</button>
+
+    <h2 id="lessonTitle"></h2>
+
+    <div id="lessonContent"></div>
+
+    <button class="primary" onclick="startQuiz()">
+      📝 ابدأ اختبار الوحدة
+    </button>
+  </div>
 
 </div>
 
-<div class="card">
 
-<h2>📚 مستوى A1</h2>
+<div id="quiz" class="hidden">
 
-<div id="units"></div>
+  <div class="card">
+
+    <button class="secondary" onclick="goHome()">⬅️ الوحدات</button>
+
+    <h2 id="quizTitle"></h2>
+
+    <p id="questionNumber" class="small"></p>
+
+    <h3 id="questionText"></h3>
+
+    <div id="options"></div>
+
+    <div id="feedback"></div>
+
+  </div>
 
 </div>
 
-<div class="card">
 
-<button class="danger" onclick="resetProgress()">إعادة ضبط التقدم</button>
+<div id="result" class="hidden">
+
+  <div class="card">
+
+    <h2>🎉 انتهى الاختبار</h2>
+
+    <div id="resultContent"></div>
+
+    <button class="primary" onclick="goHome()">
+      العودة إلى الوحدات
+    </button>
+
+  </div>
+
+</div>
+
+
+<div id="mistakes" class="hidden">
+
+  <div class="card">
+
+    <button class="secondary" onclick="goHome()">⬅️ العودة</button>
+
+    <h2>🔁 مراجعة الأخطاء</h2>
+
+    <div id="mistakeContent"></div>
+
+  </div>
 
 </div>
 
 </div>
 
-<div id="lesson"></div>
-
-<div id="quiz"></div>
-
-</div>
 
 <script>
 
 const units = [
 
 {
-
-title:"1. Verb to be — am / is / are",
-
+title:"الوحدة 1 — Verb to be",
 explain:`
-
-<h3>ما هو Verb to be؟</h3>
-
-<p>نستخدم <b>am / is / are</b> للتحدث عن الهوية، العمر، الوظيفة، الحالة، والمعلومات الأساسية.</p>
-
-<div class="rule">
-
-<b>I → am</b><br>
-
-<b>He / She / It → is</b><br>
-
-<b>You / We / They → are</b>
-
-</div>
-
-<h3>أمثلة</h3>
-
-<div class="example english">I am Laith.</div>
-
-<p>أنا ليث.</p>
-
-<div class="example english">She is a teacher.</div>
-
-<p>هي مدرسة.</p>
-
-<div class="example english">They are happy.</div>
-
-<p>هم سعداء.</p>
-
-<h3>النفي</h3>
-
-<div class="example english">I am not tired.</div>
-
-<div class="example english">He is not busy.</div>
-
-<div class="example english">They are not ready.</div>
-
-<h3>السؤال</h3>
-
-<div class="example english">Are you ready?</div>
-
-<div class="example english">Is he a doctor?</div>
-
-<div class="example english">Are they at home?</div>
-
-`,
-
-questions:[
-
-["I ___ a student.","am","is","are","A"],
-
-["She ___ happy.","am","is","are","B"],
-
-["They ___ at home.","am","is","are","C"],
-
-["___ you Iraqi?","Am","Is","Are","C"],
-
-["He ___ not tired.","am","is","are","B"],
-
-["We ___ friends.","am","is","are","C"]
-
-]
-
-},
-
-{
-
-title:"2. Pronouns — الضمائر",
-
-explain:`
-
-<h3>الضمائر الشخصية</h3>
-
-<div class="rule">
-
-I = أنا<br>
-
-You = أنت / أنتم<br>
-
-He = هو<br>
-
-She = هي<br>
-
-It = هو/هي لغير العاقل<br>
-
-We = نحن<br>
-
-They = هم / هن
-
-</div>
-
-<h3>أمثلة</h3>
-
-<div class="example english">I am a worker.</div>
-
-<div class="example english">He is my brother.</div>
-
-<div class="example english">She is my sister.</div>
-
-<div class="example english">We are friends.</div>
-
-<div class="example english">They are students.</div>
-
-`,
-
-questions:[
-
-["Ali is my brother. ___ is 30.","He","She","They","A"],
-
-["Sara is a doctor. ___ is busy.","He","She","It","B"],
-
-["My friends are here. ___ are ready.","He","We","They","C"],
-
-["My brother and I = ___","They","We","You","B"],
-
-["The car is new. ___ is expensive.","He","She","It","C"]
-
-]
-
-},
-
-{
-
-title:"3. Possessives — الملكية",
-
-explain:`
-
-<h3>صفات الملكية</h3>
-
-<div class="rule">
-
-my = لي / خاصتي<br>
-
-your = لك<br>
-
-his = له<br>
-
-her = لها<br>
-
-our = لنا<br>
-
-their = لهم
-
-</div>
-
-<h3>أمثلة</h3>
-
-<div class="example english">This is my car.</div>
-
-<div class="example english">That is her house.</div>
-
-<div class="example english">His name is Ali.</div>
-
-<div class="example english">Our teacher is good.</div>
-
-<div class="example english">Their children are young.</div>
-
-<h3>ملكية الشخص باستخدام 's</h3>
-
-<div class="example english">Ali's car.</div>
-
-<p>سيارة علي.</p>
-
-`,
-
-questions:[
-
-["This is ___ book. I own it.","my","his","their","A"],
-
-["Ali has a car. It is ___ car.","her","his","our","B"],
-
-["Sara has a house. It is ___ house.","his","her","their","B"],
-
-["We have a teacher. ___ teacher is good.","Our","Their","His","A"],
-
-["They have a house. It is ___ house.","my","our","their","C"]
-
-]
-
-},
-
-{
-
-title:"4. a / an / the",
-
-explain:`
-
-<h3>a</h3>
-
-<p>تأتي قبل اسم مفرد يبدأ بصوت ساكن.</p>
-
-<div class="example english">a car</div>
-
-<div class="example english">a book</div>
-
-<h3>an</h3>
-
-<p>تأتي قبل اسم مفرد يبدأ بصوت علّة.</p>
-
-<div class="example english">an apple</div>
-
-<div class="example english">an orange</div>
-
-<h3>the</h3>
-
-<p>نستخدمها عندما يكون الشيء معروفًا أو محددًا.</p>
-
-<div class="example english">The car is new.</div>
-
-`,
-
-questions:[
-
-["I have ___ car.","a","an","the","A"],
-
-["She eats ___ apple.","a","an","the","B"],
-
-["He is ___ teacher.","a","an","the","A"],
-
-["___ sun is hot.","A","An","The","C"],
-
-["I see ___ orange.","a","an","the","B"]
-
-]
-
-},
-
-{
-
-title:"5. This / That / These / Those",
-
-explain:`
-
-<div class="rule">
-
-This = هذا/هذه للمفرد القريب<br>
-
-That = ذلك/تلك للمفرد البعيد<br>
-
-These = هؤلاء/هذه للجمع القريب<br>
-
-Those = أولئك/تلك للجمع البعيد
-
-</div>
-
-<div class="example english">This is my phone.</div>
-
-<div class="example english">That is your car.</div>
-
-<div class="example english">These are my books.</div>
-
-<div class="example english">Those are houses.</div>
-
-`,
-
-questions:[
-
-["___ is my phone. (near)","This","Those","These","A"],
-
-["___ is your car. (far)","These","That","This","B"],
-
-["___ are my books. (near)","This","That","These","C"],
-
-["___ are houses. (far)","These","Those","This","B"]
-
-]
-
-},
-
-{
-
-title:"6. Singular & Plural — المفرد والجمع",
-
-explain:`
-
-<p>الاسم المفرد يشير إلى شيء واحد، والجمع إلى أكثر من واحد.</p>
-
-<div class="example english">one book → two books</div>
-
-<div class="example english">one car → three cars</div>
-
-<div class="example english">one box → two boxes</div>
-
-<p>بعض الكلمات غير منتظمة:</p>
-
-<div class="example english">man → men</div>
-
-<div class="example english">woman → women</div>
-
-<div class="example english">child → children</div>
-
-`,
-
-questions:[
-
-["One book → two ___.","book","books","bookes","B"],
-
-["One box → two ___.","boxs","boxes","box","B"],
-
-["One child → two ___.","childs","children","childes","B"],
-
-["One man → two ___.","mans","men","man","B"]
-
-]
-
-},
-
-{
-
-title:"7. Present Simple — المضارع البسيط",
-
-explain:`
-
-<h3>الاستخدام</h3>
-
-<p>نستخدم Present Simple للعادات، الروتين، والحقائق.</p>
-
-<div class="rule">
-
-I / You / We / They + verb<br>
-
-He / She / It + verb + s
-
-</div>
-
-<div class="example english">I work every day.</div>
-
-<div class="example english">They live in Basra.</div>
-
-<div class="example english">He works every day.</div>
-
-<div class="example english">She lives in Iraq.</div>
-
-<h3>مهم جدًا</h3>
-
-<p>مع he/she/it نضيف غالبًا <b>s</b>.</p>
-
-`,
-
-questions:[
-
-["I ___ every day.","work","works","working","A"],
-
-["She ___ English.","study","studies","studying","B"],
-
-["He ___ to work.","go","goes","going","B"],
-
-["They ___ football.","play","plays","playing","A"],
-
-["My brother ___ here.","work","works","working","B"]
-
-]
-
-},
-
-{
-
-title:"8. Do / Does — النفي والأسئلة",
-
-explain:`
-
-<h3>الأسئلة</h3>
-
-<div class="example english">Do you work?</div>
-
-<div class="example english">Do they live here?</div>
-
-<div class="example english">Does he work?</div>
-
-<div class="example english">Does she like tea?</div>
-
-<h3>النفي</h3>
-
-<div class="example english">I do not work.</div>
-
-<div class="example english">They don't work.</div>
-
-<div class="example english">He does not work.</div>
-
-<div class="example english">She doesn't work.</div>
-
-<p><b>ملاحظة:</b> بعد does يعود الفعل إلى شكله الأساسي.</p>
-
-<div class="example english">Does he work? ✅</div>
-
-<div class="example english">Does he works? ❌</div>
-
-`,
-
-questions:[
-
-["___ you work here?","Do","Does","Are","A"],
-
-["___ he work here?","Do","Does","Is","B"],
-
-["She ___ like coffee.","don't","doesn't","isn't","B"],
-
-["They ___ play football.","doesn't","don't","aren't","B"],
-
-["Does he ___ English?","speaks","speak","speaking","B"]
-
-]
-
-},
-
-{
-
-title:"9. What / Where / When / Who / Why / How",
-
-explain:`
-
-<h3>كلمات السؤال المهمة جدًا</h3>
-
-<div class="rule">
-
-<b>What</b> = ماذا / ما<br>
-
-<b>Where</b> = أين<br>
-
-<b>When</b> = متى<br>
-
-<b>Who</b> = من<br>
-
-<b>Why</b> = لماذا<br>
-
-<b>How</b> = كيف
-
-</div>
-
-<h3>أمثلة</h3>
-
-<div class="example english">What is your name?</div>
-
-<p>ما اسمك؟</p>
-
-<div class="example english">Where do you live?</div>
-
-<p>أين تعيش؟</p>
-
-<div class="example english">When do you work?</div>
-
-<p>متى تعمل؟</p>
-
-<div class="example english">Who is he?</div>
-
-<p>من هو؟</p>
-
-<div class="example english">Why are you tired?</div>
-
-<p>لماذا أنت متعب؟</p>
-
-<div class="example english">How are you?</div>
-
-<p>كيف حالك؟</p>
-
-<h3>أسئلة مهمة أخرى</h3>
-
-<div class="example english">How old are you?</div>
-
-<p>كم عمرك؟</p>
-
-<div class="example english">How many brothers do you have?</div>
-
-<p>كم أخًا لديك؟</p>
-
-<div class="example english">How much is it?</div>
-
-<p>كم سعره؟</p>
-
-`,
-
-questions:[
-
-["___ is your name?","What","Where","When","A"],
-
-["___ do you live?","What","Where","Who","B"],
-
-["___ do you work?","When","Who","Why","A"],
-
-["___ is your father?","Who","Where","How","A"],
-
-["___ are you tired?","What","Why","Where","B"],
-
-["___ are you?","How","Who","When","A"],
-
-["___ old are you?","What","How","Where","B"],
-
-["___ brothers do you have?","How much","How many","How old","B"]
-
-]
-
-},
-
-{
-
-title:"10. Adverbs of Frequency — always / usually / sometimes / never",
-
-explain:`
-
-<p>تستخدم لوصف عدد مرات حدوث الشيء.</p>
-
-<div class="rule">
-
-always = دائمًا<br>
-
-usually = عادةً<br>
-
-often = غالبًا<br>
-
-sometimes = أحيانًا<br>
-
-never = أبدًا
-
-</div>
-
-<div class="example english">I always work early.</div>
-
-<div class="example english">She usually drinks coffee.</div>
-
-<div class="example english">I sometimes watch TV.</div>
-
-<div class="example english">He never smokes.</div>
-
-`,
-
-questions:[
-
-["I ___ go to work every day.","always","never","sometimes","A"],
-
-["She ___ drinks coffee, but not every day.","sometimes","never","always","A"],
-
-["He ___ forgets his keys. 0%","always","never","often","B"],
-
-["I ___ eat breakfast before work.","usually","never","sometimes","A"]
-
-]
-
-},
-
-{
-
-title:"11. Present Continuous — am/is/are + ing",
-
-explain:`
-
-<p>نستخدم Present Continuous للشيء الذي يحدث الآن أو حول الوقت الحالي.</p>
-
-<div class="rule">
-
-I + am + verb-ing<br>
-
-He/She/It + is + verb-ing<br>
-
-You/We/They + are + verb-ing
-
-</div>
-
-<div class="example english">I am working.</div>
-
-<div class="example english">She is sleeping.</div>
-
-<div class="example english">They are playing.</div>
-
-<h3>النفي</h3>
-
-<div class="example english">I am not working.</div>
-
-<div class="example english">He isn't sleeping.</div>
-
-<h3>السؤال</h3>
-
-<div class="example english">Are you working?</div>
-
-<div class="example english">Is she sleeping?</div>
-
-`,
-
-questions:[
-
-["I ___ working now.","am","is","are","A"],
-
-["She ___ sleeping.","am","is","are","B"],
-
-["They ___ playing.","am","is","are","C"],
-
-["Are you ___?","work","working","works","B"],
-
-["He isn't ___.","sleep","sleeping","sleeps","B"]
-
-]
-
-},
-
-{
-
-title:"12. Prepositions — in / on / at / under / behind / next to",
-
-explain:`
-
-<h3>حروف الجر للمكان والوقت</h3>
-
-<div class="rule">
-
-in = في / داخل<br>
-
-on = على<br>
-
-at = عند / في وقت محدد<br>
-
-under = تحت<br>
-
-behind = خلف<br>
-
-next to = بجانب<br>
-
-between = بين
-
-</div>
-
-<h3>أمثلة المكان</h3>
-
-<div class="example english">The keys are on the table.</div>
-
-<div class="example english">The car is in the garage.</div>
-
-<div class="example english">The bag is under the chair.</div>
-
-<div class="example english">The bank is next to the shop.</div>
-
-<h3>الوقت</h3>
-
-<div class="example english">at 7 o'clock</div>
-
-<div class="example english">on Monday</div>
-
-<div class="example english">in July</div>
-
-`,
-
-questions:[
-
-["The book is ___ the table.","in","on","at","B"],
-
-["The car is ___ the garage.","in","on","at","A"],
-
-["I wake up ___ 7 o'clock.","in","on","at","C"],
-
-["I work ___ Monday.","in","on","at","B"],
-
-["He lives ___ Iraq.","in","on","at","A"],
-
-["The bag is ___ the chair.","under","at","on","A"]
-
-]
-
-},
-
-{
-
-title:"13. There is / There are",
-
-explain:`
-
-<p>نستخدمها لقول إن شيئًا موجود.</p>
-
-<div class="rule">
-
-There is + مفرد<br>
-
-There are + جمع
-
-</div>
-
-<div class="example english">There is a car outside.</div>
-
-<div class="example english">There are two cars outside.</div>
-
-<h3>النفي</h3>
-
-<div class="example english">There isn't a car.</div>
-
-<div class="example english">There aren't any cars.</div>
-
-`,
-
-questions:[
-
-["___ a book on the table.","There is","There are","There am","A"],
-
-["___ two chairs.","There is","There are","There be","B"],
-
-["___ a car outside.","There isn't","There aren't","There don't","A"],
-
-["___ three students here.","There is","There are","There be","B"]
-
-]
-
-},
-
-{
-
-title:"14. Can / Can't",
-
-explain:`
-
-<p><b>Can</b> تعني يستطيع / يمكن.</p>
-
-<div class="example english">I can swim.</div>
-
-<div class="example english">She can drive.</div>
-
-<p>النفي:</p>
-
-<div class="example english">I can't swim.</div>
-
-<p>السؤال:</p>
-
-<div class="example english">Can you drive?</div>
-
-<p>بعد can نستخدم الفعل الأساسي بدون s.</p>
-
-<div class="example english">He can speak English. ✅</div>
-
-`,
-
-questions:[
-
-["I ___ swim.","can","am can","cans","A"],
-
-["She ___ drive.","can","cans","is can","A"],
-
-["He ___ speak English.","can","cans","can speaks","A"],
-
-["___ you cook?","Can","Are can","Do can","A"],
-
-["I ___ fly.","can't","can nots","amn't","A"]
-
-]
-
-},
-
-{
-
-title:"15. Countable / Uncountable + some / any",
-
-explain:`
-
-<h3>Countable</h3>
-
-<p>أشياء يمكن عدّها: one apple, two apples.</p>
-
-<h3>Uncountable</h3>
-
-<p>أشياء لا نعدها عادةً بهذه الطريقة: water, milk, rice.</p>
-
-<div class="rule">
-
-some تستخدم غالبًا في الجمل المثبتة.<br>
-
-any تستخدم غالبًا في النفي والأسئلة.
-
-</div>
-
-<div class="example english">I have some apples.</div>
-
-<div class="example english">I don't have any apples.</div>
-
-<div class="example english">Do you have any milk?</div>
-
-`,
-
-questions:[
-
-["I have ___ apples.","some","any","a","A"],
-
-["I don't have ___ money.","some","any","an","B"],
-
-["Do you have ___ water?","some","any","a","B"],
-
-["There are ___ books.","some","any","an","A"]
-
-]
-
-},
-
-{
-
-title:"16. Adjectives — الصفات",
-
-explain:`
-
-<p>الصفة تصف الاسم.</p>
-
-<div class="example english">a big house</div>
-
-<div class="example english">a small car</div>
-
-<div class="example english">a new phone</div>
-
-<div class="example english">an old man</div>
-
-<p>الصفة تأتي غالبًا قبل الاسم.</p>
-
-<h3>صفات أساسية</h3>
-
-<p>big = كبير، small = صغير، old = قديم/كبير بالعمر، new = جديد، good = جيد، bad = سيئ، fast = سريع، slow = بطيء، hot = حار، cold = بارد.</p>
-
-`,
-
-questions:[
-
-["It is a ___ car.","fast","fastly","fasterly","A"],
-
-["She has a ___ house.","big","bigs","biggerly","A"],
-
-["This is a ___ phone.","new","news","newly","A"],
-
-["He is a ___ man.","good","goods","well","A"]
-
-]
-
-},
-
-{
-
-title:"17. Past Simple — was / were",
-
-explain:`
-
-<p>الماضي من Verb to be:</p>
-
-<div class="rule">
-
-I / He / She / It → was<br>
-
-You / We / They → were
-
-</div>
-
-<div class="example english">I was tired yesterday.</div>
-
-<div class="example english">He was at home.</div>
-
-<div class="example english">They were busy.</div>
-
-<h3>النفي</h3>
-
-<div class="example english">I wasn't tired.</div>
-
-<div class="example english">They weren't busy.</div>
-
-<h3>السؤال</h3>
-
-<div class="example english">Were you at home?</div>
-
-<div class="example english">Was he tired?</div>
-
-`,
-
-questions:[
-
-["I ___ tired yesterday.","was","were","am","A"],
-
-["They ___ at home.","was","were","are","B"],
-
-["She ___ happy.","was","were","is","A"],
-
-["___ you busy yesterday?","Was","Were","Are","B"],
-
-["He ___ not tired.","was","were","is","A"]
-
-]
-
-},
-
-{
-
-title:"18. Past Simple — regular & irregular verbs",
-
-explain:`
-
-<p>نستخدم Past Simple للأحداث التي انتهت في الماضي.</p>
-
-<h3>Regular verbs</h3>
-
-<div class="example english">work → worked</div>
-
-<div class="example english">play → played</div>
-
-<div class="example english">clean → cleaned</div>
-
-<h3>Irregular verbs</h3>
-
-<div class="example english">go → went</div>
-
-<div class="example english">come → came</div>
-
-<div class="example english">take → took</div>
-
-<div class="example english">eat → ate</div>
-
-<div class="example english">see → saw</div>
-
-<div class="example english">have → had</div>
-
-<h3>أمثلة</h3>
-
-<div class="example english">I worked yesterday.</div>
-
-<div class="example english">She went home.</div>
-
-<div class="example english">They ate dinner.</div>
-
-`,
-
-questions:[
-
-["Yesterday I ___ to work.","go","went","going","B"],
-
-["She ___ dinner.","eat","ate","eating","B"],
-
-["We ___ football yesterday.","play","played","playing","B"],
-
-["He ___ home.","went","go","goes","A"],
-
-["I ___ a new phone last year.","buy","bought","buying","B"]
-
-]
-
-},
-
-{
-
-title:"19. Future — going to",
-
-explain:`
-
-<p>نستخدم <b>be + going to</b> للخطط والنوايا المستقبلية.</p>
-
-<div class="rule">
-
-I am going to...<br>
-
-He/She is going to...<br>
-
-You/We/They are going to...
-
-</div>
-
-<div class="example english">I am going to study.</div>
-
-<div class="example english">She is going to travel.</div>
-
-<div class="example english">They are going to work.</div>
-
-<h3>النفي</h3>
-
-<div class="example english">I am not going to go.</div>
-
-<h3>السؤال</h3>
-
-<div class="example english">Are you going to travel?</div>
-
-`,
-
-questions:[
-
-["I ___ going to study.","am","is","are","A"],
-
-["She ___ going to travel.","am","is","are","B"],
-
-["They ___ going to work.","am","is","are","C"],
-
-["Are you going to ___?","travel","travels","traveling","A"],
-
-["He isn't going to ___.","go","goes","going","A"]
-
-]
-
-},
-
-{
-
-title:"20. A1 Review — مراجعة شاملة",
-
-explain:`
-
-<h3>مراجعة أهم ما تعلمناه</h3>
-
-<p>راجع:</p>
+<h3>📌 الفكرة</h3>
+
+<p>
+نستخدم <b>am / is / are</b> مع فعل to be.
+</p>
 
 <ul>
-
-<li>am / is / are</li>
-
-<li>الضمائر</li>
-
-<li>الملكية</li>
-
-<li>a / an / the</li>
-
-<li>This / That / These / Those</li>
-
-<li>Present Simple</li>
-
-<li>Do / Does</li>
-
-<li>What / Where / When / Who / Why / How</li>
-
-<li>Present Continuous</li>
-
-<li>حروف الجر</li>
-
-<li>There is / There are</li>
-
-<li>Can / Can't</li>
-
-<li>some / any</li>
-
-<li>Past Simple</li>
-
-<li>going to</li>
-
+<li>I → am</li>
+<li>He / She / It → is</li>
+<li>You / We / They → are</li>
 </ul>
 
+<h3>✅ الإثبات</h3>
+
+<div class="example">
+<div class="en">I am a student.</div>
+<div class="ar">أنا طالب.</div>
+</div>
+
+<div class="example">
+<div class="en">She is happy.</div>
+<div class="ar">هي سعيدة.</div>
+</div>
+
+<div class="example">
+<div class="en">They are ready.</div>
+<div class="ar">هم مستعدون.</div>
+</div>
+
+<h3>❌ النفي</h3>
+
+<div class="example">
+<div class="en">I am not tired.</div>
+<div class="ar">أنا لست متعبًا.</div>
+</div>
+
+<div class="example">
+<div class="en">He is not here.</div>
+<div class="ar">هو ليس هنا.</div>
+</div>
+
+<h3>❓ السؤال</h3>
+
+<div class="example">
+<div class="en">Are you ready?</div>
+<div class="ar">هل أنت مستعد؟</div>
+</div>
+
+<div class="example">
+<div class="en">Is she a teacher?</div>
+<div class="ar">هل هي معلمة؟</div>
+</div>
 `,
-
 questions:[
-
-["She ___ English every day.","study","studies","studying","B"],
-
-["___ do you live?","What","Where","Why","B"],
-
-["I ___ working now.","am","is","are","A"],
-
-["They ___ at home yesterday.","was","were","are","B"],
-
-["He ___ going to travel.","am","is","are","B"],
-
-["___ you speak English?","Can","Are","Is","A"],
-
-["There ___ two cars.","is","are","am","B"],
-
-["Does she ___ coffee?","likes","like","liking","B"],
-
-["I don't have ___ money.","some","any","a","B"],
-
-["What ___ your name?","am","is","are","B"]
-
+["I ___ a student.","am","is","are","A"],
+["She ___ happy.","am","is","are","B"],
+["They ___ ready.","am","is","are","C"],
+["We ___ friends.","am","is","are","C"],
+["He ___ at home.","am","is","are","B"],
+["You ___ my friend.","am","is","are","C"],
+["It ___ cold.","am","is","are","B"],
+["I ___ not tired.","am","is","are","A"]
 ]
-
 },
 
 {
-
-title:"21. A1 Final Test — الاختبار النهائي",
-
+title:"الوحدة 2 — Pronouns",
 explain:`
+<h3>📌 الضمائر</h3>
+<ul>
+<li>I = أنا</li>
+<li>You = أنت / أنتم</li>
+<li>He = هو</li>
+<li>She = هي</li>
+<li>It = هو/هي لغير العاقل</li>
+<li>We = نحن</li>
+<li>They = هم</li>
+</ul>
 
-<h3>🎯 الاختبار النهائي لمستوى A1</h3>
+<div class="example">
+<div class="en">Ali is a student. He is young.</div>
+<div class="ar">علي طالب. هو شاب.</div>
+</div>
 
-<p>هذا الاختبار يجمع أهم قواعد A1.</p>
-
-<p>حاول الإجابة بدون الرجوع إلى الدروس.</p>
-
+<div class="example">
+<div class="en">Sara is a teacher. She is kind.</div>
+<div class="ar">سارة معلمة. هي لطيفة.</div>
+</div>
 `,
-
 questions:[
-
-["I ___ from Iraq.","am","is","are","A"],
-
-["She ___ a teacher.","am","is","are","B"],
-
-["They ___ my friends.","am","is","are","C"],
-
-["He ___ English every day.","study","studies","studying","B"],
-
-["___ you work here?","Do","Does","Are","A"],
-
-["___ does he live?","What","Where","Who","B"],
-
-["___ is your birthday?","When","Where","Why","A"],
-
-["___ is that man?","Who","What","When","A"],
-
-["___ are you tired?","Why","Where","What","A"],
-
-["___ are you?","How","Who","What","A"],
-
-["She ___ sleeping now.","am","is","are","B"],
-
-["They ___ playing football now.","am","is","are","C"],
-
-["The book is ___ the table.","in","on","at","B"],
-
-["I wake up ___ 7.","in","on","at","C"],
-
-["There ___ a car outside.","is","are","am","A"],
-
-["There ___ three books.","is","are","am","B"],
-
-["I ___ swim.","can","cans","am can","A"],
-
-["Do you have ___ water?","some","any","a","B"],
-
-["I ___ to work yesterday.","go","went","going","B"],
-
-["She ___ dinner last night.","eat","ate","eating","B"],
-
-["I am going to ___.","travel","travels","traveling","A"],
-
-["This is ___ car.","my","his","their","A"],
-
-["Ali has a car. It is ___ car.","his","her","our","A"],
-
-["One child → two ___.","childs","children","childes","B"],
-
-["___ apple.","a","an","the","B"]
-
+["Ali is a boy. ___ is young.","He","She","They","A"],
+["Sara is a girl. ___ is happy.","He","She","It","B"],
+["The dog is small. ___ is cute.","He","She","It","C"],
+["Ali and Omar are friends. ___ are happy.","He","They","It","B"],
+["My brother and I are students. ___ are students.","We","They","He","A"],
+["___ am from Iraq.","I","He","They","A"]
 ]
+},
 
+{
+title:"الوحدة 3 — Possessives",
+explain:`
+<h3>📌 الملكية</h3>
+
+<ul>
+<li>my = لي / خاصتي</li>
+<li>your = لك</li>
+<li>his = له</li>
+<li>her = لها</li>
+<li>our = لنا</li>
+<li>their = لهم</li>
+</ul>
+
+<div class="example">
+<div class="en">This is my car.</div>
+<div class="ar">هذه سيارتي.</div>
+</div>
+
+<div class="example">
+<div class="en">That is her phone.</div>
+<div class="ar">ذلك هاتفها.</div>
+</div>
+
+<p>
+نستخدم <b>'s</b> للدلالة على الملكية:
+</p>
+
+<div class="example">
+<div class="en">Ali's car</div>
+<div class="ar">سيارة علي</div>
+</div>
+`,
+questions:[
+["This is ___ book.","I","my","me","B"],
+["That is ___ car.","he","his","him","B"],
+["This is ___ phone.","she","her","hers","B"],
+["This is ___ house.","we","our","us","B"],
+["That is ___ school.","they","their","them","B"],
+["Ali's car means:","سيارة علي","علي سيارة","سيارة إلى علي","A"]
+]
+},
+
+{
+title:"الوحدة 4 — Articles a / an / the",
+explain:`
+<h3>📌 أدوات التعريف</h3>
+
+<p>
+<b>a</b> قبل الاسم المفرد الذي يبدأ بصوت ساكن.
+</p>
+
+<div class="example">
+<div class="en">a car</div>
+<div class="ar">سيارة</div>
+</div>
+
+<p>
+<b>an</b> قبل الاسم المفرد الذي يبدأ بصوت علّة.
+</p>
+
+<div class="example">
+<div class="en">an apple</div>
+<div class="ar">تفاحة</div>
+</div>
+
+<p>
+<b>the</b> عندما نتحدث عن شيء محدد ومعروف.
+</p>
+
+<div class="example">
+<div class="en">The car is red.</div>
+<div class="ar">السيارة حمراء.</div>
+</div>
+`,
+questions:[
+["I have ___ car.","a","an","the","A"],
+["She has ___ apple.","a","an","the","B"],
+["He is ___ teacher.","a","an","the","A"],
+["___ sun is hot.","A","An","The","C"],
+["I saw ___ dog.","a","an","the","A"]
+]
+},
+
+{
+title:"الوحدة 5 — This / That / These / Those",
+explain:`
+<h3>📌 أسماء الإشارة</h3>
+
+<ul>
+<li>This = هذا / هذه — مفرد قريب</li>
+<li>That = ذلك / تلك — مفرد بعيد</li>
+<li>These = هؤلاء / هذه الأشياء — جمع قريب</li>
+<li>Those = أولئك / تلك الأشياء — جمع بعيد</li>
+</ul>
+
+<div class="example">
+<div class="en">This is my phone.</div>
+<div class="ar">هذا هاتفي.</div>
+</div>
+
+<div class="example">
+<div class="en">Those are my shoes.</div>
+<div class="ar">تلك أحذيتي.</div>
+</div>
+`,
+questions:[
+["___ is my book.","This","These","Those","A"],
+["___ are my shoes.","This","That","These","C"],
+["___ is your car over there.","This","That","These","B"],
+["___ are the houses over there.","This","These","Those","C"],
+["___ is a pen.","This","These","Those","A"]
+]
+},
+
+{
+title:"الوحدة 6 — Singular / Plural",
+explain:`
+<h3>📌 المفرد والجمع</h3>
+
+<p>
+غالبًا نضيف <b>s</b> للجمع:
+</p>
+
+<div class="example">
+<div class="en">book → books</div>
+<div class="ar">كتاب → كتب</div>
+</div>
+
+<div class="example">
+<div class="en">car → cars</div>
+<div class="ar">سيارة → سيارات</div>
+</div>
+
+<p>
+وهناك جموع شاذة:
+</p>
+
+<ul>
+<li>man → men</li>
+<li>woman → women</li>
+<li>child → children</li>
+<li>person → people</li>
+</ul>
+`,
+questions:[
+["One book, two ___.","book","books","bookes","B"],
+["One car, three ___.","cars","car","cares","A"],
+["One child, two ___.","childs","children","childes","B"],
+["One man, two ___.","mans","men","mens","B"],
+["One woman, two ___.","woman","women","womans","B"]
+]
+},
+
+{
+title:"الوحدة 7 — Present Simple",
+explain:`
+<h3>📌 المضارع البسيط</h3>
+
+<p>
+نستخدمه للعادات والحقائق والأشياء التي تحدث بشكل متكرر.
+</p>
+
+<div class="example">
+<div class="en">I work every day.</div>
+<div class="ar">أنا أعمل كل يوم.</div>
+</div>
+
+<div class="example">
+<div class="en">She works every day.</div>
+<div class="ar">هي تعمل كل يوم.</div>
+</div>
+
+<p>
+مع <b>he / she / it</b> نضيف غالبًا <b>s</b>.
+</p>
+
+<div class="example">
+<div class="en">He plays football.</div>
+<div class="ar">هو يلعب كرة القدم.</div>
+</div>
+`,
+questions:[
+["I ___ every day.","work","works","working","A"],
+["She ___ English.","study","studies","studying","B"],
+["He ___ football.","play","plays","playing","B"],
+["They ___ coffee.","drink","drinks","drinking","A"],
+["My father ___ at night.","work","works","working","B"],
+["We ___ English.","learn","learns","learning","A"],
+["The car ___ fast.","go","goes","going","B"]
+]
+},
+
+{
+title:"الوحدة 8 — Do / Does + Negatives",
+explain:`
+<h3>📌 النفي والسؤال</h3>
+
+<p>
+نستخدم <b>do</b> مع:
+I / you / we / they
+</p>
+
+<p>
+ونستخدم <b>does</b> مع:
+he / she / it
+</p>
+
+<div class="example">
+<div class="en">Do you work?</div>
+<div class="ar">هل تعمل؟</div>
+</div>
+
+<div class="example">
+<div class="en">Does he work?</div>
+<div class="ar">هل هو يعمل؟</div>
+</div>
+
+<div class="example">
+<div class="en">I don't work.</div>
+<div class="ar">أنا لا أعمل.</div>
+</div>
+
+<div class="example">
+<div class="en">She doesn't work.</div>
+<div class="ar">هي لا تعمل.</div>
+</div>
+`,
+questions:[
+["___ you work?","Do","Does","Is","A"],
+["___ he work?","Do","Does","Are","B"],
+["I ___ like tea.","don't","doesn't","not","A"],
+["She ___ like coffee.","don't","doesn't","isn't","B"],
+["___ they live here?","Do","Does","Are","A"],
+["___ she speak English?","Do","Does","Is","B"]
+]
+},
+
+{
+title:"الوحدة 9 — WH Questions",
+explain:`
+<h3>📌 كلمات السؤال</h3>
+
+<ul>
+<li>What = ماذا / ما</li>
+<li>Where = أين</li>
+<li>When = متى</li>
+<li>Who = من</li>
+<li>Why = لماذا</li>
+<li>How = كيف</li>
+<li>How old = كم العمر</li>
+<li>How many = كم عدد</li>
+<li>How much = كم كمية / كم السعر</li>
+</ul>
+
+<div class="example">
+<div class="en">Where do you live?</div>
+<div class="ar">أين تعيش؟</div>
+</div>
+
+<div class="example">
+<div class="en">What do you do?</div>
+<div class="ar">ماذا تعمل؟</div>
+</div>
+
+<div class="example">
+<div class="en">Why are you tired?</div>
+<div class="ar">لماذا أنت متعب؟</div>
+</div>
+`,
+questions:[
+["___ do you live?","What","Where","When","B"],
+["___ is your name?","What","Where","Why","A"],
+["___ do you go to work?","When","Who","What","A"],
+["___ is your teacher?","Who","Where","Why","A"],
+["___ are you tired?","What","Why","Where","B"],
+["___ old are you?","What","How","Where","B"],
+["___ books do you have?","How much","How many","How old","B"]
+]
+},
+
+{
+title:"الوحدة 10 — Frequency Adverbs",
+explain:`
+<h3>📌 ظروف التكرار</h3>
+
+<ul>
+<li>always = دائمًا</li>
+<li>usually = عادةً</li>
+<li>often = غالبًا</li>
+<li>sometimes = أحيانًا</li>
+<li>never = أبدًا</li>
+</ul>
+
+<div class="example">
+<div class="en">I always drink coffee.</div>
+<div class="ar">أنا دائمًا أشرب القهوة.</div>
+</div>
+
+<div class="example">
+<div class="en">She usually works early.</div>
+<div class="ar">هي عادةً تعمل مبكرًا.</div>
+</div>
+`,
+questions:[
+["I ___ go to work every day.","always","never","sometimes","A"],
+["She ___ drinks coffee, but not every day.","sometimes","never","always","A"],
+["He ___ arrives on time.","usually","never","not","A"],
+["I ___ smoke.","never","always","usually","A"],
+["They ___ play football on Fridays.","often","never","not","A"]
+]
+},
+
+{
+title:"الوحدة 11 — Present Continuous",
+explain:`
+<h3>📌 المضارع المستمر</h3>
+
+<p>
+نستخدمه لشيء يحدث الآن.
+</p>
+
+<p>
+التركيب:
+</p>
+
+<p>
+<b>am / is / are + verb-ing</b>
+</p>
+
+<div class="example">
+<div class="en">I am working now.</div>
+<div class="ar">أنا أعمل الآن.</div>
+</div>
+
+<div class="example">
+<div class="en">She is sleeping.</div>
+<div class="ar">هي نائمة الآن.</div>
+</div>
+
+<div class="example">
+<div class="en">They are playing.</div>
+<div class="ar">هم يلعبون الآن.</div>
+</div>
+`,
+questions:[
+["I ___ working now.","am","is","are","A"],
+["She ___ sleeping.","am","is","are","B"],
+["They ___ playing.","am","is","are","C"],
+["We ___ studying.","am","is","are","C"],
+["He ___ driving.","am","is","are","B"],
+["You ___ reading.","am","is","are","C"]
+]
+},
+
+{
+title:"الوحدة 12 — Prepositions",
+explain:`
+<h3>📌 حروف الجر</h3>
+
+<ul>
+<li>in = في / داخل</li>
+<li>on = على</li>
+<li>at = عند / في مكان محدد</li>
+<li>under = تحت</li>
+<li>behind = خلف</li>
+<li>next to = بجانب</li>
+<li>between = بين</li>
+<li>in front of = أمام</li>
+</ul>
+
+<div class="example">
+<div class="en">The book is on the table.</div>
+<div class="ar">الكتاب على الطاولة.</div>
+</div>
+
+<div class="example">
+<div class="en">The car is in the garage.</div>
+<div class="ar">السيارة في الكراج.</div>
+</div>
+
+<div class="example">
+<div class="en">The dog is under the table.</div>
+<div class="ar">الكلب تحت الطاولة.</div>
+</div>
+`,
+questions:[
+["The book is ___ the table.","in","on","under","B"],
+["The car is ___ the garage.","in","on","at","A"],
+["The dog is ___ the table.","under","on","between","A"],
+["The shop is ___ the bank.","next to","under","in","A"],
+["The car is ___ the house.","in front of","between","under","A"],
+["The ball is ___ the boxes.","between","on","at","A"]
+]
+},
+
+{
+title:"الوحدة 13 — There is / There are",
+explain:`
+<h3>📌 يوجد</h3>
+
+<p>
+<b>There is</b> للمفرد.
+</p>
+
+<p>
+<b>There are</b> للجمع.
+</p>
+
+<div class="example">
+<div class="en">There is a car outside.</div>
+<div class="ar">توجد سيارة في الخارج.</div>
+</div>
+
+<div class="example">
+<div class="en">There are two cars outside.</div>
+<div class="ar">توجد سيارتان في الخارج.</div>
+</div>
+`,
+questions:[
+["___ a book on the table.","There is","There are","There am","A"],
+["___ two cars outside.","There is","There are","There am","B"],
+["___ a problem.","There is","There are","There be","A"],
+["___ three students.","There is","There are","There am","B"],
+["___ a bank near here.","There is","There are","There be","A"]
+]
+},
+
+{
+title:"الوحدة 14 — Can / Can't",
+explain:`
+<h3>📌 القدرة والإمكانية</h3>
+
+<p>
+<b>can</b> = يستطيع / يمكنه
+</p>
+
+<p>
+<b>can't</b> = لا يستطيع
+</p>
+
+<div class="example">
+<div class="en">I can swim.</div>
+<div class="ar">أستطيع السباحة.</div>
+</div>
+
+<div class="example">
+<div class="en">She can't drive.</div>
+<div class="ar">هي لا تستطيع القيادة.</div>
+</div>
+
+<p>
+بعد can نستخدم الفعل بصيغته الأساسية.
+</p>
+`,
+questions:[
+["I ___ swim.","can","am","do","A"],
+["She ___ drive.","can","is","does","A"],
+["He ___ speak English.","can","cans","is can","A"],
+["I ___ fly.","can't","don't can","am not","A"],
+["___ you cook?","Can","Do can","Are can","A"]
+]
+},
+
+{
+title:"الوحدة 15 — Countable / Uncountable + Some / Any",
+explain:`
+<h3>📌 المعدود وغير المعدود</h3>
+
+<p>
+Countable = أشياء يمكن عدها:
+</p>
+
+<p>
+one apple, two apples
+</p>
+
+<p>
+Uncountable = أشياء لا نعدها عادةً:
+</p>
+
+<p>
+water, milk, rice, money
+</p>
+
+<h3>Some / Any</h3>
+
+<p>
+some غالبًا في الجمل المثبتة.
+</p>
+
+<div class="example">
+<div class="en">I have some apples.</div>
+<div class="ar">لدي بعض التفاح.</div>
+</div>
+
+<p>
+any غالبًا في السؤال والنفي.
+</p>
+
+<div class="example">
+<div class="en">Do you have any water?</div>
+<div class="ar">هل لديك ماء؟</div>
+</div>
+`,
+questions:[
+["I have ___ apples.","some","any","much","A"],
+["Do you have ___ water?","some","any","many","B"],
+["I don't have ___ money.","some","any","a","B"],
+["There are ___ books.","some","any","much","A"],
+["How ___ apples?","much","many","old","B"]
+]
+},
+
+{
+title:"الوحدة 16 — Adjectives",
+explain:`
+<h3>📌 الصفات</h3>
+
+<ul>
+<li>big = كبير</li>
+<li>small = صغير</li>
+<li>good = جيد</li>
+<li>bad = سيئ</li>
+<li>hot = حار</li>
+<li>cold = بارد</li>
+<li>new = جديد</li>
+<li>old = قديم / كبير بالعمر</li>
+<li>fast = سريع</li>
+<li>slow = بطيء</li>
+</ul>
+
+<div class="example">
+<div class="en">It is a big car.</div>
+<div class="ar">إنها سيارة كبيرة.</div>
+</div>
+
+<div class="example">
+<div class="en">He is tall.</div>
+<div class="ar">هو طويل.</div>
+</div>
+`,
+questions:[
+["A very large house is ___.","small","big","slow","B"],
+["A car that moves quickly is ___.","fast","cold","old","A"],
+["Ice is ___.","hot","cold","big","B"],
+["A new phone is not ___.","new","old","fast","B"],
+["A good opposite is ___.","bad","big","cold","A"]
+]
+},
+
+{
+title:"الوحدة 17 — Past Simple: was / were",
+explain:`
+<h3>📌 الماضي مع be</h3>
+
+<p>
+am / is → was
+</p>
+
+<p>
+are → were
+</p>
+
+<ul>
+<li>I was</li>
+<li>He was</li>
+<li>She was</li>
+<li>It was</li>
+<li>You were</li>
+<li>We were</li>
+<li>They were</li>
+</ul>
+
+<div class="example">
+<div class="en">I was tired yesterday.</div>
+<div class="ar">كنت متعبًا أمس.</div>
+</div>
+
+<div class="example">
+<div class="en">They were at home.</div>
+<div class="ar">كانوا في المنزل.</div>
+</div>
+`,
+questions:[
+["I ___ tired yesterday.","was","were","am","A"],
+["She ___ at home.","was","were","is","A"],
+["They ___ happy.","was","were","are","B"],
+["We ___ at work.","was","were","are","B"],
+["He ___ sick yesterday.","was","were","is","A"],
+["You ___ late.","was","were","are","B"]
+]
+},
+
+{
+title:"الوحدة 18 — Past Simple Regular Verbs",
+explain:`
+<h3>📌 الماضي البسيط</h3>
+
+<p>
+مع الأفعال المنتظمة نضيف غالبًا <b>-ed</b>.
+</p>
+
+<ul>
+<li>work → worked</li>
+<li>play → played</li>
+<li>watch → watched</li>
+<li>clean → cleaned</li>
+<li>visit → visited</li>
+</ul>
+
+<div class="example">
+<div class="en">I worked yesterday.</div>
+<div class="ar">عملت أمس.</div>
+</div>
+
+<div class="example">
+<div class="en">She visited her friend.</div>
+<div class="ar">زارت صديقتها.</div>
+</div>
+`,
+questions:[
+["Yesterday I ___ at home.","work","worked","working","B"],
+["She ___ TV last night.","watch","watched","watching","B"],
+["We ___ our room.","clean","cleaned","cleaning","B"],
+["They ___ their friend.","visit","visited","visiting","B"],
+["He ___ football yesterday.","play","played","playing","B"]
+]
+},
+
+{
+title:"الوحدة 19 — Past Simple Irregular Verbs",
+explain:`
+<h3>📌 الأفعال الشاذة</h3>
+
+<p>
+بعض الأفعال لا تأخذ ed، بل تتغير.
+</p>
+
+<ul>
+<li>go → went</li>
+<li>come → came</li>
+<li>eat → ate</li>
+<li>drink → drank</li>
+<li>see → saw</li>
+<li>take → took</li>
+<li>have → had</li>
+<li>get → got</li>
+<li>make → made</li>
+</ul>
+
+<div class="example">
+<div class="en">I went to work.</div>
+<div class="ar">ذهبت إلى العمل.</div>
+</div>
+
+<div class="example">
+<div class="en">She had breakfast.</div>
+<div class="ar">تناولت الفطور.</div>
+</div>
+`,
+questions:[
+["go →","went","goed","gone","A"],
+["eat →","eated","ate","eaten","B"],
+["drink →","drank","drinked","drunk","A"],
+["see →","seed","saw","seen","B"],
+["take →","took","taked","taken","A"],
+["have →","had","haved","has","A"],
+["make →","made","maked","making","A"],
+["get →","got","getted","getting","A"]
+]
+},
+
+{
+title:"الوحدة 20 — Future: going to",
+explain:`
+<h3>📌 المستقبل باستخدام going to</h3>
+
+<p>
+نستخدمه للخطط أو النوايا المستقبلية.
+</p>
+
+<p>
+التركيب:
+</p>
+
+<p>
+<b>am / is / are + going to + verb</b>
+</p>
+
+<div class="example">
+<div class="en">I am going to travel.</div>
+<div class="ar">سأسافر / أخطط للسفر.</div>
+</div>
+
+<div class="example">
+<div class="en">She is going to study.</div>
+<div class="ar">هي ستدرس.</div>
+</div>
+
+<div class="example">
+<div class="en">They are going to play.</div>
+<div class="ar">هم سيلعبون.</div>
+</div>
+`,
+questions:[
+["I ___ going to travel.","am","is","are","A"],
+["She ___ going to study.","am","is","are","B"],
+["They ___ going to play.","am","is","are","C"],
+["We ___ going to work.","am","is","are","C"],
+["He ___ going to buy a car.","am","is","are","B"],
+["You ___ going to learn English.","am","is","are","C"]
+]
+},
+
+{
+title:"الوحدة 21 — A1 Review + Final Test",
+explain:`
+<h3>🎯 المراجعة النهائية</h3>
+
+<p>
+هذه الوحدة تجمع أهم قواعد A1:
+</p>
+
+<ul>
+<li>am / is / are</li>
+<li>الضمائر</li>
+<li>الملكية</li>
+<li>a / an / the</li>
+<li>This / That / These / Those</li>
+<li>المفرد والجمع</li>
+<li>Present Simple</li>
+<li>Do / Does</li>
+<li>WH Questions</li>
+<li>Frequency</li>
+<li>Present Continuous</li>
+<li>Prepositions</li>
+<li>There is / There are</li>
+<li>Can / Can't</li>
+<li>Some / Any</li>
+<li>Adjectives</li>
+<li>Past Simple</li>
+<li>Going to</li>
+</ul>
+
+<p>
+بعد إكمال الاختبار النهائي تستطيع معرفة مدى إتقانك لمستوى A1.
+</p>
+`,
+questions:[
+["She ___ a teacher.","am","is","are","B"],
+["They ___ students.","am","is","are","C"],
+["This is ___ book.","my","me","I","A"],
+["I ___ English every day.","study","studies","studying","A"],
+["He ___ football every Friday.","play","plays","playing","B"],
+["___ you live in Basra?","Do","Does","Is","A"],
+["___ does she work?","Where","Who","Why","A"],
+["I am ___ now.","work","worked","working","C"],
+["The book is ___ the table.","in","on","under","B"],
+["There ___ two cars.","is","are","am","B"],
+["I ___ swim.","can","am","do","A"],
+["Do you have ___ water?","some","any","many","B"],
+["Yesterday I ___ tired.","am","was","were","B"],
+["They ___ at home yesterday.","was","were","are","B"],
+["I ___ to work yesterday.","go","went","going","B"],
+["She ___ TV last night.","watch","watched","watching","B"],
+["I am going to ___ tomorrow.","travel","traveled","travelling","A"],
+["___ old are you?","What","How","Where","B"],
+["___ are my shoes.","This","That","These","C"],
+["He ___ like coffee.","don't","doesn't","isn't","B"],
+["We ___ friends.","am","is","are","C"],
+["She ___ sleeping now.","am","is","are","B"],
+["The dog is ___ the table.","under","between","at","A"],
+["He ___ speak English.","can","cans","is can","A"],
+["I ___ have any money.","don't","doesn't","am not","A"]
+]
 }
 
 ];
 
 let progress = JSON.parse(localStorage.getItem("a1progress") || "{}");
+let mistakes = JSON.parse(localStorage.getItem("a1mistakes") || "[]");
 
 let currentUnit = 0;
-
 let currentQuestion = 0;
-
 let score = 0;
+let quizQuestions = [];
 
 function save(){
-
-localStorage.setItem("a1progress",JSON.stringify(progress));
-
+  localStorage.setItem("a1progress",JSON.stringify(progress));
+  localStorage.setItem("a1mistakes",JSON.stringify(mistakes));
 }
 
 function renderUnits(){
 
-let html="";
+  const box=document.getElementById("units");
+  box.innerHTML="";
 
-units.forEach((u,i)=>{
+  units.forEach((u,i)=>{
 
-let done=progress[i] ? "done":"";
+    let p=progress[i] || 0;
 
-let mark=progress[i] ? "✅":"📘";
+    box.innerHTML += `
+      <div class="unit">
+        <div class="unit-title">${i+1}. ${u.title}</div>
 
-html+=`
+        <span class="badge">
+          ${p >= 70 ? "✅ مكتملة" : p > 0 ? "🔄 قيد الدراسة" : "⭕ لم تبدأ"}
+        </span>
 
-<div class="unit ${done}">
+        <p class="small">الإتقان: ${p}%</p>
 
-<h3>${mark} ${u.title}</h3>
+        <div class="progress">
+          <div class="progress-bar" style="width:${p}%"></div>
+        </div>
 
-<p class="small">${progress[i] ? "تم الإنجاز":"لم تدرس بعد"}</p>
+        <button class="primary" onclick="openUnit(${i})">
+          فتح الوحدة
+        </button>
+      </div>
+    `;
+  });
 
-<button class="primary" onclick="openLesson(${i})">ابدأ الدرس</button>
-
-</div>`;
-
-});
-
-document.getElementById("units").innerHTML=html;
-
-updateProgress();
-
+  updateOverall();
 }
 
-function updateProgress(){
+function updateOverall(){
 
-let done=Object.keys(progress).length;
+  let total=0;
 
-let percent=Math.round(done/units.length*100);
+  for(let i=0;i<units.length;i++){
+    total += progress[i] || 0;
+  }
 
-document.getElementById("progressBar").style.width=percent+"%";
+  let overall=Math.round(total/units.length);
 
-document.getElementById("progressText").innerText=
+  document.getElementById("overallProgress").style.width=overall+"%";
 
-`أنجزت ${done} من ${units.length} وحدة — ${percent}%`;
-
+  document.getElementById("overallText").innerText =
+    `التقدم العام في A1: ${overall}% — ${units.length} وحدة`;
 }
 
-function openLesson(i){
-
-currentUnit=i;
-
-document.getElementById("home").style.display="none";
-
-let u=units[i];
-
-document.getElementById("lesson").style.display="block";
-
-document.getElementById("quiz").style.display="none";
-
-document.getElementById("lesson").innerHTML=`
-
-<div class="card">
-
-<h2>${u.title}</h2>
-
-${u.explain}
-
-<hr>
-
-<h3>🎯 تدريب واختبار الدرس</h3>
-
-<p>بعد قراءة الشرح والأمثلة، اضغط على الزر للبدء.</p>
-
-<button class="primary" onclick="startQuiz()">ابدأ الاختبار</button>
-
-<button class="secondary" onclick="goHome()">رجوع للوحدات</button>
-
-</div>`;
-
-}
-
-function startQuiz(){
-
-currentQuestion=0;
-
-score=0;
-
-document.getElementById("lesson").style.display="none";
-
-document.getElementById("quiz").style.display="block";
-
-showQuestion();
-
-}
-
-function showQuestion(){
-
-let q=units[currentUnit].questions[currentQuestion];
-
-let html=`
-
-<div class="card">
-
-<p class="small">السؤال ${currentQuestion+1} من ${units[currentUnit].questions.length}</p>
-
-<h2>${q[0]}</h2>
-
-<button class="option" onclick="answer('A',this)">${q[1]}</button>
-
-<button class="option" onclick="answer('B',this)">${q[2]}</button>
-
-<button class="option" onclick="answer('C',this)">${q[3]}</button>
-
-<div id="feedback"></div>
-
-</div>`;
-
-document.getElementById("quiz").innerHTML=html;
-
-}
-
-function answer(letter,button){
-
-let q=units[currentUnit].questions[currentQuestion];
-
-let buttons=document.querySelectorAll(".option");
-
-buttons.forEach(b=>b.disabled=true);
-
-if(letter===q[4]){
-
-button.classList.add("correct");
-
-score++;
-
-document.getElementById("feedback").innerHTML=
-
-`<div class="example">✅ إجابة صحيحة!</div>`;
-
-}else{
-
-button.classList.add("wrong");
-
-let correctIndex=q[4]==="A"?1:q[4]==="B"?2:3;
-
-buttons[correctIndex-1].classList.add("correct");
-
-document.getElementById("feedback").innerHTML=
-
-`<div class="example">❌ خطأ.<br>الإجابة الصحيحة: <b>${q[correctIndex]}</b></div>`;
-
-}
-
-setTimeout(()=>{
-
-currentQuestion++;
-
-if(currentQuestion < units[currentUnit].questions.length){
-
-showQuestion();
-
-}else{
-
-finishQuiz();
-
-}
-
-},1200);
-
-}
-
-function finishQuiz(){
-
-let total=units[currentUnit].questions.length;
-
-let percent=Math.round(score/total*100);
-
-if(percent>=70){
-
-progress[currentUnit]=true;
-
-save();
-
-}
-
-document.getElementById("quiz").innerHTML=`
-
-<div class="card">
-
-<h2>🏆 انتهى الاختبار</h2>
-
-<div class="score">
-
-${score} / ${total}<br>
-
-${percent}%
-
-</div>
-
-<p style="text-align:center">
-
-${percent>=70
-
-?"🎉 ممتاز! تم اجتياز الوحدة."
-
-:"📚 لم تصل إلى 70%. راجع الدرس وأعد الاختبار."}
-
-</p>
-
-${percent<70?
-
-`<button class="primary" onclick="openLesson(${currentUnit})">راجع الدرس</button>`
-
-:
-
-`<button class="primary" onclick="nextUnit()">الوحدة التالية</button>`
-
-}
-
-<button class="secondary" onclick="goHome()">قائمة الوحدات</button>
-
-</div>`;
-
-}
-
-function nextUnit(){
-
-if(currentUnit < units.length-1){
-
-openLesson(currentUnit+1);
-
-}else{
-
-goHome();
-
-alert("🎉 أكملت جميع وحدات A1!");
-
-}
+function hideAll(){
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("lesson").classList.add("hidden");
+  document.getElementById("quiz").classList.add("hidden");
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("mistakes").classList.add("hidden");
 
 }
 
 function goHome(){
 
-document.getElementById("lesson").style.display="none";
+  hideAll();
+  document.getElementById("home").classList.remove("hidden");
+  renderUnits();
 
-document.getElementById("quiz").style.display="none";
+}
 
-document.getElementById("home").style.display="block";
+function openUnit(i){
 
-renderUnits();
+  currentUnit=i;
 
-window.scrollTo(0,0);
+  hideAll();
+
+  document.getElementById("lesson").classList.remove("hidden");
+
+  document.getElementById("lessonTitle").innerText =
+    units[i].title;
+
+  document.getElementById("lessonContent").innerHTML =
+    units[i].explain;
+}
+
+function startQuiz(){
+
+  currentQuestion=0;
+  score=0;
+
+  quizQuestions=[...units[currentUnit].questions];
+
+  hideAll();
+
+  document.getElementById("quiz").classList.remove("hidden");
+
+  document.getElementById("quizTitle").innerText =
+    units[currentUnit].title;
+
+  showQuestion();
+}
+
+function showQuestion(){
+
+  const q=quizQuestions[currentQuestion];
+
+  document.getElementById("questionNumber").innerText =
+    `السؤال ${currentQuestion+1} من ${quizQuestions.length}`;
+
+  document.getElementById("questionText").innerText=q[0];
+
+  const options=document.getElementById("options");
+
+  options.innerHTML="";
+
+  document.getElementById("feedback").innerHTML="";
+
+  for(let i=1;i<=3;i++){
+
+    const btn=document.createElement("button");
+
+    btn.className="option";
+
+    btn.innerText=q[i];
+
+    btn.onclick=()=>answer(i-1,btn);
+
+    options.appendChild(btn);
+  }
+}
+
+function answer(index,button){
+
+  const q=quizQuestions[currentQuestion];
+
+  const correct =
+    q[4]==="A" ? 0 :
+    q[4]==="B" ? 1 : 2;
+
+  const buttons=document.querySelectorAll(".option");
+
+  buttons.forEach(b=>b.disabled=true);
+
+  if(index===correct){
+
+    button.classList.add("correct");
+
+    score++;
+
+    document.getElementById("feedback").innerHTML=
+      `<div class="example">✅ إجابة صحيحة!</div>`;
+
+  }else{
+
+    button.classList.add("wrong");
+
+    buttons[correct].classList.add("correct");
+
+    document.getElementById("feedback").innerHTML=
+      `<div class="example">
+        ❌ غير صحيحة.<br>
+        الإجابة الصحيحة: <b>${q[correct+1]}</b>
+      </div>`;
+
+    mistakes.push({
+      unit:currentUnit,
+      question:q[0],
+      answer:q[correct+1]
+    });
+
+    save();
+  }
+
+  setTimeout(()=>{
+
+    currentQuestion++;
+
+    if(currentQuestion < quizQuestions.length){
+
+      showQuestion();
+
+    }else{
+
+      finishQuiz();
+
+    }
+
+  },1100);
+}
+
+function finishQuiz(){
+
+  let percent=
+    Math.round((score/quizQuestions.length)*100);
+
+  progress[currentUnit]=Math.max(
+    progress[currentUnit] || 0,
+    percent
+  );
+
+  save();
+
+  hideAll();
+
+  document.getElementById("result").classList.remove("hidden");
+
+  let message="";
+
+  if(percent>=90){
+    message="🏆 ممتاز جدًا! أنت متقن لهذه الوحدة.";
+  }else if(percent>=70){
+    message="✅ جيد جدًا! الوحدة ناجحة ويمكنك الانتقال.";
+  }else{
+    message="🔁 تحتاج إلى مراجعة الوحدة وإعادة الاختبار.";
+  }
+
+  document.getElementById("resultContent").innerHTML=`
+    <div class="score">${score} / ${quizQuestions.length}</div>
+
+    <div class="score">${percent}%</div>
+
+    <div class="example">
+      ${message}
+    </div>
+
+    <button class="primary"
+      onclick="openUnit(${currentUnit})">
+      📖 مراجعة الوحدة
+    </button>
+
+    <button class="secondary"
+      onclick="startQuiz()">
+      🔄 إعادة الاختبار
+    </button>
+
+    ${
+      currentUnit < units.length-1
+      ?
+      `<button class="primary"
+        onclick="openUnit(${currentUnit+1})">
+        ➡️ الوحدة التالية
+      </button>`
+      :
+      `<div class="example">
+        🎉 أكملت جميع وحدات A1!
+      </div>`
+    }
+  `;
+}
+
+function showMistakes(){
+
+  hideAll();
+
+  document.getElementById("mistakes").classList.remove("hidden");
+
+  const box=document.getElementById("mistakeContent");
+
+  if(mistakes.length===0){
+
+    box.innerHTML=`
+      <div class="example">
+        🎉 لا توجد أخطاء محفوظة حاليًا.
+      </div>
+    `;
+
+    return;
+  }
+
+  box.innerHTML="";
+
+  mistakes.slice(-30).reverse().forEach((m,index)=>{
+
+    box.innerHTML += `
+      <div class="unit">
+
+        <b>السؤال:</b>
+        <div class="en">${m.question}</div>
+
+        <p>
+          <b>الإجابة الصحيحة:</b>
+          ${m.answer}
+        </p>
+
+      </div>
+    `;
+
+  });
+
+  box.innerHTML += `
+    <button class="danger" onclick="clearMistakes()">
+      حذف سجل الأخطاء
+    </button>
+  `;
+}
+
+function clearMistakes(){
+
+  mistakes=[];
+
+  save();
+
+  showMistakes();
 
 }
 
 function resetProgress(){
 
-if(confirm("هل تريد حذف تقدمك بالكامل؟")){
+  if(confirm("هل تريد حذف تقدم A1 بالكامل؟")){
 
-progress={};
+    progress={};
+    mistakes=[];
 
-save();
+    save();
 
-renderUnits();
+    renderUnits();
 
-}
+    alert("تمت إعادة البرنامج من البداية.");
 
+  }
 }
 
 renderUnits();
@@ -1671,5 +1458,4 @@ renderUnits();
 </script>
 
 </body>
-
 </html>
