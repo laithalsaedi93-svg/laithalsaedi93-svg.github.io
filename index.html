@@ -10,23 +10,19 @@
 
 <meta name="theme-color" content="#2563eb">
 
-<title>English Trainer A1 → A2</title>
+<title>English Trainer A1 → A2 | Laith</title>
 
 <style>
 
-*{
-
-  box-sizing:border-box;
-
-}
+*{box-sizing:border-box}
 
 body{
 
   margin:0;
 
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-family:Arial,sans-serif;
 
-  background:#f3f6fb;
+  background:#f1f5f9;
 
   color:#172033;
 
@@ -38,93 +34,23 @@ header{
 
   color:white;
 
-  padding:18px 15px;
+  padding:20px 15px;
 
-  position:sticky;
-
-  top:0;
-
-  z-index:20;
-
-  box-shadow:0 2px 10px #0002;
+  text-align:center;
 
 }
 
-header h1{
+header h1{margin:0 0 7px;font-size:23px}
 
-  margin:0;
+header p{margin:0;font-size:14px}
 
-  font-size:22px;
-
-}
-
-header p{
-
-  margin:5px 0 0;
-
-  font-size:13px;
-
-  opacity:.9;
-
-}
-
-nav{
-
-  display:flex;
-
-  gap:7px;
-
-  overflow-x:auto;
-
-  padding:10px;
-
-  background:white;
-
-  position:sticky;
-
-  top:75px;
-
-  z-index:19;
-
-}
-
-nav button{
-
-  border:0;
-
-  background:#eef2ff;
-
-  color:#1e3a8a;
-
-  border-radius:10px;
-
-  padding:9px 13px;
-
-  white-space:nowrap;
-
-  font-weight:700;
-
-}
-
-main{
+.container{
 
   max-width:850px;
 
   margin:auto;
 
-  padding:14px;
-
-}
-
-section{
-
-  display:none;
-
-}
-
-section.active{
-
-  display:block;
+  padding:15px;
 
 }
 
@@ -134,145 +60,67 @@ section.active{
 
   border-radius:16px;
 
-  padding:17px;
+  padding:18px;
 
-  margin-bottom:14px;
+  margin-bottom:15px;
 
-  box-shadow:0 2px 10px #0000000d;
-
-}
-
-h2{
-
-  margin-top:0;
-
-  font-size:21px;
+  box-shadow:0 3px 12px #00000012;
 
 }
 
-h3{
+h2{margin-top:0;color:#1d4ed8}
 
-  margin-bottom:7px;
+h3{color:#334155}
 
-}
-
-button.action{
-
-  width:100%;
+button{
 
   border:0;
 
-  border-radius:12px;
+  border-radius:10px;
 
-  padding:13px;
+  padding:12px 17px;
 
-  margin:6px 0;
-
-  background:#2563eb;
-
-  color:white;
+  margin:5px 0;
 
   font-size:16px;
 
-  font-weight:700;
+  cursor:pointer;
 
 }
 
-button.secondary{
+.primary{background:#2563eb;color:white}
 
-  background:#e5e7eb;
+.secondary{background:#e2e8f0;color:#172033}
 
-  color:#111827;
-
-}
-
-button.success{
-
-  background:#16a34a;
-
-}
-
-button.danger{
-
-  background:#dc2626;
-
-}
+.danger{background:#dc2626;color:white}
 
 .option{
 
+  display:block;
+
   width:100%;
 
-  text-align:left;
-
-  direction:ltr;
-
-  padding:14px;
-
-  margin:7px 0;
-
-  border:2px solid #e5e7eb;
-
-  background:white;
-
-  border-radius:12px;
-
-  font-size:16px;
-
-}
-
-.option.correct{
-
-  border-color:#16a34a;
-
-  background:#dcfce7;
-
-}
-
-.option.wrong{
-
-  border-color:#dc2626;
-
-  background:#fee2e2;
-
-}
-
-.stat{
-
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:10px;
-
-}
-
-.stat div{
+  text-align:right;
 
   background:#f8fafc;
 
-  padding:15px;
+  border:2px solid #e2e8f0;
 
-  border-radius:12px;
-
-  text-align:center;
+  margin:9px 0;
 
 }
 
-.stat b{
+.option:hover{border-color:#2563eb}
 
-  display:block;
+.correct{background:#dcfce7!important;border-color:#16a34a!important}
 
-  font-size:24px;
-
-  color:#2563eb;
-
-}
+.wrong{background:#fee2e2!important;border-color:#dc2626!important}
 
 .progress{
 
   height:12px;
 
-  background:#e5e7eb;
+  background:#e2e8f0;
 
   border-radius:20px;
 
@@ -280,9 +128,7 @@ button.danger{
 
 }
 
-.progress i{
-
-  display:block;
+.progress div{
 
   height:100%;
 
@@ -292,239 +138,67 @@ button.danger{
 
 }
 
-.badge{
-
-  display:inline-block;
-
-  background:#dcfce7;
-
-  color:#166534;
-
-  border-radius:20px;
-
-  padding:5px 9px;
-
-  font-size:12px;
-
-  font-weight:bold;
-
-}
-
-.badge.gray{
-
-  background:#e5e7eb;
-
-  color:#374151;
-
-}
-
 .unit{
 
-  border:1px solid #e5e7eb;
+  border:2px solid #e2e8f0;
 
-  border-radius:13px;
+  border-radius:14px;
 
-  padding:13px;
+  padding:15px;
+
+  margin:10px 0;
+
+}
+
+.unit.done{border-color:#16a34a}
+
+.small{font-size:14px;color:#64748b}
+
+.example{
+
+  background:#eff6ff;
+
+  padding:12px;
+
+  border-radius:10px;
 
   margin:8px 0;
 
 }
 
-.word{
-
-  direction:ltr;
-
-  text-align:center;
-
-  font-size:32px;
-
-  font-weight:700;
-
-  margin:20px 0 5px;
-
-}
-
-.meaning{
-
-  text-align:center;
-
-  font-size:18px;
-
-  color:#4b5563;
-
-}
-
-.example{
-
-  direction:ltr;
-
-  text-align:center;
+.rule{
 
   background:#f8fafc;
 
+  border-right:4px solid #2563eb;
+
   padding:12px;
 
-  border-radius:10px;
-
-  margin:15px 0;
+  margin:10px 0;
 
 }
 
-textarea,
-
-input{
-
-  width:100%;
-
-  padding:13px;
-
-  border:2px solid #e5e7eb;
-
-  border-radius:11px;
-
-  font-size:16px;
-
-  background:white;
-
-}
-
-textarea{
-
-  min-height:120px;
-
-}
-
-.small{
-
-  color:#6b7280;
-
-  font-size:13px;
-
-}
-
-.center{
-
-  text-align:center;
-
-}
-
-.hidden{
-
-  display:none!important;
-
-}
-
-.ltr{
+.english{
 
   direction:ltr;
 
   text-align:left;
 
+  font-weight:bold;
+
 }
 
-.questionText{
+#lesson,#quiz{display:none}
 
-  direction:ltr;
-
-  text-align:left;
-
-  line-height:1.9;
+.score{
 
   font-size:22px;
 
-  font-weight:700;
-
-  margin:18px 0;
-
-}
-
-.blank{
-
-  display:inline-block;
-
-  min-width:70px;
-
-  padding:0 7px 2px;
-
-  margin:0 4px;
-
-  border-bottom:3px solid #2563eb;
-
-  color:#2563eb;
-
-  text-align:center;
-
-  direction:ltr;
-
-}
-
-.resultGood{
-
-  background:#dcfce7;
-
-  color:#166534;
-
-  padding:12px;
-
-  border-radius:10px;
-
   font-weight:bold;
 
-}
-
-.resultBad{
-
-  background:#fee2e2;
-
-  color:#991b1b;
-
-  padding:12px;
-
-  border-radius:10px;
-
-  font-weight:bold;
-
-}
-
-#toast{
-
-  position:fixed;
-
-  bottom:20px;
-
-  left:15px;
-
-  right:15px;
-
-  max-width:500px;
-
-  margin:auto;
-
-  background:#111827;
-
-  color:white;
-
-  padding:13px;
-
-  border-radius:12px;
-
   text-align:center;
 
-  z-index:100;
-
-  display:none;
-
-}
-
-footer{
-
-  text-align:center;
-
-  padding:25px;
-
-  color:#6b7280;
-
-  font-size:12px;
+  padding:15px;
 
 }
 
@@ -536,4181 +210,1463 @@ footer{
 
 <header>
 
-  <h1>English Trainer A1 → A2</h1>
+<h1>English Trainer A1 → A2 | Laith</h1>
 
-  <p>برنامج ليث — تعلم واختبر واحفظ تقدمك</p>
+<p>برنامج تدريب شخصي — شرح + أمثلة + تدريب + اختبار + متابعة</p>
 
 </header>
 
-<nav>
+<div class="container">
 
-  <button onclick="show('home')">الرئيسية</button>
-
-  <button onclick="show('units')">الوحدات</button>
-
-  <button onclick="show('quiz')">الاختبار</button>
-
-  <button onclick="show('words')">الكلمات</button>
-
-  <button onclick="show('listen')">Listening</button>
-
-  <button onclick="show('speak')">Speaking</button>
-
-  <button onclick="show('write')">Writing</button>
-
-  <button onclick="show('stats')">التقدم</button>
-
-</nav>
-
-<main>
-
-<!-- ================= HOME ================= -->
-
-<section id="home" class="active">
+<div id="home">
 
 <div class="card">
 
-<h2>مرحبًا ليث 👋</h2>
+<h2>📊 تقدمك</h2>
 
-<p>
+<div class="progress"><div id="progressBar"></div></div>
 
-هذا برنامجك لتعلم الإنجليزية من A1 إلى A2.
-
-</p>
-
-<div class="stat">
-
-<div>
-
-<b id="homePoints">0</b>
-
-النقاط
-
-</div>
-
-<div>
-
-<b id="homeCorrect">0</b>
-
-إجابات صحيحة
-
-</div>
-
-<div>
-
-<b id="homeWrong">0</b>
-
-إجابات خاطئة
-
-</div>
-
-<div>
-
-<b id="homeCompleted">0</b>
-
-وحدات مكتملة
-
-</div>
-
-</div>
+<p id="progressText">0%</p>
 
 </div>
 
 <div class="card">
 
-<h3>التقدم</h3>
+<h2>📚 مستوى A1</h2>
 
-<div class="progress">
-
-<i id="homeProgress"></i>
-
-</div>
-
-<p id="homeProgressText" class="small"></p>
+<div id="units"></div>
 
 </div>
 
 <div class="card">
 
-<h3>الحفظ</h3>
-
-<p class="small">
-
-يتم حفظ تقدمك على الجهاز.
-
-</p>
-
-<button class="action success" onclick="saveState();toast('تم حفظ التقدم ✓')">
-
-حفظ الآن
-
-</button>
-
-<button class="action secondary" onclick="restoreState()">
-
-استرجاع آخر حفظ
-
-</button>
-
-<button class="action danger" onclick="resetProgress()">
-
-مسح التقدم
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= UNITS ================= -->
-
-<section id="units">
-
-<div class="card">
-
-<h2>منهج A1 → A2</h2>
-
-<div id="unitsList"></div>
-
-</div>
-
-</section>
-
-<!-- ================= QUIZ ================= -->
-
-<section id="quiz">
-
-<div class="card" id="quizStart">
-
-<h2>الاختبارات 📝</h2>
-
-<p>
-
-اختر الوحدة أو ابدأ الاختبار الشامل.
-
-</p>
-
-<div id="quizUnitButtons"></div>
-
-<button class="action success" onclick="startFullTest()">
-
-اختبار شامل — 50 سؤال
-
-</button>
-
-<button class="action secondary" onclick="startMistakes()">
-
-مراجعة الأخطاء
-
-</button>
-
-</div>
-
-<div class="card hidden" id="quizBox">
-
-<div class="small" id="quizCounter"></div>
-
-<div class="progress">
-
-<i id="quizProgress"></i>
-
-</div>
-
-<div id="questionText" class="questionText"></div>
-
-<div id="options"></div>
-
-<div id="feedback"></div>
-
-<button
-
-class="action secondary hidden"
-
-id="nextBtn"
-
-onclick="nextQuestion()">
-
-السؤال التالي
-
-</button>
-
-</div>
-
-<div class="card hidden" id="quizResult"></div>
-
-</section>
-
-<!-- ================= WORDS ================= -->
-
-<section id="words">
-
-<div class="card">
-
-<h2>المفردات 📚</h2>
-
-<div class="word" id="wordEnglish"></div>
-
-<div class="meaning" id="wordArabic"></div>
-
-<div class="example" id="wordExample"></div>
-
-<button class="action" onclick="speakWord()">
-
-🔊 النطق
-
-</button>
-
-<button class="action success" onclick="knowWord()">
-
-أعرفها ✓
-
-</button>
-
-<button class="action danger" onclick="missWord()">
-
-لم أحفظها ✗
-
-</button>
-
-<p class="center small" id="wordCounter"></p>
-
-</div>
-
-<div class="card">
-
-<h3>الكلمات المحفوظة</h3>
-
-<p id="knownWordsCount"></p>
-
-</div>
-
-</section>
-
-<!-- ================= LISTENING ================= -->
-
-<section id="listen">
-
-<div class="card">
-
-<h2>Listening 🎧</h2>
-
-<p class="small">
-
-اضغط استمع، حاول فهم الجملة، ثم اختر معناها.
-
-</p>
-
-<button class="action" onclick="playListening()">
-
-🔊 استمع
-
-</button>
-
-<div id="listenQuestion"></div>
-
-<div id="listenOptions"></div>
-
-<div id="listenResult"></div>
-
-<button
-
-class="action secondary hidden"
-
-id="listenNext"
-
-onclick="nextListening()">
-
-التالي
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= SPEAKING ================= -->
-
-<section id="speak">
-
-<div class="card">
-
-<h2>Speaking 🗣️</h2>
-
-<p id="speakPrompt"></p>
-
-<button class="action" onclick="startSpeech()">
-
-🎤 تحدث
-
-</button>
-
-<textarea
-
-id="speechText"
-
-placeholder="إذا لم يعمل الميكروفون، اكتب إجابتك هنا...">
-
-</textarea>
-
-<button class="action success" onclick="checkSpeech()">
-
-فحص الإجابة
-
-</button>
-
-<div id="speechResult"></div>
-
-<button class="action secondary" onclick="nextSpeaking()">
-
-سؤال آخر
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= WRITING ================= -->
-
-<section id="write">
-
-<div class="card">
-
-<h2>Writing ✍️</h2>
-
-<p id="writePrompt"></p>
-
-<textarea
-
-id="writingAnswer"
-
-placeholder="اكتب إجابتك بالإنجليزية...">
-
-</textarea>
-
-<button class="action success" onclick="checkWriting()">
-
-فحص الإجابة
-
-</button>
-
-<div id="writingResult"></div>
-
-<button class="action secondary" onclick="nextWriting()">
-
-سؤال آخر
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= STATS ================= -->
-
-<section id="stats">
-
-<div class="card">
-
-<h2>إحصائياتك 📊</h2>
-
-<div class="stat">
-
-<div>
-
-<b id="statPoints">0</b>
-
-النقاط
-
-</div>
-
-<div>
-
-<b id="statCorrect">0</b>
-
-صحيح
-
-</div>
-
-<div>
-
-<b id="statWrong">0</b>
-
-خطأ
-
-</div>
-
-<div>
-
-<b id="statWords">0</b>
-
-كلمات
-
-</div>
-
-<div>
-
-<b id="statUnits">0</b>
-
-وحدات
-
-</div>
-
-<div>
-
-<b id="statMistakes">0</b>
-
-أخطاء
+<button class="danger" onclick="resetProgress()">إعادة ضبط التقدم</button>
 
 </div>
 
 </div>
 
-</div>
+<div id="lesson"></div>
 
-<div class="card">
-
-<h3>الوحدات المكتملة</h3>
-
-<div id="completedList"></div>
+<div id="quiz"></div>
 
 </div>
-
-</section>
-
-</main>
-
-<footer>
-
-English Trainer A1 → A2<br>
-
-الحفظ محليًا على الجهاز
-
-</footer>
-
-<div id="toast"></div>
 
 <script>
 
-/* =========================================================
-
-   STORAGE
-
-========================================================= */
-
-const STORAGE_KEY = "LAITH_ENGLISH_A1_A2_COMPLETE";
-
-const defaultState = {
-
-  completed: [],
-
-  previousMastered: [1,3,5,6,10,11],
-
-  unitScores: {},
-
-  points: 0,
-
-  correct: 0,
-
-  wrong: 0,
-
-  mistakes: [],
-
-  knownWords: [],
-
-  wordIndex: 0,
-
-  listening: {
-
-    attempts:0,
-
-    correct:0
-
-  },
-
-  speaking: {
-
-    attempts:0,
-
-    correct:0
-
-  },
-
-  writing: {
-
-    attempts:0,
-
-    correct:0
-
-  },
-
-  fullTests:0
-
-};
-
-function cloneDefault(){
-
-  return JSON.parse(JSON.stringify(defaultState));
-
-}
-
-function loadState(){
-
-  try{
-
-    const saved = localStorage.getItem(STORAGE_KEY);
-
-    if(!saved){
-
-      return cloneDefault();
-
-    }
-
-    const parsed = JSON.parse(saved);
-
-    const merged = cloneDefault();
-
-    Object.keys(merged).forEach(key=>{
-
-      if(parsed[key] !== undefined){
-
-        merged[key] = parsed[key];
-
-      }
-
-    });
-
-    return merged;
-
-  }catch(error){
-
-    console.log(error);
-
-    return cloneDefault();
-
-  }
-
-}
-
-let state = loadState();
-
-function saveState(){
-
-  try{
-
-    localStorage.setItem(
-
-      STORAGE_KEY,
-
-      JSON.stringify(state)
-
-    );
-
-    return true;
-
-  }catch(error){
-
-    toast(
-
-      "⚠️ الحفظ غير متاح في طريقة فتح الملف الحالية"
-
-    );
-
-    return false;
-
-  }
-
-}
-
-function restoreState(){
-
-  state = loadState();
-
-  updateAll();
-
-  toast("تم استرجاع آخر حفظ ✓");
-
-}
-
-function resetProgress(){
-
-  if(!confirm("هل تريد حذف تقدمك بالكامل؟")){
-
-    return;
-
-  }
-
-  try{
-
-    localStorage.removeItem(STORAGE_KEY);
-
-  }catch(e){}
-
-  state = cloneDefault();
-
-  saveState();
-
-  updateAll();
-
-  toast("تم حذف التقدم");
-
-}
-
-/* =========================================================
-
-   GENERAL
-
-========================================================= */
-
-function toast(message){
-
-  const el = document.getElementById("toast");
-
-  el.textContent = message;
-
-  el.style.display = "block";
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer = setTimeout(()=>{
-
-    el.style.display = "none";
-
-  },2500);
-
-}
-
-function show(id){
-
-  document
-
-    .querySelectorAll("section")
-
-    .forEach(section=>{
-
-      section.classList.remove("active");
-
-    });
-
-  const target = document.getElementById(id);
-
-  if(target){
-
-    target.classList.add("active");
-
-  }
-
-  updateAll();
-
-}
-
-/* =========================================================
-
-   UNITS
-
-========================================================= */
-
 const units = [
 
-["A1 — Unit 1","Verb to be — am / is / are"],
+{
 
-["A1 — Unit 2","Pronouns & Possessives"],
+title:"1. Verb to be — am / is / are",
 
-["A1 — Unit 3","Present Simple"],
+explain:`
 
-["A1 — Unit 4","Daily Routine"],
+<h3>ما هو Verb to be؟</h3>
 
-["A1 — Unit 5","Questions & Negatives"],
+<p>نستخدم <b>am / is / are</b> للتحدث عن الهوية، العمر، الوظيفة، الحالة، والمعلومات الأساسية.</p>
 
-["A1 — Unit 6","Present Continuous"],
+<div class="rule">
 
-["A1 — Unit 7","There is / There are"],
+<b>I → am</b><br>
 
-["A1 — Unit 8","Articles — a / an / the"],
+<b>He / She / It → is</b><br>
 
-["A1 — Unit 9","Some / Any"],
+<b>You / We / They → are</b>
 
-["A1 — Unit 10","Time & Prepositions"],
+</div>
 
-["A1 — Unit 11","Past Simple"],
+<h3>أمثلة</h3>
 
-["A1 — Unit 12","A1 Review"],
+<div class="example english">I am Laith.</div>
 
-["A2 — Unit 13","Present Perfect"],
+<p>أنا ليث.</p>
 
-["A2 — Unit 14","Present Perfect vs Simple"],
+<div class="example english">She is a teacher.</div>
 
-["A2 — Unit 15","Past Simple vs Present Perfect"],
+<p>هي مدرسة.</p>
 
-["A2 — Unit 16","Past Continuous"],
+<div class="example english">They are happy.</div>
 
-["A2 — Unit 17","Future"],
+<p>هم سعداء.</p>
 
-["A2 — Unit 18","Modal Verbs"],
+<h3>النفي</h3>
 
-["A2 — Unit 19","Comparatives"],
+<div class="example english">I am not tired.</div>
 
-["A2 — Unit 20","Adverbs & Frequency"],
+<div class="example english">He is not busy.</div>
 
-["A2 — Unit 21","First Conditional"],
+<div class="example english">They are not ready.</div>
 
-["A2 — Unit 22","Infinitive & -ing"],
+<h3>السؤال</h3>
 
-["A2 — Unit 23","Practical Communication"],
+<div class="example english">Are you ready?</div>
 
-["A2 — Unit 24","A2 Review"]
+<div class="example english">Is he a doctor?</div>
+
+<div class="example english">Are they at home?</div>
+
+`,
+
+questions:[
+
+["I ___ a student.","am","is","are","A"],
+
+["She ___ happy.","am","is","are","B"],
+
+["They ___ at home.","am","is","are","C"],
+
+["___ you Iraqi?","Am","Is","Are","C"],
+
+["He ___ not tired.","am","is","are","B"],
+
+["We ___ friends.","am","is","are","C"]
+
+]
+
+},
+
+{
+
+title:"2. Pronouns — الضمائر",
+
+explain:`
+
+<h3>الضمائر الشخصية</h3>
+
+<div class="rule">
+
+I = أنا<br>
+
+You = أنت / أنتم<br>
+
+He = هو<br>
+
+She = هي<br>
+
+It = هو/هي لغير العاقل<br>
+
+We = نحن<br>
+
+They = هم / هن
+
+</div>
+
+<h3>أمثلة</h3>
+
+<div class="example english">I am a worker.</div>
+
+<div class="example english">He is my brother.</div>
+
+<div class="example english">She is my sister.</div>
+
+<div class="example english">We are friends.</div>
+
+<div class="example english">They are students.</div>
+
+`,
+
+questions:[
+
+["Ali is my brother. ___ is 30.","He","She","They","A"],
+
+["Sara is a doctor. ___ is busy.","He","She","It","B"],
+
+["My friends are here. ___ are ready.","He","We","They","C"],
+
+["My brother and I = ___","They","We","You","B"],
+
+["The car is new. ___ is expensive.","He","She","It","C"]
+
+]
+
+},
+
+{
+
+title:"3. Possessives — الملكية",
+
+explain:`
+
+<h3>صفات الملكية</h3>
+
+<div class="rule">
+
+my = لي / خاصتي<br>
+
+your = لك<br>
+
+his = له<br>
+
+her = لها<br>
+
+our = لنا<br>
+
+their = لهم
+
+</div>
+
+<h3>أمثلة</h3>
+
+<div class="example english">This is my car.</div>
+
+<div class="example english">That is her house.</div>
+
+<div class="example english">His name is Ali.</div>
+
+<div class="example english">Our teacher is good.</div>
+
+<div class="example english">Their children are young.</div>
+
+<h3>ملكية الشخص باستخدام 's</h3>
+
+<div class="example english">Ali's car.</div>
+
+<p>سيارة علي.</p>
+
+`,
+
+questions:[
+
+["This is ___ book. I own it.","my","his","their","A"],
+
+["Ali has a car. It is ___ car.","her","his","our","B"],
+
+["Sara has a house. It is ___ house.","his","her","their","B"],
+
+["We have a teacher. ___ teacher is good.","Our","Their","His","A"],
+
+["They have a house. It is ___ house.","my","our","their","C"]
+
+]
+
+},
+
+{
+
+title:"4. a / an / the",
+
+explain:`
+
+<h3>a</h3>
+
+<p>تأتي قبل اسم مفرد يبدأ بصوت ساكن.</p>
+
+<div class="example english">a car</div>
+
+<div class="example english">a book</div>
+
+<h3>an</h3>
+
+<p>تأتي قبل اسم مفرد يبدأ بصوت علّة.</p>
+
+<div class="example english">an apple</div>
+
+<div class="example english">an orange</div>
+
+<h3>the</h3>
+
+<p>نستخدمها عندما يكون الشيء معروفًا أو محددًا.</p>
+
+<div class="example english">The car is new.</div>
+
+`,
+
+questions:[
+
+["I have ___ car.","a","an","the","A"],
+
+["She eats ___ apple.","a","an","the","B"],
+
+["He is ___ teacher.","a","an","the","A"],
+
+["___ sun is hot.","A","An","The","C"],
+
+["I see ___ orange.","a","an","the","B"]
+
+]
+
+},
+
+{
+
+title:"5. This / That / These / Those",
+
+explain:`
+
+<div class="rule">
+
+This = هذا/هذه للمفرد القريب<br>
+
+That = ذلك/تلك للمفرد البعيد<br>
+
+These = هؤلاء/هذه للجمع القريب<br>
+
+Those = أولئك/تلك للجمع البعيد
+
+</div>
+
+<div class="example english">This is my phone.</div>
+
+<div class="example english">That is your car.</div>
+
+<div class="example english">These are my books.</div>
+
+<div class="example english">Those are houses.</div>
+
+`,
+
+questions:[
+
+["___ is my phone. (near)","This","Those","These","A"],
+
+["___ is your car. (far)","These","That","This","B"],
+
+["___ are my books. (near)","This","That","These","C"],
+
+["___ are houses. (far)","These","Those","This","B"]
+
+]
+
+},
+
+{
+
+title:"6. Singular & Plural — المفرد والجمع",
+
+explain:`
+
+<p>الاسم المفرد يشير إلى شيء واحد، والجمع إلى أكثر من واحد.</p>
+
+<div class="example english">one book → two books</div>
+
+<div class="example english">one car → three cars</div>
+
+<div class="example english">one box → two boxes</div>
+
+<p>بعض الكلمات غير منتظمة:</p>
+
+<div class="example english">man → men</div>
+
+<div class="example english">woman → women</div>
+
+<div class="example english">child → children</div>
+
+`,
+
+questions:[
+
+["One book → two ___.","book","books","bookes","B"],
+
+["One box → two ___.","boxs","boxes","box","B"],
+
+["One child → two ___.","childs","children","childes","B"],
+
+["One man → two ___.","mans","men","man","B"]
+
+]
+
+},
+
+{
+
+title:"7. Present Simple — المضارع البسيط",
+
+explain:`
+
+<h3>الاستخدام</h3>
+
+<p>نستخدم Present Simple للعادات، الروتين، والحقائق.</p>
+
+<div class="rule">
+
+I / You / We / They + verb<br>
+
+He / She / It + verb + s
+
+</div>
+
+<div class="example english">I work every day.</div>
+
+<div class="example english">They live in Basra.</div>
+
+<div class="example english">He works every day.</div>
+
+<div class="example english">She lives in Iraq.</div>
+
+<h3>مهم جدًا</h3>
+
+<p>مع he/she/it نضيف غالبًا <b>s</b>.</p>
+
+`,
+
+questions:[
+
+["I ___ every day.","work","works","working","A"],
+
+["She ___ English.","study","studies","studying","B"],
+
+["He ___ to work.","go","goes","going","B"],
+
+["They ___ football.","play","plays","playing","A"],
+
+["My brother ___ here.","work","works","working","B"]
+
+]
+
+},
+
+{
+
+title:"8. Do / Does — النفي والأسئلة",
+
+explain:`
+
+<h3>الأسئلة</h3>
+
+<div class="example english">Do you work?</div>
+
+<div class="example english">Do they live here?</div>
+
+<div class="example english">Does he work?</div>
+
+<div class="example english">Does she like tea?</div>
+
+<h3>النفي</h3>
+
+<div class="example english">I do not work.</div>
+
+<div class="example english">They don't work.</div>
+
+<div class="example english">He does not work.</div>
+
+<div class="example english">She doesn't work.</div>
+
+<p><b>ملاحظة:</b> بعد does يعود الفعل إلى شكله الأساسي.</p>
+
+<div class="example english">Does he work? ✅</div>
+
+<div class="example english">Does he works? ❌</div>
+
+`,
+
+questions:[
+
+["___ you work here?","Do","Does","Are","A"],
+
+["___ he work here?","Do","Does","Is","B"],
+
+["She ___ like coffee.","don't","doesn't","isn't","B"],
+
+["They ___ play football.","doesn't","don't","aren't","B"],
+
+["Does he ___ English?","speaks","speak","speaking","B"]
+
+]
+
+},
+
+{
+
+title:"9. What / Where / When / Who / Why / How",
+
+explain:`
+
+<h3>كلمات السؤال المهمة جدًا</h3>
+
+<div class="rule">
+
+<b>What</b> = ماذا / ما<br>
+
+<b>Where</b> = أين<br>
+
+<b>When</b> = متى<br>
+
+<b>Who</b> = من<br>
+
+<b>Why</b> = لماذا<br>
+
+<b>How</b> = كيف
+
+</div>
+
+<h3>أمثلة</h3>
+
+<div class="example english">What is your name?</div>
+
+<p>ما اسمك؟</p>
+
+<div class="example english">Where do you live?</div>
+
+<p>أين تعيش؟</p>
+
+<div class="example english">When do you work?</div>
+
+<p>متى تعمل؟</p>
+
+<div class="example english">Who is he?</div>
+
+<p>من هو؟</p>
+
+<div class="example english">Why are you tired?</div>
+
+<p>لماذا أنت متعب؟</p>
+
+<div class="example english">How are you?</div>
+
+<p>كيف حالك؟</p>
+
+<h3>أسئلة مهمة أخرى</h3>
+
+<div class="example english">How old are you?</div>
+
+<p>كم عمرك؟</p>
+
+<div class="example english">How many brothers do you have?</div>
+
+<p>كم أخًا لديك؟</p>
+
+<div class="example english">How much is it?</div>
+
+<p>كم سعره؟</p>
+
+`,
+
+questions:[
+
+["___ is your name?","What","Where","When","A"],
+
+["___ do you live?","What","Where","Who","B"],
+
+["___ do you work?","When","Who","Why","A"],
+
+["___ is your father?","Who","Where","How","A"],
+
+["___ are you tired?","What","Why","Where","B"],
+
+["___ are you?","How","Who","When","A"],
+
+["___ old are you?","What","How","Where","B"],
+
+["___ brothers do you have?","How much","How many","How old","B"]
+
+]
+
+},
+
+{
+
+title:"10. Adverbs of Frequency — always / usually / sometimes / never",
+
+explain:`
+
+<p>تستخدم لوصف عدد مرات حدوث الشيء.</p>
+
+<div class="rule">
+
+always = دائمًا<br>
+
+usually = عادةً<br>
+
+often = غالبًا<br>
+
+sometimes = أحيانًا<br>
+
+never = أبدًا
+
+</div>
+
+<div class="example english">I always work early.</div>
+
+<div class="example english">She usually drinks coffee.</div>
+
+<div class="example english">I sometimes watch TV.</div>
+
+<div class="example english">He never smokes.</div>
+
+`,
+
+questions:[
+
+["I ___ go to work every day.","always","never","sometimes","A"],
+
+["She ___ drinks coffee, but not every day.","sometimes","never","always","A"],
+
+["He ___ forgets his keys. 0%","always","never","often","B"],
+
+["I ___ eat breakfast before work.","usually","never","sometimes","A"]
+
+]
+
+},
+
+{
+
+title:"11. Present Continuous — am/is/are + ing",
+
+explain:`
+
+<p>نستخدم Present Continuous للشيء الذي يحدث الآن أو حول الوقت الحالي.</p>
+
+<div class="rule">
+
+I + am + verb-ing<br>
+
+He/She/It + is + verb-ing<br>
+
+You/We/They + are + verb-ing
+
+</div>
+
+<div class="example english">I am working.</div>
+
+<div class="example english">She is sleeping.</div>
+
+<div class="example english">They are playing.</div>
+
+<h3>النفي</h3>
+
+<div class="example english">I am not working.</div>
+
+<div class="example english">He isn't sleeping.</div>
+
+<h3>السؤال</h3>
+
+<div class="example english">Are you working?</div>
+
+<div class="example english">Is she sleeping?</div>
+
+`,
+
+questions:[
+
+["I ___ working now.","am","is","are","A"],
+
+["She ___ sleeping.","am","is","are","B"],
+
+["They ___ playing.","am","is","are","C"],
+
+["Are you ___?","work","working","works","B"],
+
+["He isn't ___.","sleep","sleeping","sleeps","B"]
+
+]
+
+},
+
+{
+
+title:"12. Prepositions — in / on / at / under / behind / next to",
+
+explain:`
+
+<h3>حروف الجر للمكان والوقت</h3>
+
+<div class="rule">
+
+in = في / داخل<br>
+
+on = على<br>
+
+at = عند / في وقت محدد<br>
+
+under = تحت<br>
+
+behind = خلف<br>
+
+next to = بجانب<br>
+
+between = بين
+
+</div>
+
+<h3>أمثلة المكان</h3>
+
+<div class="example english">The keys are on the table.</div>
+
+<div class="example english">The car is in the garage.</div>
+
+<div class="example english">The bag is under the chair.</div>
+
+<div class="example english">The bank is next to the shop.</div>
+
+<h3>الوقت</h3>
+
+<div class="example english">at 7 o'clock</div>
+
+<div class="example english">on Monday</div>
+
+<div class="example english">in July</div>
+
+`,
+
+questions:[
+
+["The book is ___ the table.","in","on","at","B"],
+
+["The car is ___ the garage.","in","on","at","A"],
+
+["I wake up ___ 7 o'clock.","in","on","at","C"],
+
+["I work ___ Monday.","in","on","at","B"],
+
+["He lives ___ Iraq.","in","on","at","A"],
+
+["The bag is ___ the chair.","under","at","on","A"]
+
+]
+
+},
+
+{
+
+title:"13. There is / There are",
+
+explain:`
+
+<p>نستخدمها لقول إن شيئًا موجود.</p>
+
+<div class="rule">
+
+There is + مفرد<br>
+
+There are + جمع
+
+</div>
+
+<div class="example english">There is a car outside.</div>
+
+<div class="example english">There are two cars outside.</div>
+
+<h3>النفي</h3>
+
+<div class="example english">There isn't a car.</div>
+
+<div class="example english">There aren't any cars.</div>
+
+`,
+
+questions:[
+
+["___ a book on the table.","There is","There are","There am","A"],
+
+["___ two chairs.","There is","There are","There be","B"],
+
+["___ a car outside.","There isn't","There aren't","There don't","A"],
+
+["___ three students here.","There is","There are","There be","B"]
+
+]
+
+},
+
+{
+
+title:"14. Can / Can't",
+
+explain:`
+
+<p><b>Can</b> تعني يستطيع / يمكن.</p>
+
+<div class="example english">I can swim.</div>
+
+<div class="example english">She can drive.</div>
+
+<p>النفي:</p>
+
+<div class="example english">I can't swim.</div>
+
+<p>السؤال:</p>
+
+<div class="example english">Can you drive?</div>
+
+<p>بعد can نستخدم الفعل الأساسي بدون s.</p>
+
+<div class="example english">He can speak English. ✅</div>
+
+`,
+
+questions:[
+
+["I ___ swim.","can","am can","cans","A"],
+
+["She ___ drive.","can","cans","is can","A"],
+
+["He ___ speak English.","can","cans","can speaks","A"],
+
+["___ you cook?","Can","Are can","Do can","A"],
+
+["I ___ fly.","can't","can nots","amn't","A"]
+
+]
+
+},
+
+{
+
+title:"15. Countable / Uncountable + some / any",
+
+explain:`
+
+<h3>Countable</h3>
+
+<p>أشياء يمكن عدّها: one apple, two apples.</p>
+
+<h3>Uncountable</h3>
+
+<p>أشياء لا نعدها عادةً بهذه الطريقة: water, milk, rice.</p>
+
+<div class="rule">
+
+some تستخدم غالبًا في الجمل المثبتة.<br>
+
+any تستخدم غالبًا في النفي والأسئلة.
+
+</div>
+
+<div class="example english">I have some apples.</div>
+
+<div class="example english">I don't have any apples.</div>
+
+<div class="example english">Do you have any milk?</div>
+
+`,
+
+questions:[
+
+["I have ___ apples.","some","any","a","A"],
+
+["I don't have ___ money.","some","any","an","B"],
+
+["Do you have ___ water?","some","any","a","B"],
+
+["There are ___ books.","some","any","an","A"]
+
+]
+
+},
+
+{
+
+title:"16. Adjectives — الصفات",
+
+explain:`
+
+<p>الصفة تصف الاسم.</p>
+
+<div class="example english">a big house</div>
+
+<div class="example english">a small car</div>
+
+<div class="example english">a new phone</div>
+
+<div class="example english">an old man</div>
+
+<p>الصفة تأتي غالبًا قبل الاسم.</p>
+
+<h3>صفات أساسية</h3>
+
+<p>big = كبير، small = صغير، old = قديم/كبير بالعمر، new = جديد، good = جيد، bad = سيئ، fast = سريع، slow = بطيء، hot = حار، cold = بارد.</p>
+
+`,
+
+questions:[
+
+["It is a ___ car.","fast","fastly","fasterly","A"],
+
+["She has a ___ house.","big","bigs","biggerly","A"],
+
+["This is a ___ phone.","new","news","newly","A"],
+
+["He is a ___ man.","good","goods","well","A"]
+
+]
+
+},
+
+{
+
+title:"17. Past Simple — was / were",
+
+explain:`
+
+<p>الماضي من Verb to be:</p>
+
+<div class="rule">
+
+I / He / She / It → was<br>
+
+You / We / They → were
+
+</div>
+
+<div class="example english">I was tired yesterday.</div>
+
+<div class="example english">He was at home.</div>
+
+<div class="example english">They were busy.</div>
+
+<h3>النفي</h3>
+
+<div class="example english">I wasn't tired.</div>
+
+<div class="example english">They weren't busy.</div>
+
+<h3>السؤال</h3>
+
+<div class="example english">Were you at home?</div>
+
+<div class="example english">Was he tired?</div>
+
+`,
+
+questions:[
+
+["I ___ tired yesterday.","was","were","am","A"],
+
+["They ___ at home.","was","were","are","B"],
+
+["She ___ happy.","was","were","is","A"],
+
+["___ you busy yesterday?","Was","Were","Are","B"],
+
+["He ___ not tired.","was","were","is","A"]
+
+]
+
+},
+
+{
+
+title:"18. Past Simple — regular & irregular verbs",
+
+explain:`
+
+<p>نستخدم Past Simple للأحداث التي انتهت في الماضي.</p>
+
+<h3>Regular verbs</h3>
+
+<div class="example english">work → worked</div>
+
+<div class="example english">play → played</div>
+
+<div class="example english">clean → cleaned</div>
+
+<h3>Irregular verbs</h3>
+
+<div class="example english">go → went</div>
+
+<div class="example english">come → came</div>
+
+<div class="example english">take → took</div>
+
+<div class="example english">eat → ate</div>
+
+<div class="example english">see → saw</div>
+
+<div class="example english">have → had</div>
+
+<h3>أمثلة</h3>
+
+<div class="example english">I worked yesterday.</div>
+
+<div class="example english">She went home.</div>
+
+<div class="example english">They ate dinner.</div>
+
+`,
+
+questions:[
+
+["Yesterday I ___ to work.","go","went","going","B"],
+
+["She ___ dinner.","eat","ate","eating","B"],
+
+["We ___ football yesterday.","play","played","playing","B"],
+
+["He ___ home.","went","go","goes","A"],
+
+["I ___ a new phone last year.","buy","bought","buying","B"]
+
+]
+
+},
+
+{
+
+title:"19. Future — going to",
+
+explain:`
+
+<p>نستخدم <b>be + going to</b> للخطط والنوايا المستقبلية.</p>
+
+<div class="rule">
+
+I am going to...<br>
+
+He/She is going to...<br>
+
+You/We/They are going to...
+
+</div>
+
+<div class="example english">I am going to study.</div>
+
+<div class="example english">She is going to travel.</div>
+
+<div class="example english">They are going to work.</div>
+
+<h3>النفي</h3>
+
+<div class="example english">I am not going to go.</div>
+
+<h3>السؤال</h3>
+
+<div class="example english">Are you going to travel?</div>
+
+`,
+
+questions:[
+
+["I ___ going to study.","am","is","are","A"],
+
+["She ___ going to travel.","am","is","are","B"],
+
+["They ___ going to work.","am","is","are","C"],
+
+["Are you going to ___?","travel","travels","traveling","A"],
+
+["He isn't going to ___.","go","goes","going","A"]
+
+]
+
+},
+
+{
+
+title:"20. A1 Review — مراجعة شاملة",
+
+explain:`
+
+<h3>مراجعة أهم ما تعلمناه</h3>
+
+<p>راجع:</p>
+
+<ul>
+
+<li>am / is / are</li>
+
+<li>الضمائر</li>
+
+<li>الملكية</li>
+
+<li>a / an / the</li>
+
+<li>This / That / These / Those</li>
+
+<li>Present Simple</li>
+
+<li>Do / Does</li>
+
+<li>What / Where / When / Who / Why / How</li>
+
+<li>Present Continuous</li>
+
+<li>حروف الجر</li>
+
+<li>There is / There are</li>
+
+<li>Can / Can't</li>
+
+<li>some / any</li>
+
+<li>Past Simple</li>
+
+<li>going to</li>
+
+</ul>
+
+`,
+
+questions:[
+
+["She ___ English every day.","study","studies","studying","B"],
+
+["___ do you live?","What","Where","Why","B"],
+
+["I ___ working now.","am","is","are","A"],
+
+["They ___ at home yesterday.","was","were","are","B"],
+
+["He ___ going to travel.","am","is","are","B"],
+
+["___ you speak English?","Can","Are","Is","A"],
+
+["There ___ two cars.","is","are","am","B"],
+
+["Does she ___ coffee?","likes","like","liking","B"],
+
+["I don't have ___ money.","some","any","a","B"],
+
+["What ___ your name?","am","is","are","B"]
+
+]
+
+},
+
+{
+
+title:"21. A1 Final Test — الاختبار النهائي",
+
+explain:`
+
+<h3>🎯 الاختبار النهائي لمستوى A1</h3>
+
+<p>هذا الاختبار يجمع أهم قواعد A1.</p>
+
+<p>حاول الإجابة بدون الرجوع إلى الدروس.</p>
+
+`,
+
+questions:[
+
+["I ___ from Iraq.","am","is","are","A"],
+
+["She ___ a teacher.","am","is","are","B"],
+
+["They ___ my friends.","am","is","are","C"],
+
+["He ___ English every day.","study","studies","studying","B"],
+
+["___ you work here?","Do","Does","Are","A"],
+
+["___ does he live?","What","Where","Who","B"],
+
+["___ is your birthday?","When","Where","Why","A"],
+
+["___ is that man?","Who","What","When","A"],
+
+["___ are you tired?","Why","Where","What","A"],
+
+["___ are you?","How","Who","What","A"],
+
+["She ___ sleeping now.","am","is","are","B"],
+
+["They ___ playing football now.","am","is","are","C"],
+
+["The book is ___ the table.","in","on","at","B"],
+
+["I wake up ___ 7.","in","on","at","C"],
+
+["There ___ a car outside.","is","are","am","A"],
+
+["There ___ three books.","is","are","am","B"],
+
+["I ___ swim.","can","cans","am can","A"],
+
+["Do you have ___ water?","some","any","a","B"],
+
+["I ___ to work yesterday.","go","went","going","B"],
+
+["She ___ dinner last night.","eat","ate","eating","B"],
+
+["I am going to ___.","travel","travels","traveling","A"],
+
+["This is ___ car.","my","his","their","A"],
+
+["Ali has a car. It is ___ car.","his","her","our","A"],
+
+["One child → two ___.","childs","children","childes","B"],
+
+["___ apple.","a","an","the","B"]
+
+]
+
+}
 
 ];
 
-/* =========================================================
+let progress = JSON.parse(localStorage.getItem("a1progress") || "{}");
 
-   QUESTION BANK
+let currentUnit = 0;
 
-   [BLANK] = مكان الفراغ الحقيقي
+let currentQuestion = 0;
 
-========================================================= */
+let score = 0;
 
-const questions = [
+function save(){
 
-{id:1,u:1,q:"I [BLANK] a student.",a:["am","is","are","be"],c:0},
-
-{id:2,u:1,q:"She [BLANK] my sister.",a:["am","are","is","be"],c:2},
-
-{id:3,u:1,q:"They [BLANK] at home.",a:["is","am","are","be"],c:2},
-
-{id:4,u:1,q:"He [BLANK] not tired.",a:["are","am","isn't","aren't"],c:2},
-
-{id:5,u:2,q:"This is [BLANK] book.",a:["I","me","my","mine"],c:2},
-
-{id:6,u:2,q:"That car is [BLANK].",a:["he","his","him","he's"],c:1},
-
-{id:7,u:2,q:"[BLANK] are my friends.",a:["They","Them","Their","Theirs"],c:0},
-
-{id:8,u:3,q:"She [BLANK] English every day.",a:["study","studies","studying","studied"],c:1},
-
-{id:9,u:3,q:"I [BLANK] coffee every morning.",a:["drink","drinks","drinking","drank"],c:0},
-
-{id:10,u:3,q:"He [BLANK] to work at 8.",a:["go","goes","going","went"],c:1},
-
-{id:11,u:3,q:"They [BLANK] football on Fridays.",a:["plays","play","playing","played"],c:1},
-
-{id:12,u:4,q:"I [BLANK] up at 7 every day.",a:["get","gets","am getting","got"],c:0},
-
-{id:13,u:4,q:"She [BLANK] breakfast at 8.",a:["have","has","having","had"],c:1},
-
-{id:14,u:4,q:"He usually [BLANK] to work by car.",a:["go","goes","going","went"],c:1},
-
-{id:15,u:5,q:"[BLANK] you like tea?",a:["Do","Does","Are","Is"],c:0},
-
-{id:16,u:5,q:"[BLANK] she work here?",a:["Do","Does","Is","Are"],c:1},
-
-{id:17,u:5,q:"He [BLANK] like coffee.",a:["don't","doesn't","isn't","aren't"],c:1},
-
-{id:18,u:5,q:"[BLANK] they live in Basra?",a:["Does","Do","Is","Are"],c:1},
-
-{id:19,u:6,q:"Look! The baby [BLANK].",a:["sleep","sleeps","is sleeping","slept"],c:2},
-
-{id:20,u:6,q:"I [BLANK] TV now.",a:["watch","watches","am watching","watched"],c:2},
-
-{id:21,u:6,q:"They [BLANK] dinner at the moment.",a:["have","has","are having","had"],c:2},
-
-{id:22,u:7,q:"[BLANK] a book on the table.",a:["There is","There are","It are","They is"],c:0},
-
-{id:23,u:7,q:"[BLANK] three cars outside.",a:["There is","There are","It is","There be"],c:1},
-
-{id:24,u:8,q:"I have [BLANK] apple.",a:["a","an","the","some"],c:1},
-
-{id:25,u:8,q:"She is [BLANK] doctor.",a:["a","an","some","any"],c:0},
-
-{id:26,u:9,q:"I have [BLANK] money.",a:["some","any","a","an"],c:0},
-
-{id:27,u:9,q:"Do you have [BLANK] questions?",a:["some","any","a","an"],c:1},
-
-{id:28,u:10,q:"The meeting starts [BLANK] 8 o'clock.",a:["in","on","at","under"],c:2},
-
-{id:29,u:10,q:"I was born [BLANK] 1993.",a:["at","on","in","under"],c:2},
-
-{id:30,u:10,q:"We work [BLANK] Monday.",a:["at","in","on","under"],c:2},
-
-{id:31,u:10,q:"The shoes are [BLANK] the bed.",a:["under","at","on","in"],c:0},
-
-{id:32,u:11,q:"I [BLANK] to Baghdad yesterday.",a:["go","goes","went","gone"],c:2},
-
-{id:33,u:11,q:"She [BLANK] dinner last night.",a:["cooks","cooked","cook","cooking"],c:1},
-
-{id:34,u:11,q:"They [BLANK] the movie yesterday.",a:["see","saw","seen","seeing"],c:1},
-
-{id:35,u:13,q:"I [BLANK] finished my work.",a:["have","has","am","did"],c:0},
-
-{id:36,u:13,q:"She [BLANK] visited London.",a:["have","has","is","did"],c:1},
-
-{id:37,u:13,q:"They have [BLANK] the food.",a:["eat","ate","eaten","eating"],c:2},
-
-{id:38,u:14,q:"I [BLANK] here every day.",a:["work","am working","have worked","worked"],c:0},
-
-{id:39,u:14,q:"I [BLANK] here since 2020.",a:["work","worked","have worked","am work"],c:2},
-
-{id:40,u:15,q:"I [BLANK] him yesterday.",a:["have seen","saw","see","am seeing"],c:1},
-
-{id:41,u:15,q:"I [BLANK] never seen this movie.",a:["have","has","did","am"],c:0},
-
-{id:42,u:16,q:"I [BLANK] when he called.",a:["sleep","was sleeping","am sleeping","slept"],c:1},
-
-{id:43,u:16,q:"They [BLANK] football at 7 yesterday.",a:["were playing","play","played","are playing"],c:0},
-
-{id:44,u:17,q:"I think it [BLANK] rain tomorrow.",a:["will","is","was","has"],c:0},
-
-{id:45,u:17,q:"She [BLANK] visit us next week.",a:["will","did","has","was"],c:0},
-
-{id:46,u:18,q:"You [BLANK] study more.",a:["should","are","did","has"],c:0},
-
-{id:47,u:18,q:"[BLANK] I open the window?",a:["May","Did","Has","Was"],c:0},
-
-{id:48,u:19,q:"Ali is [BLANK] than Ahmed.",a:["tall","taller","more tall","tallest"],c:1},
-
-{id:49,u:19,q:"This is the [BLANK] car here.",a:["fast","faster","fastest","more fast"],c:2},
-
-{id:50,u:20,q:"She [BLANK] goes to work early.",a:["always","yesterday","now","tomorrow"],c:0},
-
-{id:51,u:21,q:"If it rains, I [BLANK] at home.",a:["stay","will stay","stayed","am stay"],c:1},
-
-{id:52,u:21,q:"If you study, you [BLANK] pass.",a:["will","would","did","are"],c:0},
-
-{id:53,u:22,q:"I enjoy [BLANK] English.",a:["learn","learning","to learn","learned"],c:1},
-
-{id:54,u:22,q:"I want [BLANK] English.",a:["learning","learned","to learn","learn"],c:2},
-
-{id:55,u:23,q:"How [BLANK] you?",a:["are","is","do","have"],c:0},
-
-{id:56,u:23,q:"Nice [BLANK] meet you.",a:["to","at","on","in"],c:0},
-
-{id:57,u:12,q:"She [BLANK] working now.",a:["is","does","has","was"],c:0},
-
-{id:58,u:12,q:"They [BLANK] already finished.",a:["have","has","are","did"],c:0},
-
-{id:59,u:12,q:"He [BLANK] TV every night.",a:["watch","watches","is watch","watched"],c:1},
-
-{id:60,u:12,q:"We [BLANK] dinner yesterday.",a:["have","had","has","are having"],c:1}
-
-];
-
-/* =========================================================
-
-   QUESTION DISPLAY
-
-========================================================= */
-
-function renderQuestionText(text){
-
-  const safe = String(text)
-
-    .replace(/&/g,"&amp;")
-
-    .replace(/</g,"&lt;")
-
-    .replace(/>/g,"&gt;")
-
-    .replace(/"/g,"&quot;")
-
-    .replace(/'/g,"&#039;");
-
-  return safe.replace(
-
-    /\[BLANK\]/g,
-
-    '<span class="blank">_____</span>'
-
-  );
+localStorage.setItem("a1progress",JSON.stringify(progress));
 
 }
 
-/* =========================================================
+function renderUnits(){
 
-   QUIZ
+let html="";
 
-========================================================= */
+units.forEach((u,i)=>{
 
-let quizQuestions = [];
+let done=progress[i] ? "done":"";
 
-let quizIndex = 0;
+let mark=progress[i] ? "✅":"📘";
 
-let quizCorrect = 0;
+html+=`
 
-let currentUnit = null;
+<div class="unit ${done}">
 
-let quizAnswered = false;
+<h3>${mark} ${u.title}</h3>
 
-function shuffle(array){
+<p class="small">${progress[i] ? "تم الإنجاز":"لم تدرس بعد"}</p>
 
-  const arr = [...array];
+<button class="primary" onclick="openLesson(${i})">ابدأ الدرس</button>
 
-  for(let i=arr.length-1;i>0;i--){
+</div>`;
 
-    const j = Math.floor(
+});
 
-      Math.random() * (i+1)
+document.getElementById("units").innerHTML=html;
 
-    );
-
-    [arr[i],arr[j]] =
-
-    [arr[j],arr[i]];
-
-  }
-
-  return arr;
+updateProgress();
 
 }
 
-function prepareQuestion(q){
+function updateProgress(){
 
-  const options = q.a.map(
+let done=Object.keys(progress).length;
 
-    (text,index)=>({
+let percent=Math.round(done/units.length*100);
 
-      text:text,
+document.getElementById("progressBar").style.width=percent+"%";
 
-      correct:index===q.c
+document.getElementById("progressText").innerText=
 
-    })
-
-  );
-
-  return {
-
-    ...q,
-
-    options:shuffle(options)
-
-  };
+`أنجزت ${done} من ${units.length} وحدة — ${percent}%`;
 
 }
 
-function startUnitQuiz(unit){
+function openLesson(i){
 
-  currentUnit = unit;
+currentUnit=i;
 
-  const source =
+document.getElementById("home").style.display="none";
 
-    questions.filter(q=>q.u===unit);
+let u=units[i];
 
-  if(source.length===0){
+document.getElementById("lesson").style.display="block";
 
-    toast("لا توجد أسئلة لهذه الوحدة حاليًا.");
+document.getElementById("quiz").style.display="none";
 
-    return;
+document.getElementById("lesson").innerHTML=`
 
-  }
+<div class="card">
 
-  quizQuestions =
+<h2>${u.title}</h2>
 
-    shuffle(source)
+${u.explain}
 
-    .slice(0,10)
+<hr>
 
-    .map(prepareQuestion);
+<h3>🎯 تدريب واختبار الدرس</h3>
 
-  quizIndex = 0;
+<p>بعد قراءة الشرح والأمثلة، اضغط على الزر للبدء.</p>
 
-  quizCorrect = 0;
+<button class="primary" onclick="startQuiz()">ابدأ الاختبار</button>
 
-  quizAnswered = false;
+<button class="secondary" onclick="goHome()">رجوع للوحدات</button>
 
-  document
-
-    .getElementById("quizStart")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizResult")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizBox")
-
-    .classList.remove("hidden");
-
-  show("quiz");
-
-  renderQuestion();
+</div>`;
 
 }
 
-function startFullTest(){
+function startQuiz(){
 
-  currentUnit = 0;
+currentQuestion=0;
 
-  quizQuestions =
+score=0;
 
-    shuffle(questions)
+document.getElementById("lesson").style.display="none";
 
-    .slice(0,50)
+document.getElementById("quiz").style.display="block";
 
-    .map(prepareQuestion);
-
-  quizIndex = 0;
-
-  quizCorrect = 0;
-
-  quizAnswered = false;
-
-  state.fullTests++;
-
-  saveState();
-
-  document
-
-    .getElementById("quizStart")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizResult")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizBox")
-
-    .classList.remove("hidden");
-
-  show("quiz");
-
-  renderQuestion();
+showQuestion();
 
 }
 
-function startMistakes(){
+function showQuestion(){
 
-  const ids = new Set(
+let q=units[currentUnit].questions[currentQuestion];
 
-    state.mistakes
+let html=`
 
-      .filter(x=>x.id)
+<div class="card">
 
-      .map(x=>x.id)
+<p class="small">السؤال ${currentQuestion+1} من ${units[currentUnit].questions.length}</p>
 
-  );
+<h2>${q[0]}</h2>
 
-  quizQuestions =
+<button class="option" onclick="answer('A',this)">${q[1]}</button>
 
-    questions
+<button class="option" onclick="answer('B',this)">${q[2]}</button>
 
-      .filter(q=>ids.has(q.id))
+<button class="option" onclick="answer('C',this)">${q[3]}</button>
 
-      .map(prepareQuestion);
+<div id="feedback"></div>
 
-  if(quizQuestions.length===0){
+</div>`;
 
-    toast("لا توجد أخطاء محفوظة حاليًا.");
-
-    return;
-
-  }
-
-  currentUnit = -1;
-
-  quizIndex = 0;
-
-  quizCorrect = 0;
-
-  quizAnswered = false;
-
-  document
-
-    .getElementById("quizStart")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizResult")
-
-    .classList.add("hidden");
-
-  document
-
-    .getElementById("quizBox")
-
-    .classList.remove("hidden");
-
-  show("quiz");
-
-  renderQuestion();
+document.getElementById("quiz").innerHTML=html;
 
 }
 
-function renderQuestion(){
+function answer(letter,button){
 
-  if(quizIndex >= quizQuestions.length){
+let q=units[currentUnit].questions[currentQuestion];
 
-    finishQuiz();
+let buttons=document.querySelectorAll(".option");
 
-    return;
+buttons.forEach(b=>b.disabled=true);
 
-  }
+if(letter===q[4]){
 
-  quizAnswered = false;
+button.classList.add("correct");
 
-  const q = quizQuestions[quizIndex];
+score++;
 
-  document.getElementById("quizCounter")
+document.getElementById("feedback").innerHTML=
 
-    .textContent =
+`<div class="example">✅ إجابة صحيحة!</div>`;
 
-    `السؤال ${quizIndex+1} من ${quizQuestions.length}`;
+}else{
 
-  document.getElementById("quizProgress")
+button.classList.add("wrong");
 
-    .style.width =
+let correctIndex=q[4]==="A"?1:q[4]==="B"?2:3;
 
-    `${(quizIndex/quizQuestions.length)*100}%`;
+buttons[correctIndex-1].classList.add("correct");
 
-  document.getElementById("questionText")
+document.getElementById("feedback").innerHTML=
 
-    .innerHTML =
-
-    renderQuestionText(q.q);
-
-  const box =
-
-    document.getElementById("options");
-
-  box.innerHTML = "";
-
-  q.options.forEach((option,index)=>{
-
-    const button =
-
-      document.createElement("button");
-
-    button.className = "option";
-
-    button.textContent = option.text;
-
-    button.onclick =
-
-      ()=>answerQuestion(index);
-
-    box.appendChild(button);
-
-  });
-
-  document.getElementById("feedback")
-
-    .innerHTML = "";
-
-  document.getElementById("nextBtn")
-
-    .classList.add("hidden");
+`<div class="example">❌ خطأ.<br>الإجابة الصحيحة: <b>${q[correctIndex]}</b></div>`;
 
 }
 
-function answerQuestion(index){
+setTimeout(()=>{
 
-  if(quizAnswered){
+currentQuestion++;
 
-    return;
+if(currentQuestion < units[currentUnit].questions.length){
 
-  }
+showQuestion();
 
-  quizAnswered = true;
+}else{
 
-  const q = quizQuestions[quizIndex];
-
-  const buttons = [
-
-    ...document.querySelectorAll(
-
-      "#options .option"
-
-    )
-
-  ];
-
-  const selected =
-
-    q.options[index];
-
-  buttons[index].classList.add(
-
-    selected.correct
-
-      ? "correct"
-
-      : "wrong"
-
-  );
-
-  if(selected.correct){
-
-    quizCorrect++;
-
-    state.correct++;
-
-    state.points += 10;
-
-    /* إزالة السؤال من الأخطاء */
-
-    state.mistakes =
-
-      state.mistakes.filter(
-
-        x=>x.id!==q.id
-
-      );
-
-    document.getElementById("feedback")
-
-      .innerHTML =
-
-      `<div class="resultGood">
-
-        ✓ إجابة صحيحة
-
-      </div>`;
-
-  }else{
-
-    state.wrong++;
-
-    const correct =
-
-      q.options.find(
-
-        x=>x.correct
-
-      );
-
-    /* حفظ الخطأ */
-
-    state.mistakes =
-
-      state.mistakes.filter(
-
-        x=>x.id!==q.id
-
-      );
-
-    state.mistakes.push({
-
-      id:q.id,
-
-      question:q.q,
-
-      correct:correct.text
-
-    });
-
-    document.getElementById("feedback")
-
-      .innerHTML =
-
-      `<div class="resultBad">
-
-        ✗ خطأ — الصحيح: ${correct.text}
-
-      </div>`;
-
-  }
-
-  saveState();
-
-  updateAll();
-
-  document.getElementById("nextBtn")
-
-    .classList.remove("hidden");
+finishQuiz();
 
 }
 
-function nextQuestion(){
-
-  quizIndex++;
-
-  renderQuestion();
+},1200);
 
 }
 
 function finishQuiz(){
 
-  document.getElementById("quizBox")
+let total=units[currentUnit].questions.length;
 
-    .classList.add("hidden");
+let percent=Math.round(score/total*100);
 
-  const total =
+if(percent>=70){
 
-    quizQuestions.length;
+progress[currentUnit]=true;
 
-  const percent =
-
-    Math.round(
-
-      (quizCorrect/total)*100
-
-    );
-
-  let message = "";
-
-  if(currentUnit > 0){
-
-    if(percent >= 80){
-
-      message =
-
-        "ممتاز! أصبحت هذه الوحدة مكتملة ✓";
-
-      if(!state.completed.includes(currentUnit)){
-
-        state.completed.push(
-
-          currentUnit
-
-        );
-
-      }
-
-    }else if(percent >= 60){
-
-      message =
-
-        "جيد، لكن تحتاج إلى مراجعة بعض النقاط.";
-
-    }else{
-
-      message =
-
-        "تحتاج إلى دراسة الوحدة ومراجعتها مرة أخرى.";
-
-    }
-
-    state.unitScores[currentUnit] =
-
-      percent;
-
-  }else if(currentUnit === 0){
-
-    message =
-
-      "هذه نتيجة الاختبار الشامل.";
-
-  }else{
-
-    message =
-
-      "هذه نتيجة مراجعة الأخطاء.";
-
-  }
-
-  saveState();
-
-  const result =
-
-    document.getElementById("quizResult");
-
-  result.classList.remove("hidden");
-
-  result.innerHTML = `
-
-    <h2>نتيجة الاختبار 🎉</h2>
-
-    <div class="stat">
-
-      <div>
-
-        <b>${percent}%</b>
-
-        النتيجة
-
-      </div>
-
-      <div>
-
-        <b>${quizCorrect}</b>
-
-        صحيح
-
-      </div>
-
-      <div>
-
-        <b>${total-quizCorrect}</b>
-
-        خطأ
-
-      </div>
-
-    </div>
-
-    <p class="center">
-
-      ${message}
-
-    </p>
-
-    <button
-
-      class="action"
-
-      onclick="backToQuizStart()">
-
-      العودة للاختبارات
-
-    </button>
-
-  `;
-
-  updateAll();
+save();
 
 }
 
-function backToQuizStart(){
+document.getElementById("quiz").innerHTML=`
 
-  document
+<div class="card">
 
-    .getElementById("quizResult")
+<h2>🏆 انتهى الاختبار</h2>
 
-    .classList.add("hidden");
+<div class="score">
 
-  document
+${score} / ${total}<br>
 
-    .getElementById("quizStart")
+${percent}%
 
-    .classList.remove("hidden");
+</div>
+
+<p style="text-align:center">
+
+${percent>=70
+
+?"🎉 ممتاز! تم اجتياز الوحدة."
+
+:"📚 لم تصل إلى 70%. راجع الدرس وأعد الاختبار."}
+
+</p>
+
+${percent<70?
+
+`<button class="primary" onclick="openLesson(${currentUnit})">راجع الدرس</button>`
+
+:
+
+`<button class="primary" onclick="nextUnit()">الوحدة التالية</button>`
 
 }
 
-/* =========================================================
+<button class="secondary" onclick="goHome()">قائمة الوحدات</button>
 
-   VOCABULARY
-
-========================================================= */
-
-/*
-
-  كلمات حقيقية شائعة.
-
-  البرنامج يكررها ويحتفظ بالكلمات التي حفظتها.
-
-*/
-
-const wordList = [
-
-["be","يكون","I want to be happy."],
-
-["have","يملك","I have a car."],
-
-["do","يفعل","I do my work."],
-
-["go","يذهب","I go to work."],
-
-["come","يأتي","Come here."],
-
-["get","يحصل","I get a message."],
-
-["make","يصنع","I make coffee."],
-
-["take","يأخذ","Take your book."],
-
-["give","يعطي","Give me the key."],
-
-["know","يعرف","I know him."],
-
-["think","يفكر","I think so."],
-
-["want","يريد","I want water."],
-
-["need","يحتاج","I need help."],
-
-["like","يحب","I like tea."],
-
-["love","يحب","I love my family."],
-
-["use","يستخدم","I use my phone."],
-
-["work","يعمل","I work every day."],
-
-["call","يتصل","Call me later."],
-
-["try","يحاول","Try again."],
-
-["ask","يسأل","Ask a question."],
-
-["answer","يجيب","Answer the question."],
-
-["feel","يشعر","I feel good."],
-
-["become","يصبح","He became a teacher."],
-
-["leave","يغادر","I leave at eight."],
-
-["put","يضع","Put it here."],
-
-["keep","يحتفظ","Keep the key."],
-
-["let","يسمح","Let me help."],
-
-["begin","يبدأ","The class begins now."],
-
-["seem","يبدو","You seem tired."],
-
-["help","يساعد","Can you help me?"],
-
-["talk","يتحدث","We talk every day."],
-
-["turn","يدور","Turn left."],
-
-["start","يبدأ","We start at nine."],
-
-["show","يظهر","Show me the picture."],
-
-["hear","يسمع","I can hear you."],
-
-["play","يلعب","They play football."],
-
-["run","يركض","I run every morning."],
-
-["move","يتحرك","Move the chair."],
-
-["live","يعيش","I live in Basra."],
-
-["believe","يصدق","I believe you."],
-
-["bring","يجلب","Bring your book."],
-
-["happen","يحدث","What happened?"],
-
-["write","يكتب","Write your name."],
-
-["provide","يوفر","They provide help."],
-
-["sit","يجلس","Sit here."],
-
-["stand","يقف","Please stand up."],
-
-["lose","يخسر","Do not lose it."],
-
-["pay","يدفع","I pay the bill."],
-
-["meet","يقابل","Nice to meet you."],
-
-["include","يشمل","The price includes tax."],
-
-["continue","يستمر","Please continue."],
-
-["set","يضع","Set the table."],
-
-["learn","يتعلم","I learn English."],
-
-["change","يغير","Things change."],
-
-["lead","يقود","He leads the team."],
-
-["understand","يفهم","I understand you."],
-
-["watch","يشاهد","I watch TV."],
-
-["follow","يتبع","Follow me."],
-
-["stop","يتوقف","Stop here."],
-
-["create","ينشئ","We create a plan."],
-
-["speak","يتحدث","I speak English."],
-
-["read","يقرأ","I read books."],
-
-["allow","يسمح","They allow visitors."],
-
-["add","يضيف","Add some water."],
-
-["spend","ينفق","I spend money carefully."],
-
-["grow","ينمو","Children grow quickly."],
-
-["open","يفتح","Open the door."],
-
-["walk","يمشي","I walk to work."],
-
-["win","يفوز","We can win."],
-
-["offer","يعرض","They offer help."],
-
-["remember","يتذكر","Remember my name."],
-
-["love","يحب","I love this place."],
-
-["consider","يعتبر","Consider this idea."],
-
-["appear","يظهر","He appears happy."],
-
-["buy","يشتري","I buy food."],
-
-["wait","ينتظر","Wait here."],
-
-["serve","يخدم","They serve food."],
-
-["die","يموت","Plants die without water."],
-
-["send","يرسل","Send me a message."],
-
-["expect","يتوقع","I expect good news."],
-
-["build","يبني","They build houses."],
-
-["stay","يبقى","Stay here."],
-
-["fall","يسقط","Be careful not to fall."],
-
-["cut","يقطع","Cut the bread."],
-
-["reach","يصل","We reach the city."],
-
-["kill","يقتل","The story is fictional."],
-
-["remain","يبقى","Please remain here."],
-
-["suggest","يقترح","I suggest this."],
-
-["raise","يرفع","Raise your hand."],
-
-["pass","يمر","The bus passes here."],
-
-["sell","يبيع","They sell cars."],
-
-["require","يتطلب","This job requires English."],
-
-["report","يبلغ","Report the problem."],
-
-["decide","يقرر","I decide today."],
-
-["pull","يسحب","Pull the door."],
-
-["return","يعود","I return home."],
-
-["explain","يشرح","Please explain."],
-
-["hope","يأمل","I hope so."],
-
-["develop","يطور","We develop skills."],
-
-["carry","يحمل","Carry the bag."],
-
-["break","يكسر","Do not break it."],
-
-["receive","يستلم","I received a message."],
-
-["agree","يوافق","I agree."],
-
-["support","يدعم","I support you."],
-
-["hit","يضرب","Do not hit it."],
-
-["produce","ينتج","The factory produces oil."],
-
-["eat","يأكل","I eat breakfast."],
-
-["cover","يغطي","Cover the food."],
-
-["catch","يمسك","Catch the ball."],
-
-["draw","يرسم","Draw a picture."],
-
-["choose","يختار","Choose one."],
-
-["cause","يسبب","Rain can cause problems."],
-
-["point","يشير","Point to the answer."],
-
-["listen","يستمع","Listen carefully."],
-
-["realize","يدرك","I realize the problem."],
-
-["place","مكان","This is a nice place."],
-
-["person","شخص","He is a good person."],
-
-["year","سنة","This year is busy."],
-
-["time","وقت","I need time."],
-
-["way","طريقة","This is the best way."],
-
-["day","يوم","Have a nice day."],
-
-["thing","شيء","What is this thing?"],
-
-["man","رجل","The man is here."],
-
-["woman","امرأة","The woman is a doctor."],
-
-["child","طفل","The child is sleeping."],
-
-["world","العالم","The world is large."],
-
-["life","حياة","Life is beautiful."],
-
-["hand","يد","Raise your hand."],
-
-["part","جزء","This is part of the plan."],
-
-["place","مكان","The place is clean."],
-
-["week","أسبوع","See you next week."],
-
-["case","حالة","This is a special case."],
-
-["point","نقطة","That is the point."],
-
-["government","حكومة","The government announced a plan."],
-
-["company","شركة","I work for a company."],
-
-["number","رقم","What is your number?"],
-
-["group","مجموعة","We work in a group."],
-
-["problem","مشكلة","We have a problem."],
-
-["fact","حقيقة","That is a fact."],
-
-["home","بيت","I am at home."],
-
-["water","ماء","Drink some water."],
-
-["room","غرفة","My room is small."],
-
-["mother","أم","My mother is kind."],
-
-["father","أب","My father is at home."],
-
-["family","عائلة","My family is important."],
-
-["friend","صديق","He is my friend."],
-
-["school","مدرسة","The school is near."],
-
-["student","طالب","I am a student."],
-
-["teacher","مدرس","She is a teacher."],
-
-["book","كتاب","This is my book."],
-
-["car","سيارة","My car is new."],
-
-["house","منزل","Their house is big."],
-
-["food","طعام","The food is good."],
-
-["money","مال","I need money."],
-
-["job","وظيفة","I have a new job."],
-
-["office","مكتب","I work in an office."],
-
-["city","مدينة","Basra is a city."],
-
-["country","بلد","I love my country."],
-
-["morning","صباح","Good morning."],
-
-["afternoon","بعد الظهر","Good afternoon."],
-
-["evening","مساء","Good evening."],
-
-["night","ليل","Good night."],
-
-["today","اليوم","I am busy today."],
-
-["tomorrow","غدًا","See you tomorrow."],
-
-["yesterday","أمس","I worked yesterday."],
-
-["Monday","الاثنين","I work on Monday."],
-
-["Tuesday","الثلاثاء","Tuesday is busy."],
-
-["Wednesday","الأربعاء","See you Wednesday."],
-
-["Thursday","الخميس","The meeting is Thursday."],
-
-["Friday","الجمعة","Friday is my day off."],
-
-["Saturday","السبت","I work Saturday."],
-
-["Sunday","الأحد","Sunday is quiet."],
-
-["good","جيد","This is good."],
-
-["bad","سيئ","That is bad."],
-
-["big","كبير","The house is big."],
-
-["small","صغير","The room is small."],
-
-["long","طويل","It is a long road."],
-
-["short","قصير","The meeting is short."],
-
-["new","جديد","I have a new phone."],
-
-["old","قديم","This car is old."],
-
-["young","شاب","He is young."],
-
-["important","مهم","This is important."],
-
-["easy","سهل","English can be easy."],
-
-["difficult","صعب","This question is difficult."],
-
-["beautiful","جميل","The city is beautiful."],
-
-["happy","سعيد","I am happy."],
-
-["sad","حزين","She is sad."],
-
-["tired","متعب","I am tired."],
-
-["busy","مشغول","I am busy."],
-
-["free","متفرغ","Are you free?"],
-
-["ready","جاهز","I am ready."],
-
-["right","صحيح","Your answer is right."],
-
-["wrong","خطأ","That answer is wrong."],
-
-["fast","سريع","The car is fast."],
-
-["slow","بطيء","The bus is slow."],
-
-["hot","حار","It is hot today."],
-
-["cold","بارد","The water is cold."],
-
-["early","مبكر","I wake up early."],
-
-["late","متأخر","I am late."],
-
-["always","دائمًا","I always study."],
-
-["usually","عادةً","I usually walk."],
-
-["often","غالبًا","I often read."],
-
-["sometimes","أحيانًا","I sometimes cook."],
-
-["never","أبدًا","I never smoke."],
-
-["here","هنا","Come here."],
-
-["there","هناك","Put it there."],
-
-["inside","داخل","It is inside."],
-
-["outside","خارج","Wait outside."],
-
-["under","تحت","The shoes are under the bed."],
-
-["above","فوق","The picture is above the table."],
-
-["before","قبل","Come before eight."],
-
-["after","بعد","See you after work."],
-
-["between","بين","The shop is between two buildings."],
-
-["near","قريب","The school is near."],
-
-["with","مع","Come with me."],
-
-["without","بدون","Tea without sugar."],
-
-["because","لأن","I stayed because it rained."],
-
-["but","لكن","I tried, but I failed."],
-
-["and","و","You and I."],
-
-["or","أو","Tea or coffee?"],
-
-["if","إذا","If it rains, stay home."],
-
-["when","متى","When are you coming?"],
-
-["where","أين","Where do you live?"],
-
-["why","لماذا","Why are you late?"],
-
-["what","ماذا","What is this?"],
-
-["who","من","Who is he?"],
-
-["how","كيف","How are you?"],
-
-["which","أي","Which one do you want?"],
-
-["can","يستطيع","I can help."],
-
-["could","استطاع/يمكن","Could you help me?"],
-
-["should","ينبغي","You should study."],
-
-["must","يجب","You must be careful."],
-
-["may","قد/هل يمكن","May I come in?"],
-
-["will","سوف","I will call you."],
-
-["would","سوف/قد","Would you like tea?"],
-
-["am","أكون","I am ready."],
-
-["is","يكون","He is here."],
-
-["are","يكونون","They are ready."],
-
-["was","كان","I was tired."],
-
-["were","كانوا","They were busy."],
-
-["been","كان/صار","I have been there."],
-
-["being","كون","He is being careful."],
-
-["do","يفعل","Do your work."],
-
-["does","يفعل","She does her work."],
-
-["did","فعل","I did it."],
-
-["done","فعل/منجز","It is done."],
-
-["go","يذهب","Go home."],
-
-["went","ذهب","I went yesterday."],
-
-["gone","ذهب","He has gone home."],
-
-["come","يأتي","Come tomorrow."],
-
-["came","أتى","He came early."],
-
-["see","يرى","I see you."],
-
-["saw","رأى","I saw him."],
-
-["seen","شوهد","I have seen it."],
-
-["eat","يأكل","We eat together."],
-
-["ate","أكل","I ate lunch."],
-
-["eaten","مأكول","I have eaten."],
-
-["drink","يشرب","Drink water."],
-
-["drank","شرب","I drank coffee."],
-
-["drunk","شرب","He has drunk water."],
-
-["write","يكتب","Write a sentence."],
-
-["wrote","كتب","She wrote a letter."],
-
-["written","مكتوب","It is written here."],
-
-["read","يقرأ","I read every day."],
-
-["speak","يتحدث","Speak slowly."],
-
-["spoke","تحدث","He spoke English."],
-
-["spoken","متحدث","English is spoken here."],
-
-["take","يأخذ","Take this."],
-
-["took","أخذ","I took it."],
-
-["taken","مأخوذ","It has been taken."],
-
-["give","يعطي","Give me that."],
-
-["gave","أعطى","He gave me a book."],
-
-["given","معطى","I have given it."],
-
-["make","يصنع","Make a plan."],
-
-["made","صنع","I made coffee."],
-
-["find","يجد","Find the answer."],
-
-["found","وجد","I found it."],
-
-["think","يفكر","Think carefully."],
-
-["thought","فكر","I thought about it."],
-
-["know","يعرف","I know the answer."],
-
-["knew","عرف","I knew him."],
-
-["known","معروف","I have known him."],
-
-["buy","يشتري","I buy food."],
-
-["bought","اشترى","I bought a car."],
-
-["bring","يجلب","Bring your ID."],
-
-["brought","جلب","He brought food."],
-
-["teach","يعلم","I teach English."],
-
-["taught","علّم","She taught me."],
-
-["learn","يتعلم","I learn English."],
-
-["learned","تعلم","I learned a lot."],
-
-["understand","يفهم","I understand."],
-
-["understood","فهم","I understood."],
-
-["forget","ينسى","Do not forget."],
-
-["forgot","نسي","I forgot."],
-
-["remember","يتذكر","Remember this."],
-
-["remembered","تذكر","I remembered."],
-
-["sleep","ينام","I sleep early."],
-
-["slept","نام","I slept well."],
-
-["wake","يستيقظ","I wake at seven."],
-
-["woke","استيقظ","I woke early."],
-
-["drive","يقود","I drive to work."],
-
-["drove","قاد","He drove home."],
-
-["work","عمل","I work every day."],
-
-["worked","عمل","I worked yesterday."],
-
-["study","يدرس","I study English."],
-
-["studied","درس","I studied last night."],
-
-["live","يعيش","I live in Basra."],
-
-["lived","عاش","He lived here."],
-
-["play","يلعب","Children play outside."],
-
-["played","لعب","We played football."],
-
-["watch","يشاهد","I watch TV."],
-
-["watched","شاهد","I watched a movie."],
-
-["clean","ينظف","Clean your room."],
-
-["cleaned","نظف","I cleaned the car."],
-
-["open","يفتح","Open the door."],
-
-["opened","فتح","She opened the window."],
-
-["close","يغلق","Close the door."],
-
-["closed","أغلق","He closed it."],
-
-["help","يساعد","Help me."],
-
-["helped","ساعد","She helped me."],
-
-["call","يتصل","Call me."],
-
-["called","اتصل","He called yesterday."],
-
-["start","يبدأ","We start at eight."],
-
-["started","بدأ","The class started."],
-
-["finish","ينهي","Finish your work."],
-
-["finished","أنهى","I finished."],
-
-["look","ينظر","Look at this."],
-
-["looked","نظر","I looked outside."],
-
-["listen","يستمع","Listen carefully."],
-
-["listened","استمع","I listened to him."],
-
-["walk","يمشي","I walk every day."],
-
-["walked","مشى","We walked home."],
-
-["wait","ينتظر","Wait here."],
-
-["waited","انتظر","I waited for you."],
-
-["visit","يزور","I visit my family."],
-
-["visited","زار","I visited Baghdad."],
-
-["travel","يسافر","I travel for work."],
-
-["traveled","سافر","We traveled yesterday."],
-
-["plan","يخطط","I plan my day."],
-
-["planned","خطط","We planned the trip."],
-
-["answer","إجابة","What is the answer?"],
-
-["question","سؤال","Ask a question."],
-
-["lesson","درس","This is a lesson."],
-
-["language","لغة","English is a language."],
-
-["English","اللغة الإنجليزية","I study English."],
-
-["word","كلمة","Learn this word."],
-
-["sentence","جملة","Write a sentence."],
-
-["grammar","قواعد","Grammar is important."],
-
-["meaning","معنى","What is the meaning?"],
-
-["example","مثال","Give me an example."],
-
-["test","اختبار","I have a test."],
-
-["practice","تدريب","Practice every day."],
-
-["mistake","خطأ","Learn from your mistake."],
-
-["correct","صحيح","That is correct."],
-
-["incorrect","غير صحيح","That is incorrect."],
-
-["pronunciation","نطق","Practice pronunciation."],
-
-["conversation","محادثة","We had a conversation."],
-
-["listen","استمع","Listen to the sentence."],
-
-["speak","يتكلم","Speak English."],
-
-["write","يكتب","Write your answer."],
-
-["read","يقرأ","Read the question."],
-
-["learn","يتعلم","Learn one word."],
-
-["review","يراجع","Review the lesson."],
-
-["progress","تقدم","I can see my progress."],
-
-["level","مستوى","My English level is A1."],
-
-["unit","وحدة","This is Unit 1."],
-
-["score","درجة","My score is high."],
-
-["point","نقطة","I got ten points."],
-
-["correctly","بشكل صحيح","Answer correctly."],
-
-["quickly","بسرعة","He runs quickly."],
-
-["slowly","ببطء","Speak slowly."],
-
-["carefully","بحذر","Listen carefully."],
-
-["really","حقًا","I really like it."],
-
-["very","جدًا","It is very good."],
-
-["also","أيضًا","I also study."],
-
-["again","مرة أخرى","Try again."],
-
-["together","معًا","Let's study together."],
-
-["already","بالفعل","I have already finished."],
-
-["yet","بعد","I haven't finished yet."],
-
-["ever","هل سبق","Have you ever been there?"],
-
-["never","أبدًا","I have never been there."],
-
-["since","منذ","I have worked here since 2020."],
-
-["for","لمدة","I have worked here for five years."],
-
-["just","للتو","I have just arrived."],
-
-["still","ما زال","I am still working."],
-
-["already","بالفعل","She has already left."],
-
-["today","اليوم","I am working today."],
-
-["this","هذا","This is my book."],
-
-["that","ذلك","That is my car."],
-
-["these","هذه","These are my books."],
-
-["those","تلك","Those are your shoes."],
-
-["my","لي","This is my phone."],
-
-["your","لك","Where is your car?"],
-
-["his","له","This is his book."],
-
-["her","لها","This is her bag."],
-
-["our","لنا","Our house is big."],
-
-["their","لهم","Their car is new."],
-
-["mine","لي","The phone is mine."],
-
-["yours","لك","The book is yours."],
-
-["ours","لنا","The house is ours."],
-
-["theirs","لهم","The car is theirs."],
-
-["one","واحد","I have one book."],
-
-["two","اثنان","I have two cars."],
-
-["three","ثلاثة","There are three people."],
-
-["four","أربعة","I need four chairs."],
-
-["five","خمسة","I have five books."],
-
-["first","الأول","This is my first lesson."],
-
-["second","الثاني","This is the second question."],
-
-["last","الأخير","This is the last question."],
-
-["next","التالي","Go to the next page."],
-
-["same","نفس","We have the same car."],
-
-["different","مختلف","They are different."],
-
-["more","أكثر","I need more time."],
-
-["less","أقل","I need less sugar."],
-
-["many","كثير","There are many people."],
-
-["much","كثير","I don't have much time."],
-
-["some","بعض","I need some water."],
-
-["any","أي","Do you have any questions?"],
-
-["enough","كافٍ","That is enough."],
-
-["another","آخر","Give me another one."],
-
-["every","كل","I study every day."],
-
-["each","كل واحد","Each student has a book."],
-
-["all","كل","All students are ready."],
-
-["both","كلاهما","Both answers are correct."],
-
-["either","أي من الاثنين","Either answer is fine."],
-
-["neither","لا هذا ولا ذاك","Neither answer is correct."],
-
-["a","أداة نكرة","I have a car."],
-
-["an","أداة نكرة","I have an apple."],
-
-["the","أداة التعريف","Open the door."],
-
-["in","في","I live in Basra."],
-
-["on","على/في","The book is on the table."],
-
-["at","في/عند","Meet me at eight."],
-
-["under","تحت","The shoes are under the bed."],
-
-["over","فوق","The plane is over the city."],
-
-["behind","خلف","The car is behind the house."],
-
-["front","أمام","The car is in front of me."],
-
-["next","بجانب/التالي","The shop is next to the bank."],
-
-["between","بين","The house is between two shops."],
-
-["near","قريب","The school is near my house."],
-
-["far","بعيد","The airport is far."],
-
-["inside","في الداخل","Wait inside."],
-
-["outside","في الخارج","Wait outside."],
-
-["up","إلى الأعلى","Look up."],
-
-["down","إلى الأسفل","Sit down."],
-
-["left","يسار","Turn left."],
-
-["right","يمين","Turn right."],
-
-["straight","مباشرة","Go straight."],
-
-["road","طريق","The road is long."],
-
-["street","شارع","I live on this street."],
-
-["building","بناية","The building is tall."],
-
-["door","باب","Open the door."],
-
-["window","نافذة","Close the window."],
-
-["table","طاولة","The book is on the table."],
-
-["chair","كرسي","Sit on the chair."],
-
-["bed","سرير","The shoes are under the bed."],
-
-["phone","هاتف","My phone is new."],
-
-["computer","حاسوب","I use a computer."],
-
-["internet","إنترنت","The internet is slow."],
-
-["message","رسالة","I sent a message."],
-
-["email","بريد إلكتروني","Send me an email."],
-
-["number","رقم","Write your number."],
-
-["name","اسم","What is your name?"],
-
-["address","عنوان","What is your address?"],
-
-["country","بلد","What country are you from?"],
-
-["city","مدينة","What city do you live in?"],
-
-["work","عمل","Where do you work?"],
-
-["company","شركة","I work for a company."],
-
-["manager","مدير","The manager is busy."],
-
-["office","مكتب","The office is open."],
-
-["meeting","اجتماع","The meeting starts at eight."],
-
-["department","قسم","I work in this department."],
-
-["employee","موظف","He is an employee."],
-
-["car","سيارة","My car is outside."],
-
-["bus","حافلة","The bus is late."],
-
-["taxi","سيارة أجرة","I took a taxi."],
-
-["airport","مطار","The airport is far."],
-
-["hotel","فندق","The hotel is near."],
-
-["restaurant","مطعم","The restaurant is open."],
-
-["shop","متجر","The shop is closed."],
-
-["market","سوق","I went to the market."],
-
-["hospital","مستشفى","The hospital is near."],
-
-["doctor","طبيب","The doctor is busy."],
-
-["medicine","دواء","Take your medicine."],
-
-["health","صحة","Health is important."],
-
-["head","رأس","My head hurts."],
-
-["hand","يد","Wash your hands."],
-
-["eye","عين","My eyes are tired."],
-
-["ear","أذن","My ear hurts."],
-
-["mouth","فم","Open your mouth."],
-
-["face","وجه","Wash your face."],
-
-["body","جسم","Exercise is good for the body."],
-
-["food","طعام","The food is hot."],
-
-["breakfast","فطور","I eat breakfast at seven."],
-
-["lunch","غداء","Lunch is ready."],
-
-["dinner","عشاء","We have dinner at eight."],
-
-["coffee","قهوة","I drink coffee."],
-
-["tea","شاي","Would you like tea?"],
-
-["milk","حليب","I drink milk."],
-
-["bread","خبز","I bought bread."],
-
-["rice","رز","We eat rice."],
-
-["meat","لحم","The meat is hot."],
-
-["chicken","دجاج","I like chicken."],
-
-["fish","سمك","We eat fish."],
-
-["apple","تفاحة","I eat an apple."],
-
-["orange","برتقالة","The orange is sweet."],
-
-["water","ماء","Drink water."],
-
-["sugar","سكر","I don't want sugar."],
-
-["salt","ملح","Add some salt."],
-
-["family","عائلة","My family is big."],
-
-["parent","والد","He is a parent."],
-
-["brother","أخ","My brother is young."],
-
-["sister","أخت","My sister is a teacher."],
-
-["son","ابن","His son is five."],
-
-["daughter","ابنة","Her daughter is six."],
-
-["husband","زوج","Her husband works here."],
-
-["wife","زوجة","His wife is a doctor."],
-
-["friend","صديق","He is my best friend."],
-
-["people","ناس","Many people are here."],
-
-["man","رجل","That man is my teacher."],
-
-["woman","امرأة","That woman is my manager."],
-
-["boy","ولد","The boy is playing."],
-
-["girl","بنت","The girl is reading."],
-
-["baby","طفل رضيع","The baby is sleeping."],
-
-["teacher","مدرس","The teacher is speaking."],
-
-["student","طالب","The student is studying."],
-
-["lesson","درس","The lesson is easy."],
-
-["class","صف","The class starts now."],
-
-["book","كتاب","Read the book."],
-
-["page","صفحة","Open page ten."],
-
-["pen","قلم","Where is my pen?"],
-
-["paper","ورقة","Write on the paper."],
-
-["school","مدرسة","The school is near."],
-
-["university","جامعة","He studies at university."],
-
-["English","الإنجليزية","English is useful."],
-
-["Arabic","العربية","I speak Arabic."],
-
-["language","لغة","What language do you speak?"],
-
-["word","كلمة","Learn a new word."],
-
-["sentence","جملة","Write a sentence."],
-
-["question","سؤال","Answer the question."],
-
-["answer","جواب","Your answer is correct."],
-
-["test","اختبار","The test is easy."],
-
-["exam","امتحان","I have an exam."],
-
-["mistake","خطأ","This is a mistake."],
-
-["practice","ممارسة","Practice every day."],
-
-["skill","مهارة","Speaking is an important skill."],
-
-["level","مستوى","My level is A1."],
-
-["beginner","مبتدئ","I am a beginner."],
-
-["intermediate","متوسط","He is intermediate."],
-
-["advanced","متقدم","She is advanced."],
-
-["goal","هدف","My goal is A2."],
-
-["success","نجاح","Practice brings success."],
-
-["easy","سهل","The question is easy."],
-
-["hard","صعب","The test is hard."],
-
-["important","مهم","This lesson is important."],
-
-["useful","مفيد","This word is useful."],
-
-["possible","ممكن","It is possible."],
-
-["ready","جاهز","I am ready."],
-
-["sure","متأكد","Are you sure?"],
-
-["true","صحيح","That is true."],
-
-["false","خطأ","That is false."],
-
-["right","صحيح/يمين","You are right."],
-
-["wrong","خطأ","You are wrong."],
-
-["same","نفس","We have the same idea."],
-
-["different","مختلف","The answers are different."],
-
-["beautiful","جميل","The place is beautiful."],
-
-["clean","نظيف","The room is clean."],
-
-["dirty","وسخ","The car is dirty."],
-
-["strong","قوي","He is strong."],
-
-["weak","ضعيف","I feel weak."],
-
-["healthy","صحي","The food is healthy."],
-
-["sick","مريض","He is sick."],
-
-["safe","آمن","The place is safe."],
-
-["dangerous","خطير","That road is dangerous."],
-
-["kind","طيب","She is kind."],
-
-["friendly","ودود","He is friendly."],
-
-["careful","حذر","Be careful."],
-
-["careless","مهمل","Do not be careless."],
-
-["quiet","هادئ","The room is quiet."],
-
-["loud","عالي الصوت","The music is loud."],
-
-["busy","مشغول","I am busy today."],
-
-["free","متفرغ","I am free tomorrow."],
-
-["happy","سعيد","I am happy."],
-
-["sad","حزين","She is sad."],
-
-["angry","غاضب","He is angry."],
-
-["afraid","خائف","I am afraid."],
-
-["tired","متعب","I am tired."],
-
-["hungry","جائع","I am hungry."],
-
-["thirsty","عطشان","I am thirsty."],
-
-["cold","بارد","I am cold."],
-
-["hot","حار","It is hot."],
-
-["young","شاب/صغير","He is young."],
-
-["old","قديم/كبير","My car is old."],
-
-["rich","غني","He is rich."],
-
-["poor","فقير","The family is poor."],
-
-["cheap","رخيص","The phone is cheap."],
-
-["expensive","غالي","The car is expensive."],
-
-["fast","سريع","The car is fast."],
-
-["slow","بطيء","The bus is slow."],
-
-["big","كبير","The house is big."],
-
-["small","صغير","The room is small."],
-
-["long","طويل","The road is long."],
-
-["short","قصير","The lesson is short."],
-
-["high","مرتفع","The building is high."],
-
-["low","منخفض","The price is low."],
-
-["early","مبكر","I arrived early."],
-
-["late","متأخر","I arrived late."],
-
-["always","دائمًا","I always study."],
-
-["usually","عادةً","I usually walk."],
-
-["often","غالبًا","I often read."],
-
-["sometimes","أحيانًا","I sometimes cook."],
-
-["rarely","نادرًا","I rarely watch TV."],
-
-["never","أبدًا","I never drink alcohol."],
-
-["now","الآن","I am working now."],
-
-["soon","قريبًا","See you soon."],
-
-["later","لاحقًا","Call me later."],
-
-["again","مرة أخرى","Try again."],
-
-["together","معًا","Let's study together."],
-
-["alone","وحده","He lives alone."],
-
-["really","حقًا","I really like it."],
-
-["very","جدًا","It is very good."],
-
-["too","أيضًا/جدًا","It is too expensive."],
-
-["also","أيضًا","I also study."],
-
-["only","فقط","I have only one."],
-
-["just","فقط/للتو","I have just arrived."],
-
-["already","بالفعل","I have already finished."],
-
-["yet","بعد","I haven't finished yet."],
-
-["ever","هل سبق","Have you ever been there?"],
-
-["never","أبدًا","I have never been there."],
-
-["since","منذ","I have worked here since 2020."],
-
-["for","لمدة","I have worked here for five years."],
-
-["before","قبل","I saw him before."],
-
-["after","بعد","I went home after work."],
-
-["during","خلال","I slept during the day."],
-
-["while","بينما","I called while driving."],
-
-["because","لأن","I stayed because it rained."],
-
-["although","رغم أن","Although it was late, I worked."],
-
-["but","لكن","I tried, but I failed."],
-
-["and","و","You and I."],
-
-["or","أو","Tea or coffee?"],
-
-["so","لذلك","I was tired, so I slept."],
-
-["if","إذا","If it rains, I will stay home."],
-
-["when","عندما","Call me when you arrive."],
-
-["where","أين","Where do you live?"],
-
-["why","لماذا","Why are you late?"],
-
-["what","ماذا","What is your name?"],
-
-["who","من","Who is he?"],
-
-["how","كيف","How are you?"],
-
-["which","أي","Which one do you want?"],
-
-["whose","لمن","Whose book is this?"],
-
-["can","يستطيع","I can swim."],
-
-["could","يمكن/استطاع","Could you help me?"],
-
-["should","ينبغي","You should study."],
-
-["must","يجب","You must stop."],
-
-["may","قد/هل يمكن","May I come in?"],
-
-["might","قد","It might rain."],
-
-["will","سوف","I will call you."],
-
-["would","هل ترغب","Would you like tea?"],
-
-["shall","سوف","Shall we start?"]
-
-];
-
-/*
-
-  نستخدم الكلمات الحقيقية الموجودة أعلاه.
-
-  وإذا انتهت القائمة نعود للبداية بدل إنشاء
-
-  كلمات وهمية مثل word301.
-
-*/
-
-const baseWords = wordList;
-
-/* =========================================================
-
-   VOCAB FUNCTIONS
-
-========================================================= */
-
-function renderWord(){
-
-  if(!baseWords.length){
-
-    return;
-
-  }
-
-  if(state.wordIndex < 0){
-
-    state.wordIndex = 0;
-
-  }
-
-  if(state.wordIndex >= baseWords.length){
-
-    state.wordIndex = 0;
-
-  }
-
-  const word =
-
-    baseWords[state.wordIndex];
-
-  document.getElementById("wordEnglish")
-
-    .textContent = word[0];
-
-  document.getElementById("wordArabic")
-
-    .textContent = word[1];
-
-  document.getElementById("wordExample")
-
-    .textContent = word[2];
-
-  document.getElementById("wordCounter")
-
-    .textContent =
-
-    `${state.wordIndex+1} / ${baseWords.length}`;
-
-  document.getElementById("knownWordsCount")
-
-    .textContent =
-
-    `حفظت ${state.knownWords.length} كلمة من ${baseWords.length}`;
+</div>`;
 
 }
 
-function speakWord(){
+function nextUnit(){
 
-  if(!("speechSynthesis" in window)){
+if(currentUnit < units.length-1){
 
-    toast("النطق غير مدعوم في هذا المتصفح.");
+openLesson(currentUnit+1);
 
-    return;
+}else{
 
-  }
+goHome();
 
-  const word =
-
-    baseWords[state.wordIndex][0];
-
-  speechSynthesis.cancel();
-
-  const speech =
-
-    new SpeechSynthesisUtterance(word);
-
-  speech.lang = "en-US";
-
-  speech.rate = .75;
-
-  speechSynthesis.speak(speech);
+alert("🎉 أكملت جميع وحدات A1!");
 
 }
 
-function knowWord(){
+}
 
-  const word =
+function goHome(){
 
-    baseWords[state.wordIndex][0];
+document.getElementById("lesson").style.display="none";
 
-  if(!state.knownWords.includes(word)){
+document.getElementById("quiz").style.display="none";
 
-    state.knownWords.push(word);
+document.getElementById("home").style.display="block";
 
-    state.points += 2;
+renderUnits();
 
-  }
-
-  state.wordIndex++;
-
-  if(state.wordIndex >= baseWords.length){
-
-    state.wordIndex = 0;
-
-  }
-
-  saveState();
-
-  renderWord();
-
-  updateStats();
-
-  toast("تم حفظ الكلمة ✓");
+window.scrollTo(0,0);
 
 }
 
-function missWord(){
+function resetProgress(){
 
-  const word =
+if(confirm("هل تريد حذف تقدمك بالكامل؟")){
 
-    baseWords[state.wordIndex][0];
+progress={};
 
-  state.mistakes =
+save();
 
-    state.mistakes.filter(
-
-      x=>x.word!==word
-
-    );
-
-  state.mistakes.push({
-
-    word:word,
-
-    question:"Vocabulary",
-
-    correct:baseWords[state.wordIndex][1]
-
-  });
-
-  state.wordIndex++;
-
-  if(state.wordIndex >= baseWords.length){
-
-    state.wordIndex = 0;
-
-  }
-
-  saveState();
-
-  renderWord();
-
-  updateStats();
-
-  toast("سوف نراجعها لاحقًا");
+renderUnits();
 
 }
 
-/* =========================================================
-
-   LISTENING
-
-========================================================= */
-
-const listeningData = [
-
-["I am a student.","أنا طالب"],
-
-["She is my sister.","هي أختي"],
-
-["They are at home.","هم في المنزل"],
-
-["I drink coffee every morning.","أشرب القهوة كل صباح"],
-
-["He goes to work at eight.","هو يذهب إلى العمل في الثامنة"],
-
-["I am watching TV now.","أنا أشاهد التلفاز الآن"],
-
-["The baby is sleeping.","الطفل نائم"],
-
-["There is a book on the table.","يوجد كتاب على الطاولة"],
-
-["There are three cars outside.","توجد ثلاث سيارات في الخارج"],
-
-["I was born in 1993.","ولدت عام 1993"],
-
-["We work on Monday.","نعمل يوم الاثنين"],
-
-["The shoes are under the bed.","الأحذية تحت السرير"],
-
-["I went to Baghdad yesterday.","ذهبت إلى بغداد أمس"],
-
-["She cooked dinner last night.","طبخت العشاء الليلة الماضية"],
-
-["I have finished my work.","لقد أنهيت عملي"],
-
-["She has visited London.","لقد زارت لندن"],
-
-["I have worked here since 2020.","أعمل هنا منذ 2020"],
-
-["I saw him yesterday.","رأيته أمس"],
-
-["I have never seen this movie.","لم أشاهد هذا الفيلم من قبل"],
-
-["They were playing football.","كانوا يلعبون كرة القدم"],
-
-["I will call you tomorrow.","سأتصل بك غدًا"],
-
-["You should study more.","يجب أن تدرس أكثر"],
-
-["I enjoy learning English.","أستمتع بتعلم الإنجليزية"],
-
-["I want to learn English.","أريد أن أتعلم الإنجليزية"],
-
-["Nice to meet you.","سعيد بلقائك"]
-
-];
-
-let listenIndex = 0;
-
-let listenAnswered = false;
-
-function renderListening(){
-
-  const item =
-
-    listeningData[listenIndex];
-
-  document.getElementById("listenQuestion")
-
-    .innerHTML = `
-
-      <h3>ما معنى الجملة؟</h3>
-
-      <p class="ltr">
-
-        اضغط 🔊 استمع أولًا
-
-      </p>
-
-    `;
-
-  const correct = item[1];
-
-  const otherAnswers =
-
-    listeningData
-
-      .map(x=>x[1])
-
-      .filter(x=>x!==correct);
-
-  const answers =
-
-    shuffle([
-
-      correct,
-
-      ...shuffle(otherAnswers).slice(0,3)
-
-    ]);
-
-  const box =
-
-    document.getElementById("listenOptions");
-
-  box.innerHTML = "";
-
-  answers.forEach(answer=>{
-
-    const button =
-
-      document.createElement("button");
-
-    button.className = "option";
-
-    button.textContent = answer;
-
-    button.onclick =
-
-      ()=>answerListening(
-
-        answer,
-
-        correct
-
-      );
-
-    box.appendChild(button);
-
-  });
-
-  document.getElementById("listenResult")
-
-    .innerHTML = "";
-
-  document.getElementById("listenNext")
-
-    .classList.add("hidden");
-
-  listenAnswered = false;
-
 }
 
-function playListening(){
-
-  if(!("speechSynthesis" in window)){
-
-    toast("الصوت غير مدعوم.");
-
-    return;
-
-  }
-
-  const text =
-
-    listeningData[listenIndex][0];
-
-  speechSynthesis.cancel();
-
-  const speech =
-
-    new SpeechSynthesisUtterance(text);
-
-  speech.lang = "en-US";
-
-  speech.rate = .72;
-
-  speechSynthesis.speak(speech);
-
-}
-
-function answerListening(answer,correct){
-
-  if(listenAnswered){
-
-    return;
-
-  }
-
-  listenAnswered = true;
-
-  state.listening.attempts++;
-
-  if(answer===correct){
-
-    state.listening.correct++;
-
-    state.correct++;
-
-    state.points += 5;
-
-    document.getElementById("listenResult")
-
-      .innerHTML =
-
-      `<div class="resultGood">✓ صحيح</div>`;
-
-  }else{
-
-    state.wrong++;
-
-    document.getElementById("listenResult")
-
-      .innerHTML =
-
-      `<div class="resultBad">
-
-        ✗ الصحيح: ${correct}
-
-      </div>`;
-
-  }
-
-  saveState();
-
-  updateAll();
-
-  document.getElementById("listenNext")
-
-    .classList.remove("hidden");
-
-}
-
-function nextListening(){
-
-  listenIndex++;
-
-  if(listenIndex >= listeningData.length){
-
-    listenIndex = 0;
-
-  }
-
-  renderListening();
-
-}
-
-/* =========================================================
-
-   SPEAKING
-
-========================================================= */
-
-const speakingData = [
-
-{
-
-  question:"Introduce yourself.",
-
-  answers:[
-
-    "my name is laith",
-
-    "i am laith",
-
-    "my name is laith i am from basra"
-
-  ]
-
-},
-
-{
-
-  question:"Where do you live?",
-
-  answers:[
-
-    "i live in basra",
-
-    "i live in basra iraq"
-
-  ]
-
-},
-
-{
-
-  question:"What do you do?",
-
-  answers:[
-
-    "i work",
-
-    "i am an employee",
-
-    "i work in basra oil company"
-
-  ]
-
-},
-
-{
-
-  question:"What do you do every morning?",
-
-  answers:[
-
-    "i wake up early",
-
-    "i drink coffee",
-
-    "i go to work"
-
-  ]
-
-},
-
-{
-
-  question:"What did you do yesterday?",
-
-  answers:[
-
-    "i went to work",
-
-    "i worked yesterday",
-
-    "i stayed at home"
-
-  ]
-
-},
-
-{
-
-  question:"What are you doing now?",
-
-  answers:[
-
-    "i am studying english",
-
-    "i am learning english",
-
-    "i am studying"
-
-  ]
-
-},
-
-{
-
-  question:"What will you do tomorrow?",
-
-  answers:[
-
-    "i will go to work",
-
-    "i will study english",
-
-    "i will stay at home"
-
-  ]
-
-},
-
-{
-
-  question:"What is your favorite drink?",
-
-  answers:[
-
-    "my favorite drink is coffee",
-
-    "i like coffee",
-
-    "i like tea"
-
-  ]
-
-}
-
-];
-
-let speakIndex = 0;
-
-function renderSpeaking(){
-
-  document.getElementById("speakPrompt")
-
-    .innerHTML =
-
-    `<strong>Speak:</strong>
-
-     <span class="ltr">
-
-     ${speakingData[speakIndex].question}
-
-     </span>`;
-
-  document.getElementById("speechText")
-
-    .value = "";
-
-  document.getElementById("speechResult")
-
-    .innerHTML = "";
-
-}
-
-function startSpeech(){
-
-  const Recognition =
-
-    window.SpeechRecognition ||
-
-    window.webkitSpeechRecognition;
-
-  if(!Recognition){
-
-    toast(
-
-      "الميكروفون غير مدعوم. اكتب الإجابة يدويًا."
-
-    );
-
-    return;
-
-  }
-
-  const recognition =
-
-    new Recognition();
-
-  recognition.lang = "en-US";
-
-  recognition.interimResults = false;
-
-  recognition.maxAlternatives = 1;
-
-  recognition.onresult = function(event){
-
-    const text =
-
-      event.results[0][0].transcript;
-
-    document.getElementById("speechText")
-
-      .value = text;
-
-  };
-
-  recognition.onerror = function(){
-
-    toast(
-
-      "تعذر تشغيل الميكروفون. يمكنك كتابة الإجابة."
-
-    );
-
-  };
-
-  recognition.start();
-
-}
-
-function normalizeText(text){
-
-  return String(text)
-
-    .toLowerCase()
-
-    .replace(/[.,!?;:'"]/g,"")
-
-    .replace(/\s+/g," ")
-
-    .trim();
-
-}
-
-function checkSpeech(){
-
-  const answer =
-
-    normalizeText(
-
-      document.getElementById("speechText").value
-
-    );
-
-  if(!answer){
-
-    toast("اكتب أو تحدث أولًا.");
-
-    return;
-
-  }
-
-  const data =
-
-    speakingData[speakIndex];
-
-  const correct =
-
-    data.answers.some(
-
-      expected=>{
-
-        const e = normalizeText(expected);
-
-        return (
-
-          answer===e ||
-
-          answer.includes(e) ||
-
-          e.includes(answer)
-
-        );
-
-      }
-
-    );
-
-  state.speaking.attempts++;
-
-  if(correct){
-
-    state.speaking.correct++;
-
-    state.points += 10;
-
-    state.correct++;
-
-    document.getElementById("speechResult")
-
-      .innerHTML =
-
-      `<div class="resultGood">
-
-        ✓ إجابة جيدة
-
-      </div>`;
-
-  }else{
-
-    state.wrong++;
-
-    document.getElementById("speechResult")
-
-      .innerHTML =
-
-      `<div class="resultBad">
-
-        حاول تكوين جملة أقرب إلى:
-
-        <br>
-
-        ${data.answers[0]}
-
-      </div>`;
-
-  }
-
-  saveState();
-
-  updateAll();
-
-}
-
-function nextSpeaking(){
-
-  speakIndex++;
-
-  if(speakIndex >= speakingData.length){
-
-    speakIndex = 0;
-
-  }
-
-  renderSpeaking();
-
-}
-
-/* =========================================================
-
-   WRITING
-
-========================================================= */
-
-const writingData = [
-
-{
-
-  question:"Write: أنا طالب.",
-
-  answers:[
-
-    "i am a student"
-
-  ]
-
-},
-
-{
-
-  question:"Write: أنا أعيش في البصرة.",
-
-  answers:[
-
-    "i live in basra"
-
-  ]
-
-},
-
-{
-
-  question:"Write: أنا أذهب إلى العمل كل يوم.",
-
-  answers:[
-
-    "i go to work every day"
-
-  ]
-
-},
-
-{
-
-  question:"Write: هي تدرس الإنجليزية كل يوم.",
-
-  answers:[
-
-    "she studies english every day"
-
-  ]
-
-},
-
-{
-
-  question:"Write: أنا أشاهد التلفاز الآن.",
-
-  answers:[
-
-    "i am watching tv now"
-
-  ]
-
-},
-
-{
-
-  question:"Write: ذهبت إلى بغداد أمس.",
-
-  answers:[
-
-    "i went to baghdad yesterday"
-
-  ]
-
-},
-
-{
-
-  question:"Write: لقد أنهيت عملي.",
-
-  answers:[
-
-    "i have finished my work"
-
-  ]
-
-},
-
-{
-
-  question:"Write: سأتصل بك غدًا.",
-
-  answers:[
-
-    "i will call you tomorrow"
-
-  ]
-
-},
-
-{
-
-  question:"Write: يجب أن تدرس أكثر.",
-
-  answers:[
-
-    "you should study more"
-
-  ]
-
-},
-
-{
-
-  question:"Write: أنا أتعلم الإنجليزية.",
-
-  answers:[
-
-    "i am learning english",
-
-    "i learn english"
-
-  ]
-
-}
-
-];
-
-let writeIndex = 0;
-
-function renderWriting(){
-
-  document.getElementById("writePrompt")
-
-    .innerHTML =
-
-    `<strong>${writingData[writeIndex].question}</strong>`;
-
-  document.getElementById("writingAnswer")
-
-    .value = "";
-
-  document.getElementById("writingResult")
-
-    .innerHTML = "";
-
-}
-
-function checkWriting(){
-
-  const answer =
-
-    normalizeText(
-
-      document.getElementById("writingAnswer").value
-
-    );
-
-  if(!answer){
-
-    toast("اكتب الإجابة أولًا.");
-
-    return;
-
-  }
-
-  const data =
-
-    writingData[writeIndex];
-
-  const correct =
-
-    data.answers.some(
-
-      expected=>
-
-        normalizeText(expected)===answer
-
-    );
-
-  state.writing.attempts++;
-
-  if(correct){
-
-    state.writing.correct++;
-
-    state.correct++;
-
-    state.points += 10;
-
-    document.getElementById("writingResult")
-
-      .innerHTML =
-
-      `<div class="resultGood">
-
-        ✓ إجابة صحيحة
-
-      </div>`;
-
-  }else{
-
-    state.wrong++;
-
-    document.getElementById("writingResult")
-
-      .innerHTML =
-
-      `<div class="resultBad">
-
-        ✗ حاول مرة أخرى.
-
-        <br><br>
-
-        الإجابة النموذجية:
-
-        <br>
-
-        <span class="ltr">
-
-        ${data.answers[0]}
-
-        </span>
-
-      </div>`;
-
-  }
-
-  saveState();
-
-  updateAll();
-
-}
-
-function nextWriting(){
-
-  writeIndex++;
-
-  if(writeIndex >= writingData.length){
-
-    writeIndex = 0;
-
-  }
-
-  renderWriting();
-
-}
-
-/* =========================================================
-
-   UNITS UI
-
-========================================================= */
-
-function renderUnits(){
-
-  const box =
-
-    document.getElementById("unitsList");
-
-  box.innerHTML = "";
-
-  units.forEach((unit,index)=>{
-
-    const number = index+1;
-
-    const mastered =
-
-      state.previousMastered.includes(number) ||
-
-      state.completed.includes(number);
-
-    const score =
-
-      state.unitScores[number];
-
-    const div =
-
-      document.createElement("div");
-
-    div.className = "unit";
-
-    div.innerHTML = `
-
-      <strong>${unit[0]}</strong>
-
-      <p class="small">
-
-        ${unit[1]}
-
-      </p>
-
-      ${
-
-        mastered
-
-        ?
-
-        '<span class="badge">✓ مكتملة سابقًا</span>'
-
-        :
-
-        '<span class="badge gray">غير مكتملة</span>'
-
-      }
-
-      ${
-
-        score !== undefined
-
-        ?
-
-        `<span class="badge">
-
-          النتيجة ${score}%
-
-        </span>`
-
-        :
-
-        ""
-
-      }
-
-      <button
-
-        class="action"
-
-        onclick="startUnitQuiz(${number})">
-
-        اختبار الوحدة
-
-      </button>
-
-    `;
-
-    box.appendChild(div);
-
-  });
-
-}
-
-/* =========================================================
-
-   QUIZ BUTTONS
-
-========================================================= */
-
-function renderQuizButtons(){
-
-  const box =
-
-    document.getElementById("quizUnitButtons");
-
-  box.innerHTML = "";
-
-  units.forEach((unit,index)=>{
-
-    const number = index+1;
-
-    const button =
-
-      document.createElement("button");
-
-    button.className =
-
-      "action secondary";
-
-    button.textContent =
-
-      `Unit ${number} — ${unit[1]}`;
-
-    button.onclick =
-
-      ()=>startUnitQuiz(number);
-
-    box.appendChild(button);
-
-  });
-
-}
-
-/* =========================================================
-
-   HOME
-
-========================================================= */
-
-function updateHome(){
-
-  const completed =
-
-    new Set([
-
-      ...state.completed,
-
-      ...state.previousMastered
-
-    ]);
-
-  document.getElementById("homePoints")
-
-    .textContent =
-
-    state.points;
-
-  document.getElementById("homeCorrect")
-
-    .textContent =
-
-    state.correct;
-
-  document.getElementById("homeWrong")
-
-    .textContent =
-
-    state.wrong;
-
-  document.getElementById("homeCompleted")
-
-    .textContent =
-
-    completed.size;
-
-  const percent =
-
-    Math.round(
-
-      (completed.size / units.length)*100
-
-    );
-
-  document.getElementById("homeProgress")
-
-    .style.width =
-
-    `${percent}%`;
-
-  document.getElementById("homeProgressText")
-
-    .textContent =
-
-    `${completed.size} من ${units.length} وحدة — ${percent}%`;
-
-}
-
-/* =========================================================
-
-   STATS
-
-========================================================= */
-
-function updateStats(){
-
-  const completed =
-
-    new Set([
-
-      ...state.completed,
-
-      ...state.previousMastered
-
-    ]);
-
-  document.getElementById("statPoints")
-
-    .textContent =
-
-    state.points;
-
-  document.getElementById("statCorrect")
-
-    .textContent =
-
-    state.correct;
-
-  document.getElementById("statWrong")
-
-    .textContent =
-
-    state.wrong;
-
-  document.getElementById("statWords")
-
-    .textContent =
-
-    state.knownWords.length;
-
-  document.getElementById("statUnits")
-
-    .textContent =
-
-    completed.size;
-
-  document.getElementById("statMistakes")
-
-    .textContent =
-
-    state.mistakes.length;
-
-  const list =
-
-    document.getElementById("completedList");
-
-  list.innerHTML = "";
-
-  if(completed.size===0){
-
-    list.innerHTML =
-
-      '<p class="small">لا توجد وحدات مكتملة بعد.</p>';
-
-    return;
-
-  }
-
-  [...completed]
-
-    .sort((a,b)=>a-b)
-
-    .forEach(number=>{
-
-      const div =
-
-        document.createElement("div");
-
-      div.className = "unit";
-
-      div.innerHTML = `
-
-        <strong>
-
-          ${units[number-1][0]}
-
-        </strong>
-
-        <br>
-
-        <span class="badge">
-
-          ✓ مكتملة
-
-        </span>
-
-      `;
-
-      list.appendChild(div);
-
-    });
-
-}
-
-/* =========================================================
-
-   UPDATE ALL
-
-========================================================= */
-
-function updateAll(){
-
-  renderUnits();
-
-  renderQuizButtons();
-
-  updateHome();
-
-  updateStats();
-
-  renderWord();
-
-}
-
-/* =========================================================
-
-   START
-
-========================================================= */
-
-document.addEventListener(
-
-  "DOMContentLoaded",
-
-  function(){
-
-    updateAll();
-
-    renderListening();
-
-    renderSpeaking();
-
-    renderWriting();
-
-    try{
-
-      const testKey =
-
-        "LAITH_ENGLISH_STORAGE_TEST";
-
-      localStorage.setItem(
-
-        testKey,
-
-        "OK"
-
-      );
-
-      localStorage.removeItem(
-
-        testKey
-
-      );
-
-    }catch(error){
-
-      setTimeout(()=>{
-
-        toast(
-
-          "⚠️ الحفظ غير متاح بهذه الطريقة لفتح الملف. افتحه في Safari."
-
-        );
-
-      },1000);
-
-    }
-
-  }
-
-);
-
-window.addEventListener(
-
-  "beforeunload",
-
-  function(){
-
-    saveState();
-
-  }
-
-);
+renderUnits();
 
 </script>
 
