@@ -1,174 +1,307 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
 <meta name="theme-color" content="#2563eb">
+
 <title>English Trainer A1 → A2 | Laith</title>
 
 <style>
+
 *{box-sizing:border-box}
+
 body{
+
   margin:0;
+
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
   background:#f3f6fb;
+
   color:#172033;
+
 }
+
 header{
+
   background:#2563eb;
+
   color:white;
+
   padding:22px 16px;
+
   text-align:center;
+
   border-radius:0 0 25px 25px;
+
 }
+
 header h1{margin:0 0 7px;font-size:24px}
+
 header p{margin:0;font-size:14px;opacity:.95}
 
 .container{max-width:850px;margin:auto;padding:14px}
 
 .card{
+
   background:white;
+
   border-radius:18px;
+
   padding:17px;
+
   margin:12px 0;
+
   box-shadow:0 3px 14px #0000000d;
+
 }
 
 h2{font-size:21px;margin:5px 0 12px}
+
 h3{font-size:18px;margin:8px 0}
+
 p{line-height:1.75}
 
 button{
+
   border:0;
+
   border-radius:13px;
+
   padding:12px 15px;
+
   margin:5px 2px;
+
   background:#2563eb;
+
   color:white;
+
   font-size:15px;
+
   cursor:pointer;
+
 }
+
 button.secondary{background:#64748b}
+
 button.success{background:#16a34a}
+
 button.danger{background:#dc2626}
+
 button.light{background:#e8eefc;color:#17429b}
 
 .hidden{display:none}
 
 .tabs{
+
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
+
   gap:8px;
+
 }
+
 .tabs button{margin:0}
 
 .progress{
+
   height:13px;
+
   background:#e5e7eb;
+
   border-radius:20px;
+
   overflow:hidden;
+
   margin:8px 0;
+
 }
+
 .progress div{
+
   height:100%;
+
   background:#2563eb;
+
   width:0%;
+
   transition:.3s;
+
 }
 
 .unit{
+
   border:1px solid #e1e7f0;
+
   border-radius:15px;
+
   padding:13px;
+
   margin:9px 0;
+
   cursor:pointer;
+
 }
+
 .unit:hover{background:#f8fbff}
+
 .unit-title{font-weight:bold}
+
 .unit-info{font-size:13px;color:#64748b;margin-top:4px}
 
 .example{
+
   background:#f1f5ff;
+
   border-right:4px solid #2563eb;
+
   padding:11px;
+
   margin:8px 0;
+
   border-radius:8px;
+
 }
+
 .rule{
+
   background:#fff7ed;
+
   border-right:4px solid #f97316;
+
   padding:11px;
+
   border-radius:8px;
+
   margin:8px 0;
+
 }
+
 .warning{
+
   background:#fef2f2;
+
   border-right:4px solid #dc2626;
+
   padding:11px;
+
   border-radius:8px;
+
 }
 
 .option{
+
   display:block;
+
   width:100%;
+
   text-align:right;
+
   background:#f8fafc;
+
   color:#172033;
+
   border:1px solid #dbe2ea;
+
   margin:9px 0;
+
 }
+
 .option:hover{background:#eef4ff}
 
 .question{
+
   font-size:20px;
+
   font-weight:bold;
+
   line-height:1.6;
+
   margin:15px 0;
+
 }
 
 .score{
+
   font-size:25px;
+
   font-weight:bold;
+
   text-align:center;
+
   margin:15px;
+
 }
 
 .badge{
+
   display:inline-block;
+
   padding:5px 9px;
+
   border-radius:20px;
+
   background:#dbeafe;
+
   color:#1d4ed8;
+
   font-size:12px;
+
   margin:2px;
+
 }
 
 .small{font-size:13px;color:#64748b}
 
 table{
+
   width:100%;
+
   border-collapse:collapse;
+
 }
+
 td,th{
+
   border:1px solid #ddd;
+
   padding:8px;
+
   text-align:right;
+
 }
 
 @media(max-width:600px){
+
   header h1{font-size:21px}
+
   .container{padding:10px}
+
   button{font-size:14px}
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>English Trainer A1 → A2</h1>
+
 <p>برنامج تدريب شخصي — شرح + تدريب + اختبار + متابعة</p>
+
 <p>ليث | English Learning Program</p>
+
 </header>
 
 <div class="container">
@@ -176,33 +309,55 @@ td,th{
 <div id="home">
 
 <div class="card">
+
 <h2>📊 تقدّمك</h2>
+
 <div id="overallText">جاري الحساب...</div>
+
 <div class="progress"><div id="overallBar"></div></div>
+
 <div id="stats"></div>
+
 </div>
 
 <div class="card">
+
 <h2>🎯 اختر المستوى</h2>
+
 <div class="tabs">
+
 <button onclick="showLevel('A1')">A1</button>
+
 <button onclick="showLevel('A2')">A2</button>
+
 <button onclick="showReview()">🔁 مراجعة الأخطاء</button>
+
 <button onclick="showVocabulary()">📚 الكلمات</button>
+
 </div>
+
 </div>
 
 <div class="card">
+
 <h2>🧠 مهارات اللغة</h2>
+
 <button onclick="skill('reading')">📖 Reading</button>
+
 <button onclick="skill('writing')">✍️ Writing</button>
+
 <button onclick="skill('listening')">🔊 Listening</button>
+
 <button onclick="skill('speaking')">🎤 Speaking</button>
+
 </div>
 
 <div class="card">
+
 <h2>⚙️ البرنامج</h2>
+
 <button class="danger" onclick="resetProgress()">إعادة ضبط التقدم</button>
+
 </div>
 
 </div>
@@ -214,405 +369,761 @@ td,th{
 <script>
 
 /* =========================================================
+
    DATA
+
 ========================================================= */
 
 const A1 = [
 
 {
+
 title:"Verb to be — am / is / are",
+
 desc:"الفعل يكون",
+
 rule:"I am — He/She/It is — You/We/They are",
+
 examples:[
+
 "I am a student. = أنا طالب.",
+
 "She is happy. = هي سعيدة.",
+
 "They are at home. = هم في البيت."
+
 ],
+
 mistakes:"لا نقول: I is أو He are.",
+
 words:["student","happy","home","teacher"],
+
 questions:[
+
 ["I ___ a student.","am",["am","is","are","be"]],
+
 ["She ___ happy.","is",["am","is","are","be"]],
+
 ["They ___ at home.","are",["am","is","are","be"]],
+
 ["___ you tired?","Are",["Is","Are","Am","Be"]]
+
 ]
+
 },
 
 {
+
 title:"Pronouns — الضمائر",
+
 desc:"I, you, he, she, it, we, they",
+
 rule:"الضمير يحل محل الاسم.",
+
 examples:[
+
 "He is Ali. = هو علي.",
+
 "She is a teacher. = هي معلمة.",
+
 "They are friends. = هم أصدقاء."
+
 ],
+
 mistakes:"He للذكر، She للأنثى، It للشيء أو الحيوان غالبًا.",
+
 words:["I","you","he","she","it","we","they"],
+
 questions:[
+
 ["Ali is a boy. ___ is 20.","He",["He","She","It","They"]],
+
 ["Sara is a girl. ___ is happy.","She",["He","She","It","We"]],
+
 ["Ali and Omar are friends. ___ are friends.","They",["He","She","They","It"]],
+
 ["My phone is new. ___ is expensive.","It",["He","She","It","They"]]
+
 ]
+
 },
 
 {
+
 title:"Possessives — الملكية",
+
 desc:"my, your, his, her, its, our, their",
+
 rule:"my = لي، your = لك، his = له، her = لها، our = لنا، their = لهم",
+
 examples:[
+
 "This is my car. = هذه سيارتي.",
+
 "That is her phone. = ذلك هاتفها.",
+
 "Their house is big. = بيتهم كبير."
+
 ],
+
 mistakes:"his للذكر و her للأنثى.",
+
 words:["my","your","his","her","our","their"],
+
 questions:[
+
 ["I have a car. It is ___ car.","my",["my","his","her","their"]],
+
 ["Sara has a phone. It is ___ phone.","her",["his","her","our","their"]],
+
 ["Ali has a brother. He is ___ brother.","his",["her","his","my","our"]],
+
 ["We have a house. It is ___ house.","our",["their","our","his","her"]]
+
 ]
+
 },
 
 {
+
 title:"Articles — a / an / the",
+
 desc:"أدوات التنكير والتعريف",
+
 rule:"a قبل صوت ساكن، an قبل صوت علّة، the لشيء محدد.",
+
 examples:[
+
 "a car = سيارة",
+
 "an apple = تفاحة",
+
 "the car = السيارة المعروفة"
+
 ],
+
 mistakes:"نقول an apple وليس a apple.",
+
 words:["apple","car","book","orange"],
+
 questions:[
+
 ["I have ___ car.","a",["a","an","the","are"]],
+
 ["She eats ___ apple.","an",["a","an","the","is"]],
+
 ["___ sun is hot.","The",["A","An","The","At"]]
+
 ]
+
 },
 
 {
+
 title:"This / That / These / Those",
+
 desc:"الإشارة للمفرد والجمع",
+
 rule:"This قريب مفرد، That بعيد مفرد، These قريب جمع، Those بعيد جمع.",
+
 examples:[
+
 "This is my phone. = هذا هاتفي.",
+
 "That is your car. = تلك سيارتك.",
+
 "These are my books. = هذه كتبي.",
+
 "Those are houses. = تلك بيوت."
+
 ],
+
 mistakes:"These/Those مع الجمع.",
+
 words:["this","that","these","those"],
+
 questions:[
+
 ["___ is my phone.","This",["This","These","Those","They"]],
+
 ["___ are my books.","These",["This","That","These","It"]],
+
 ["___ is your car over there.","That",["This","These","That","Those"]]
+
 ]
+
 },
 
 {
+
 title:"Singular / Plural — المفرد والجمع",
+
 desc:"المفرد والجمع",
+
 rule:"غالبًا نضيف s للجمع: book → books.",
+
 examples:[
+
 "one book = كتاب واحد",
+
 "two books = كتابان/كتب",
+
 "one car → two cars"
+
 ],
+
 mistakes:"لا نستخدم a مع الجمع.",
+
 words:["book","books","car","cars"],
+
 questions:[
+
 ["I have two ___.","books",["book","books","a book","one book"]],
+
 ["She has one ___.","car",["cars","car","books","people"]]
+
 ]
+
 },
 
 {
+
 title:"Present Simple — المضارع البسيط",
+
 desc:"العادات والحقائق والأشياء المتكررة",
+
 rule:"I/You/We/They + verb. He/She/It + verb+s.",
+
 examples:[
+
 "I work every day. = أعمل كل يوم.",
+
 "He works every day. = هو يعمل كل يوم.",
+
 "She likes coffee. = هي تحب القهوة."
+
 ],
+
 mistakes:"مع he/she/it نضيف s غالبًا.",
+
 words:["work","like","play","go","study"],
+
 questions:[
+
 ["I ___ English every day.","study",["study","studies","studying","studied"]],
+
 ["She ___ English every day.","studies",["study","studies","studying","studied"]],
+
 ["He ___ to work every day.","goes",["go","goes","going","went"]],
+
 ["They ___ football.","play",["play","plays","playing","played"]]
+
 ]
+
 },
 
 {
+
 title:"Do / Does + Negatives",
+
 desc:"الأسئلة والنفي في المضارع البسيط",
+
 rule:"Do مع I/you/we/they. Does مع he/she/it. بعد does يعود الفعل للمصدر.",
+
 examples:[
+
 "Do you work? = هل تعمل؟",
+
 "Does he work? = هل هو يعمل؟",
+
 "I don't work. = أنا لا أعمل.",
+
 "She doesn't work. = هي لا تعمل."
+
 ],
+
 mistakes:"Does he works ❌ → Does he work ✅",
+
 words:["do","does","don't","doesn't"],
+
 questions:[
+
 ["___ you work here?","Do",["Do","Does","Is","Are"]],
+
 ["___ she like coffee?","Does",["Do","Does","Is","Are"]],
+
 ["He ___ not work here.","does",["do","does","is","are"]],
+
 ["She doesn't ___ coffee.","like",["likes","like","liked","liking"]]
+
 ]
+
 },
 
 {
+
 title:"WH Questions",
+
 desc:"What / Where / When / Who / Why / How",
+
 rule:"What ماذا، Where أين، When متى، Who من، Why لماذا، How كيف.",
+
 examples:[
+
 "What is your name? = ما اسمك؟",
+
 "Where do you live? = أين تسكن؟",
+
 "When do you work? = متى تعمل؟",
+
 "Why are you tired? = لماذا أنت متعب؟"
+
 ],
+
 mistakes:"بعد Where/What نحتاج ترتيب السؤال الصحيح.",
+
 words:["what","where","when","who","why","how"],
+
 questions:[
+
 ["___ is your name?","What",["What","Where","When","Who"]],
+
 ["___ do you live?","Where",["What","Where","Why","Who"]],
+
 ["___ is your teacher?","Who",["Who","When","Where","How"]],
+
 ["___ are you late?","Why",["Why","Who","What","When"]]
+
 ]
+
 },
 
 {
+
 title:"Frequency Adverbs",
+
 desc:"always / usually / often / sometimes / never",
+
 rule:"تصف عدد مرات حدوث الشيء.",
+
 examples:[
+
 "I always work. = أعمل دائمًا.",
+
 "I usually drink tea. = عادةً أشرب الشاي.",
+
 "He never smokes. = هو لا يدخن أبدًا."
+
 ],
+
 mistakes:"مع فعل be يأتي الظرف بعد be: He is always late.",
+
 words:["always","usually","often","sometimes","never"],
+
 questions:[
+
 ["I ___ drink coffee.","always",["always","yesterday","now","tomorrow"]],
+
 ["He is ___ late.","always",["always","every","at","on"]]
+
 ]
+
 },
 
 {
+
 title:"Present Continuous",
+
 desc:"المضارع المستمر",
+
 rule:"am/is/are + verb-ing. يستخدم للشيء الذي يحدث الآن.",
+
 examples:[
+
 "I am working now. = أنا أعمل الآن.",
+
 "She is sleeping. = هي نائمة الآن.",
+
 "They are playing. = هم يلعبون."
+
 ],
+
 mistakes:"لا ننسى am/is/are.",
+
 words:["working","sleeping","running","playing"],
+
 questions:[
+
 ["I ___ working now.","am",["am","is","are","do"]],
+
 ["She is ___ now.","sleeping",["sleep","sleeps","sleeping","slept"]],
+
 ["They ___ playing.","are",["am","is","are","do"]]
+
 ]
+
 },
 
 {
+
 title:"Prepositions — حروف الجر",
+
 desc:"in / on / at / under / next to",
+
 rule:"in داخل، on على سطح، at عند نقطة/مكان، under تحت.",
+
 examples:[
+
 "The book is on the table. = الكتاب على الطاولة.",
+
 "I am at work. = أنا في العمل.",
+
 "The cat is under the chair. = القطة تحت الكرسي."
+
 ],
+
 mistakes:"at work / at home شائعة.",
+
 words:["in","on","at","under","next to"],
+
 questions:[
+
 ["The book is ___ the table.","on",["in","on","at","under"]],
+
 ["I am ___ work.","at",["in","on","at","under"]],
+
 ["The cat is ___ the chair.","under",["on","at","under","in"]]
+
 ]
+
 },
 
 {
+
 title:"There is / There are",
+
 desc:"يوجد",
+
 rule:"There is للمفرد، There are للجمع.",
+
 examples:[
+
 "There is a car. = توجد سيارة.",
+
 "There are two cars. = توجد سيارتان.",
+
 "There isn't a problem. = لا توجد مشكلة."
+
 ],
+
 mistakes:"الجمع يحتاج There are.",
+
 words:["there","problem","room","car"],
+
 questions:[
+
 ["There ___ a car.","is",["is","are","am","be"]],
+
 ["There ___ two cars.","are",["is","are","am","be"]],
+
 ["There ___ a problem.","isn't",["isn't","aren't","don't","doesn't"]]
+
 ]
+
 },
 
 {
+
 title:"Can / Can't",
+
 desc:"القدرة والإمكانية",
+
 rule:"can + verb المصدر. لا نضيف s بعد can.",
+
 examples:[
+
 "I can swim. = أستطيع السباحة.",
+
 "She can drive. = تستطيع القيادة.",
+
 "He can't swim. = لا يستطيع السباحة."
+
 ],
+
 mistakes:"She can drives ❌ → She can drive ✅",
+
 words:["can","can't","swim","drive"],
+
 questions:[
+
 ["I can ___.","swim",["swim","swims","swimming","swam"]],
+
 ["She can ___.","drive",["drive","drives","driving","drove"]],
+
 ["He ___ swim.","can't",["can't","doesn't","isn't","aren't"]]
+
 ]
+
 },
 
 {
+
 title:"Countable / Uncountable + Some / Any",
+
 desc:"الأسماء المعدودة وغير المعدودة",
+
 rule:"some غالبًا في الإثبات، any غالبًا في النفي والأسئلة.",
+
 examples:[
+
 "I have some books. = لدي بعض الكتب.",
+
 "I don't have any money. = ليس لدي أي مال.",
+
 "Do you have any water? = هل لديك ماء؟"
+
 ],
+
 mistakes:"money/water غالبًا غير معدودة.",
+
 words:["some","any","money","water","food"],
+
 questions:[
+
 ["I have ___ books.","some",["some","any","an","a"]],
+
 ["I don't have ___ money.","any",["some","any","a","an"]],
+
 ["Do you have ___ water?","any",["some","any","a","the"]]
+
 ]
+
 },
 
 {
+
 title:"Adjectives — الصفات",
+
 desc:"big, small, good, bad, new, old...",
+
 rule:"الصفة تصف الاسم.",
+
 examples:[
+
 "a big car = سيارة كبيرة",
+
 "a new phone = هاتف جديد",
+
 "The house is big. = البيت كبير."
+
 ],
+
 mistakes:"لا نجمع الصفة: two big cars وليس two bigs cars.",
+
 words:["big","small","good","bad","new","old"],
+
 questions:[
+
 ["This is a ___ car.","new",["new","newly","news","newed"]],
+
 ["The house is ___.","big",["big","bigs","biggered","bigly"]]
+
 ]
+
 },
 
 {
+
 title:"Past Simple — was / were",
+
 desc:"الماضي من be",
+
 rule:"I/he/she/it was. You/we/they were.",
+
 examples:[
+
 "I was tired. = كنت متعبًا.",
+
 "She was at home. = كانت في البيت.",
+
 "They were happy. = كانوا سعداء."
+
 ],
+
 mistakes:"They was ❌ → They were ✅",
+
 words:["was","were","yesterday","last"],
+
 questions:[
+
 ["I ___ tired yesterday.","was",["was","were","am","is"]],
+
 ["They ___ happy.","were",["was","were","are","is"]],
+
 ["She ___ at home.","was",["was","were","is","are"]]
+
 ]
+
 },
 
 {
+
 title:"Past Simple — Regular Verbs",
+
 desc:"الماضي للأفعال المنتظمة",
+
 rule:"غالبًا نضيف ed: work → worked.",
+
 examples:[
+
 "I worked yesterday. = عملت أمس.",
+
 "She played football. = لعبت كرة القدم.",
+
 "They watched TV. = شاهدوا التلفاز."
+
 ],
+
 mistakes:"بعد did يعود الفعل للمصدر: Did you work? وليس Did you worked?",
+
 words:["worked","played","watched","cleaned"],
+
 questions:[
+
 ["I ___ yesterday.","worked",["work","worked","working","works"]],
+
 ["She ___ football.","played",["play","played","plays","playing"]],
+
 ["Did you ___ yesterday?","work",["worked","work","works","working"]]
+
 ]
+
 },
 
 {
+
 title:"Past Simple — Irregular Verbs",
+
 desc:"الأفعال الشاذة في الماضي",
+
 rule:"الأفعال الشاذة لا تأخذ ed.",
+
 examples:[
+
 "go → went",
+
 "come → came",
+
 "take → took",
+
 "give → gave",
+
 "get → got",
+
 "make → made",
+
 "see → saw",
+
 "have → had",
+
 "drink → drank",
+
 "read → read"
+
 ],
+
 mistakes:"لا نقول goed أو taked.",
+
 words:["went","came","took","gave","got","made","had","drank","read"],
+
 questions:[
+
 ["I ___ home yesterday.","went",["go","went","gone","going"]],
+
 ["She ___ a book.","read",["read","reads","reading","red"]],
+
 ["He ___ a car.","took",["take","took","taken","taking"]],
+
 ["They ___ coffee.","drank",["drink","drank","drunk","drinking"]]
+
 ]
+
 },
 
 {
+
 title:"Future — going to",
+
 desc:"المستقبل المخطط له",
+
 rule:"am/is/are + going to + verb.",
+
 examples:[
+
 "I am going to study. = سأدرس/أنوي الدراسة.",
+
 "She is going to travel. = ستسافر.",
+
 "They are going to work. = سيعملون."
+
 ],
+
 mistakes:"بعد going to يأتي الفعل المصدر.",
+
 words:["going","tomorrow","plan","travel"],
+
 questions:[
+
 ["I am going to ___ English.","study",["study","studies","studying","studied"]],
+
 ["She is going to ___.","travel",["travel","travels","traveling","traveled"]],
+
 ["They ___ going to work.","are",["am","is","are","do"]]
+
 ]
+
 },
 
 {
+
 title:"A1 Review + Final Test",
+
 desc:"مراجعة شاملة لكل A1",
+
 rule:"مراجعة am/is/are، الضمائر، الملكية، a/an/the، Present Simple، Continuous، Past، Future، الأسئلة وحروف الجر.",
+
 examples:[
+
 "I am working now.",
+
 "She studies English every day.",
+
 "They went home yesterday.",
+
 "I am going to travel tomorrow."
+
 ],
+
 mistakes:"ركز على الزمن أولًا ثم اختر تركيب الجملة.",
+
 words:["review","test","correct","answer"],
+
 questions:[
+
 ["She ___ English every day.","studies",["study","studies","studying","studied"]],
+
 ["They ___ home yesterday.","went",["go","went","gone","going"]],
+
 ["I ___ working now.","am",["am","is","are","do"]],
+
 ["He is going to ___.","travel",["travel","travels","traveling","traveled"]],
+
 ["___ you like coffee?","Do",["Do","Does","Are","Is"]],
+
 ["She ___ not work here.","does",["do","does","is","are"]]
+
 ]
+
 }
 
 ];
@@ -622,871 +1133,1485 @@ questions:[
 const A2 = [
 
 {
+
 title:"Present Perfect",
+
 desc:"have / has + التصريف الثالث",
+
 rule:"I/you/we/they have + V3. He/she/it has + V3.",
+
 examples:[
+
 "I have finished. = لقد أنهيت.",
+
 "She has gone home. = لقد ذهبت إلى البيت.",
+
 "They have seen the movie. = لقد شاهدوا الفيلم."
+
 ],
+
 mistakes:"لا نستخدم التصريف الثاني بعد have/has.",
+
 words:["have","has","finished","gone","seen"],
+
 questions:[
+
 ["I ___ finished.","have",["have","has","am","did"]],
+
 ["She ___ finished.","has",["have","has","is","did"]],
+
 ["They have ___ the movie.","seen",["see","saw","seen","seeing"]],
+
 ["He has ___ home.","gone",["go","went","gone","going"]]
+
 ]
+
 },
 
 {
+
 title:"Present Perfect — since / for",
+
 desc:"المدة وبداية الفترة",
+
 rule:"for + مدة. since + بداية زمن.",
+
 examples:[
+
 "I have lived here for five years.",
+
 "She has worked here since 2020."
+
 ],
+
 mistakes:"for five years، since 2020.",
+
 words:["since","for","year","month","day"],
+
 questions:[
+
 ["I have lived here ___ five years.","for",["for","since","from","at"]],
+
 ["She has worked here ___ 2020.","since",["for","since","at","on"]]
+
 ]
+
 },
 
 {
+
 title:"Already / Yet",
+
 desc:"already = بالفعل، yet = بعد/حتى الآن",
+
 rule:"already غالبًا في الإثبات، yet غالبًا في النفي والأسئلة.",
+
 examples:[
+
 "I have already eaten.",
+
 "I haven't finished yet.",
+
 "Have you finished yet?"
+
 ],
+
 mistakes:"yet تأتي كثيرًا في نهاية الجملة.",
+
 words:["already","yet","finished","eaten"],
+
 questions:[
+
 ["I have ___ finished.","already",["already","yet","never","since"]],
+
 ["I haven't finished ___.","yet",["already","yet","ever","since"]]
+
 ]
+
 },
 
 {
+
 title:"Ever / Never",
+
 desc:"التجربة في الحياة",
+
 rule:"Have you ever...؟ للسؤال عن تجربة. never = أبدًا.",
+
 examples:[
+
 "Have you ever been to Baghdad?",
+
 "I have never been there."
+
 ],
+
 mistakes:"never لا تحتاج not.",
+
 words:["ever","never","been","experience"],
+
 questions:[
+
 ["Have you ___ visited Baghdad?","ever",["ever","never","yet","since"]],
+
 ["I have ___ been there.","never",["ever","never","already","yet"]]
+
 ]
+
 },
 
 {
+
 title:"Present Perfect vs Past Simple",
+
 desc:"الفرق بين الماضي المحدد وPresent Perfect",
+
 rule:"Past Simple مع وقت ماضٍ منتهٍ ومحدد. Present Perfect عندما لا نحدد وقتًا منتهيًا أو نهتم بالنتيجة/التجربة.",
+
 examples:[
+
 "I saw him yesterday.",
+
 "I have seen him before."
+
 ],
+
 mistakes:"yesterday → Past Simple.",
+
 words:["yesterday","before","already","last"],
+
 questions:[
+
 ["I ___ him yesterday.","saw",["saw","have seen","see","seeing"]],
+
 ["I have ___ him before.","seen",["saw","seen","see","seeing"]]
+
 ]
+
 },
 
 {
+
 title:"Past Continuous",
+
 desc:"was/were + ing",
+
 rule:"حدث كان مستمرًا في وقت معين في الماضي.",
+
 examples:[
+
 "I was sleeping at 10.",
+
 "They were working."
+
 ],
+
 mistakes:"was/were + ing.",
+
 words:["was","were","sleeping","working"],
+
 questions:[
+
 ["I ___ sleeping.","was",["was","were","am","have"]],
+
 ["They ___ working.","were",["was","were","are","have"]]
+
 ]
+
 },
 
 {
+
 title:"Past Simple vs Past Continuous",
+
 desc:"حدث قصير قطع حدثًا مستمرًا",
+
 rule:"While + Past Continuous. حدث آخر غالبًا Past Simple.",
+
 examples:[
+
 "I was sleeping when he called.",
+
 "She was working when I arrived."
+
 ],
+
 mistakes:"لا نخلط was + verb2.",
+
 words:["while","when","arrived","called"],
+
 questions:[
+
 ["I was sleeping when he ___.","called",["called","was calling","calls","calling"]],
+
 ["She ___ working when I arrived.","was",["was","were","is","has"]]
+
 ]
+
 },
 
 {
+
 title:"Future — will",
+
 desc:"will + verb",
+
 rule:"will + المصدر.",
+
 examples:[
+
 "I will call you.",
+
 "She will help me.",
+
 "They won't come."
+
 ],
+
 mistakes:"بعد will لا نضيف s أو ed.",
+
 words:["will","won't","call","help"],
+
 questions:[
+
 ["I will ___ you.","call",["call","calls","called","calling"]],
+
 ["She will ___ me.","help",["help","helps","helped","helping"]]
+
 ]
+
 },
 
 {
+
 title:"Future — going to",
+
 desc:"خطط وتوقعات مبنية على دليل",
+
 rule:"am/is/are going to + verb.",
+
 examples:[
+
 "I am going to study tonight.",
+
 "Look at the clouds. It is going to rain."
+
 ],
+
 mistakes:"going to + المصدر.",
+
 words:["plan","tonight","rain","future"],
+
 questions:[
+
 ["I am going to ___ tonight.","study",["study","studies","studying","studied"]],
+
 ["It is going to ___.","rain",["rain","rains","raining","rained"]]
+
 ]
+
 },
 
 {
+
 title:"Comparatives",
+
 desc:"المقارنة",
+
 rule:"small → smaller، big → bigger، beautiful → more beautiful.",
+
 examples:[
+
 "My car is faster than yours.",
+
 "This book is more interesting."
+
 ],
+
 mistakes:"than بعد المقارنة غالبًا.",
+
 words:["bigger","smaller","faster","better"],
+
 questions:[
+
 ["My car is ___ than yours.","faster",["fast","faster","fastest","more fast"]],
+
 ["This house is ___ than that one.","bigger",["big","bigger","biggest","more big"]]
+
 ]
+
 },
 
 {
+
 title:"Superlatives",
+
 desc:"الأعلى/الأفضل بين مجموعة",
+
 rule:"the + -est أو the most.",
+
 examples:[
+
 "He is the tallest.",
+
 "This is the most expensive car."
+
 ],
+
 mistakes:"غالبًا نستخدم the.",
+
 words:["best","worst","biggest","most"],
+
 questions:[
+
 ["He is the ___ student.","best",["good","better","best","well"]],
+
 ["This is the ___ car.","biggest",["big","bigger","biggest","more big"]]
+
 ]
+
 },
 
 {
+
 title:"Should / Shouldn't",
+
 desc:"النصيحة",
+
 rule:"should + verb.",
+
 examples:[
+
 "You should study.",
+
 "You shouldn't smoke."
+
 ],
+
 mistakes:"لا نضع to بعد should.",
+
 words:["should","shouldn't","advice","study"],
+
 questions:[
+
 ["You should ___ English.","study",["study","to study","studies","studied"]],
+
 ["You shouldn't ___.","smoke",["smoke","to smoke","smokes","smoked"]]
+
 ]
+
 },
 
 {
+
 title:"Must / Have to",
+
 desc:"الضرورة والالتزام",
+
 rule:"must + verb. have to + verb.",
+
 examples:[
+
 "You must be careful.",
+
 "I have to work tomorrow.",
+
 "She has to study."
+
 ],
+
 mistakes:"بعد must المصدر.",
+
 words:["must","have to","has to","careful"],
+
 questions:[
+
 ["You must ___ careful.","be",["be","are","is","being"]],
+
 ["She has to ___.","study",["study","studies","studying","studied"]]
+
 ]
+
 },
 
 {
+
 title:"Adverbs",
+
 desc:"quickly, slowly, carefully...",
+
 rule:"الظرف يصف طريقة حدوث الفعل.",
+
 examples:[
+
 "He drives carefully.",
+
 "She speaks slowly."
+
 ],
+
 mistakes:"careful صفة، carefully ظرف.",
+
 words:["quickly","slowly","carefully","easily"],
+
 questions:[
+
 ["He drives ___.","carefully",["careful","carefully","care","caring"]],
+
 ["She speaks ___.","slowly",["slow","slowly","slowness","slowed"]]
+
 ]
+
 },
 
 {
+
 title:"Object Pronouns",
+
 desc:"me, you, him, her, it, us, them",
+
 rule:"تأتي بعد الفعل أو حرف الجر.",
+
 examples:[
+
 "She called me.",
+
 "I saw him.",
+
 "They helped us."
+
 ],
+
 mistakes:"I/me، he/him، she/her.",
+
 words:["me","him","her","us","them"],
+
 questions:[
+
 ["She called ___.","me",["I","me","my","mine"]],
+
 ["I saw ___.","him",["he","him","his","himself"]],
+
 ["They helped ___.","us",["we","us","our","ours"]]
+
 ]
+
 },
 
 {
+
 title:"Possessive Pronouns",
+
 desc:"mine, yours, his, hers, ours, theirs",
+
 rule:"تأتي بدل الاسم المملوك.",
+
 examples:[
+
 "This book is mine.",
+
 "That car is hers.",
+
 "The house is theirs."
+
 ],
+
 mistakes:"my book ≠ mine.",
+
 words:["mine","yours","hers","ours","theirs"],
+
 questions:[
+
 ["This phone is ___.","mine",["my","mine","me","I"]],
+
 ["That car is ___.","hers",["her","hers","she","his"]],
+
 ["The house is ___.","theirs",["their","theirs","them","they"]]
+
 ]
+
 },
 
 {
+
 title:"Question Forms",
+
 desc:"تكوين الأسئلة في الأزمنة المختلفة",
+
 rule:"Do/Does للمضارع البسيط، Did للماضي، Have/Has للـ Present Perfect، Am/Is/Are للمستمر.",
+
 examples:[
+
 "Do you work?",
+
 "Did you work?",
+
 "Have you worked?",
+
 "Are you working?"
+
 ],
+
 mistakes:"اختيار أداة السؤال يعتمد على الزمن.",
+
 words:["do","does","did","have","has"],
+
 questions:[
+
 ["___ you work yesterday?","Did",["Do","Does","Did","Have"]],
+
 ["___ you finished?","Have",["Do","Did","Have","Are"]],
+
 ["___ she working now?","Is",["Do","Did","Is","Has"]]
+
 ]
+
 },
 
 {
+
 title:"Tense Review",
+
 desc:"تمييز الأزمنة",
+
 rule:"Simple = عادة/حقيقة، Continuous = يحدث الآن، Past = انتهى، Perfect = تجربة/نتيجة مرتبطة بالحاضر.",
+
 examples:[
+
 "I work every day.",
+
 "I am working now.",
+
 "I worked yesterday.",
+
 "I have worked here for five years."
+
 ],
+
 mistakes:"ابحث عن كلمات الوقت مثل now, yesterday, every day, since, for.",
+
 words:["now","yesterday","every","since","for"],
+
 questions:[
+
 ["I ___ every day.","work",["work","am working","worked","have worked"]],
+
 ["I am ___ now.","working",["work","working","worked","works"]],
+
 ["I ___ yesterday.","worked",["work","working","worked","have worked"]],
+
 ["I have ___ here for five years.","worked",["work","working","worked","works"]]
+
 ]
+
 },
 
 {
+
 title:"Reading Skills",
+
 desc:"فهم النصوص القصيرة",
+
 rule:"اقرأ الفكرة العامة أولًا ثم التفاصيل.",
+
 examples:[
+
 "Ali works in an office. He starts work at 8 o'clock. He goes home at 3.",
+
 "Question: When does Ali start work? Answer: At 8 o'clock."
+
 ],
+
 mistakes:"لا تترجم كل كلمة؛ ابحث عن معنى السؤال.",
+
 words:["office","start","finish","question"],
+
 questions:[
+
 ["Ali starts work at ___.","8",["6","7","8","9"]],
+
 ["Ali works in an ___.","office",["office","school","hospital","shop"]]
+
 ]
+
 },
 
 {
+
 title:"Writing Skills",
+
 desc:"كتابة جمل وفقرات بسيطة",
+
 rule:"ابدأ بجملة واضحة، ثم أضف تفاصيل.",
+
 examples:[
+
 "My name is Laith. I live in Basra. I work in an office. I study English every day."
+
 ],
+
 mistakes:"انتبه للحرف الكبير والنقطة وترتيب الجملة.",
+
 words:["name","live","work","study"],
+
 questions:[
+
 ["اختر الجملة الصحيحة.","I study English every day.",[
+
 "I study English every day.",
+
 "I English study every day.",
+
 "Study I English every day.",
+
 "I every day English study."
+
 ]]
+
 ]
+
 },
 
 {
+
 title:"A2 Review + Final Test",
+
 desc:"اختبار شامل A2",
+
 rule:"اختبار يجمع الأزمنة، المقارنة، المستقبل، Present Perfect، الأسئلة والمهارات.",
+
 examples:[
+
 "I have lived here for five years.",
+
 "I was sleeping when he called.",
+
 "This car is faster than mine.",
+
 "I will call you tomorrow."
+
 ],
+
 mistakes:"حدد الزمن أولًا قبل اختيار الإجابة.",
+
 words:["review","final","perfect","future"],
+
 questions:[
+
 ["I have lived here ___ five years.","for",["for","since","at","on"]],
+
 ["She ___ sleeping when I called.","was",["was","were","is","has"]],
+
 ["This car is ___ than mine.","faster",["fast","faster","fastest","more fast"]],
+
 ["I will ___ tomorrow.","call",["call","called","calling","calls"]],
+
 ["Have you ___ been there?","ever",["ever","never","yet","since"]]
+
 ]
+
 }
 
 ];
 
-
 /* =========================================================
+
    STATE
+
 ========================================================= */
 
 const KEY="laithEnglishFinalV1";
 
 let state={
+
   answers:{},
+
   mastered:{},
+
   mistakes:[],
+
   history:[],
+
   vocabulary:{}
+
 };
 
 function load(){
+
   try{
+
     const old=localStorage.getItem(KEY);
+
     if(old) state=Object.assign(state,JSON.parse(old));
+
   }catch(e){}
 
   /* محاولة استرجاع بيانات البرنامج القديم */
+
   try{
+
     const oldProgress=localStorage.getItem("a1progress");
+
     if(oldProgress && Object.keys(state.mastered).length===0){
+
       const p=JSON.parse(oldProgress);
+
       Object.keys(p).forEach(k=>{
+
         if(p[k]>=70) state.mastered["A1-"+k]=true;
+
       });
+
     }
+
   }catch(e){}
 
   save();
+
 }
 
 function save(){
+
   localStorage.setItem(KEY,JSON.stringify(state));
+
   updateHome();
+
 }
 
-
 /* =========================================================
+
    HOME
+
 ========================================================= */
 
 function allUnits(){
+
   return [
+
     ...A1.map((x,i)=>({...x,level:"A1",index:i,id:"A1-"+i})),
+
     ...A2.map((x,i)=>({...x,level:"A2",index:i,id:"A2-"+i}))
+
   ];
+
 }
 
 function updateHome(){
+
   const units=allUnits();
+
   let done=units.filter(u=>state.mastered[u.id]).length;
+
   let percent=Math.round(done/units.length*100);
 
   document.getElementById("overallText").innerHTML=
+
     `أتقنت <b>${done}</b> من <b>${units.length}</b> وحدة — <b>${percent}%</b>`;
 
   document.getElementById("overallBar").style.width=percent+"%";
 
   document.getElementById("stats").innerHTML=
+
     `<span class="badge">A1: ${A1.filter((u,i)=>state.mastered["A1-"+i]).length}/${A1.length}</span>
+
      <span class="badge">A2: ${A2.filter((u,i)=>state.mastered["A2-"+i]).length}/${A2.length}</span>
+
      <span class="badge">أخطاء: ${state.mistakes.length}</span>`;
+
 }
 
 function showLevel(level){
+
   const arr=level==="A1"?A1:A2;
 
   document.getElementById("home").classList.add("hidden");
+
   const c=document.getElementById("content");
+
   c.classList.remove("hidden");
 
   let html=`
+
   <div class="card">
+
     <button class="secondary" onclick="backHome()">⬅️ الرئيسية</button>
+
     <h2>📘 مستوى ${level}</h2>
+
     <p>اختر الوحدة. ستجد الشرح ثم التدريب والاختبار.</p>
+
   </div>`;
 
   arr.forEach((u,i)=>{
+
     const id=level+"-"+i;
+
     const done=state.mastered[id];
 
     html+=`
+
     <div class="unit" onclick="openUnit('${level}',${i})">
+
       <div class="unit-title">
+
         ${done?"✅":"⭕"} ${i+1}. ${u.title}
+
       </div>
+
       <div class="unit-info">${u.desc}</div>
+
     </div>`;
+
   });
 
   c.innerHTML=html;
+
 }
 
 function backHome(){
+
   document.getElementById("content").classList.add("hidden");
+
   document.getElementById("home").classList.remove("hidden");
+
   updateHome();
+
 }
 
-
 /* =========================================================
+
    UNIT
+
 ========================================================= */
 
 let currentLevel="";
+
 let currentIndex=0;
+
 let qIndex=0;
+
 let unitScore=0;
+
 let unitQuestions=[];
 
 function openUnit(level,index){
+
   currentLevel=level;
+
   currentIndex=index;
 
   const arr=level==="A1"?A1:A2;
+
   const u=arr[index];
 
   document.getElementById("home").classList.add("hidden");
+
   const c=document.getElementById("content");
+
   c.classList.remove("hidden");
 
   let html=`
+
   <div class="card">
+
     <button class="secondary" onclick="showLevel('${level}')">⬅️ الوحدات</button>
+
     <h2>${level} — الوحدة ${index+1}</h2>
+
     <h2>${u.title}</h2>
+
     <p>${u.desc}</p>
 
     <div class="rule">
+
       <b>📌 القاعدة:</b><br>
+
       ${u.rule}
+
     </div>
 
     <h3>📚 أمثلة</h3>
+
   `;
 
   u.examples.forEach(e=>{
+
     html+=`<div class="example">${e}</div>`;
+
   });
 
   html+=`
+
     <h3>⚠️ أخطاء مهمة</h3>
+
     <div class="warning">${u.mistakes}</div>
 
     <h3>🗣️ مفردات</h3>
+
     <p>${u.words.map(w=>`<span class="badge">${w}</span>`).join("")}</p>
 
     <hr>
+
     <button onclick="startUnitTest()">📝 ابدأ اختبار الوحدة</button>
+
     <button class="light" onclick="speak('${escapeSpeech(u.examples[0])}')">🔊 استماع</button>
+
   </div>`;
 
   c.innerHTML=html;
+
 }
 
 function escapeSpeech(x){
+
   return x.replace(/=/g,"");
+
 }
 
 function startUnitTest(){
+
   const arr=currentLevel==="A1"?A1:A2;
+
   unitQuestions=arr[currentIndex].questions;
+
   qIndex=0;
+
   unitScore=0;
+
   renderQuestion();
+
 }
 
 function renderQuestion(){
+
   const c=document.getElementById("content");
 
   if(qIndex>=unitQuestions.length){
+
     finishUnit();
+
     return;
+
   }
 
   const q=unitQuestions[qIndex];
 
   let html=`
+
   <div class="card">
+
     <button class="secondary" onclick="openUnit('${currentLevel}',${currentIndex})">⬅️ رجوع للشرح</button>
 
     <p class="small">
+
       السؤال ${qIndex+1} من ${unitQuestions.length}
+
     </p>
 
     <div class="progress">
+
       <div style="width:${qIndex/unitQuestions.length*100}%"></div>
+
     </div>
 
     <div class="question">${q[0]}</div>
+
   `;
 
   q[2].forEach((option,i)=>{
+
     html+=`
+
       <button class="option" onclick="answerQuestion(${i})">
+
         ${String.fromCharCode(65+i)}) ${option}
+
       </button>`;
+
   });
 
   html+=`</div>`;
 
   c.innerHTML=html;
+
 }
 
 function answerQuestion(choice){
+
   const q=unitQuestions[qIndex];
+
   const selected=q[2][choice];
+
   const correct=q[1];
 
   if(selected===correct){
+
     unitScore++;
+
     showAnswer(true,correct);
+
   }else{
+
     state.mistakes.push({
+
       level:currentLevel,
+
       unit:currentIndex,
+
       question:q[0],
+
       selected:selected,
+
       correct:correct,
+
       options:q[2]
+
     });
+
     save();
+
     showAnswer(false,correct);
+
   }
+
 }
 
 function showAnswer(ok,correct){
+
   const c=document.getElementById("content");
 
   c.innerHTML=`
+
   <div class="card">
+
     <div class="score">${ok?"✅ إجابة صحيحة":"❌ إجابة غير صحيحة"}</div>
+
     <p style="text-align:center">
+
       ${ok?"ممتاز!":"الإجابة الصحيحة هي:"}
+
       <b>${correct}</b>
+
     </p>
 
     <button onclick="nextQuestion()">التالي ➡️</button>
+
   </div>`;
+
 }
 
 function nextQuestion(){
+
   qIndex++;
+
   renderQuestion();
+
 }
 
 function finishUnit(){
+
   const total=unitQuestions.length;
+
   const percent=Math.round(unitScore/total*100);
 
   const id=currentLevel+"-"+currentIndex;
 
   if(percent>=70){
+
     state.mastered[id]=true;
+
   }else{
+
     delete state.mastered[id];
+
   }
 
   state.history.push({
+
     id,
+
     score:unitScore,
+
     total,
+
     percent,
+
     date:new Date().toISOString()
+
   });
 
   save();
 
   document.getElementById("content").innerHTML=`
+
   <div class="card">
+
     <div class="score">${percent}%</div>
+
     <h2 style="text-align:center">
+
       ${percent>=70?"🎉 تم إتقان الوحدة":"📖 تحتاج إلى مراجعة"}
+
     </h2>
 
     <p style="text-align:center">
+
       النتيجة: ${unitScore} / ${total}
+
     </p>
 
     <p>
+
       ${percent>=70
+
       ?"ممتاز. تم تسجيل هذه الوحدة ضمن الوحدات المتقنة."
+
       :"تحتاج إلى 70% على الأقل حتى تُسجل الوحدة كمُتقنة."}
+
     </p>
 
     <button onclick="startUnitTest()">🔁 إعادة الاختبار</button>
+
     <button class="secondary" onclick="showLevel('${currentLevel}')">📚 الوحدات</button>
+
     <button class="light" onclick="showReview()">🔁 مراجعة الأخطاء</button>
+
   </div>`;
+
 }
 
-
 /* =========================================================
+
    MISTAKES
+
 ========================================================= */
 
 function showReview(){
+
   document.getElementById("home").classList.add("hidden");
+
   const c=document.getElementById("content");
+
   c.classList.remove("hidden");
 
   if(state.mistakes.length===0){
+
     c.innerHTML=`
+
     <div class="card">
+
       <button class="secondary" onclick="backHome()">⬅️ الرئيسية</button>
+
       <h2>🔁 مراجعة الأخطاء</h2>
+
       <p>رائع! لا توجد أخطاء مسجلة حاليًا.</p>
+
     </div>`;
+
     return;
+
   }
 
   let html=`
+
   <div class="card">
+
     <button class="secondary" onclick="backHome()">⬅️ الرئيسية</button>
+
     <h2>🔁 مراجعة الأخطاء</h2>
+
     <p>عدد الأخطاء: <b>${state.mistakes.length}</b></p>
+
     <button onclick="startMistakeTest()">📝 ابدأ اختبار الأخطاء</button>
+
     <button class="danger" onclick="clearMistakes()">مسح الأخطاء</button>
+
   </div>`;
 
   state.mistakes.slice(-30).reverse().forEach((m,i)=>{
+
     html+=`
+
     <div class="card">
+
       <b>${m.question}</b>
+
       <p>إجابتك: ❌ ${m.selected}</p>
+
       <p>الصحيح: ✅ ${m.correct}</p>
+
     </div>`;
+
   });
 
   c.innerHTML=html;
+
 }
 
 let mistakeQuestions=[];
+
 let mistakeIndex=0;
+
 let mistakeScore=0;
 
 function startMistakeTest(){
+
   mistakeQuestions=state.mistakes.slice(-20).map(m=>[
+
     m.question,
+
     m.correct,
+
     m.options
+
   ]);
 
   mistakeIndex=0;
+
   mistakeScore=0;
+
   renderMistakeQuestion();
+
 }
 
 function renderMistakeQuestion(){
+
   if(mistakeIndex>=mistakeQuestions.length){
+
     const p=Math.round(mistakeScore/mistakeQuestions.length*100);
 
     document.getElementById("content").innerHTML=`
+
     <div class="card">
+
       <div class="score">${p}%</div>
+
       <p style="text-align:center">نتيجة مراجعة الأخطاء</p>
+
       <button onclick="showReview()">⬅️ مراجعة الأخطاء</button>
+
     </div>`;
+
     return;
+
   }
 
   const q=mistakeQuestions[mistakeIndex];
 
   let html=`
+
   <div class="card">
+
   <p>السؤال ${mistakeIndex+1} من ${mistakeQuestions.length}</p>
+
   <div class="question">${q[0]}</div>`;
 
   q[2].forEach((x,i)=>{
+
     html+=`<button class="option" onclick="answerMistake(${i})">
+
     ${String.fromCharCode(65+i)}) ${x}</button>`;
+
   });
 
   html+=`</div>`;
+
   document.getElementById("content").innerHTML=html;
+
 }
 
 function answerMistake(i){
+
   const q=mistakeQuestions[mistakeIndex];
 
   if(q[2][i]===q[1]) mistakeScore++;
 
   mistakeIndex++;
+
   renderMistakeQuestion();
+
 }
 
 function clearMistakes(){
+
   state.mistakes=[];
+
   save();
+
   showReview();
+
 }
 
-
 /* =========================================================
+
    VOCABULARY
+
 ========================================================= */
 
 function showVocabulary(){
+
   document.getElementById("home").classList.add("hidden");
+
   const c=document.getElementById("content");
+
   c.classList.remove("hidden");
 
   const words=[];
 
   allUnits().forEach(u=>{
+
     u.words.forEach(w=>{
+
       if(!words.includes(w)) words.push(w);
+
     });
+
   });
 
   let html=`
+
   <div class="card">
+
     <button class="secondary" onclick="backHome()">⬅️ الرئيسية</button>
+
     <h2>📚 Vocabulary</h2>
+
     <p>اضغط على الكلمة لسماع نطقها.</p>
+
   </div>`;
 
   words.forEach(w=>{
+
     html+=`
+
     <button class="light" onclick="speak('${w}')">
+
       🔊 ${w}
+
     </button>`;
+
   });
 
   c.innerHTML+=html;
+
 }
 
-
 /* =========================================================
+
    SKILLS
+
 ========================================================= */
 
 function skill(type){
 
   document.getElementById("home").classList.add("hidden");
+
   const c=document.getElementById("content");
+
   c.classList.remove("hidden");
 
   let data={
+
     reading:{
+
       title:"📖 Reading",
+
       text:"اقرأ النص ببطء ثم حاول فهم الفكرة العامة قبل ترجمة الكلمات.",
+
       sample:"My name is Ali. I live in Basra. I work in an office. I study English every day."
+
     },
+
     writing:{
+
       title:"✍️ Writing",
+
       text:"اكتب جملًا قصيرة صحيحة. ابدأ بالفاعل ثم الفعل ثم باقي الجملة.",
+
       sample:"My name is Laith. I live in Basra. I work every day. I study English."
+
     },
+
     listening:{
+
       title:"🔊 Listening",
+
       text:"اضغط على زر الاستماع عدة مرات، ثم حاول فهم الجملة دون النظر إلى الترجمة.",
+
       sample:"I have worked here for five years."
+
     },
+
     speaking:{
+
       title:"🎤 Speaking",
+
       text:"استمع إلى الجملة، ثم كررها بصوت عالٍ. البرنامج لا يعتمد على خادم خارجي لتقييم صوتك.",
+
       sample:"I am learning English every day."
+
     }
+
   }[type];
 
   c.innerHTML=`
+
   <div class="card">
+
     <button class="secondary" onclick="backHome()">⬅️ الرئيسية</button>
+
     <h2>${data.title}</h2>
+
     <p>${data.text}</p>
 
     <div class="example">
+
       <b>${data.sample}</b>
+
     </div>
 
     <button onclick="speak('${data.sample}')">🔊 اسمع</button>
+
     <button class="success" onclick="speak('${data.sample}')">🎤 استمع ثم كرر</button>
+
   </div>`;
+
 }
 
 function speak(text){
+
   if(!("speechSynthesis" in window)){
+
     alert("المتصفح لا يدعم النطق الصوتي.");
+
     return;
+
   }
 
   speechSynthesis.cancel();
 
   const u=new SpeechSynthesisUtterance(text);
+
   u.lang="en-US";
+
   u.rate=.82;
+
   speechSynthesis.speak(u);
+
 }
 
-
 /* =========================================================
+
    RESET
+
 ========================================================= */
 
 function resetProgress(){
+
   const ok=confirm(
+
     "هل أنت متأكد؟ سيتم حذف تقدم البرنامج والأخطاء والاختبارات."
+
   );
 
   if(!ok)return;
@@ -1494,26 +2619,37 @@ function resetProgress(){
   localStorage.removeItem(KEY);
 
   state={
+
     answers:{},
+
     mastered:{},
+
     mistakes:[],
+
     history:[],
+
     vocabulary:{}
+
   };
 
   updateHome();
+
   alert("تمت إعادة ضبط البرنامج.");
+
 }
 
-
 /* =========================================================
+
    START
+
 ========================================================= */
 
 load();
+
 updateHome();
 
 </script>
 
 </body>
+
 </html>
