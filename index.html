@@ -15,6 +15,7 @@
             --green: #2ca02c;
             --orange: #ff9800;
             --dark: #202124;
+            --light-blue: #e8f0fe;
         }
         * {
             box-sizing: border-box;
@@ -53,7 +54,7 @@
             border-radius: 16px;
             display: flex;
             justify-content: space-around;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 166px rgba(0,0,0,0.06);
             position: relative;
             z-index: 10;
         }
@@ -123,7 +124,7 @@
             font-size: 1rem;
             background-color: #f8f9fa;
             outline: none;
-            -webkit-appearance: none;
+            color: var(--dark);
         }
         .card-content {
             background: var(--white);
@@ -167,12 +168,11 @@
             align-items: center;
             gap: 8px;
         }
-        .btn:active {
-            transform: scale(0.98);
-        }
+        .btn:active { transform: scale(0.98); }
         .btn-audio { background-color: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
         .btn-mic { background-color: #f5f5f5; color: #424242; border: 1px solid #e0e0e0; }
         .btn-success { background-color: var(--green); color: white; box-shadow: 0 4px 12px rgba(44,160,44,0.2); }
+        .btn-wrong { background-color: #fce8e6; color: #c5221f; border: 1px solid #fad2cf; display: none; }
         
         .input-answer {
             width: 100%;
@@ -189,6 +189,16 @@
         .input-answer:focus {
             border-color: var(--green);
             background-color: #fff;
+        }
+        .active-word {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin: 2px;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -225,46 +235,38 @@
     </div>
 
     <div class="selector-card">
-        <label for="unit-select">📂 تصفح الـ 42 وحدة كاملة بالتفصيل:</label>
+        <label for="unit-select">📂 تصفح الـ 42 وحدة كاملة بالتفصيل دون أي نقص:</label>
         <select id="unit-select" onchange="loadSelectedUnit()"></select>
+        <button class="btn btn-wrong" id="btn-review-wrong" onclick="startWrongReview()">🔄 إعادة الأسئلة التي أخطأت بها (<span id="wrong-count">0</span>)</button>
     </div>
 
     <div class="card-content">
         <div class="section-title grammar-title">📘 شرح القواعد المعياري والأمثلة بالعربية</div>
-        <div class="explanation-text" id="grammar-text">جاري تجميع قواعد أكسفورد وبناء الهيكل...</div>
+        <div class="explanation-text" id="grammar-text">جاري التحميل...</div>
+        <div style="margin-top: 10px; font-weight: bold; color: var(--dark)">🔤 المفردات والكلمات المطلوبة:</div>
+        <div id="vocab-container" style="margin-top: 5px;"></div>
     </div>
 
     <div class="card-content">
         <div class="section-title audio-title">🎧 مهارات الاستماع والتحدث التفاعلي</div>
-        <button class="btn btn-audio" onclick="playOxfordVoice()">🔊 استمع للمقطع الصوتي التعليمي</button>
-        <button class="btn btn-mic" onclick="simulateMic()">🎤 تفعيل لاقط الميكروفون للتحليل</button>
+        <button class="btn btn-audio" onclick="playOxfordVoice()">🔊 استمع للمقطع الصوتي التعليمي (الإصغاء)</button>
+        <button class="btn btn-mic" onclick="simulateMic()">🎤 تفعيل لاقط الميكروفون للتحليل (التحدث)</button>
     </div>
 
     <div class="card-content">
-        <div class="section-title write-title">📝 القراءة والكتابة والتقييم الفوري</div>
+        <div class="section-title write-title">📝 القراءة والكتابة والتقييم الفوري (اختبار سؤال واحد)</div>
         <div id="question-text" style="font-size: 1rem; font-weight: 600; color: #3c4043; line-height: 1.4;">السؤال:</div>
         <input type="text" class="input-answer" id="user-answer" placeholder="اكتب إجابتك بالإنجليزية هنا..." autocomplete="off" autocapitalize="none">
         <button class="btn btn-success" onclick="verifyLaithAnswer()">✅ تحقق من إجابتي الفورية</button>
     </div>
 
     <script>
-        // توليد قاعدة البيانات للـ 42 وحدة بشكل كامل ومحكم لمنع وجود حقول ناقصة في GitHub
-        const curriculumData = {};
-        
-        // بناء الـ 21 وحدة لمستوى A1
-        for(let i = 1; i <= 21; i++) {
-            curriculumData[`unit_${i}`] = {
-                level: "A1",
-                title: `الوحدة ${i} (A1): قواعد التأسيس والتركيب - الجزء ${i}`,
-                grammar: `★ شرح قاعدة الوحدة ${i} من منهج أكسفورد للتأسيس:\nنركز في هذا القسم على الهيكل القواعدي وصياغة الجمل الاسمية والفعلية بشكل منظم ومتدرج للمبتدئين.\n\n🔤 الكلمات المطلوبة: Hello (مرحباً) - Name (اسم) - Book (كتاب) - Day (يوم)`,
-                listening: `Welcome to oxford training unit number ${i}. Let's learn together.`,
-                speaking: `I am improving my skills step by step.`,
-                question: `اكتب الكلمة الإنجليزية المقابلة لـ 'مرحباً' أو اكتب الجواب الافتراضي للوحدة للعبور (hello):`,
-                answer: "hello"
-            };
-        }
-        
-        // تخصيص دقيق ومميز لأولى وحدات الـ A1 لتظهر ثرية بالبيانات
-        curriculumData["unit_1"].grammar = "★ فعل الكينونة للمتكلم: نستخدم (I am) للتعريف بالاسم، السن، والجنسية.\nالنفي: نضع not مباشرة بعد الفعل المساعد ليكون (I am not).\n\n🔤 كلمات الحفظ: Hello (مرحباً) - Name (اسم) - Country (بلد)";
-        curriculumData["unit_1"].listening = "Hello, my name is Laith. I am from Iraq.";
-        curriculumData["unit_1"].speaking = "I am a student studying English.";
+        // قاعدة البيانات الكاملة والشاملة لجميع الوحدات الـ 42 بالتفصيل وبدون أي اختصار
+        const curriculumData = {
+            // ----- مستوى A1: من وحدة 1 إلى 21 -----
+            "unit_1": {
+                title: "الوحدة 1 (A1): التعارف وفعل الكينونة (am)",
+                grammar: "★ فعل الكينونة للمتكلم: نستخدم (I am) للتعريف بالاسم، السن، والجنسية.\nالنفي: نضع not مباشرة بعد الفعل المساعد ليكون (I am not).\nمثال: I am Laith.",
+                vocab: ["Hello (مرحباً)", "Name (اسم)", "Country (بلد)", "Age (عمر)"],
+                listening: "Hello, my name is Laith. I am from Iraq.",
+                speaking: "I am a student studying English.",
